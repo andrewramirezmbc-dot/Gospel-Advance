@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gospel Advance | Andrew Ramirez</title>
+<meta name="description" content="Jesus for Every Generation. Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation. Andrew Ramirez — Gospel Advance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1C1C1C;--cream:#F5F0E8;--bronze:#B8965A;--light-gold:#D4C4A0;
+  --sage:#E4E8E0;--warm-gray:#8A8478;--slate:#4A5B6A;--deep-slate:#2A3640;
+  --white:#FFFFFF;--text-body:#4A4A4A;--border:rgba(28,28,28,.08);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --radius:12px;
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--white);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:inherit}
+
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* Section headers (Dial In style) */
+.section-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:40px}
+.section-label{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal)}
+.section-more{font-size:.8rem;font-weight:500;color:var(--bronze);display:inline-flex;align-items:center;gap:6px;transition:gap .3s ease}
+.section-more:hover{gap:12px}
+.section-more svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* =========== NAV (Dial In pill style) =========== */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw,60px);transition:all .4s ease}
+nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border);padding:10px clamp(20px,5vw,60px)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+
+.nav-logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--sans);font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);line-height:1.1}
+.logo-accent{color:var(--bronze);font-size:.6rem;letter-spacing:.2em;display:block;font-weight:600}
+.logo-divider{width:1px;height:28px;background:rgba(28,28,28,.2)}
+.logo-name{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap}
+
+.nav-pill{display:flex;align-items:center;gap:2px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
+.nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
+.nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-search{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--charcoal);transition:background .3s ease}
+.nav-search:hover{background:var(--cream)}
+.nav-search svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.nav-give{padding:8px 22px;background:var(--bronze);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
+.nav-give:hover{background:var(--charcoal);transform:translateY(-1px)}
+
+.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
+
+/* =========== HERO (Dial In warm gradient + centered) =========== */
+.hero{padding:140px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(245,240,232,.2) 0%,
+    rgba(212,196,160,.15) 30%,
+    rgba(184,150,90,.08) 60%,
+    rgba(255,255,255,0) 100%
+  );
+}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:800;line-height:1.08;color:var(--charcoal);margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .2s forwards cubic-bezier(.16,1,.3,1)}
+.hero h1 em{font-style:italic;color:var(--bronze)}
+.hero-sub{font-size:clamp(.95rem,1.2vw,1.1rem);font-weight:400;line-height:1.65;color:var(--warm-gray);max-width:520px;margin:0 auto 2.5rem;opacity:0;animation:fadeUp .8s .4s forwards cubic-bezier(.16,1,.3,1)}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .6s forwards cubic-bezier(.16,1,.3,1)}
+.btn-yt{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
+.btn-yt:hover{background:#c4302b;transform:translateY(-2px)}
+.btn-yt svg{width:20px;height:20px;fill:currentColor}
+.btn-ig{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--charcoal);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;border:1px solid rgba(28,28,28,.15);transition:all .3s ease}
+.btn-ig:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
+.btn-ig svg{width:18px;height:18px;fill:currentColor}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* =========== MARQUEE =========== */
+.marquee{padding:20px 0;background:var(--cream);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-track{display:flex;width:max-content;animation:scrollMarquee 35s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{display:flex;align-items:center;gap:28px;padding:0 28px;white-space:nowrap}
+.marquee-item span{font-family:var(--sans);font-size:.78rem;font-weight:500;color:var(--charcoal);letter-spacing:.04em;opacity:.6}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--bronze);flex-shrink:0}
+@keyframes scrollMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* =========== FEATURED (Dial In: big + sidebar) =========== */
+.featured{padding:80px 0}
+.featured-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+
+.featured-main{border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .3s ease}
+.featured-main:hover{transform:translateY(-3px)}
+.featured-main-thumb{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--deep-slate),var(--charcoal));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.featured-main-thumb iframe{width:100%;height:100%;border:none;position:absolute;inset:0}
+.featured-main-body{padding:24px 4px 0}
+.featured-main-body .meta{font-size:.72rem;font-weight:500;color:var(--warm-gray);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.featured-main-body .meta .cat{color:var(--bronze);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.featured-main-body h3{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:var(--charcoal);line-height:1.25;margin-bottom:10px}
+.featured-main-body p{font-size:.9rem;line-height:1.6;color:var(--text-body)}
+.author-row{display:flex;align-items:center;gap:10px;margin-top:16px}
+.author-avatar{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700;color:var(--charcoal)}
+.author-name{font-size:.78rem;color:var(--warm-gray);font-weight:500}
+
+.featured-sidebar{display:flex;flex-direction:column;gap:24px}
+.sidebar-item{display:grid;grid-template-columns:160px 1fr;gap:16px;cursor:pointer;transition:transform .3s ease}
+.sidebar-item:hover{transform:translateX(3px)}
+.sidebar-thumb{width:100%;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,var(--sage),var(--light-gold));position:relative}
+.sidebar-thumb iframe{width:100%;height:100%;border:none;position:absolute;inset:0;pointer-events:none}
+.sidebar-info .meta{font-size:.65rem;font-weight:500;color:var(--warm-gray);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.sidebar-info .meta .cat{color:var(--bronze);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.sidebar-info h4{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:6px}
+.sidebar-info .author-row{margin-top:4px}
+
+/* =========== CONTENT CARDS (3-col grid like Dial In Messages) =========== */
+.content-section{padding:80px 0}
+.content-section.alt{background:var(--cream)}
+.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+.content-card{cursor:pointer;transition:transform .3s ease}
+.content-card:hover{transform:translateY(-3px)}
+.card-thumb{width:100%;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;margin-bottom:16px;background:linear-gradient(135deg,var(--sage),var(--light-gold));position:relative}
+.card-thumb iframe{width:100%;height:100%;border:none;position:absolute;inset:0;pointer-events:none}
+.card-thumb-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;color:var(--warm-gray);opacity:.4}
+.content-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:8px}
+.content-card p{font-size:.84rem;line-height:1.55;color:var(--text-body);margin-bottom:12px}
+.content-card .meta{font-size:.68rem;font-weight:500;color:var(--warm-gray);display:flex;align-items:center;gap:6px}
+.content-card .meta .cat{color:var(--bronze);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* =========== LATEST LIST (Dial In table style) =========== */
+.latest{padding:80px 0;background:var(--cream)}
+.latest-list{display:flex;flex-direction:column}
+.latest-row{display:grid;grid-template-columns:1fr 140px 140px 36px;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid var(--border);transition:all .3s ease;cursor:pointer}
+.latest-row:first-child{border-top:1px solid var(--border)}
+.latest-row:hover{padding-left:8px}
+.latest-row h4{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--charcoal)}
+.latest-row h4 a{color:inherit;transition:color .3s ease}
+.latest-row h4 a:hover{color:var(--bronze)}
+.latest-row .row-cat{font-size:.72rem;font-weight:500;color:var(--bronze);letter-spacing:.06em}
+.latest-row .row-date{font-size:.78rem;color:var(--warm-gray)}
+.latest-row .row-avatar{width:32px;height:32px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;color:var(--charcoal)}
+
+/* =========== ARTICLES =========== */
+.articles{padding:80px 0}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.article-card{cursor:pointer;transition:transform .3s ease}
+.article-card:hover{transform:translateY(-3px)}
+.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
+.article-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:8px}
+.article-card p{font-size:.84rem;line-height:1.55;color:var(--text-body);margin-bottom:12px}
+.article-card .meta{font-size:.68rem;font-weight:500;color:var(--warm-gray)}
+@media(max-width:1024px){.articles-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.articles-grid{grid-template-columns:1fr}}
+
+/* =========== ABOUT (clean, minimal) =========== */
+.about{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(48px,6vw,100px);align-items:center}
+.about-image{position:relative}
+.about-img-box{width:100%;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,var(--sage) 0%,var(--light-gold) 50%,var(--cream) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--warm-gray);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.about-img-box svg{width:48px;height:48px;opacity:.3;stroke:currentColor;stroke-width:1;fill:none}
+.about-accent{position:absolute;bottom:-16px;right:-16px;width:100px;height:100px;border-radius:50%;border:1.5px solid var(--bronze);opacity:.2}
+
+.about-text .section-label{margin-bottom:1rem;display:block}
+.about-text h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;line-height:1.12;color:var(--charcoal);margin-bottom:1.5rem}
+.about-text p{font-size:.95rem;line-height:1.8;color:var(--text-body);margin-bottom:1rem}
+
+.about-quote{margin-top:2rem;padding:28px 32px;border-left:3px solid var(--bronze);background:var(--cream);border-radius:0 var(--radius) var(--radius) 0}
+.about-quote blockquote{font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal);margin:0 0 10px}
+.about-quote cite{font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--bronze)}
+
+/* =========== THE GOSPEL =========== */
+.gospel{padding:100px 0;background:var(--charcoal);position:relative;overflow:hidden}
+.gospel::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(184,150,90,.04),transparent 70%)}
+.gospel .container{position:relative;z-index:2}
+.gospel-intro{text-align:center;max-width:560px;margin:0 auto 56px}
+.gospel-intro .section-label{color:var(--bronze);margin-bottom:1rem;display:block}
+.gospel-intro h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--cream);line-height:1.1;margin-bottom:1rem}
+.gospel-intro h2 em{font-style:italic;color:var(--bronze)}
+.gospel-intro p{font-size:1rem;line-height:1.7;color:var(--light-gold)}
+
+.gospel-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gospel-step{padding:32px 24px;border-radius:14px;background:rgba(245,240,232,.04);border:1px solid rgba(245,240,232,.06);transition:all .4s ease;text-align:center}
+.gospel-step:hover{background:rgba(245,240,232,.08);border-color:rgba(184,150,90,.2);transform:translateY(-3px)}
+.step-num{font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--bronze);margin-bottom:12px;line-height:1}
+.gospel-step h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:8px}
+.gospel-step p{font-size:.82rem;line-height:1.55;color:var(--warm-gray)}
+.gospel-step cite{display:block;margin-top:10px;font-family:var(--sans);font-style:normal;font-size:.68rem;letter-spacing:.04em;color:var(--bronze);opacity:.7}
+
+.gospel-verse{text-align:center;margin-top:56px;padding:40px;border-radius:14px;border:1px solid rgba(184,150,90,.12);background:rgba(184,150,90,.03)}
+.gospel-verse blockquote{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;line-height:1.65;color:var(--cream);max-width:600px;margin:0 auto 12px}
+.gospel-verse cite{font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.08em}
+
+/* =========== CONNECT / SUBSCRIBE =========== */
+.connect{padding:100px 0;background:var(--cream);text-align:center}
+.connect h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
+.connect p{font-size:.95rem;line-height:1.6;color:var(--text-body);max-width:480px;margin:0 auto 2rem}
+/* (email form removed — replaced with YouTube + Instagram CTAs) */
+
+.socials{display:flex;justify-content:center;gap:12px}
+.socials a{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.1);color:var(--charcoal);transition:all .3s ease}
+.socials a:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
+.socials svg{width:15px;height:15px;fill:currentColor}
+
+/* =========== CONTACT =========== */
+.contact{padding:100px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-left .section-label{margin-bottom:1rem;display:block}
+.contact-left h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);margin-bottom:1.2rem}
+.contact-left p{font-size:.95rem;line-height:1.75;color:var(--text-body);margin-bottom:2rem}
+.contact-info{display:flex;flex-direction:column}
+.contact-row{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--border)}
+.contact-row svg{width:18px;height:18px;stroke:var(--bronze);stroke-width:1.5;fill:none;flex-shrink:0}
+.contact-row span{font-size:.88rem;color:var(--charcoal)}
+
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--warm-gray)}
+.field input,.field textarea{padding:14px 16px;background:var(--cream);border:1px solid transparent;border-radius:10px;font-family:var(--sans);font-size:.88rem;color:var(--charcoal);outline:none;transition:border-color .3s ease;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--bronze)}
+.field textarea{min-height:120px}
+.form-btn{align-self:flex-start;padding:14px 36px;background:var(--charcoal);color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
+.form-btn:hover{background:var(--bronze);transform:translateY(-2px)}
+
+/* =========== FOOTER =========== */
+footer{padding:60px 0 40px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand-col .logo-text{margin-bottom:12px}
+.footer-tagline{font-size:.85rem;line-height:1.6;color:var(--text-body);margin-bottom:20px;max-width:280px}
+.footer-socials{display:flex;gap:10px}
+.footer-socials a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.08);color:var(--charcoal);transition:all .3s ease}
+.footer-socials a:hover{border-color:var(--bronze);color:var(--bronze)}
+.footer-socials svg{width:13px;height:13px;fill:currentColor}
+.footer-col h5{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.84rem;color:var(--text-body);transition:color .3s ease}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);transition:color .3s ease}
+.mobile-nav a:hover{color:var(--bronze)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  .hero h1,.hero-sub,.hero-form{animation:none!important;opacity:1!important;transform:none!important}
+  .marquee-track{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* FOCUS */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .featured-grid{grid-template-columns:1fr}
+  .content-grid{grid-template-columns:repeat(2,1fr)}
+  .gospel-steps{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-pill{display:none}
+  .nav-search{display:none}
+  .menu-toggle{display:flex}
+  .mobile-nav{display:flex}
+  .content-grid{grid-template-columns:1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .gospel-steps{grid-template-columns:1fr}
+  .latest-row{grid-template-columns:1fr auto auto;gap:12px}
+  .latest-row .row-date{display:none}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn-yt,.btn-ig{justify-content:center}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .sidebar-item{grid-template-columns:120px 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-text">Gospel<span class="logo-accent">Advance</span></div>
+      <div class="logo-divider"></div>
+      <span class="logo-name">Andrew Ramirez</span>
+    </a>
+    <div class="nav-pill">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="sermons.html">Watch</a>
+      <a href="articles.html">Articles</a>
+      <a href="#gospel">The Gospel</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="#connect" class="nav-search" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give">YouTube</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="sermons.html">Watch</a>
+  <a href="articles.html">Articles</a>
+  <a href="#gospel">The Gospel</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <h1>Jesus for every<br>generation.</h1>
+    <p class="hero-sub">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
+    <div class="hero-cta">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="btn-yt">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Subscribe on YouTube
+      </a>
+      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" class="btn-ig">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Faithfully Proclaiming the Word of God</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Jesus for Every Generation</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Gospel of John Series</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Evangelism &amp; Preaching</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Discipling the Next Generation</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Street Evangelism</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Faithfully Proclaiming the Word of God</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Jesus for Every Generation</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Gospel of John Series</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Evangelism &amp; Preaching</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Discipling the Next Generation</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Street Evangelism</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section class="featured" id="sermons">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Featured</span>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-main reveal">
+        <div class="featured-main-thumb" id="featuredPlayer" style="cursor:pointer;position:relative">
+          <img src="https://img.youtube.com/vi/-wMeu74tAxQ/hqdefault.jpg" alt="The Fixation & The Invitation" style="width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .3s ease" onmouseover="this.style.background='rgba(0,0,0,.15)'" onmouseout="this.style.background='rgba(0,0,0,.3)'">
+            <svg width="68" height="68" viewBox="0 0 68 68" fill="none"><circle cx="34" cy="34" r="34" fill="rgba(255,255,255,.9)"/><polygon points="28,20 28,48 50,34" fill="#1C1C1C"/></svg>
+          </div>
+        </div>
+        <div class="featured-main-body">
+          <div class="meta"><span class="cat">Gospel of John</span> · <span>Feb 2026</span></div>
+          <h3>The Fixation &amp; The Invitation: Finding True Satisfaction &mdash; John 4:1&ndash;29</h3>
+          <p>Jesus meets a Samaritan woman at the well and offers her living water. What does it mean to be truly satisfied in Christ?</p>
+          <div class="author-row">
+            <div class="author-avatar">AR</div>
+            <span class="author-name">Andrew Ramirez</span>
+          </div>
+        </div>
+      </div>
+      <div class="featured-sidebar">
+        <a href="https://www.youtube.com/watch?v=OJoDGg7F5_w" target="_blank" class="sidebar-item reveal d1">
+          <div class="sidebar-thumb"><img src="https://img.youtube.com/vi/OJoDGg7F5_w/mqdefault.jpg" alt="He Must Increase, I Must Decrease" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="sidebar-info">
+            <div class="meta"><span class="cat">Gospel of John</span></div>
+            <h4>He Must Increase, I Must Decrease: The Root of True Humility &mdash; John 3:27&ndash;36</h4>
+            <div class="author-row">
+              <div class="author-avatar">AR</div>
+              <span class="author-name">Andrew Ramirez</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=inTMY5XX0EI" target="_blank" class="sidebar-item reveal d2">
+          <div class="sidebar-thumb"><img src="https://img.youtube.com/vi/inTMY5XX0EI/mqdefault.jpg" alt="Why Did Jesus Have to Die?" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="sidebar-info">
+            <div class="meta"><span class="cat">Gospel of John</span></div>
+            <h4>Why Did Jesus Have to Die? The Divine &ldquo;Must&rdquo; &mdash; John 3:14&ndash;21</h4>
+            <div class="author-row">
+              <div class="author-avatar">AR</div>
+              <span class="author-name">Andrew Ramirez</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=-a8dLqwTHG0" target="_blank" class="sidebar-item reveal d3">
+          <div class="sidebar-thumb"><img src="https://img.youtube.com/vi/-a8dLqwTHG0/mqdefault.jpg" alt="How to Get to Heaven According to Jesus" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="sidebar-info">
+            <div class="meta"><span class="cat">Gospel of John</span></div>
+            <h4>How to Get to Heaven According to Jesus &mdash; John 3:1&ndash;16</h4>
+            <div class="author-row">
+              <div class="author-avatar">AR</div>
+              <span class="author-name">Andrew Ramirez</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGES (3-col content cards like Dial In) -->
+<section class="content-section alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Messages</span>
+      <a href="sermons.html" class="section-more">View all sermons <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+    </div>
+    <div class="content-grid">
+      <a href="https://www.youtube.com/watch?v=QVZExXnV7bs" target="_blank" class="content-card reveal">
+        <div class="card-thumb"><img src="https://img.youtube.com/vi/QVZExXnV7bs/mqdefault.jpg" alt="Jesus vs. Religious Corruption" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)"></div>
+        <div class="meta"><span class="cat">Gospel of John</span> · Jan 2026</div>
+        <h3>Jesus vs. Religious Corruption: The Temple Cleansing &mdash; John 2:13&ndash;25</h3>
+        <p>Jesus drives out the money changers and reveals His authority over the temple. What does righteous anger look like?</p>
+        <div class="author-row"><div class="author-avatar">AR</div><span class="author-name">Andrew Ramirez</span></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=GhcMbaCEuSE" target="_blank" class="content-card reveal d1">
+        <div class="card-thumb"><img src="https://img.youtube.com/vi/GhcMbaCEuSE/mqdefault.jpg" alt="The Battle For Your Mind" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)"></div>
+        <div class="meta"><span class="cat">Topical</span> · Jan 2026</div>
+        <h3>The Battle For Your Mind</h3>
+        <p>The greatest war you fight isn't outside of you &mdash; it's within. How do we take every thought captive for Christ?</p>
+        <div class="author-row"><div class="author-avatar">AR</div><span class="author-name">Andrew Ramirez</span></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=UoCg0YrmHUg" target="_blank" class="content-card reveal d2">
+        <div class="card-thumb"><img src="https://img.youtube.com/vi/UoCg0YrmHUg/mqdefault.jpg" alt="Water into Wine" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)"></div>
+        <div class="meta"><span class="cat">Gospel of John</span> · Jan 2026</div>
+        <h3>Water into Wine: The Beginning of Signs &mdash; John 2:1&ndash;12</h3>
+        <p>Jesus' first miracle reveals His glory and calls His disciples to deeper faith. What do the signs of John point to?</p>
+        <div class="author-row"><div class="author-avatar">AR</div><span class="author-name">Andrew Ramirez</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ARTICLES -->
+<section class="articles" id="articles">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Articles</span>
+      <a href="articles.html" class="section-more">View all <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+    </div>
+    <div class="articles-grid">
+      <a href="articles.html#seven-components" class="article-card reveal" style="text-decoration:none;color:inherit">
+        <span class="article-tag">Gospel</span>
+        <h3>The Seven Key Components of the Gospel Message</h3>
+        <p>A faithful gospel presentation requires every one of these components. Miss one and the message loses its power.</p>
+        <div class="meta">Andrew Ramirez &middot; 2026</div>
+      </a>
+      <div class="article-card reveal d1" style="opacity:.35;pointer-events:none">
+        <span class="article-tag">Discipleship</span>
+        <h3>Discipling the Next Generation in a Digital Age</h3>
+        <p>What does it look like to raise up young believers who love the Word, fear God, and walk in faithfulness?</p>
+        <div class="meta">Coming Soon</div>
+      </div>
+      <div class="article-card reveal d2" style="opacity:.35;pointer-events:none">
+        <span class="article-tag">Theology</span>
+        <h3>The Sufficiency of Scripture for Life and Ministry</h3>
+        <p>God&rsquo;s Word is enough. In a world of competing voices, we return to the text that transforms hearts and renews minds.</p>
+        <div class="meta">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="about-img-box">
+          <img src="andrew-ramirez.jpg" alt="Andrew Ramirez preaching at the pulpit with an open Bible" style="width:100%;height:100%;object-fit:cover;object-position:center 20%">
+        </div>
+        <div class="about-accent"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-label reveal">About</span>
+        <h2 class="reveal d1">Minister of the Gospel,<br>Sustained by the Grace of God.</h2>
+        <p class="reveal d2">I started Gospel Advance with one burning conviction: the lost need to hear the gospel, God's people need to be shepherded in truth, and Christ deserves all the glory. That's it. That's the mission.</p>
+        <p class="reveal d3">Whether I'm preaching from a pulpit, sharing the gospel on the streets, or discipling the next generation through a screen &mdash; my aim is the same. Faithfully proclaim the word of God wherever He opens the door. No platform chasing. No performance. Just a Christ-dependent Christ-exalting Christ for every generation.</p>
+        <div class="about-quote reveal d4">
+          <blockquote>&ldquo;His preaching was a continuation of his prayers. In both, he spoke from within the veil, his hand on the mercy seat and his eye fixed on the things invisible.&rdquo;</blockquote>
+          <cite>&mdash; Robert Murray M&rsquo;Cheyne</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE GOSPEL -->
+<section class="gospel" id="gospel">
+  <div class="container">
+    <div class="gospel-intro">
+      <span class="section-label reveal">The Gospel</span>
+      <h2 class="reveal d1">The message that changes <em>everything.</em></h2>
+      <p class="reveal d2">Not a self-help program. Not advice. An announcement: God has done for you what you could never do for yourself.</p>
+    </div>
+    <div class="gospel-steps">
+      <div class="gospel-step reveal">
+        <div class="step-num">01</div>
+        <h4>God Created</h4>
+        <p>We were made in God&rsquo;s image, designed for relationship with Him and to reflect His glory.</p>
+        <cite>Genesis 1:27</cite>
+      </div>
+      <div class="gospel-step reveal d1">
+        <div class="step-num">02</div>
+        <h4>We Rebelled</h4>
+        <p>Every person has sinned and fallen short. Our rebellion separated us from a holy God.</p>
+        <cite>Romans 3:23</cite>
+      </div>
+      <div class="gospel-step reveal d2">
+        <div class="step-num">03</div>
+        <h4>Christ Redeemed</h4>
+        <p>Jesus lived perfectly, died for our sin, and rose again victorious over death.</p>
+        <cite>Romans 5:8</cite>
+      </div>
+      <div class="gospel-step reveal d3">
+        <div class="step-num">04</div>
+        <h4>We Respond</h4>
+        <p>Repent and believe. Christianity doesn&rsquo;t start with a feeling. It starts with an empty tomb.</p>
+        <cite>Acts 17:30&ndash;31</cite>
+      </div>
+    </div>
+    <div class="gospel-verse reveal">
+      <blockquote>For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.</blockquote>
+      <cite>&mdash; John 3:16</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="container">
+    <span class="section-label reveal" style="display:block;text-align:center;margin-bottom:1rem;color:var(--bronze)">Stay Connected</span>
+    <h2 class="reveal d1">Join the journey.</h2>
+    <p class="reveal d2">Subscribe on YouTube for sermons and teaching. Follow on Instagram for daily encouragement.</p>
+    <div class="hero-cta reveal d3" style="margin-bottom:2.5rem">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="btn-yt">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Subscribe on YouTube
+      </a>
+      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" class="btn-ig">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow on Instagram
+      </a>
+    </div>
+    <div class="socials reveal d4">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://x.com/andrewpramirez" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.tiktok.com/@andrewpramirez" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.facebook.com/andrewpramirez" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-label reveal">Get In Touch</span>
+        <h2 class="reveal d1">Let's connect.</h2>
+        <p class="reveal d2">Looking for a speaker, want to partner in gospel work, or just want to say hello? We'd love to hear from you.</p>
+        <div class="contact-info reveal d3">
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>contact@thegospeladvance.org</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Southern California</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+            <span>Available for speaking engagements</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xyzgolda" method="POST">
+        <input type="hidden" name="_subject" value="New message from Gospel Advance website">
+        <input type="text" name="_gotcha" style="display:none">
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+          <div class="field"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="john@example.com" required></div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="How can we help?" required></textarea></div>
+        <button type="submit" class="form-btn" id="contactBtn">Send Message</button>
+        <p id="formStatus" style="font-size:.84rem;color:var(--bronze);margin-top:8px;display:none"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (Dial In multi-column style) -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div class="logo-text" style="font-family:var(--sans);font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;line-height:1.1">Gospel<span style="color:var(--bronze);font-size:.6rem;letter-spacing:.2em;display:block;font-weight:600">Advance</span></div>
+          <div class="logo-divider"></div>
+          <span class="logo-name">Andrew Ramirez</span>
+        </div>
+        <p class="footer-tagline">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://x.com/andrewpramirez" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Gospel Advance</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="sermons.html">Watch</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="#gospel">The Gospel</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Devotionals</a></li>
+          <li><a href="#">Evangelism</a></li>
+          <li><a href="#">Topical</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank">YouTube</a></li>
+          <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank">Instagram</a></li>
+          <li><a href="https://x.com/andrewpramirez" target="_blank">X / Twitter</a></li>
+          <li><a href="https://www.tiktok.com/@andrewpramirez" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Faithfully Proclaiming the Word of God &mdash; Jesus for Every Generation.</div>
+  </div>
+</footer>
+
+<script>
+// Featured video click-to-play
+document.getElementById('featuredPlayer').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube.com/embed/-wMeu74tAxQ?rel=0&autoplay=1" title="The Fixation &amp; The Invitation" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="width:100%;height:100%;border:none;position:absolute;inset:0"></iframe>';this.style.cursor='default'});
+
+// Nav scroll
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+// Reveal
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Mobile menu
+const menuToggle=document.getElementById('menuToggle');
+const mobileNav=document.getElementById('mobileNav');
+const mobileClose=document.getElementById('mobileClose');
+menuToggle.addEventListener('click',()=>{mobileNav.classList.add('open');menuToggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
+function closeMobile(){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+mobileClose.addEventListener('click',closeMobile);
+mobileNav.addEventListener('click',e=>{if(e.target.matches('a'))closeMobile()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileNav.classList.contains('open'))closeMobile()});
+
+// Smooth scroll
+const navHeight=72;
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-navHeight,behavior:'smooth'})}})});
+
+// Active nav link on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-pill a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.getAttribute('id')});
+  navLinks.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href')==='#'+current)l.classList.add('active');
+    else if(!current&&l.getAttribute('href')==='#')l.classList.add('active');
+  });
+},{passive:true});
+
+// Contact form (Formspree AJAX)
+const form=document.getElementById('contactForm');
+if(form){form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=document.getElementById('contactBtn');
+  const status=document.getElementById('formStatus');
+  btn.textContent='Sending...';btn.disabled=true;
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+  .then(r=>{if(r.ok){status.textContent='Message sent! We\u2019ll be in touch.';status.style.display='block';form.reset()}else{throw new Error()}})
+  .catch(()=>{status.textContent='Something went wrong. Please email us directly.';status.style.color='#c4302b';status.style.display='block'})
+  .finally(()=>{btn.textContent='Send Message';btn.disabled=false});
+})}
+</script>
+</body>
+</html>
