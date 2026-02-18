@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seven Key Components of the Gospel Message | Gospel Advance</title>
+<meta name="description" content="Every Gospel conversation must communicate the full, biblical message of salvation. Seven essential truths rooted in Scripture by Andrew Ramirez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1C1C1C;--cream:#F5F0E8;--bronze:#B8965A;--light-gold:#D4C4A0;
+  --sage:#E4E8E0;--warm-gray:#8A8478;--slate:#4A5B6A;--deep-slate:#2A3640;
+  --white:#FFFFFF;--text-body:#4A4A4A;--border:rgba(28,28,28,.08);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --radius:12px;
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--white);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:inherit}
+
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw,60px);transition:all .4s ease;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);line-height:1.1}
+.logo-accent{color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600}
+.logo-divider{width:1px;height:34px;background:rgba(28,28,28,.2)}
+.logo-name{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap}
+.nav-pill{display:flex;align-items:center;gap:2px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
+.nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
+.nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-give{padding:8px 22px;background:var(--bronze);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
+.nav-give:hover{background:var(--charcoal);transform:translateY(-1px)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);transition:color .3s ease}
+.mobile-nav a:hover{color:var(--bronze)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:var(--bronze);letter-spacing:.04em;transition:color .3s ease;margin-bottom:2rem}
+.back-link:hover{color:var(--charcoal)}
+.back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ARTICLE */
+.article-page{padding:140px 0 80px}
+.article-container{max-width:720px;margin:0 auto}
+.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+.article-container h1{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
+.article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.3}
+.article-body h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .8rem;line-height:1.3}
+.article-body p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.2rem}
+.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:var(--cream);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
+.article-body blockquote cite{display:block;margin-top:.8rem;font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.04em}
+.article-body .conclusion{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.article-attribution{margin-top:3rem;padding:24px 28px;background:rgba(184,150,90,.06);border:1px solid rgba(184,150,90,.15);border-radius:var(--radius);text-align:center}
+.article-attribution p{font-size:.78rem;line-height:1.7;color:var(--warm-gray);margin-bottom:0;letter-spacing:.02em}
+.article-attribution .institution{font-weight:600;color:var(--charcoal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;display:block;margin-top:6px}
+
+/* CTA */
+.articles-cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
+.articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
+.articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
+.btn-back{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
+.btn-back:hover{background:var(--bronze);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{padding:60px 0 40px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-tagline{font-size:.85rem;line-height:1.6;color:var(--text-body);margin-bottom:20px;max-width:280px}
+.footer-socials{display:flex;gap:10px}
+.footer-socials a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.08);color:var(--charcoal);transition:all .3s ease}
+.footer-socials a:hover{border-color:var(--bronze);color:var(--bronze)}
+.footer-socials svg{width:13px;height:13px;fill:currentColor}
+.footer-col h5{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.84rem;color:var(--text-body);transition:color .3s ease}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.footer-grid{grid-template-columns:1fr}blockquote{padding:1rem 1.2rem}.article-attribution{padding:18px 20px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-text">Gospel<span class="logo-accent">Advance</span></div>
+      <div class="logo-divider"></div>
+      <span class="logo-name">Andrew Ramirez</span>
+    </a>
+    <div class="nav-pill">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="sermons.html">Watch</a>
+      <a href="articles.html" class="active">Articles</a>
+      <a href="index.html#gospel">The Gospel</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give">YouTube</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="sermons.html">Watch</a>
+  <a href="articles.html">Articles</a>
+  <a href="index.html#gospel">The Gospel</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
+</div>
+
+<!-- ARTICLE -->
+<section class="article-page">
+  <div class="container">
+    <div class="article-container">
+      <a href="articles.html" class="back-link reveal">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Articles
+      </a>
+      <span class="article-tag reveal d1">Gospel</span>
+      <h1 class="reveal d1">The Seven Key Components of the Gospel Message</h1>
+      <div class="article-meta reveal d2">Andrew Ramirez &middot; February 2026 &middot; 12 min read</div>
+
+      <div class="article-body reveal d3">
+        <p>In every Gospel conversation, it is essential to communicate the full and biblical message of salvation. This article outlines the seven key components necessary for presenting the Gospel. Each truth is deeply rooted in Scripture and highlights the person and work of Jesus Christ, calling listeners to repentance and faith in Him alone for salvation.</p>
+
+        <h3>Key Component #1: Jesus Christ is the eternal God who took on human flesh.</h3>
+        <p>This fundamental truth sets Christianity apart from every false religion, as they all deny the deity of Jesus Christ. However, the New Testament, particularly the Gospels, clearly affirms that Jesus is God in human flesh. The Gospels record Jesus performing miracles that only God can do&mdash;walking on water, calming storms, and raising the dead. These miraculous acts demonstrate His divine authority.</p>
+        <blockquote>&ldquo;In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things came into being through Him, and without Him, nothing came into being that has come into being.&rdquo;<cite>&mdash; John 1:1&ndash;3</cite></blockquote>
+        <p>Verse 14 confirms that this &ldquo;Word&rdquo; is Jesus Christ: &ldquo;And the Word became flesh and dwelt among us, and we have seen His glory, glory as of the only Son from the Father, full of grace and truth&rdquo; (John 1:14).</p>
+        <p>Jesus Himself affirmed His divine nature in John 8:58: &ldquo;Jesus said to them, &lsquo;Truly, truly, I say to you, before Abraham was, I am.&rsquo;&rdquo; Here, Jesus uses the divine name &ldquo;I am,&rdquo; echoing God&rsquo;s self-revelation to Moses in Exodus 3:14. The Jews understood this as a claim to deity, which is why they sought to stone Him (John 8:59).</p>
+        <blockquote>&ldquo;He is the image of the invisible God, the firstborn of all creation. For by Him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities&mdash;all things were created through Him and for Him. And He is before all things, and in Him all things hold together.&rdquo;<cite>&mdash; Colossians 1:15&ndash;17</cite></blockquote>
+        <p>Paul affirms that Jesus is not only the Creator but also the sustainer of all creation, reflecting His absolute power and deity. Hebrews 1:3 declares: &ldquo;He is the radiance of the glory of God and the exact imprint of His nature, and He upholds the universe by the word of His power.&rdquo;</p>
+        <p>When Jesus walked on water (Matthew 14:25&ndash;33), commanded the storm to be still (Mark 4:35&ndash;41), and raised the dead (John 11:38&ndash;44), the people marveled, saying, &ldquo;Who then is this, that even the wind and the sea obey him?&rdquo; (Mark 4:41). These miracles pointed to His divine identity as the eternal God, taking on human form to reveal Himself to humanity.</p>
+        <blockquote>&ldquo;Though He was in the form of God, He did not count equality with God a thing to be grasped, but emptied Himself, by taking the form of a servant, being born in the likeness of men.&rdquo;<cite>&mdash; Philippians 2:6&ndash;7</cite></blockquote>
+        <p>The man who performed these miracles is not just a man but the God-Man&mdash;fully God and fully man. Understanding this truth is foundational to the Gospel because it shows that only Jesus, as God, has the authority to forgive sins and provide salvation.</p>
+
+        <h3>Key Component #2: Jesus lived a sinless and perfect life.</h3>
+        <p>The sinlessness of Jesus is essential to the Gospel because it qualifies Him to be the perfect sacrifice for the sins of the world. Jesus, as the sinless Lamb of God, was uniquely able to bear the punishment we deserve.</p>
+        <blockquote>&ldquo;Behold, the Lamb of God, who takes away the sin of the world!&rdquo;<cite>&mdash; John 1:29</cite></blockquote>
+        <p>Jesus&rsquo; sinlessness is also affirmed by the Apostle Paul in 2 Corinthians 5:21: &ldquo;For our sake, He made Him to be sin who knew no sin, so that in Him we might become the righteousness of God.&rdquo;</p>
+        <blockquote>&ldquo;For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin.&rdquo;<cite>&mdash; Hebrews 4:15</cite></blockquote>
+        <p>This sinless life is a crucial element because it sets up the next key component: Jesus&rsquo; substitutionary death on the cross.</p>
+
+        <h3>Key Component #3: Jesus Christ died on the cross, bearing the penalty for the sins of the world.</h3>
+        <p>The climax of all four Gospel accounts is the death of Jesus Christ on the cross. It is at this moment that the perfect, sinless Son of God bore the wrath of God as a substitute for sinners.</p>
+        <blockquote>&ldquo;Surely our griefs He Himself bore, and our sorrows He carried; yet we ourselves esteemed Him stricken, smitten of God, and afflicted. But He was pierced through for our transgressions, He was crushed for our iniquities; the chastening for our peace fell upon Him, and by His wounds we are healed. All of us like sheep have gone astray, each of us has turned to his own way; but Yahweh has caused the iniquity of us all to fall on Him.&rdquo;<cite>&mdash; Isaiah 53:4&ndash;6</cite></blockquote>
+        <p>Jesus Himself said in Mark 10:45: &ldquo;For even the Son of Man came not to be served but to serve, and to give His life as a ransom for many.&rdquo;</p>
+        <p>This act of substitution is the very heart of the Gospel. Paul reiterates this in Romans 5:8: &ldquo;But God shows His love for us in that while we were still sinners, Christ died for us.&rdquo; Jesus bore the full penalty of sin on the cross so that all who believe in Him may receive forgiveness and eternal life.</p>
+
+        <h3>Key Component #4: Jesus conquered sin and death through His resurrection.</h3>
+        <p>The resurrection of Jesus Christ is proof that everything He claimed and taught is true. It also guarantees that those who trust in Him will likewise be raised to eternal life.</p>
+        <blockquote>&ldquo;For if we have been united with him in a death like his, we shall certainly be united with him in a resurrection like his.&rdquo;<cite>&mdash; Romans 6:5</cite></blockquote>
+        <p>The resurrection is God&rsquo;s vindication of Jesus&rsquo; sinless life and sacrificial death.</p>
+        <blockquote>&ldquo;For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures.&rdquo;<cite>&mdash; 1 Corinthians 15:3&ndash;4</cite></blockquote>
+        <p>Because Jesus conquered death, those who believe in Him have the hope of eternal life.</p>
+
+        <h3>Key Component #5: Jesus will return to judge the living and the dead.</h3>
+        <p>Jesus Christ, who came as the suffering servant, will return as the righteous judge of the world. The Bible is clear that Jesus will judge every person for their thoughts, words, and deeds.</p>
+        <blockquote>&ldquo;And He commanded us to preach to the people and to testify that He is the one appointed by God to be judge of the living and the dead.&rdquo;<cite>&mdash; Acts 10:42</cite></blockquote>
+        <p>Jesus Himself spoke about His role as judge in Matthew 25:31&ndash;32: &ldquo;When the Son of Man comes in his glory, and all the angels with him, then he will sit on his glorious throne. Before him will be gathered all the nations, and he will separate people one from another as a shepherd separates the sheep from the goats.&rdquo;</p>
+        <p>This truth calls for an urgent response. Knowing that judgment is coming should compel listeners to repent and believe in the Gospel.</p>
+
+        <h3>Key Component #6: A call to repentance.</h3>
+        <p>Jesus began His public ministry with a call to repentance. In Mark 1:15, Jesus said: &ldquo;The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel.&rdquo;</p>
+        <p>Repentance is turning away from sin and turning toward God. It is not merely feeling sorry for sin but involves a genuine change of heart and mind.</p>
+        <blockquote>&ldquo;The times of ignorance God overlooked, but now he commands all people everywhere to repent, because he has fixed a day on which he will judge the world in righteousness by a man whom he has appointed; and of this he has given assurance to all by raising him from the dead.&rdquo;<cite>&mdash; Acts 17:30&ndash;31</cite></blockquote>
+        <p>True repentance is accompanied by a transformed life that reflects obedience to God and faith in Christ.</p>
+
+        <h3>Key Component #7: A call to faith in Christ alone for salvation.</h3>
+        <p>Salvation is by grace alone, through faith alone, in Christ alone. This is a call to trust in the finished work of Jesus for salvation, not in one&rsquo;s own efforts or works.</p>
+        <blockquote>&ldquo;For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.&rdquo;<cite>&mdash; Ephesians 2:8&ndash;9</cite></blockquote>
+        <p>Jesus said in John 14:6: &ldquo;I am the way, and the truth, and the life. No one comes to the Father except through me.&rdquo;</p>
+        <p>The exclusive nature of salvation through Christ alone must be communicated in every Gospel presentation. There is no other way to be reconciled to God but through faith in Jesus.</p>
+
+        <div class="conclusion">
+          <h3>Conclusion: Communicating the Full Gospel</h3>
+          <p>As followers of Jesus Christ, it is our duty and privilege to communicate these seven essential truths in every Gospel conversation. The message of the Gospel is not complete without these components: Jesus Christ&rsquo;s divinity, His sinless life, His substitutionary death, His resurrection, His role as judge, the call to repentance, and the call to faith in Christ alone.</p>
+          <p>We hope this article serves as a resource to equip you in sharing the full Gospel of Jesus Christ. Memorize these truths, live them out, and share them for the glory of God and the advancement of His kingdom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="articles-cta">
+  <div class="container reveal">
+    <h2>Continue Reading</h2>
+    <p>Explore more articles on evangelism, discipleship, and theology.</p>
+    <a href="articles.html" class="btn-back">All Articles</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+          <div style="font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;line-height:1.1">Gospel<span style="color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600">Advance</span></div>
+          <div style="width:1px;height:34px;background:rgba(28,28,28,.2)"></div>
+          <span style="font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap">Andrew Ramirez</span>
+        </div>
+        <p class="footer-tagline">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Gospel Advance</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="sermons.html">Watch</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="index.html#gospel">The Gospel</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Devotionals</a></li>
+          <li><a href="#">Evangelism</a></li>
+          <li><a href="#">Topical</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank">YouTube</a></li>
+          <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Faithfully Proclaiming the Word of God &mdash; Jesus for Every Generation.</div>
+  </div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const menuToggle=document.getElementById('menuToggle');
+const mobileNav=document.getElementById('mobileNav');
+const mobileClose=document.getElementById('mobileClose');
+menuToggle.addEventListener('click',()=>{mobileNav.classList.add('open');menuToggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
+function closeMobile(){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+mobileClose.addEventListener('click',closeMobile);
+mobileNav.addEventListener('click',e=>{if(e.target.matches('a'))closeMobile()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileNav.classList.contains('open'))closeMobile()});
+</script>
+</body>
+</html>

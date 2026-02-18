@@ -59,49 +59,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw
 .page-header h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
 .page-header p{font-size:clamp(.92rem,1.1vw,1.05rem);color:var(--warm-gray);max-width:520px;margin:0 auto;line-height:1.65}
 
-/* SECTION HEADERS */
-.section-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:40px}
-.section-label{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal)}
-
 /* ARTICLES GRID */
-.articles-section{padding:0 0 80px}
-.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.article-card{cursor:pointer;transition:transform .3s ease;display:block}
-.article-card:hover{transform:translateY(-3px)}
-.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
-.article-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:8px}
-.article-card p{font-size:.84rem;line-height:1.55;color:var(--text-body);margin-bottom:12px}
-.article-card .meta{font-size:.68rem;font-weight:500;color:var(--warm-gray)}
-
-/* FULL ARTICLE */
-.article-full{padding:80px 0;background:var(--cream)}
-.article-full:nth-of-type(even){background:var(--white)}
-.article-container{max-width:720px;margin:0 auto}
-.article-container .article-tag{margin-bottom:16px}
-.article-container h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
-.article-container .article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.3}
-.article-body h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .8rem;line-height:1.3}
-.article-body p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.2rem}
-.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:rgba(255,255,255,.6);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
-.article-body blockquote cite{display:block;margin-top:.8rem;font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.04em}
-.article-body .conclusion{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
-
-/* ARTICLE DIVIDER */
-.article-divider{width:60px;height:3px;background:var(--bronze);margin:0 auto;border-radius:2px}
-
-/* ACADEMIC ATTRIBUTION */
-.article-attribution{margin-top:3rem;padding:24px 28px;background:rgba(184,150,90,.06);border:1px solid rgba(184,150,90,.15);border-radius:var(--radius);text-align:center}
-.article-attribution p{font-size:.78rem;line-height:1.7;color:var(--warm-gray);margin-bottom:0;letter-spacing:.02em}
-.article-attribution .institution{font-weight:600;color:var(--charcoal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;display:block;margin-top:6px}
+.articles-section{padding:0 0 100px}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.article-card{display:block;padding:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s ease;cursor:pointer}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,28,28,.08);border-color:rgba(184,150,90,.2)}
+.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px}
+.article-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:10px}
+.article-card p{font-size:.86rem;line-height:1.6;color:var(--text-body);margin-bottom:16px}
+.article-card .meta{font-size:.7rem;font-weight:500;color:var(--warm-gray);letter-spacing:.02em}
+.article-card .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:600;color:var(--bronze);margin-top:4px;letter-spacing:.02em;transition:gap .3s ease}
+.article-card:hover .read-more{gap:10px}
+.read-more svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 
 /* CTA */
-.articles-cta{padding:80px 0;text-align:center}
+.articles-cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
 .articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
 .articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
 .btn-yt{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
 .btn-yt:hover{background:#c4302b;transform:translateY(-2px)}
-.btn-yt svg{width:20px;height:20px;fill:currentColor}
 .btn-ig{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--charcoal);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;border:1px solid rgba(28,28,28,.15);transition:all .3s ease}
 .btn-ig:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
 .btn-ig svg{width:18px;height:18px;fill:currentColor}
@@ -120,15 +96,10 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
 .footer-col a:hover{color:var(--bronze)}
 .footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
 
-/* FOCUS */
 a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
-
-/* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
-
-/* RESPONSIVE */
 @media(max-width:1024px){.articles-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.articles-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}blockquote{padding:1rem 1.2rem}.article-attribution{padding:18px 20px}}
+@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.articles-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -182,243 +153,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 <section class="articles-section">
   <div class="container">
     <div class="articles-grid">
-      <a href="#seven-components" class="article-card reveal">
+
+      <a href="seven-components.html" class="article-card reveal">
         <span class="article-tag">Gospel</span>
         <h3>The Seven Key Components of the Gospel Message</h3>
         <p>Every Gospel conversation must communicate the full, biblical message of salvation. Here are the seven essential truths rooted in Scripture.</p>
-        <div class="meta">Andrew Ramirez &middot; Feb 2026</div>
+        <div class="meta">Andrew Ramirez &middot; February 2026 &middot; 12 min read</div>
+        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
       </a>
-      <a href="#discipleship" class="article-card reveal d1">
+
+      <a href="discipleship.html" class="article-card reveal d1">
         <span class="article-tag">Discipleship</span>
         <h3>Discipleship According to Scripture</h3>
         <p>What did Jesus intend when he commanded his apostles to &ldquo;make disciples&rdquo;? A biblical study of life-on-life training and its application in today&rsquo;s church.</p>
-        <div class="meta">Andrew Ramirez &middot; May 2025</div>
+        <div class="meta">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
+        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
       </a>
-      <a href="#problem-of-evil" class="article-card reveal d2">
+
+      <a href="problem-of-evil.html" class="article-card reveal d2">
         <span class="article-tag">Theology</span>
         <h3>The Problem of Evil</h3>
         <p>If there is a loving God, then why do humans experience evil and suffering? A personal and biblical answer to one of life&rsquo;s hardest questions.</p>
-        <div class="meta">Andrew Ramirez &middot; Oct 2024</div>
+        <div class="meta">Andrew Ramirez &middot; October 2024 &middot; 14 min read</div>
+        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
       </a>
-    </div>
-  </div>
-</section>
 
-<!-- FULL ARTICLE: Seven Key Components -->
-<section class="article-full" id="seven-components">
-  <div class="container">
-    <div class="article-container">
-      <span class="article-tag reveal">Gospel</span>
-      <h2 class="reveal d1">The Seven Key Components of the Gospel Message</h2>
-      <div class="article-meta reveal d2">Andrew Ramirez &middot; February 2026 &middot; 12 min read</div>
-
-      <div class="article-body reveal d3">
-        <p>In every Gospel conversation, it is essential to communicate the full and biblical message of salvation. This article outlines the seven key components necessary for presenting the Gospel. Each truth is deeply rooted in Scripture and highlights the person and work of Jesus Christ, calling listeners to repentance and faith in Him alone for salvation.</p>
-
-        <h3>Key Component #1: Jesus Christ is the eternal God who took on human flesh.</h3>
-        <p>This fundamental truth sets Christianity apart from every false religion, as they all deny the deity of Jesus Christ. However, the New Testament, particularly the Gospels, clearly affirms that Jesus is God in human flesh. The Gospels record Jesus performing miracles that only God can do&mdash;walking on water, calming storms, and raising the dead. These miraculous acts demonstrate His divine authority.</p>
-        <blockquote>&ldquo;In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things came into being through Him, and without Him, nothing came into being that has come into being.&rdquo;<cite>&mdash; John 1:1&ndash;3</cite></blockquote>
-        <p>Verse 14 confirms that this &ldquo;Word&rdquo; is Jesus Christ: &ldquo;And the Word became flesh and dwelt among us, and we have seen His glory, glory as of the only Son from the Father, full of grace and truth&rdquo; (John 1:14).</p>
-        <p>Jesus Himself affirmed His divine nature in John 8:58: &ldquo;Jesus said to them, &lsquo;Truly, truly, I say to you, before Abraham was, I am.&rsquo;&rdquo; Here, Jesus uses the divine name &ldquo;I am,&rdquo; echoing God&rsquo;s self-revelation to Moses in Exodus 3:14. The Jews understood this as a claim to deity, which is why they sought to stone Him (John 8:59).</p>
-        <blockquote>&ldquo;He is the image of the invisible God, the firstborn of all creation. For by Him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities&mdash;all things were created through Him and for Him. And He is before all things, and in Him all things hold together.&rdquo;<cite>&mdash; Colossians 1:15&ndash;17</cite></blockquote>
-        <p>Paul affirms that Jesus is not only the Creator but also the sustainer of all creation, reflecting His absolute power and deity. Hebrews 1:3 declares: &ldquo;He is the radiance of the glory of God and the exact imprint of His nature, and He upholds the universe by the word of His power.&rdquo;</p>
-        <p>When Jesus walked on water (Matthew 14:25&ndash;33), commanded the storm to be still (Mark 4:35&ndash;41), and raised the dead (John 11:38&ndash;44), the people marveled, saying, &ldquo;Who then is this, that even the wind and the sea obey him?&rdquo; (Mark 4:41). These miracles pointed to His divine identity as the eternal God, taking on human form to reveal Himself to humanity.</p>
-        <blockquote>&ldquo;Though He was in the form of God, He did not count equality with God a thing to be grasped, but emptied Himself, by taking the form of a servant, being born in the likeness of men.&rdquo;<cite>&mdash; Philippians 2:6&ndash;7</cite></blockquote>
-        <p>The man who performed these miracles is not just a man but the God-Man&mdash;fully God and fully man. Understanding this truth is foundational to the Gospel because it shows that only Jesus, as God, has the authority to forgive sins and provide salvation.</p>
-
-        <h3>Key Component #2: Jesus lived a sinless and perfect life.</h3>
-        <p>The sinlessness of Jesus is essential to the Gospel because it qualifies Him to be the perfect sacrifice for the sins of the world. Jesus, as the sinless Lamb of God, was uniquely able to bear the punishment we deserve.</p>
-        <blockquote>&ldquo;Behold, the Lamb of God, who takes away the sin of the world!&rdquo;<cite>&mdash; John 1:29</cite></blockquote>
-        <p>Jesus&rsquo; sinlessness is also affirmed by the Apostle Paul in 2 Corinthians 5:21: &ldquo;For our sake, He made Him to be sin who knew no sin, so that in Him we might become the righteousness of God.&rdquo;</p>
-        <blockquote>&ldquo;For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin.&rdquo;<cite>&mdash; Hebrews 4:15</cite></blockquote>
-        <p>This sinless life is a crucial element because it sets up the next key component: Jesus&rsquo; substitutionary death on the cross.</p>
-
-        <h3>Key Component #3: Jesus Christ died on the cross, bearing the penalty for the sins of the world.</h3>
-        <p>The climax of all four Gospel accounts is the death of Jesus Christ on the cross. It is at this moment that the perfect, sinless Son of God bore the wrath of God as a substitute for sinners.</p>
-        <blockquote>&ldquo;Surely our griefs He Himself bore, and our sorrows He carried; yet we ourselves esteemed Him stricken, smitten of God, and afflicted. But He was pierced through for our transgressions, He was crushed for our iniquities; the chastening for our peace fell upon Him, and by His wounds we are healed. All of us like sheep have gone astray, each of us has turned to his own way; but Yahweh has caused the iniquity of us all to fall on Him.&rdquo;<cite>&mdash; Isaiah 53:4&ndash;6</cite></blockquote>
-        <p>Jesus Himself said in Mark 10:45: &ldquo;For even the Son of Man came not to be served but to serve, and to give His life as a ransom for many.&rdquo;</p>
-        <p>This act of substitution is the very heart of the Gospel. Paul reiterates this in Romans 5:8: &ldquo;But God shows His love for us in that while we were still sinners, Christ died for us.&rdquo; Jesus bore the full penalty of sin on the cross so that all who believe in Him may receive forgiveness and eternal life.</p>
-
-        <h3>Key Component #4: Jesus conquered sin and death through His resurrection.</h3>
-        <p>The resurrection of Jesus Christ is proof that everything He claimed and taught is true. It also guarantees that those who trust in Him will likewise be raised to eternal life.</p>
-        <blockquote>&ldquo;For if we have been united with him in a death like his, we shall certainly be united with him in a resurrection like his.&rdquo;<cite>&mdash; Romans 6:5</cite></blockquote>
-        <p>The resurrection is God&rsquo;s vindication of Jesus&rsquo; sinless life and sacrificial death.</p>
-        <blockquote>&ldquo;For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures.&rdquo;<cite>&mdash; 1 Corinthians 15:3&ndash;4</cite></blockquote>
-        <p>Because Jesus conquered death, those who believe in Him have the hope of eternal life.</p>
-
-        <h3>Key Component #5: Jesus will return to judge the living and the dead.</h3>
-        <p>Jesus Christ, who came as the suffering servant, will return as the righteous judge of the world. The Bible is clear that Jesus will judge every person for their thoughts, words, and deeds.</p>
-        <blockquote>&ldquo;And He commanded us to preach to the people and to testify that He is the one appointed by God to be judge of the living and the dead.&rdquo;<cite>&mdash; Acts 10:42</cite></blockquote>
-        <p>Jesus Himself spoke about His role as judge in Matthew 25:31&ndash;32: &ldquo;When the Son of Man comes in his glory, and all the angels with him, then he will sit on his glorious throne. Before him will be gathered all the nations, and he will separate people one from another as a shepherd separates the sheep from the goats.&rdquo;</p>
-        <p>This truth calls for an urgent response. Knowing that judgment is coming should compel listeners to repent and believe in the Gospel.</p>
-
-        <h3>Key Component #6: A call to repentance.</h3>
-        <p>Jesus began His public ministry with a call to repentance. In Mark 1:15, Jesus said: &ldquo;The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel.&rdquo;</p>
-        <p>Repentance is turning away from sin and turning toward God. It is not merely feeling sorry for sin but involves a genuine change of heart and mind.</p>
-        <blockquote>&ldquo;The times of ignorance God overlooked, but now he commands all people everywhere to repent, because he has fixed a day on which he will judge the world in righteousness by a man whom he has appointed; and of this he has given assurance to all by raising him from the dead.&rdquo;<cite>&mdash; Acts 17:30&ndash;31</cite></blockquote>
-        <p>True repentance is accompanied by a transformed life that reflects obedience to God and faith in Christ.</p>
-
-        <h3>Key Component #7: A call to faith in Christ alone for salvation.</h3>
-        <p>Salvation is by grace alone, through faith alone, in Christ alone. This is a call to trust in the finished work of Jesus for salvation, not in one&rsquo;s own efforts or works.</p>
-        <blockquote>&ldquo;For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.&rdquo;<cite>&mdash; Ephesians 2:8&ndash;9</cite></blockquote>
-        <p>Jesus said in John 14:6: &ldquo;I am the way, and the truth, and the life. No one comes to the Father except through me.&rdquo;</p>
-        <p>The exclusive nature of salvation through Christ alone must be communicated in every Gospel presentation. There is no other way to be reconciled to God but through faith in Jesus.</p>
-
-        <div class="conclusion">
-          <h3>Conclusion: Communicating the Full Gospel</h3>
-          <p>As followers of Jesus Christ, it is our duty and privilege to communicate these seven essential truths in every Gospel conversation. The message of the Gospel is not complete without these components: Jesus Christ&rsquo;s divinity, His sinless life, His substitutionary death, His resurrection, His role as judge, the call to repentance, and the call to faith in Christ alone.</p>
-          <p>We hope this article serves as a resource to equip you in sharing the full Gospel of Jesus Christ. Memorize these truths, live them out, and share them for the glory of God and the advancement of His kingdom.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARTICLE DIVIDER -->
-<div style="padding:40px 0;background:var(--white)"><div class="article-divider"></div></div>
-
-<!-- FULL ARTICLE: Discipleship According to Scripture -->
-<section class="article-full" id="discipleship" style="background:var(--white)">
-  <div class="container">
-    <div class="article-container">
-      <span class="article-tag reveal">Discipleship</span>
-      <h2 class="reveal d1">Discipleship According to Scripture</h2>
-      <div class="article-meta reveal d2">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
-
-      <div class="article-body reveal d3">
-
-        <h3>Introduction</h3>
-        <p>Picture this: you are a 1st-century Jew living in the territory of Israel, specifically the upper regions around the Sea of Galilee. In this setting, you work in one of the most common trades of that day&mdash;the trade of a smith, carpenter, stonemason, baker, tanner, sandal-maker, weaver, spinner, wool-comber, tailor, tentmaker, potter, perfumer, jeweler, fuller, or fisherman. This work is hands-on, oftentimes dirty, and labor-intensive, and as you go through life working long days with little pay, paying taxes to the Roman Empire, resting on the Sabbath, and following Torah, a Jewish man commands you to follow him.</p>
-        <p>Soon, you realize that this man is not another rabbi or even the typical prophet you learned about growing up, but this man is the true King of Israel and is, in fact, the Messiah you&rsquo;ve dreamt of your whole life. Now fast forward to Matthew 28:19&ndash;20, where Jesus gave a commission to his followers right before he ascended to the right hand of God the Father. Think of all the ways in which Jesus has impacted your life, from the sermons he preached to the people he healed, the one-on-one questions you were able to ask him directly, the meals that were shared, the weddings and funerals that were attended, the prayers in the garden of Gethsemane and the Passion saga that you personally experienced.</p>
-        <p>Now, hear Jesus&rsquo; command like you have never heard it before:</p>
-        <blockquote>&ldquo;All authority has been given to Me in heaven and on earth. Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, teaching them to keep all that I commanded you; and behold, I am with you always, even to the end of the age.&rdquo;<cite>&mdash; Matthew 28:18&ndash;20</cite></blockquote>
-        <p>Did you catch that? You have personally walked with the Savior of the world, God in the flesh, for the entire duration of his ministry, and now he commands you to &ldquo;Go and make disciples&hellip;teaching them to keep all that I commanded you.&rdquo; How do you perceive this instruction? How did the apostles perceive this instruction? What is Matthew intending to communicate in this text?</p>
-
-        <h3>Defining &ldquo;Disciple&rdquo;</h3>
-        <p>Matthew 28:18&ndash;20 is the foundational mandate given to believers by Christ himself to practice what we know today as &ldquo;discipleship.&rdquo; The question, of course, becomes, what did Jesus intend to communicate when he commanded his apostles to &ldquo;make disciples&rdquo;? How did Jesus&rsquo; Apostles understand this command?</p>
-        <p>First and foremost, it must be understood what the word disciple means. The word disciple in Greek is <em>math&#275;t&#275;s</em>, and this literally means &ldquo;one who engages in learning through instruction from another, pupil, apprentice.&rdquo; The term occurs very frequently in the New Testament. Its fundamental meaning is one who seeks to learn from another. A disciple is not only a partaker of information, but also one who seeks to become like his or her teacher (Luke 6:40). In this way, discipleship is about modifying one&rsquo;s entire lifestyle. The term is often used of the group of people that followed Jesus in his earthly ministry, whether the Twelve themselves (e.g., Mark 6:45) or some larger group (e.g., Luke 19:37).</p>
-
-        <h3>Discipleship According to Jesus</h3>
-        <p>It must be understood that Jesus&rsquo; disciples would have understood Jesus&rsquo; command in concert with their own discipleship journey. Notably, the process of discipleship that the apostles underwent was one where they were actively engaged in the process of learning through life-on-life experiential training. This experience included instruction (Mt 5&ndash;7, 18:15&ndash;17), rebuke and confrontation (Mt 8:26, 16:23, 17:17), exhortation (Mt 5:16, 6:33, 16:24), practice (Mt 10:1&ndash;8, 14:15&ndash;21), correction (Mt 20:26; Lk 9:48), testing (Mt 14:31; Mk 4:40), being questioned (Mt 8:26, 16:15; Jn 6:67), affirmation (Mt 16:17; Jn 1:47), demonstration (Mt 8:3; Jn 13:14&ndash;15), and restoration (Lk 22:32; Jn 21:15&ndash;19).</p>
-        <p>What Jesus&rsquo; methods of discipleship reveal is that discipleship, according to Jesus, was an intimate, impactful, life-altering process of contact learning, which provided his apostles with the exposure, experience, and education that was necessary to fulfill the commission he delivered to them in Matthew 28:19&ndash;20.</p>
-        <p>So, how would his apostles have understood the Great Commission? I believe that the apostles would have understood Jesus&rsquo; departing words in a twofold manner: (1) evangelization and (2) reduplication, through life-on-life experiential training and instruction. Fundamentally, Jesus&rsquo; apostles, the leaders of the early church, would have understood the Great Commission as a mandate to reduplicate themselves in a manner similar to what they underwent during Jesus&rsquo; life and ministry.</p>
-        <p>They would have understood that evangelism was a mandate&mdash;that is, to be Christ&rsquo;s witnesses by proclaiming the gospel to all creation (Mk 16:15), going to the ends of the earth (Acts 1:8), and proclaiming that there is forgiveness of sins through repentance and faith in the name of Jesus Christ (Lk 24:47; Acts 10:43). Nevertheless, they would not have stopped at the evangelization of the nations but would continue to reduplicate themselves through the &ldquo;ministry of reconciliation&rdquo; (2 Cor 5:18&ndash;20) by bringing about the obedience of faith among the nations (Rom 1:5) through the process of discipleship (Mt 28:19&ndash;20).</p>
-
-        <h3>The Process of Discipleship: The Execution of the Great Commission</h3>
-        <p>The process of discipleship is clearly seen in Mark 16:15&ndash;18, Matthew 28:19&ndash;20, Luke 24:44&ndash;49, and Acts 1:8. Step one: preach the gospel. Step two: baptize. Step three: teach&mdash;&ldquo;teaching them to keep all that Jesus commanded.&rdquo;</p>
-        <p>This model is seen repeatedly through the book of Acts. Consider Acts 2:1&ndash;47. Peter, after being indwelt by the Holy Spirit, preaches the Gospel to Jews celebrating the Feast of Weeks. The response to Peter&rsquo;s gospel proclamation was a deep conviction of sin, which immediately led to their baptism:</p>
-        <blockquote>&ldquo;So then, those who had received his word were baptized; and that day there were added about three thousand souls. And they were continually devoting themselves to the apostles&rsquo; teaching and to the fellowship, to the breaking of bread and to the prayers.&rdquo;<cite>&mdash; Acts 2:41&ndash;42</cite></blockquote>
-        <p>What can clearly be seen is a pattern of Gospel proclamation, baptism for those who repented and believed, and devotion to the apostles&rsquo; teaching. This model of proclamation, baptism, and instruction is seen again in Acts 10 when Peter preached the gospel to Cornelius, a God-fearing gentile. Peter retells aspects of Jesus&rsquo; life, proclaims Jesus&rsquo; death and resurrection, cites Jesus&rsquo; authority as judge over all, and offers forgiveness of sins in Jesus&rsquo; name. The response is immediate, and baptism follows.</p>
-        <p>What is evident in Jesus&rsquo; life and the execution of the great commission by Jesus&rsquo; own apostles is that discipleship was more than evangelism. Discipleship was more than baptism. Discipleship is the God-ordained process given to the members of Christ&rsquo;s body so that those who have placed their faith in Jesus Christ as their savior and lord and have been indwelt by the Holy Spirit would walk in the &ldquo;newness of life&rdquo; (Ro 6:4) through the power of the Holy Spirit, being &ldquo;conformed to the image of Christ&rdquo; (Ro 8:29) for the purpose of being &ldquo;holy and blameless before God the Father in love&rdquo; (Eph 1:4). Additionally, this process is to be facilitated by those whom God has appointed as leaders in the church (Eph 4:11&ndash;12; Ac 20:28).</p>
-
-        <h3>Bridging the Gap</h3>
-        <p>The question now becomes, how do we translate these biblical principles and models into today&rsquo;s church setting? For starters, we need to understand that the discipleship process experienced by the apostles was unique. Set aside the fact that they witnessed miracles and literally experienced the gospel story in real time&mdash;the men who followed Jesus literally left everything they had and followed Jesus everywhere.</p>
-        <p>Before the principles of discipleship are translated into the 21st-century Western context, it&rsquo;s important to highlight a fundamental difference that severely impacts how Christians in Western society do discipleship today. That difference is seen in cultural intimacy&mdash;the subconscious behaviors and emotional ties that connect individuals to their group identity.</p>
-        <p>By and large, a culture can be categorized into two groups: (1) a communal culture, predominant in countries such as Nigeria, Saudi Arabia, and Colombia, or (2) an individualistic culture, as seen in Western society. Communal cultures stress the interdependence of people, which fosters strong relationships and facilitates shared responsibility on a regular basis. The famous African proverb, &ldquo;it takes a village to raise a child,&rdquo; captures the essence of a communal culture. Juxtaposed to this is the individualistic culture in which Western society largely exists&mdash;one that prioritizes personal achievement, personal space, and independence.</p>
-        <p>The fact of the matter is that expressions of cultural intimacy vary from culture to culture, and these expressions impact the way in which individuals interact with the whole of a group. It is fundamental to recognize that these worldview differences are integral in how Christians engage with the idea of discipleship.</p>
-        <p>Let&rsquo;s take another look at Acts 2:42&ndash;46. Those who were saved at Pentecost devoted themselves to (1) the apostles&rsquo; teaching, (2) fellowship, (3) breaking of bread, (4) prayers, (5) they had all things in common and sold all their stuff to support the collective group as there was need, and (6) they daily devoted themselves in one accord.</p>
-        <blockquote>&ldquo;And daily devoting themselves with one accord in the temple and breaking bread from house to house, they were taking their meals together with gladness and sincerity of heart.&rdquo;<cite>&mdash; Acts 2:46</cite></blockquote>
-        <p>Isn&rsquo;t it fascinating that we can preach sermons on the four pillars of the early church but hardly consider how they executed those pillars? We can read through observations one through four and say &ldquo;Yes! And Amen!&rdquo; But the moment we get to observations five and six, we immediately back away and say, &ldquo;Well, that was a very long time ago.&rdquo;</p>
-        <p>The primary point that I am attempting to get across is this: the life-on-life discipleship that is clearly seen in the life of Jesus, Paul, and the Early church is not a &ldquo;given.&rdquo; It&rsquo;s not baked into our culture, and it&rsquo;s something that we individualized westerners struggle with since the idea is so abnormal to us. While a more communal culture might scoff at the idea of needing to explain what life-on-life even means, we who live in the 21st-century United States of America need serious help implementing a biblical pattern of discipleship so that we do not fall into &ldquo;box checking&rdquo; through tightly structured programs that are filled with people yet fail to transform lives.</p>
-
-        <h3>Principles Applied</h3>
-        <p>In accordance with the principles seen in Jesus&rsquo; life and executed by the apostles throughout the book of Acts, discipleship ought to be a life-on-life form of contact learning that seeks to instruct the mind in such a way that transforms the heart. The way in which a local church executes this may vary, but generally speaking, churches need to execute this in the following way: (1) general discipleship through consistent expositional preaching, (2) house-to-house discipleship where community is fostered and believers are mutually devoting themselves to one another, and (3) selected or appointed discipleship.</p>
-
-        <h4>General Discipleship</h4>
-        <p>Consistent, expositional preaching is an absolute necessity to keep in line with Jesus&rsquo; command in the Great Commission to &ldquo;teach them all that I have commanded you.&rdquo; When a shepherd, who is a disciple maker, faithfully opens up the scriptures through expository preaching, the congregation is instructed, exhorted, and provoked through the Holy Spirit&rsquo;s application of God&rsquo;s word to be conformed into the image of Jesus Christ, as their minds are renewed through the washing of the word (Ro 8:29; 12:2). This method of discipleship is the God-ordained process by which God the Spirit uses His word through a man who has been appointed to sanctify believers via the truth (Jn 17:17; Eph 4:11&ndash;12; 5:26). As essential as expository preaching is to the discipleship process, it cannot be the sole means of discipleship, as it does not provide within itself the kind of life-on-life learning that is seen in the life of Christ or the ministry of the apostles.</p>
-
-        <h4>House-to-House Discipleship</h4>
-        <p>House-to-house discipleship is modeled in Acts 2:46. It is in the intimacy of a home that believers were joined to each other in fellowship, to share meals, to pray, to bear one another&rsquo;s burdens, to exhort one another as they saw the &ldquo;day drawing near&rdquo; (Heb 10:24&ndash;25). In both public and private settings, Paul discipled individuals. Paul states in Acts 20:20, &ldquo;how I did not shrink from declaring to you anything that was profitable and teaching you publicly and from house to house.&rdquo;</p>
-        <p>What the pattern of the early church reveals is that house-to-house discipleship was the means by which individuals were exposed to one another and the apostles themselves. This kind of relational discipleship was so embodied by Paul that he could say, &ldquo;be imitators of me, just as I also am of Christ&rdquo; (1 Cor 11:1). A command such as this would have been a nonstarter if people were only exposed to Paul briefly once a week. Yet, because of Paul&rsquo;s desire to fellowship and disciple Christ&rsquo;s church, he could literally point to his life and say, &ldquo;Hey guys, you literally saw and experienced the way that I conducted myself around you, now go, imitate me and reduplicate.&rdquo;</p>
-        <p>In today&rsquo;s church, house-to-house discipleship is typically called a discipleship group or small group. While groups that involve Bible reading, prayer, and shared meals are a great start, I would advocate that these groups strive for more than simply learning or answering the Bible study questions in a systematic format. There needs to be a level of vulnerability and willingness to engage one another in a life-on-life manner. Life-on-life discipleship is not once a week or twice a week, but it&rsquo;s a habitual pattern, a reflex that enables members of Christ&rsquo;s body to act as members, not loosely connected parts.</p>
-
-        <h4>Appointed Discipleship</h4>
-        <p>Appointed discipleship is a form of discipleship that seeks to grant concentrated attention, vulnerability, and exposure to the church&rsquo;s future leaders&mdash;whether a man aspiring to ministry, deacons, evangelists, or small group leaders. This mode of discipleship is clearly seen in the life of Jesus as he selected a group of men to follow him throughout his ministry. The simple reality of life and resources is that one person can only do so much. One lead pastor can only intensively pour themselves into a few men at a time. Nevertheless, those men ought to be poured into with intentionality and excellence, because it is those men whom any given leader will pass the baton to, and it&rsquo;s those men who will be multiplied as laborers of the harvest.</p>
-        <p>What this may look like is a kind of multi-year internship or discipleship program that gives future leaders the opportunity to be discipled in a life-on-life environment&mdash;to experience what it&rsquo;s like to be instructed, exhorted, affirmed, confronted, and tested by a godly role model. This kind of intimate discipleship has to go beyond the classroom; this should include an invitation into the home to share many meals, to see how the shepherd raises his kids, to see how he ministers to his family and wife, to be shown how he prays, prepares a sermon, and more. Appointed discipleship is an area that must not be overlooked as it literally multiplies godliness, character, and leaders to serve the body of Christ.</p>
-
-        <div class="conclusion">
-          <h3>Conclusion</h3>
-          <p>Simply stated, discipleship is life-on-life training. It is older, more mature Christians&mdash;pastors, teachers, or discipleship leaders&mdash;coming alongside younger believers and ministering to them through instruction and example. It is filling the young believer&rsquo;s minds with the truths of Jesus Christ and entering into their lives in a palpable, intimate, and accessible way. It is about allowing people whom we don&rsquo;t know and may not &ldquo;naturally&rdquo; get along with into our lives.</p>
-          <p>Although the process of discipleship is messy, oftentimes it&rsquo;s inconvenient and challenging. Yet it&rsquo;s the commission Jesus Christ gave to his apostles:</p>
-          <blockquote>&ldquo;Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, teaching them to keep all that I commanded you; and behold, I am with you always, even to the end of the age.&rdquo;<cite>&mdash; Matthew 28:19&ndash;20</cite></blockquote>
-          <p>The execution of this command was necessary at the foundation of the church and remains necessary today.</p>
-        </div>
-
-        <div class="article-attribution">
-          <p>Originally submitted to Dr. Andy Burggraff in partial fulfillment of PT 511 Spiritual Formation</p>
-          <span class="institution">Shepherds Theological Seminary &middot; May 2025</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARTICLE DIVIDER -->
-<div style="padding:40px 0;background:var(--cream)"><div class="article-divider"></div></div>
-
-<!-- FULL ARTICLE: The Problem of Evil -->
-<section class="article-full" id="problem-of-evil">
-  <div class="container">
-    <div class="article-container">
-      <span class="article-tag reveal">Theology</span>
-      <h2 class="reveal d1">The Problem of Evil</h2>
-      <div class="article-meta reveal d2">Andrew Ramirez &middot; October 2024 &middot; 14 min read</div>
-
-      <div class="article-body reveal d3">
-
-        <p>If there is a God, then why are over 27 million people currently being trafficked? If there is a God, then why are 3.1 million children dying of hunger annually? If there is a loving God, then why is it that pain and suffering seem to penetrate all of life?</p>
-        <p>If there is a God, then why is my wife plagued with a chronic illness that leaves her debilitated and exhausted?</p>
-        <p>The problem of evil, sickness, and pain is one that I&rsquo;ve personally struggled through. With tears in my eyes, I have had to witness the person I love the most anguishing in so much pain, and all I can do is lay on my closet floor crying out to God to have mercy on her, not understanding why an all-powerful God would not step in to heal her and help her when it seems like she needs Him the most. All I can think of in those moments is: Why is this happening? Why is this being allowed? Where is God in the midst of this?</p>
-        <p>All of the questions that race through my head are fundamentally rooted in one overarching question: why do humans experience evil and suffering, and why would an all-loving God allow this to take place?</p>
-        <p>Whenever I find myself asking this question, I am sad, angry, and feeling completely alone. Frankly, it&rsquo;s difficult to approach this question with a clear head when I am in that kind of emotional headspace, and because of that, it&rsquo;s important to take a step back and think through the realities of life, differentiating between what is objectively true and what I&rsquo;m feeling in that moment. And so, as I attempt to answer the dilemma between an evil world and a loving God, I want you to take a step back and hear what I&rsquo;m going to say with an open mind and an open heart.</p>
-
-        <h3>In the Beginning, Everything Was Good</h3>
-        <p>The first question that must be addressed is this: has evil always existed, and if not, when did it come into existence? According to the Bible, the answer is no; evil has not always existed, and there is, in fact, a point when it entered into the world. If you take a look at the biblical text in Genesis Chapter One, where the story of creation takes place, there&rsquo;s one word that stands out on the page, and that word is &ldquo;good.&rdquo; In fact, the word good is used seven times in the first chapter of the Bible:</p>
-        <blockquote>&ldquo;And God saw all that He had made, and behold, it was very good. And there was evening and there was morning, the sixth day.&rdquo;<cite>&mdash; Genesis 1:31</cite></blockquote>
-        <p>What this shows us is that God created the heavens, the earth, the sea, and all that is in it and designed all of it to be &ldquo;good.&rdquo; No pain, no sickness, no death, and no suffering.</p>
-
-        <h3>What Went Wrong</h3>
-        <p>Well, this begs the question: if everything was made good by God, then where did evil come from? In Genesis chapters 2 and 3, the Bible clearly lays out what went wrong:</p>
-        <blockquote>&ldquo;And the Lord God commanded the man, saying, &lsquo;From any tree of the garden you may surely eat; but from the tree of the knowledge of good and evil, you shall not eat from it; for in the day that you eat from it you will surely die.&rsquo;&rdquo;<cite>&mdash; Genesis 2:16&ndash;17</cite></blockquote>
-        <p>In other words, God created the world good, He placed man in a perfect environment to have community with Him, but gave man a choice. That choice was essentially to enjoy the relationship he had with his creator in a perfect environment that had zero pain and zero suffering, or for man to disobey God and face the consequences.</p>
-        <p>Genesis chapter 3 details the creature&rsquo;s decision to rebel against the creator. The Bible reveals that God, the creator, gave his creatures the ability to make a decision: to choose life or death, to choose peace or suffering, to trust in what God told them and obey Him, or to succumb to the voice of temptation and rebel against Him. This choice would be the most consequential decision in the history of humanity, and the decision the first man and woman made was to rebel against God.</p>
-        <p>This rebellion not only separated the creature from their creator but unleashed the pandora&rsquo;s box of sin and corruption into the world:</p>
-        <blockquote>&ldquo;Because of this, just as sin entered into the world through one man, and death through sin, so also death spread to all people because all sinned.&rdquo;<cite>&mdash; Romans 5:12</cite></blockquote>
-        <p>God makes the world perfect; the creature to whom He gave freedom chose death. Therefore, the origin of evil on planet Earth starts with two human beings, not God, and the perpetuation of evil begins with all human beings, not God. And if God decided to rid the earth of all evil, He has every right to start with me and move to you and on and on until the world is ridden of the primary perpetrators of evil&mdash;that is, mankind.</p>
-
-        <h3>God&rsquo;s Redemptive Plan</h3>
-        <p>You see, the very first time that man disobeyed God, God had every right to put him to death then and there. After all, He warned them, didn&rsquo;t He? Yet instead of obligating His creature to the punishment that mankind deserved, God moved toward His creature with a plan and a purpose&mdash;a purpose to redeem these wayward humans, restore His unworthy subjects, and rescue His creation, which had now been subjected to corruption by man&rsquo;s disobedience.</p>
-        <p>Creation was made good. The creature was given a choice. The choice the creature made was bad. Cosmic treason was committed against the creator and King of the universe. The creature, mankind&hellip; we&mdash;now live in a fallen and broken world with sin and death, separated from God, and the only one who can rescue us from this darkness is the creator Himself.</p>
-
-        <h3>Where Is God in the Midst of Suffering?</h3>
-        <p>So, where is God in the midst of my suffering? Where is God in the midst of your suffering? Where is God in the midst of this evil world?</p>
-        <p>I don&rsquo;t have all the answers to that question, though I can comprehend with my 3 lb. brain why one thing happened over another. But when I feel the darkness closing in and I find myself clueless as to why God chose to allow the world to go down this horrible spiral, I go back to what I know.</p>
-        <p>I know about 2,000 years ago, there was a virgin named Mary who miraculously conceived a child. I know that this Child was not simply a prophet or a messenger but was the eternal God himself. I know that the eternal God chose not only to condescend to the earth in an act of absolute humility but also took on the form of a servant. I know that this child would be named Jesus, which means &ldquo;God saves.&rdquo;</p>
-        <p>I know that Jesus lived the perfect life and called those who were most lost back into a relationship with God. I know that Jesus, God in the flesh, king of the universe, willingly chose to go to the cross, lay down his life, and undergo torture and death for one reason&mdash;so that his wayward, rebellious, treasonous creation would not have to suffer God&rsquo;s judgment but be able to have peace with God and hope for their future. A hope that one day God would make all things new where there will be no more pain, no more sorrow, and no more evil in the world.</p>
-        <p>I know that God is love regardless of how I feel in any given moment, and He demonstrated His love by dying on the cross. I know that Jesus Christ was resurrected from the dead three days after his crucifixion and calls all people everywhere to turn away from their sin and rebellion against God and to choose to obey God by believing in the work that Jesus did on their behalf.</p>
-        <p>I know that God loves me even when I&rsquo;m crying out to him and I don&rsquo;t feel comforted, or feel loved, or understand what is going on. I know that he loves me because he made a way for me and you to have a relationship with him. Even though we live in a fallen and broken world, this is not the end; this is not the final destination. God will rectify every wrong and restore all things.</p>
-
-        <h3>A Choice Set Before You</h3>
-        <p>So why is there evil in this world? Simply put, there is evil in the world because God chose to suspend the judgment that mankind deserves and has provided a way for all people everywhere to be saved from the corrupt world that we live in by making a choice&mdash;a choice to believe in Jesus Christ as the one and only one who can save humanity from the judgment that will take place. Make no mistake: God will deal with evil, and this reality is predicted throughout the Bible from the first book to the last; God will deal a crushing blow on all evil and rid the earth of it once and for all.</p>
-        <p>The only question left is: have you chosen to follow God by turning away from sin and placing your faith in Jesus Christ, or will you take part in the flood of judgment that will cleanse this world from all evil? In the same way that God gave the first man and woman a choice to choose Him and live or rebel against Him and die, God presents this choice to you now.</p>
-        <blockquote>&ldquo;For God so loved the world, that He gave His only begotten Son, that whoever believes in Him shall not perish, but have eternal life. For God did not send the Son into the world to condemn the world, but that the world might be saved through Him. He who believes in Him is not judged; he who does not believe has been judged already, because he has not believed in the name of the only begotten Son of God.&rdquo;<cite>&mdash; John 3:16&ndash;18</cite></blockquote>
-        <blockquote>&ldquo;He who believes in the Son has eternal life; but he who does not obey the Son will not see life, but the wrath of God abides on him.&rdquo;<cite>&mdash; John 3:36</cite></blockquote>
-
-        <div class="conclusion">
-          <p>God made the world good. God gave His creatures a choice. Mankind rebelled against God and chose death, and their decision unleashed sin and corruption onto this world. God came to the earth and took on human flesh to save His wayward creation. God now gives man a choice to continue in rebellion or to choose life by believing in Jesus Christ, the only one who can save humanity from death and judgment.</p>
-          <blockquote>&ldquo;He has fixed a day on which he will judge the world in righteousness through Jesus Christ, and of this, he has given assurance to all by raising him from the dead.&rdquo;<cite>&mdash; Acts 17:31</cite></blockquote>
-          <p>The last book of the Bible, the Book of Revelation, gives a promise to all who put their trust in Jesus Christ as their savior:</p>
-          <blockquote>&ldquo;He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away. Behold, I am making everything new!&rdquo;<cite>&mdash; Revelation 21:4&ndash;5</cite></blockquote>
-          <p>God has not abandoned His creation but has drawn near to us through His Son Jesus Christ. Although we cannot comprehend all of the horrific events that take place on this earth, what we know is that God demonstrates His love to us through His Son Jesus Christ. And if you are in pain, if you feel alone, this is the message I have for you: God made you, and He knows you. God loves you more than you could possibly know. And even though you have made countless mistakes throughout your entire life, God demonstrated His love for you by dying in your place so that you can be cleansed of all your guilt, sin, and shame so long as you turn away from your rebellion against God and turn toward Him in faith.</p>
-          <blockquote>&ldquo;God is not willing for any to perish, but for all to come to repentance.&rdquo;<cite>&mdash; 2 Peter 3:9</cite></blockquote>
-          <p>Yet this decision to turn to God is on you, so stop living in the darkness and turn around and see the light of your loving creator and receive forgiveness and eternal life that is found in Jesus Christ alone.</p>
-        </div>
-
-        <div class="article-attribution">
-          <p>Originally submitted to Dr. David Burggraff in partial fulfillment of TH 501 Systematic Theology 1</p>
-          <span class="institution">Shepherds Theological Seminary &middot; October 2024</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -490,11 +249,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 </footer>
 
 <script>
-// Reveal
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// Mobile menu
 const menuToggle=document.getElementById('menuToggle');
 const mobileNav=document.getElementById('mobileNav');
 const mobileClose=document.getElementById('mobileClose');
