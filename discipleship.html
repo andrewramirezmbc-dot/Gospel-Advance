@@ -54,48 +54,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw
 .mobile-nav a:hover{color:var(--bronze)}
 .mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
 
-/* PAGE HEADER */
-.page-header{padding:140px 0 60px;text-align:center}
-.page-header h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
-.page-header p{font-size:clamp(.92rem,1.1vw,1.05rem);color:var(--warm-gray);max-width:520px;margin:0 auto;line-height:1.65}
-
 /* BACK LINK */
 .back-link{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:var(--bronze);letter-spacing:.04em;transition:color .3s ease;margin-bottom:2rem}
 .back-link:hover{color:var(--charcoal)}
-.back-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 
-/* FULL ARTICLE */
-.article-full{padding:140px 0 80px;background:var(--white)}
+/* ARTICLE */
+.article-page{padding:140px 0 80px}
 .article-container{max-width:720px;margin:0 auto}
-.article-container .article-tag{margin-bottom:16px}
-.article-container h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
-.article-container .article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze)}
+.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+.article-container h1{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
+.article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
 .article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.3}
 .article-body h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .8rem;line-height:1.3}
 .article-body p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.2rem}
-.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:rgba(255,255,255,.6);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
+.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:var(--cream);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
 .article-body blockquote cite{display:block;margin-top:.8rem;font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.04em}
 .article-body .conclusion{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
-
-/* ARTICLE DIVIDER */
-.article-divider{width:60px;height:3px;background:var(--bronze);margin:0 auto;border-radius:2px}
-
-/* ACADEMIC ATTRIBUTION */
 .article-attribution{margin-top:3rem;padding:24px 28px;background:rgba(184,150,90,.06);border:1px solid rgba(184,150,90,.15);border-radius:var(--radius);text-align:center}
 .article-attribution p{font-size:.78rem;line-height:1.7;color:var(--warm-gray);margin-bottom:0;letter-spacing:.02em}
 .article-attribution .institution{font-weight:600;color:var(--charcoal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;display:block;margin-top:6px}
 
 /* CTA */
-.articles-cta{padding:80px 0;text-align:center}
+.articles-cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
 .articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
 .articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
-.btn-yt{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
-.btn-yt:hover{background:#c4302b;transform:translateY(-2px)}
-.btn-yt svg{width:20px;height:20px;fill:currentColor}
-.btn-ig{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--charcoal);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;border:1px solid rgba(28,28,28,.15);transition:all .3s ease}
-.btn-ig:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
-.btn-ig svg{width:18px;height:18px;fill:currentColor}
+.btn-back{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
+.btn-back:hover{background:var(--bronze);transform:translateY(-2px)}
 
 /* FOOTER */
 footer{padding:60px 0 40px;border-top:1px solid var(--border)}
@@ -111,13 +96,8 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border)}
 .footer-col a:hover{color:var(--bronze)}
 .footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
 
-/* FOCUS */
 a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
-
-/* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
-
-/* RESPONSIVE */
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.footer-grid{grid-template-columns:1fr}blockquote{padding:1rem 1.2rem}.article-attribution{padding:18px 20px}}
 </style>
@@ -148,8 +128,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     </button>
   </div>
 </nav>
-
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
   <a href="index.html">Home</a>
@@ -161,8 +139,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
   <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
 </div>
 
-<!-- FULL ARTICLE: Discipleship According to Scripture -->
-<section class="article-full">
+<!-- ARTICLE -->
+<section class="article-page">
   <div class="container">
     <div class="article-container">
       <a href="articles.html" class="back-link reveal">
@@ -170,8 +148,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         Back to Articles
       </a>
       <span class="article-tag reveal d1">Discipleship</span>
-      <h2 class="reveal d2">Discipleship According to Scripture</h2>
-      <div class="article-meta reveal d3">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
+      <h1 class="reveal d1">Discipleship According to Scripture</h1>
+      <div class="article-meta reveal d2">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
 
       <div class="article-body">
 
@@ -184,13 +162,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 
         <h3>Defining &ldquo;Disciple&rdquo;</h3>
         <p>Matthew 28:18&ndash;20 is the foundational mandate given to believers by Christ himself to practice what we know today as &ldquo;discipleship.&rdquo; The question, of course, becomes, what did Jesus intend to communicate when he commanded his apostles to &ldquo;make disciples&rdquo;? How did Jesus&rsquo; Apostles understand this command?</p>
-        <p>First and foremost, it must be understood what the word disciple means. The word disciple in Greek is <em>math&#275;t&#275;s</em>, and this literally means &ldquo;one who engages in learning through instruction from another, pupil, apprentice.&rdquo; The term occurs very frequently in the New Testament. Its fundamental meaning is one who seeks to learn from another. A disciple is not only a partaker of information, but also one who seeks to become like his or her teacher (Luke 6:40). In this way, discipleship is about modifying one&rsquo;s entire lifestyle. The term is often used of the group of people that followed Jesus in his earthly ministry, whether the Twelve themselves (e.g., Mark 6:45) or some larger group (e.g., Luke 19:37).</p>
+        <p>First and foremost, it must be understood what the word disciple means. The word disciple in Greek is <em>&mu;&alpha;&theta;&eta;&tau;&eta;&sigma; math&#275;t&#275;s</em>, and this literally means &ldquo;one who engages in learning through instruction from another, pupil, apprentice.&rdquo; Byrley notes:</p>
+        <blockquote>The term <em>math&#275;t&#275;s</em> occurs very frequently in the New Testament. Its fundamental meaning is one who seeks to learn from another. A disciple is not only a partaker of information, but also one who seeks to become like his or her teacher (Luke 6:40). In this way, discipleship is about modifying one&rsquo;s entire lifestyle. The term is often used of the group of people that followed Jesus in his earthly ministry, whether the Twelve themselves (e.g., Mark 6:45) or some larger group (e.g., Luke 19:37).</blockquote>
+        <p>Byerly&rsquo;s proposed definition is spot on and truly captures how Jesus&rsquo; apostles would have understood the concept of discipleship.</p>
 
         <h3>Discipleship According to Jesus</h3>
         <p>It must be understood that Jesus&rsquo; disciples would have understood Jesus&rsquo; command in concert with their own discipleship journey. Notably, the process of discipleship that the apostles underwent was one where they were actively engaged in the process of learning through life-on-life experiential training. This experience included instruction (Mt 5&ndash;7, 18:15&ndash;17), rebuke and confrontation (Mt 8:26, 16:23, 17:17), exhortation (Mt 5:16, 6:33, 16:24), practice (Mt 10:1&ndash;8, 14:15&ndash;21), correction (Mt 20:26; Lk 9:48), testing (Mt 14:31; Mk 4:40), being questioned (Mt 8:26, 16:15; Jn 6:67), affirmation (Mt 16:17; Jn 1:47), demonstration (Mt 8:3; Jn 13:14&ndash;15), and restoration (Lk 22:32; Jn 21:15&ndash;19).</p>
         <p>What Jesus&rsquo; methods of discipleship reveal is that discipleship, according to Jesus, was an intimate, impactful, life-altering process of contact learning, which provided his apostles with the exposure, experience, and education that was necessary to fulfill the commission he delivered to them in Matthew 28:19&ndash;20.</p>
         <p>So, how would his apostles have understood the Great Commission? I believe that the apostles would have understood Jesus&rsquo; departing words in a twofold manner: (1) evangelization and (2) reduplication, through life-on-life experiential training and instruction. Fundamentally, Jesus&rsquo; apostles, the leaders of the early church, would have understood the Great Commission as a mandate to reduplicate themselves in a manner similar to what they underwent during Jesus&rsquo; life and ministry.</p>
-        <p>They would have understood that evangelism was a mandate&mdash;that is, to be Christ&rsquo;s witnesses by proclaiming the gospel to all creation (Mk 16:15), going to the ends of the earth (Acts 1:8), and proclaiming that there is forgiveness of sins through repentance and faith in the name of Jesus Christ (Lk 24:47; Acts 10:43). Nevertheless, they would not have stopped at the evangelization of the nations but would continue to reduplicate themselves through the &ldquo;ministry of reconciliation&rdquo; (2 Cor 5:18&ndash;20) by bringing about the obedience of faith among the nations (Rom 1:5) through the process of discipleship (Mt 28:19&ndash;20).</p>
+        <p>They would have understood that evangelism was a mandate&mdash;that is, to be Christ&rsquo;s witnesses by proclaiming the gospel to all creation (Mk 16:15), going to the ends of the earth (Acts 1:8), and proclaiming that there is forgiveness of sins through repentance and faith in the name of Jesus Christ (Lk 24:47; Acts 10:43). Nevertheless, they would not have stopped at the evangelization of the nations but would continue to reduplicate themselves through the &ldquo;ministry of reconciliation&rdquo; (2 Cor 5:18&ndash;20) by bringing about the obedience of faith among the nations (Rom 1:5) through the process of discipleship (Mt 28:19&ndash;20). This, of course, begs the question: how were they to disciple others? Was each apostle supposed to choose a small group and lead them the way Jesus did, thereby reduplicating themselves in the exact same manner as their Lord and teacher?</p>
 
         <h3>The Process of Discipleship: The Execution of the Great Commission</h3>
         <p>The process of discipleship is clearly seen in Mark 16:15&ndash;18, Matthew 28:19&ndash;20, Luke 24:44&ndash;49, and Acts 1:8. Step one: preach the gospel. Step two: baptize. Step three: teach&mdash;&ldquo;teaching them to keep all that Jesus commanded.&rdquo;</p>
@@ -200,20 +180,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         <p>What is evident in Jesus&rsquo; life and the execution of the great commission by Jesus&rsquo; own apostles is that discipleship was more than evangelism. Discipleship was more than baptism. Discipleship is the God-ordained process given to the members of Christ&rsquo;s body so that those who have placed their faith in Jesus Christ as their savior and lord and have been indwelt by the Holy Spirit would walk in the &ldquo;newness of life&rdquo; (Ro 6:4) through the power of the Holy Spirit, being &ldquo;conformed to the image of Christ&rdquo; (Ro 8:29) for the purpose of being &ldquo;holy and blameless before God the Father in love&rdquo; (Eph 1:4). Additionally, this process is to be facilitated by those whom God has appointed as leaders in the church (Eph 4:11&ndash;12; Ac 20:28).</p>
 
         <h3>Bridging the Gap</h3>
-        <p>The question now becomes, how do we translate these biblical principles and models into today&rsquo;s church setting? For starters, we need to understand that the discipleship process experienced by the apostles was unique. Set aside the fact that they witnessed miracles and literally experienced the gospel story in real time&mdash;the men who followed Jesus literally left everything they had and followed Jesus everywhere.</p>
+        <p>The question now becomes, how do we translate these biblical principles and models into today&rsquo;s church setting? For starters, we need to understand that the discipleship process experienced by the apostles was unique. Set aside the fact that they witnessed miracles and literally experienced the gospel story in real time&mdash;the men who followed Jesus literally left everything they had and followed Jesus everywhere. The modern-day equivalent would be something like a missionary coming to your church, preaching a sermon, and in response, a group of people leave their homes and communities to go to work on the mission field, with this new group of inexperienced missionaries living closely with one another.</p>
         <p>Before the principles of discipleship are translated into the 21st-century Western context, it&rsquo;s important to highlight a fundamental difference that severely impacts how Christians in Western society do discipleship today. That difference is seen in cultural intimacy&mdash;the subconscious behaviors and emotional ties that connect individuals to their group identity.</p>
-        <p>By and large, a culture can be categorized into two groups: (1) a communal culture, predominant in countries such as Nigeria, Saudi Arabia, and Colombia, or (2) an individualistic culture, as seen in Western society. Communal cultures stress the interdependence of people, which fosters strong relationships and facilitates shared responsibility on a regular basis. The famous African proverb, &ldquo;it takes a village to raise a child,&rdquo; captures the essence of a communal culture. Juxtaposed to this is the individualistic culture in which Western society largely exists&mdash;one that prioritizes personal achievement, personal space, and independence.</p>
+        <p>By and large, a culture can be categorized into two groups: (1) a communal culture, predominant in countries such as Nigeria, Saudi Arabia, and Colombia, or (2) an individualistic culture, as seen in Western society. Communal cultures stress the interdependence of people, which fosters strong relationships and facilitates shared responsibility on a regular basis. The famous African proverb, &ldquo;it takes a village to raise a child,&rdquo; captures the essence of a communal culture.</p>
+        <p>Juxtaposed to this is the individualistic culture in which Western society largely exists&mdash;one that prioritizes personal achievement, personal space, and independence. It must be noted that every culture exists on the spectrum of cultural intimacy, which varies from society to society.</p>
         <p>The fact of the matter is that expressions of cultural intimacy vary from culture to culture, and these expressions impact the way in which individuals interact with the whole of a group. It is fundamental to recognize that these worldview differences are integral in how Christians engage with the idea of discipleship.</p>
         <p>Let&rsquo;s take another look at Acts 2:42&ndash;46. Those who were saved at Pentecost devoted themselves to (1) the apostles&rsquo; teaching, (2) fellowship, (3) breaking of bread, (4) prayers, (5) they had all things in common and sold all their stuff to support the collective group as there was need, and (6) they daily devoted themselves in one accord.</p>
+        <blockquote>&ldquo;And they were continually devoting themselves to the apostles&rsquo; teaching and to the fellowship, to the breaking of bread and to the prayers.&rdquo;<cite>&mdash; Acts 2:42</cite></blockquote>
         <blockquote>&ldquo;And daily devoting themselves with one accord in the temple and breaking bread from house to house, they were taking their meals together with gladness and sincerity of heart.&rdquo;<cite>&mdash; Acts 2:46</cite></blockquote>
         <p>Isn&rsquo;t it fascinating that we can preach sermons on the four pillars of the early church but hardly consider how they executed those pillars? We can read through observations one through four and say &ldquo;Yes! And Amen!&rdquo; But the moment we get to observations five and six, we immediately back away and say, &ldquo;Well, that was a very long time ago.&rdquo;</p>
         <p>The primary point that I am attempting to get across is this: the life-on-life discipleship that is clearly seen in the life of Jesus, Paul, and the Early church is not a &ldquo;given.&rdquo; It&rsquo;s not baked into our culture, and it&rsquo;s something that we individualized westerners struggle with since the idea is so abnormal to us. While a more communal culture might scoff at the idea of needing to explain what life-on-life even means, we who live in the 21st-century United States of America need serious help implementing a biblical pattern of discipleship so that we do not fall into &ldquo;box checking&rdquo; through tightly structured programs that are filled with people yet fail to transform lives.</p>
+        <p>Now, I am not advocating for church every day or selling everything we own, but I am advocating careful consideration as we bridge the discipleship gap between the early church and today.</p>
 
         <h3>Principles Applied</h3>
         <p>In accordance with the principles seen in Jesus&rsquo; life and executed by the apostles throughout the book of Acts, discipleship ought to be a life-on-life form of contact learning that seeks to instruct the mind in such a way that transforms the heart. The way in which a local church executes this may vary, but generally speaking, churches need to execute this in the following way: (1) general discipleship through consistent expositional preaching, (2) house-to-house discipleship where community is fostered and believers are mutually devoting themselves to one another, and (3) selected or appointed discipleship.</p>
 
         <h4>General Discipleship</h4>
-        <p>Consistent, expositional preaching is an absolute necessity to keep in line with Jesus&rsquo; command in the Great Commission to &ldquo;teach them all that I have commanded you.&rdquo; When a shepherd, who is a disciple maker, faithfully opens up the scriptures through expository preaching, the congregation is instructed, exhorted, and provoked through the Holy Spirit&rsquo;s application of God&rsquo;s word to be conformed into the image of Jesus Christ, as their minds are renewed through the washing of the word (Ro 8:29; 12:2). This method of discipleship is the God-ordained process by which God the Spirit uses His word through a man who has been appointed to sanctify believers via the truth (Jn 17:17; Eph 4:11&ndash;12; 5:26). As essential as expository preaching is to the discipleship process, it cannot be the sole means of discipleship, as it does not provide within itself the kind of life-on-life learning that is seen in the life of Christ or the ministry of the apostles.</p>
+        <p>Consistent, expositional preaching is an absolute necessity to keep in line with Jesus&rsquo; command in the Great Commission to &ldquo;teach them all that I have commanded you.&rdquo; Richard Mayhue lays forth five key identifiers of expository preaching: (1) The message finds its sole source in Scripture. (2) The message is extracted from Scripture through careful exegesis. (3) The message preparation correctly interprets Scripture in its normal sense and its context. (4) The message clearly explains the original God-intended meaning of Scripture. (5) The message applies the Scriptural meaning for today.</p>
+        <p>When a shepherd, who is a disciple maker, faithfully opens up the scriptures through expository preaching, the congregation is instructed, exhorted, and provoked through the Holy Spirit&rsquo;s application of God&rsquo;s word to be conformed into the image of Jesus Christ, as their minds are renewed through the washing of the word (Ro 8:29; 12:2). This method of discipleship is the God-ordained process by which God the Spirit uses His word through a man who has been appointed to sanctify believers via the truth (Jn 17:17; Eph 4:11&ndash;12; 5:26). As essential as expository preaching is to the discipleship process, it cannot be the sole means of discipleship, as it does not provide within itself the kind of life-on-life learning that is seen in the life of Christ or the ministry of the apostles.</p>
 
         <h4>House-to-House Discipleship</h4>
         <p>House-to-house discipleship is modeled in Acts 2:46. It is in the intimacy of a home that believers were joined to each other in fellowship, to share meals, to pray, to bear one another&rsquo;s burdens, to exhort one another as they saw the &ldquo;day drawing near&rdquo; (Heb 10:24&ndash;25). In both public and private settings, Paul discipled individuals. Paul states in Acts 20:20, &ldquo;how I did not shrink from declaring to you anything that was profitable and teaching you publicly and from house to house.&rdquo;</p>
@@ -223,6 +207,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         <h4>Appointed Discipleship</h4>
         <p>Appointed discipleship is a form of discipleship that seeks to grant concentrated attention, vulnerability, and exposure to the church&rsquo;s future leaders&mdash;whether a man aspiring to ministry, deacons, evangelists, or small group leaders. This mode of discipleship is clearly seen in the life of Jesus as he selected a group of men to follow him throughout his ministry. The simple reality of life and resources is that one person can only do so much. One lead pastor can only intensively pour themselves into a few men at a time. Nevertheless, those men ought to be poured into with intentionality and excellence, because it is those men whom any given leader will pass the baton to, and it&rsquo;s those men who will be multiplied as laborers of the harvest.</p>
         <p>What this may look like is a kind of multi-year internship or discipleship program that gives future leaders the opportunity to be discipled in a life-on-life environment&mdash;to experience what it&rsquo;s like to be instructed, exhorted, affirmed, confronted, and tested by a godly role model. This kind of intimate discipleship has to go beyond the classroom; this should include an invitation into the home to share many meals, to see how the shepherd raises his kids, to see how he ministers to his family and wife, to be shown how he prays, prepares a sermon, and more. Appointed discipleship is an area that must not be overlooked as it literally multiplies godliness, character, and leaders to serve the body of Christ.</p>
+
+        <h4>Other Forms of Discipleship</h4>
+        <p>The kinds of discipleship in this article deal specifically with the execution of the Great Commission as modeled by Jesus and seen in the book of Acts, but there is still room for other kinds of discipleship, such as one-on-one intensive discipleship (typically known as biblical counseling) or Titus 2 discipleship, where older women train younger women. These additional aspects of discipleship are essential in the local church and cannot be overlooked.</p>
+
+        <h4>Content</h4>
+        <p>The content of discipleship will vary depending on age and stage, yet each group ought to be exposed to the following: (1) biblical interpretation that teaches a grammatical-historical approach to Scripture, (2) the storyline of Scripture, dealing with the Old Testament and the New Testament narrative and overarching themes such as biblical covenantalism, (3) good theology, whether through catechisms or working through a systematic theology, and (4) exhortative applied theology&mdash;simply making an intentional attempt at applying the timeless truths of God and His word to any given context.</p>
+        <p>While the intensity of the content will significantly vary, it&rsquo;s important to adjust the presentation and resources in accordance with the age group while committing to systematically teaching sound doctrine (2 Tim 1:13).</p>
 
         <div class="conclusion">
           <h3>Conclusion</h3>
@@ -245,17 +236,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 <section class="articles-cta">
   <div class="container reveal">
     <h2>Continue Reading</h2>
-    <p>Return to the articles page for more studies on evangelism, discipleship, and theology.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="articles.html" class="btn-yt">
-        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        Back to Articles
-      </a>
-      <a href="sermons.html" class="btn-ig">
-        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2"><polygon points="5,3 19,12 5,21" fill="currentColor" stroke="none"/></svg>
-        Watch Sermons
-      </a>
-    </div>
+    <p>Explore more articles on evangelism, discipleship, and theology.</p>
+    <a href="articles.html" class="btn-back">All Articles</a>
   </div>
 </section>
 
@@ -308,11 +290,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 </footer>
 
 <script>
-// Reveal
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// Mobile menu
 const menuToggle=document.getElementById('menuToggle');
 const mobileNav=document.getElementById('mobileNav');
 const mobileClose=document.getElementById('mobileClose');
