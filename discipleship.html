@@ -59,8 +59,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw
 .page-header h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
 .page-header p{font-size:clamp(.92rem,1.1vw,1.05rem);color:var(--warm-gray);max-width:520px;margin:0 auto;line-height:1.65}
 
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:var(--bronze);letter-spacing:.04em;transition:color .3s ease;margin-bottom:2rem}
+.back-link:hover{color:var(--charcoal)}
+.back-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
 /* FULL ARTICLE */
-.article-full{padding:80px 0;background:var(--white)}
+.article-full{padding:140px 0 80px;background:var(--white)}
 .article-container{max-width:720px;margin:0 auto}
 .article-container .article-tag{margin-bottom:16px}
 .article-container h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
@@ -160,11 +165,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 <section class="article-full">
   <div class="container">
     <div class="article-container">
-      <span class="article-tag reveal">Discipleship</span>
-      <h2 class="reveal d1">Discipleship According to Scripture</h2>
-      <div class="article-meta reveal d2">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
+      <a href="articles.html" class="back-link reveal">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Articles
+      </a>
+      <span class="article-tag reveal d1">Discipleship</span>
+      <h2 class="reveal d2">Discipleship According to Scripture</h2>
+      <div class="article-meta reveal d3">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
 
-      <div class="article-body reveal d3">
+      <div class="article-body">
 
         <h3>Introduction</h3>
         <p>Picture this: you are a 1st-century Jew living in the territory of Israel, specifically the upper regions around the Sea of Galilee. In this setting, you work in one of the most common trades of that day&mdash;the trade of a smith, carpenter, stonemason, baker, tanner, sandal-maker, weaver, spinner, wool-comber, tailor, tentmaker, potter, perfumer, jeweler, fuller, or fisherman. This work is hands-on, oftentimes dirty, and labor-intensive, and as you go through life working long days with little pay, paying taxes to the Roman Empire, resting on the Sabbath, and following Torah, a Jewish man commands you to follow him.</p>
