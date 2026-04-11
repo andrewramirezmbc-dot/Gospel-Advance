@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When You Can't Trace His Hand | Gospel Advance</title>
+<meta name="description" content="Three lessons from suffering: it's okay to ask why, God is working when we don't understand, and comfort doesn't need the right words. By Andrew Ramirez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1C1C1C;--cream:#F5F0E8;--bronze:#B8965A;--light-gold:#D4C4A0;
+  --sage:#E4E8E0;--warm-gray:#8A8478;--slate:#4A5B6A;--deep-slate:#2A3640;
+  --white:#FFFFFF;--text-body:#4A4A4A;--border:rgba(28,28,28,.08);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --radius:12px;
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--white);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:inherit}
+
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw,60px);transition:all .4s ease;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);line-height:1.1}
+.logo-accent{color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600}
+.logo-divider{width:1px;height:34px;background:rgba(28,28,28,.2)}
+.logo-name{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap}
+.nav-pill{display:flex;align-items:center;gap:2px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
+.nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
+.nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-give{padding:8px 22px;background:var(--bronze);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
+.nav-give:hover{background:var(--charcoal);transform:translateY(-1px)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);transition:color .3s ease}
+.mobile-nav a:hover{color:var(--bronze)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
+
+/* ARTICLE HEADER */
+.article-header{padding:140px 0 60px;text-align:center}
+.article-header .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze);margin-bottom:32px;transition:all .3s ease}
+.article-header .back-link:hover{gap:10px;color:var(--charcoal)}
+.article-header .back-link svg{width:14px;height:14px}
+.article-header h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--charcoal);margin-bottom:1rem}
+
+/* FULL ARTICLE */
+.article-full{padding:40px 0 80px;background:var(--cream)}
+.article-container{max-width:720px;margin:0 auto}
+.article-container .article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+.article-container h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
+.article-container .article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.3}
+.article-body h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .8rem;line-height:1.3}
+.article-body p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.2rem}
+.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:rgba(255,255,255,.6);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
+.article-body blockquote cite{display:block;margin-top:.8rem;font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.04em}
+.article-body .conclusion{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+
+/* ARTICLE DIVIDER */
+.article-divider{width:60px;height:3px;background:var(--bronze);margin:0 auto;border-radius:2px}
+
+/* ACADEMIC ATTRIBUTION */
+.article-attribution{margin-top:3rem;padding:24px 28px;background:rgba(184,150,90,.06);border:1px solid rgba(184,150,90,.15);border-radius:var(--radius);text-align:center}
+.article-attribution p{font-size:.78rem;line-height:1.7;color:var(--warm-gray);margin-bottom:0;letter-spacing:.02em}
+.article-attribution .institution{font-weight:600;color:var(--charcoal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;display:block;margin-top:6px}
+
+/* CTA */
+.articles-cta{padding:80px 0;text-align:center}
+.articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
+.articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
+.btn-yt{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
+.btn-yt:hover{background:#c4302b;transform:translateY(-2px)}
+.btn-yt svg{width:20px;height:20px;fill:currentColor}
+.btn-ig{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--charcoal);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;border:1px solid rgba(28,28,28,.15);transition:all .3s ease}
+.btn-ig:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
+.btn-ig svg{width:18px;height:18px;fill:currentColor}
+
+/* FOOTER */
+footer{padding:60px 0 40px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-tagline{font-size:.85rem;line-height:1.6;color:var(--text-body);margin-bottom:20px;max-width:280px}
+.footer-socials{display:flex;gap:10px}
+.footer-socials a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.08);color:var(--charcoal);transition:all .3s ease}
+.footer-socials a:hover{border-color:var(--bronze);color:var(--bronze)}
+.footer-socials svg{width:13px;height:13px;fill:currentColor}
+.footer-col h5{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.84rem;color:var(--text-body);transition:color .3s ease}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
+
+/* FOCUS */
+a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.footer-grid{grid-template-columns:1fr}blockquote{padding:1rem 1.2rem}.article-attribution{padding:18px 20px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-text">Gospel<span class="logo-accent">Advance</span></div>
+      <div class="logo-divider"></div>
+      <span class="logo-name">Andrew Ramirez</span>
+    </a>
+    <div class="nav-pill">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="sermons.html">Watch</a>
+      <a href="articles.html" class="active">Articles</a>
+      <a href="index.html#gospel">The Gospel</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give">YouTube</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="sermons.html">Watch</a>
+  <a href="articles.html">Articles</a>
+  <a href="index.html#gospel">The Gospel</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
+  <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
+</div>
+
+<!-- ARTICLE HEADER -->
+<section class="article-header">
+  <div class="container">
+    <a href="articles.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Articles
+    </a>
+    <h1>When You Can&rsquo;t Trace His Hand</h1>
+  </div>
+</section>
+
+<!-- FULL ARTICLE -->
+<section class="article-full">
+  <div class="container">
+    <div class="article-container">
+      <span class="article-tag reveal">Suffering</span>
+      <div class="article-meta reveal d2">Andrew Ramirez &middot; April 2026 &middot; 11 min read</div>
+
+      <div class="article-body">
+        <p>This past month has been one of the hardest of my life. My best friend Julian was bitten by a rattlesnake, taken to the hospital, and a month later he was gone. Twenty-five years old. My wife Piper and I flew out to California to grieve with his family, and through it all, God taught me three things I want to share with you&mdash;lessons about suffering, about trust, and about being a light to people who are hurting.</p>
+
+        <h3>1. It&rsquo;s Okay to Ask Why</h3>
+        <p>There&rsquo;s a kind of cookie-cutter Christianity that creeps into our churches and small groups&mdash;an unspoken expectation that the faithful answer to &ldquo;How are you?&rdquo; is always &ldquo;Doing great, praise the Lord.&rdquo; We sing about God&rsquo;s faithfulness. We teach kids that they&rsquo;ve got the joy, joy, joy, joy down in their hearts. And those are good things. But sometimes the truth is that we&rsquo;re not okay. Sometimes we&rsquo;re crushed by anxiety, wrestling with chronic illness, watching a loved one fall apart, or grieving someone who shouldn&rsquo;t be gone yet.</p>
+        <p>And here&rsquo;s what I want you to hear: that&rsquo;s not only acceptable. It&rsquo;s expected. We live in a broken world, and bringing our raw questions to God&mdash;<em>God, why did this happen? God, what are You doing? God, I don&rsquo;t understand</em>&mdash;is not a failure of faith. Scripture is full of men who walked through valleys so dark they begged God to let them die.</p>
+
+        <blockquote>&ldquo;Awake! Why are you sleeping, O Lord? Rouse yourself! Do not reject us forever! Why do you hide your face? Why do you forget our affliction and oppression?&rdquo;<cite>&mdash; Psalm 44:23&ndash;24 (ESV)</cite></blockquote>
+        <h4>Elijah</h4>
+        <p>Elijah is one of the most towering prophets in all of Scripture&mdash;so significant that, centuries later, he would appear alongside Moses on the Mount of Transfiguration to speak with Jesus Himself. He was the prophet who called down fire from heaven on Mount Carmel and humiliated four hundred and fifty prophets of Baal in front of all Israel. One of the greatest spiritual victories in the entire Old Testament. And the very next day&mdash;the very next day&mdash;Queen Jezebel sent word that she was going to kill him, and Elijah ran for his life. Exhausted, terrified, and feeling completely alone, he sat down under a broom tree and asked God to take his life.</p>
+        <blockquote>&ldquo;But he himself went a day&rsquo;s journey into the wilderness, and came and sat down under a broom tree; and he asked for himself that he might die, and said, &lsquo;It is enough; now, O Yahweh, take my life, for I am not better than my fathers.&rsquo;&rdquo;<cite>&mdash; 1 Kings 19:4 (LSB)</cite></blockquote>
+        <h4>Moses</h4>
+        <p>Then there&rsquo;s Moses&mdash;the man God used to deliver an entire nation out of slavery, the man who stood face to face with Pharaoh, who parted the Red Sea, who received the Law on Sinai. <em>That</em> Moses. And the weight of leading a million complaining, ungrateful Israelites through the wilderness eventually broke him. He told God he&rsquo;d rather die than carry the burden one more day.</p>
+        <blockquote>&ldquo;So if You are going to deal thus with me, please kill me at once, if I have found favor in Your sight, and do not let me see my wretchedness.&rdquo;<cite>&mdash; Numbers 11:15 (LSB)</cite></blockquote>
+        <h4>Job</h4>
+        <p>And then Job. The man God Himself bragged about to Satan&mdash;&ldquo;there is no one like him on the earth, a blameless and upright man.&rdquo; In a single day Job lost his ten children, his livestock, his servants, his wealth, and finally his health. Sitting in ashes, scraping his sores with broken pottery, he opened his mouth and said this:</p>
+        <blockquote>&ldquo;Oh that my request might come to pass, and that God would grant my hope! Would that God were willing to crush me, that He would release His hand and cut me off!&rdquo;<cite>&mdash; Job 6:8&ndash;9 (LSB)</cite></blockquote>
+        <p>Elijah. Moses. Job. Three of the most significant figures in the Old Testament&mdash;each of them, in a moment of unbearable weight, asked God to end their lives. And God did not strike them down. He did not lecture them. He met them. He fed Elijah under the broom tree. He shouldered Moses&rsquo; burden by raising up seventy elders. He answered Job out of the whirlwind and restored him. So if you are wrestling with God tonight, you are in remarkably good company.</p>
+        <p>And then there&rsquo;s Psalm 88&mdash;the only psalm in the entire Psalter that does not end with hope. It just ends. There is no resolution, no upward turn, no &ldquo;but God.&rdquo; The final word of the psalm is <em>darkness</em>.</p>
+        <blockquote>&ldquo;Lord, you are the God who saves me; day and night I cry out to you. May my prayer come before you; turn your ear to my cry.<br><br>I am overwhelmed with troubles and my life draws near to death. I am counted among those who go down to the pit; I am like one without strength. I am set apart with the dead, like the slain who lie in the grave, whom you remember no more, who are cut off from your care.<br><br>You have put me in the lowest pit, in the darkest depths. Your wrath lies heavily on me; you have overwhelmed me with all your waves. You have taken from me my closest friends and have made me repulsive to them. I am confined and cannot escape; my eyes are dim with grief.<br><br>I call to you, Lord, every day; I spread out my hands to you. Do you show your wonders to the dead? Do their spirits rise up and praise you? Is your love declared in the grave, your faithfulness in Destruction? Are your wonders known in the place of darkness, or your righteous deeds in the land of oblivion?<br><br>But I cry to you for help, Lord; in the morning my prayer comes before you. Why, Lord, do you reject me and hide your face from me? From my youth I have suffered and been close to death; I have borne your terrors and am in despair. Your wrath has swept over me; your terrors have destroyed me. All day long they surround me like a flood; they have completely engulfed me. You have taken from me friend and neighbor&mdash;darkness is my closest friend.&rdquo;<cite>&mdash; Psalm 88 (NIV)</cite></blockquote>
+        <p>The counselor Paul Tripp writes about this psalm beautifully:</p>
+        <blockquote>&ldquo;The hope of Psalm 88 is found precisely in the fact that it has no hope in it. It isn&rsquo;t wrapped with some cute theological bow at the end. Instead, Psalm 88 is hopeful because of its stark honesty and profound darkness.<br><br>This Psalm confronts us with a blunt reality: being in a covenantal relationship with the Lord does not mean that I will escape the difficulties of life in a fallen world. As difficult as it is to accept, you are still here because this is where your all-wise and all-loving Heavenly Father wants you.<br><br>Our continued presence in this groaning place is not the failure of the plan; it is the plan. These experiences do not get in the way of what he is doing in and through you but are the means by which it gets done.<br><br>Psalm 88 also reminds me that the God in whom I hope really does understand the most profound suffering in life. He hears with patience and mercy the most desperate cries of the human heart. He never minimizes, mischaracterizes, misunderstands, or mocks my struggle.<br><br>Our Lord redeems the lost and the lonely, the rebel and the fearful, the confused and the doubtful, the sinner and the sufferer, the poor and the forsaken, the rejecter and the one rejected. There is no thought so distorted, no emotion so powerful, no circumstance so horrible, no action so twisted, and no desire so desperate as to be outside of the reach of the Redeemer and his grace.&rdquo;<cite>&mdash; Paul Tripp, &ldquo;A Psalm That Has No Hope&rdquo; (paultripp.com)</cite></blockquote>
+        
+        <p>So hear me clearly: it&rsquo;s okay to struggle. It&rsquo;s okay to ask why. The men and women of faith before us did, and God met them in it.</p>
+
+        <h3>2. God Is Working When We Don&rsquo;t Understand</h3>
+        <p>When tragedy strikes, when the diagnosis comes, when one bad thing piles on top of another, we can&rsquo;t see the end of the tunnel. We can&rsquo;t even see the light. The walls feel like they&rsquo;re closing in. And we don&rsquo;t understand why. But here&rsquo;s the thing: we don&rsquo;t need to understand <em>how</em> God is working in order to trust <em>that</em> He is working. Charles Spurgeon put it this way:</p>
+        <blockquote>&ldquo;When we cannot trace His hand, we must trust His heart.&rdquo;<cite>&mdash; Charles Spurgeon</cite></blockquote>
+        <p>And we have seen the heart of God in the person of Jesus Christ&mdash;in His teachings, His miracles, and ultimately in His sacrifice on the cross for guilty, broken people.</p>
+        <p>Let me share something I only learned after Julian died. He was in New York with friends, walking past a church, when he suddenly wanted to go inside. He knelt down, prayed, and wept over his sin, asking God for forgiveness. A couple of months later, he was gone.</p>
+        <p>I had no idea this had happened until his friend Oscar shared the story with me. I had shared the gospel with Julian more times than I can count. I had seen him watch God transform my marriage. Yet, I never saw his moment of repentance. God did. Knowing that Julian was entering the final months of his life, God met him there with overwhelming grace.</p>
+        <p>I just stand back in amazement. In the thick of a trial, it can be so hard to understand what God is doing, and there are still trials in my life that don&rsquo;t make sense. But every now and then, God lets us pull back the curtain just enough to see His steady hand at work, reminding us that His grace was carrying us through the trial the entire time.</p>
+        <blockquote>&ldquo;Consider it all joy, my brothers, when you encounter various trials, knowing that the testing of your faith brings about perseverance.&rdquo;<cite>&mdash; James 1:2&ndash;3</cite></blockquote>
+        <p>Consider it all joy? Yes&mdash;because you don&rsquo;t know how God is shaping you and making you dependent on Him in the middle of it. Maybe that&rsquo;s you right now. And if it&rsquo;s not, it will be one day. So hear it again: when you cannot trace His hand, trust His heart.</p>
+
+        <h3>3. Comfort Doesn&rsquo;t Need the Right Words</h3>
+        <p>When you&rsquo;re around someone who&rsquo;s suffering an unimaginable loss, there&rsquo;s nothing you can say to make them feel better. Nothing you can do to make the pain go away. But you can be there. This is what&rsquo;s sometimes called the ministry of presence&mdash;simply hearing someone, hugging someone, sitting with someone. They don&rsquo;t need an article on why evil exists. They need someone to show them the love of Christ by being there and praying for them.</p>
+        <p>Well-meaning Christians often do the opposite. We try to say the &ldquo;right thing&rdquo; at the wrong time, and instead of comforting, we alienate. Instead of reaching for the right formula, sit in the uncomfortable silence. Let them talk. Let them cry. Be present.</p>
+        <blockquote>Wisdom isn&rsquo;t simply relaying truth. It&rsquo;s saying the right thing at the right time.</blockquote>
+        <p>The way you graciously bring people to Jesus in the middle of grief is not by handing them clich&eacute;s like &ldquo;all things work together for good.&rdquo; You pray for them. You remind them in your prayer that God is, in fact, with us in this dark time. The first night I was in California, the family asked me to pray over the group. And in that prayer I talked about how we don&rsquo;t know why certain things happen, but we know how much God loves us as His creatures&mdash;how Jesus, when He came to the tomb of His dear friend Lazarus, wept. And how He calls all people to cast their burdens on Him.</p>
+
+        <div class="conclusion">
+          <p>Suffering does not disqualify your faith. The men and women of Scripture wrestled with God in their darkest moments, and He met them there&mdash;not with rebuke, but with presence. Elijah, Moses, Job, and the writer of Psalm 88 give us permission to be honest about the weight we carry. Their honesty is not weakness; it is worship.</p>
+          <p>And in the middle of that honesty, we hold onto a quieter truth: God is working even when we cannot see it. We may not be able to trace His hand through the wreckage, but we can trust His heart, because we have already seen His heart on the cross. The story is not over when we cannot make sense of it&mdash;sometimes God lets us pull back the curtain and discover that what felt meaningless was never meaningless at all.</p>
+          <p>And when it&rsquo;s your turn to walk alongside someone in their grief, remember that comfort doesn&rsquo;t need the right words. It needs presence. It needs prayer. It needs someone willing to sit in the silence and point&mdash;gently, patiently&mdash;to the One who wept at the tomb of His friend. That is how we love the hurting. That is how we graciously bring people to Jesus.</p>
+          <p>So if today finds you in the dark, hear this one more time: it&rsquo;s okay to ask why. God is working when you don&rsquo;t understand. And when you cannot trace His hand, trust His heart.</p>
+        </div>
+        <div class="article-attribution">
+          <p>Adapted from a sermon by Andrew Ramirez, &ldquo;Three Lessons from Suffering&rdquo;</p>
+          <span class="institution">Alpha Omega Campus Ministry</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="articles-cta">
+  <div class="container reveal">
+    <h2>Continue Reading</h2>
+    <p>Explore more articles on evangelism, discipleship, and theology.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="articles.html" class="btn-yt">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2"><polygon points="5,3 19,12 5,21" fill="currentColor" stroke="none"/></svg>
+        Back to Articles
+      </a>
+      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" class="btn-ig">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+          <div style="font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;line-height:1.1">Gospel<span style="color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600">Advance</span></div>
+          <div style="width:1px;height:34px;background:rgba(28,28,28,.2)"></div>
+          <span style="font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap">Andrew Ramirez</span>
+        </div>
+        <p class="footer-tagline">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Gospel Advance</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="sermons.html">Watch</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="index.html#gospel">The Gospel</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Devotionals</a></li>
+          <li><a href="#">Evangelism</a></li>
+          <li><a href="#">Topical</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank">YouTube</a></li>
+          <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Faithfully Proclaiming the Word of God &mdash; Jesus for Every Generation.</div>
+  </div>
+</footer>
+
+<script>
+// Reveal
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Mobile menu
+const menuToggle=document.getElementById('menuToggle');
+const mobileNav=document.getElementById('mobileNav');
+const mobileClose=document.getElementById('mobileClose');
+menuToggle.addEventListener('click',()=>{mobileNav.classList.add('open');menuToggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
+function closeMobile(){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+mobileClose.addEventListener('click',closeMobile);
+mobileNav.addEventListener('click',e=>{if(e.target.matches('a'))closeMobile()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileNav.classList.contains('open'))closeMobile()});
+</script>
+</body>
+</html>
