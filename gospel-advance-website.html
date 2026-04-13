@@ -51,6 +51,21 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit
 .nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
 .nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
 .nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.nav-pill .has-dropdown{position:relative}
+.nav-pill .dropdown-toggle{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.nav-pill .dropdown-toggle::after{content:"▾";font-size:.55rem;opacity:.6;transition:transform .25s ease}
+.nav-pill .has-dropdown:hover .dropdown-toggle::after,
+.nav-pill .has-dropdown:focus-within .dropdown-toggle::after{transform:rotate(180deg)}
+.nav-pill .dropdown-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:200px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:6px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s ease;z-index:100}
+.nav-pill .has-dropdown:hover .dropdown-menu,
+.nav-pill .has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-pill .dropdown-menu::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
+.nav-pill .dropdown-menu a{display:block;padding:10px 14px;font-size:.82rem;font-weight:500;color:var(--text-body);border-radius:8px;background:transparent;text-align:left}
+.nav-pill .dropdown-menu a:hover{background:var(--cream);color:var(--charcoal)}
+.nav-pill .dropdown-menu a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.mobile-nav .mobile-group-label{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-top:.5rem}
+.mobile-nav .mobile-sub{font-size:1.15rem !important;color:var(--warm-gray) !important;font-family:var(--serif) !important}
+
 
 .nav-right{display:flex;align-items:center;gap:12px}
 .nav-search{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--charcoal);transition:background .3s ease}
@@ -305,7 +320,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       <a href="#" class="active">Home</a>
       <a href="#about">About</a>
       <a href="sermons.html">Watch</a>
-      <a href="articles.html">Articles</a>
+      <div class="has-dropdown">
+        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault()">Resources</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="articles.html"  role="menuitem">Articles</a>
+          <a href="preachers-guide.html"  role="menuitem">The Preacher's Guide</a>
+        </div>
+      </div>
       <a href="#gospel">The Gospel</a>
       <a href="#contact">Contact</a>
       <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
@@ -328,7 +349,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   <a href="#">Home</a>
   <a href="#about">About</a>
   <a href="sermons.html">Watch</a>
-  <a href="articles.html">Articles</a>
+  <div class="mobile-group-label">Resources</div>
+  <a href="articles.html" class="mobile-sub">Articles</a>
+  <a href="preachers-guide.html" class="mobile-sub">The Preacher&#39;s Guide</a>
   <a href="#gospel">The Gospel</a>
   <a href="#contact">Contact</a>
   <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
@@ -641,6 +664,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
           <li><a href="#about">About</a></li>
           <li><a href="sermons.html">Watch</a></li>
           <li><a href="articles.html">Articles</a></li>
+          <li><a href="preachers-guide.html">The Preacher&rsquo;s Guide</a></li>
           <li><a href="#gospel">The Gospel</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a></li>

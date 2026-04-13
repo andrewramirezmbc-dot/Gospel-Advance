@@ -4,689 +4,741 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Preacher's Preparation Guide | Gospel Advance</title>
-<meta name="description" content="A step-by-step workbook for first-time preachers — turning a biblical passage into a faithful, well-crafted sermon.">
-
+<meta name="description" content="A step-by-step workbook for first-time preachers — turning a biblical passage into a faithful, well-crafted sermon. By Andrew Ramirez.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --charcoal:#1C1C1C; --cream:#F5F0E8; --bronze:#B8965A; --light-gold:#D4C4A0;
-  --sage:#E4E8E0; --warm-gray:#8A8478; --white:#FFFFFF; --text-body:#4A4A4A;
-  --border:rgba(28,28,28,.08); --radius:12px;
+  --charcoal:#1C1C1C;--cream:#F5F0E8;--bronze:#B8965A;--light-gold:#D4C4A0;
+  --sage:#E4E8E0;--warm-gray:#8A8478;--slate:#4A5B6A;--deep-slate:#2A3640;
+  --white:#FFFFFF;--text-body:#4A4A4A;--border:rgba(28,28,28,.08);
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --radius:12px;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--text-body);background:var(--white);line-height:1.75;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--white);overflow-x:hidden;line-height:1.6}
 img{max-width:100%;display:block}
-a{color:var(--bronze);text-decoration:none;transition:opacity .2s}
-a:hover{opacity:.7}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:inherit}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;transition:all .3s}
-.nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.04);padding:.85rem 2rem}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--charcoal);letter-spacing:-.01em}
-.logo span{color:var(--bronze);font-weight:400}
-.nav-links{display:flex;gap:.5rem;list-style:none}
-.nav-links a{display:block;padding:.55rem 1.1rem;font-size:.875rem;font-weight:500;color:var(--charcoal);border-radius:999px;transition:all .2s}
-.nav-links a:hover{background:var(--cream);opacity:1}
-.nav-links a.active{background:var(--charcoal);color:var(--white)}
-.hamburger{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--charcoal)}
-.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);z-index:99;padding:5rem 2rem 2rem}
-.mobile-nav.open{display:block}
-.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:1rem}
-.mobile-nav a{display:block;padding:1rem;font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);border-bottom:1px solid var(--border)}
-
-.page-header{padding:10rem 2rem 5rem;background:var(--cream);text-align:center;border-bottom:1px solid var(--border)}
-.page-header .label{display:inline-block;font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem}
-.page-header h1{font-family:var(--serif);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--charcoal);line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.02em}
-.page-header h1 em{font-style:italic;color:var(--bronze);font-weight:400}
-.page-header .subtitle{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--warm-gray);max-width:640px;margin:0 auto;line-height:1.5}
-
-.intro{max-width:780px;margin:0 auto;padding:5rem 2rem 3rem}
-.intro p{font-size:1.15rem;margin-bottom:1.5rem;color:var(--text-body)}
-.divider{width:60px;height:2px;background:var(--bronze);margin:3rem auto}
-
-.download-cta{max-width:780px;margin:0 auto 4rem;padding:2.5rem;background:var(--cream);border-radius:var(--radius);border-left:4px solid var(--bronze);text-align:center}
-.download-cta .label{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:.75rem}
-.download-cta h3{font-family:var(--serif);font-size:1.75rem;color:var(--charcoal);margin-bottom:.75rem}
-.download-cta p{margin-bottom:1.5rem;color:var(--text-body)}
-
-.btn{display:inline-block;padding:.9rem 2rem;background:var(--charcoal);color:var(--white);font-family:var(--sans);font-size:.9rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;transition:all .2s}
-.btn:hover{background:var(--bronze);opacity:1}
-.btn-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
-.btn-secondary{background:transparent;color:var(--charcoal);border:2px solid var(--charcoal);padding:calc(.9rem - 2px) calc(2rem - 2px)}
-.btn-secondary:hover{background:var(--charcoal);color:var(--white)}
-.btn-secondary-dark{background:transparent;color:var(--white);border:2px solid var(--white);padding:calc(.9rem - 2px) calc(2rem - 2px)}
-.btn-secondary-dark:hover{background:var(--white);color:var(--charcoal);border-color:var(--white)}
-.btn-note{font-size:.85rem !important;color:var(--warm-gray) !important;margin-bottom:0 !important;font-style:italic}
-
-.toc{max-width:880px;margin:3rem auto 4rem;padding:2.5rem;background:var(--cream);border-radius:var(--radius)}
-.toc .label{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:.75rem}
-.toc h3{font-family:var(--serif);font-size:1.75rem;color:var(--charcoal);margin-bottom:1.5rem}
-.toc-section{margin-bottom:1.75rem}
-.toc-section:last-child{margin-bottom:0}
-.toc-section h4{font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem}
-.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.5rem 2rem}
-.toc ol li{counter-increment:toc;padding:.5rem 0;border-bottom:1px solid rgba(28,28,28,.08);font-size:.95rem}
-.toc ol li::before{content:counter(toc,upper-roman) ".  ";font-family:var(--serif);font-style:italic;color:var(--bronze);font-weight:700}
-.toc ol li a{color:var(--charcoal)}
-.toc-extras{list-style:none}
-.toc-extras li{padding:.5rem 0;font-size:.95rem;color:var(--charcoal);border-bottom:1px solid rgba(28,28,28,.08)}
-.toc-extras li:last-child{border-bottom:none}
-.toc-extras a{color:var(--charcoal)}
-
-.section{max-width:760px;margin:0 auto;padding:4rem 2rem;border-top:1px solid var(--border)}
-.section:first-of-type{border-top:none}
-.section-number{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--bronze);letter-spacing:.05em;margin-bottom:.5rem}
-.section h2{font-family:var(--serif);font-size:clamp(1.85rem,3.5vw,2.6rem);font-weight:700;color:var(--charcoal);margin-bottom:1.75rem;line-height:1.2;letter-spacing:-.01em}
-.section p{font-size:1.05rem;margin-bottom:1.25rem}
-.section p.lead{font-size:1.15rem;color:var(--charcoal)}
-.section h3{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--charcoal);text-transform:uppercase;letter-spacing:.15em;margin:2.5rem 0 .85rem}
-.section h4{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .75rem}
-.section ul{list-style:none;margin:1rem 0 1.5rem}
-.section ul li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:1.05rem}
-.section ul li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;background:var(--bronze);border-radius:50%}
-.section em{font-style:italic}
-.section strong{color:var(--charcoal);font-weight:600}
-
-.instruction{font-family:var(--serif);font-style:italic;color:var(--warm-gray);font-size:1.05rem;margin-bottom:1.25rem !important;padding-left:1rem;border-left:2px solid var(--light-gold)}
-.prompt{font-family:var(--serif);font-weight:700;font-style:italic;color:var(--charcoal);font-size:1.1rem;margin:1.5rem 0 .5rem !important}
-
-.definition{margin:2rem 0;padding:1.75rem 2rem;background:var(--cream);border-left:4px solid var(--bronze);border-radius:0 var(--radius) var(--radius) 0}
-.definition .label{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:.5rem}
-.definition .term{font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--charcoal);margin-bottom:.5rem}
-.definition .meaning{font-size:1rem;color:var(--text-body);margin:0 !important}
-
-.scripture{margin:2.5rem 0;padding:2rem 0;text-align:center;border-top:1px solid var(--light-gold);border-bottom:1px solid var(--light-gold)}
-.scripture blockquote{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--charcoal);line-height:1.5;max-width:640px;margin:0 auto 1rem}
-.scripture cite{font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;font-style:normal}
-
-.tool{margin:2.5rem 0;padding:1.75rem 0;border-top:1px solid var(--border)}
-.tool:first-of-type{border-top:none;padding-top:0;margin-top:1rem}
-.tool-number{display:inline-block;font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--bronze);letter-spacing:.2em;margin-right:.75rem}
-.tool-name{font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--charcoal);letter-spacing:.2em}
-
-.appendix{background:#FDFBF7;border-top:3px solid var(--bronze)}
-
-.related{max-width:760px;margin:4rem auto;padding:3rem 2rem}
-.related-header{text-align:center;margin-bottom:2.5rem}
-.related-header .label{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:.75rem}
-.related-header h2{font-family:var(--serif);font-size:2rem;color:var(--charcoal);font-weight:700}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.related-card{padding:2rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);transition:all .2s;display:block}
-.related-card:hover{border-color:var(--bronze);transform:translateY(-2px);opacity:1;box-shadow:0 8px 24px rgba(0,0,0,.04)}
-.related-card .kind{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;display:block}
-.related-card h3{font-family:var(--serif);font-size:1.3rem;color:var(--charcoal);margin-bottom:.5rem;font-weight:700;line-height:1.3}
-.related-card p{font-size:.95rem;color:var(--text-body);margin:0}
-
-.final-cta{margin:5rem auto 0;padding:5rem 2rem;background:var(--charcoal);text-align:center;color:var(--white)}
-.final-cta .label{font-size:.72rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem}
-.final-cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1rem;line-height:1.2}
-.final-cta p{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 2rem}
-.final-cta .btn{background:var(--bronze)}
-.final-cta .btn:hover{background:var(--white);color:var(--charcoal)}
-
-footer{background:var(--cream);padding:4rem 2rem 2rem;border-top:1px solid var(--border)}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand .logo{font-size:1.3rem;margin-bottom:1rem;display:block}
-.footer-brand p{font-size:.95rem;color:var(--text-body);max-width:320px}
-.footer-col h4{font-family:var(--sans);font-size:.75rem;font-weight:600;color:var(--charcoal);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:.6rem}
-.footer-col a{font-size:.9rem;color:var(--text-body)}
-.footer-col a:hover{color:var(--bronze)}
-.footer-bottom{max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.85rem;color:var(--warm-gray)}
-
-@media (max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:block}
-  .page-header{padding:8rem 1.5rem 4rem}
-  .intro,.section,.toc,.download-cta,.related{padding-left:1.5rem;padding-right:1.5rem}
-  .toc ol{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr;gap:2rem}
-}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw,60px);transition:all .4s ease;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);line-height:1.1}
+.logo-accent{color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600}
+.logo-divider{width:1px;height:34px;background:rgba(28,28,28,.2)}
+.logo-name{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap}
+.nav-pill{display:flex;align-items:center;gap:2px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
+.nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
+.nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-give{padding:8px 22px;background:var(--bronze);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
+.nav-give:hover{background:var(--charcoal);transform:translateY(-1px)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
+.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);transition:color .3s ease}
+.mobile-nav a:hover{color:var(--bronze)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:var(--bronze);letter-spacing:.04em;transition:color .3s ease;margin-bottom:2rem}
+.back-link:hover{color:var(--charcoal)}
+.back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ARTICLE */
+.article-page{padding:140px 0 80px}
+.article-container{max-width:720px;margin:0 auto}
+.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+.article-container h1{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1rem}
+.article-meta{font-size:.82rem;color:var(--warm-gray);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--charcoal);margin:2.5rem 0 1rem;line-height:1.3}
+.article-body h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--charcoal);margin:2rem 0 .8rem;line-height:1.3}
+.article-body p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.2rem}
+.article-body blockquote{margin:1.5rem 0;padding:1.5rem 2rem;border-left:3px solid var(--bronze);background:var(--cream);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.75;color:var(--charcoal)}
+.article-body blockquote cite{display:block;margin-top:.8rem;font-family:var(--sans);font-style:normal;font-size:.78rem;color:var(--bronze);letter-spacing:.04em}
+.article-body .conclusion{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.article-attribution{margin-top:3rem;padding:24px 28px;background:rgba(184,150,90,.06);border:1px solid rgba(184,150,90,.15);border-radius:var(--radius);text-align:center}
+.article-attribution p{font-size:.78rem;line-height:1.7;color:var(--warm-gray);margin-bottom:0;letter-spacing:.02em}
+.article-attribution .institution{font-weight:600;color:var(--charcoal);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;display:block;margin-top:6px}
+
+/* CTA */
+.articles-cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
+.articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
+.articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
+.btn-back{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
+.btn-back:hover{background:var(--bronze);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{padding:60px 0 40px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-tagline{font-size:.85rem;line-height:1.6;color:var(--text-body);margin-bottom:20px;max-width:280px}
+.footer-socials{display:flex;gap:10px}
+.footer-socials a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.08);color:var(--charcoal);transition:all .3s ease}
+.footer-socials a:hover{border-color:var(--bronze);color:var(--bronze)}
+.footer-socials svg{width:13px;height:13px;fill:currentColor}
+.footer-col h5{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.84rem;color:var(--text-body);transition:color .3s ease}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.footer-grid{grid-template-columns:1fr}blockquote{padding:1rem 1.2rem}.article-attribution{padding:18px 20px}}
+
+/* DROPDOWN NAV */
+.nav-pill .has-dropdown{position:relative}
+.nav-pill .dropdown-toggle{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.nav-pill .dropdown-toggle::after{content:"▾";font-size:.55rem;opacity:.6;transition:transform .25s ease}
+.nav-pill .has-dropdown:hover .dropdown-toggle::after,
+.nav-pill .has-dropdown:focus-within .dropdown-toggle::after{transform:rotate(180deg)}
+.nav-pill .dropdown-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:200px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:6px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s ease;z-index:100}
+.nav-pill .has-dropdown:hover .dropdown-menu,
+.nav-pill .has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-pill .dropdown-menu::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
+.nav-pill .dropdown-menu a{display:block;padding:10px 14px;font-size:.82rem;font-weight:500;color:var(--text-body);border-radius:8px;background:transparent;text-align:left}
+.nav-pill .dropdown-menu a:hover{background:var(--cream);color:var(--charcoal)}
+.nav-pill .dropdown-menu a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
+.mobile-nav .mobile-group-label{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-top:.5rem}
+.mobile-nav .mobile-sub{font-size:1.15rem !important;color:var(--warm-gray) !important;font-family:var(--serif) !important}
+
+/* GUIDE-SPECIFIC ELEMENTS */
+.guide-hero{background:var(--cream);padding:160px 0 80px;text-align:center;border-bottom:1px solid var(--border)}
+.guide-hero .tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.25rem}
+.guide-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:800;color:var(--charcoal);line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.01em}
+.guide-hero h1 em{font-style:italic;color:var(--bronze);font-weight:400}
+.guide-hero .subtitle{font-family:var(--serif);font-size:1.2rem;font-style:italic;color:var(--warm-gray);max-width:600px;margin:0 auto;line-height:1.5}
+
+.download-card{max-width:720px;margin:3rem auto;padding:2.25rem;background:var(--cream);border-radius:var(--radius);border-left:4px solid var(--bronze);text-align:center}
+.download-card.secondary{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--light-gold)}
+.download-card .label{display:block;font-size:.68rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem}
+.download-card h3{font-family:var(--serif);font-size:1.55rem;color:var(--charcoal);margin-bottom:.75rem;font-weight:700}
+.download-card p{font-size:.92rem;color:var(--text-body);margin-bottom:1.4rem;line-height:1.7}
+.btn-row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem}
+.btn-dl{display:inline-block;padding:.75rem 1.6rem;background:var(--charcoal);color:var(--white);font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:100px;transition:all .25s ease}
+.btn-dl:hover{background:var(--bronze)}
+.btn-dl.outline{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal);padding:calc(.75rem - 1.5px) calc(1.6rem - 1.5px)}
+.btn-dl.outline:hover{background:var(--charcoal);color:var(--white)}
+.btn-note{font-size:.78rem;color:var(--warm-gray);font-style:italic;margin:0 !important}
+
+.toc-box{max-width:720px;margin:3rem auto;padding:2rem 2.25rem;background:var(--cream);border-radius:var(--radius)}
+.toc-box .label{display:block;font-size:.68rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
+.toc-box h3{font-family:var(--serif);font-size:1.4rem;color:var(--charcoal);margin-bottom:1.2rem;font-weight:700}
+.toc-box h4{font-family:var(--sans);font-size:.68rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin:1.2rem 0 .6rem}
+.toc-box h4:first-child{margin-top:0}
+.toc-box ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.25rem 1.5rem;padding:0}
+.toc-box ol li{counter-increment:toc;padding:.4rem 0;border-bottom:1px solid rgba(28,28,28,.07);font-size:.88rem}
+.toc-box ol li::before{content:counter(toc,upper-roman) ".  ";font-family:var(--serif);font-style:italic;color:var(--bronze);font-weight:700;margin-right:.3rem}
+.toc-box ol li a{color:var(--charcoal)}
+.toc-box ol li a:hover{color:var(--bronze)}
+.toc-box .extras{list-style:none;padding:0}
+.toc-box .extras li{padding:.4rem 0;border-bottom:1px solid rgba(28,28,28,.07);font-size:.88rem}
+.toc-box .extras li:last-child{border-bottom:none}
+.toc-box .extras a{color:var(--charcoal)}
+.toc-box .extras a:hover{color:var(--bronze)}
+
+/* GUIDE SECTIONS (use article-body styles but with section numbering) */
+.guide-section{padding:3rem 0;border-top:1px solid var(--border)}
+.guide-section:first-of-type{border-top:none}
+.guide-section .section-label{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--bronze);letter-spacing:.04em;margin-bottom:.4rem;display:block}
+.guide-section h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;color:var(--charcoal);line-height:1.2;margin-bottom:1.4rem;letter-spacing:-.01em}
+.guide-section p{font-size:.95rem;line-height:1.85;color:var(--text-body);margin-bottom:1.15rem}
+.guide-section p.lead{font-size:1.02rem;color:var(--charcoal)}
+.guide-section h3{font-family:var(--sans);font-size:.78rem;font-weight:600;color:var(--charcoal);text-transform:uppercase;letter-spacing:.14em;margin:2.2rem 0 .75rem}
+.guide-section h4{font-family:var(--serif);font-size:1.18rem;font-weight:700;color:var(--charcoal);margin:1.8rem 0 .65rem}
+.guide-section ul{list-style:none;margin:.8rem 0 1.4rem;padding:0}
+.guide-section ul li{position:relative;padding-left:1.3rem;margin-bottom:.55rem;font-size:.95rem;line-height:1.75}
+.guide-section ul li::before{content:"";position:absolute;left:0;top:.75em;width:5px;height:5px;background:var(--bronze);border-radius:50%}
+
+.instruction{font-family:var(--serif);font-style:italic;color:var(--warm-gray);font-size:.98rem;margin:.8rem 0 1.1rem !important;padding-left:1rem;border-left:2px solid var(--light-gold)}
+.prompt{font-family:var(--serif);font-weight:700;font-style:italic;color:var(--charcoal);font-size:1.02rem;margin:1.3rem 0 .4rem !important}
+
+.definition{margin:1.8rem 0;padding:1.5rem 1.75rem;background:var(--cream);border-left:4px solid var(--bronze);border-radius:0 var(--radius) var(--radius) 0}
+.definition .def-label{display:block;font-size:.68rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.definition .term{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--charcoal);margin-bottom:.4rem;font-weight:700}
+.definition .meaning{font-size:.92rem;color:var(--text-body);margin:0 !important;line-height:1.7}
+
+.scripture-quote{margin:2rem 0;padding:1.75rem 0;text-align:center;border-top:1px solid var(--light-gold);border-bottom:1px solid var(--light-gold)}
+.scripture-quote blockquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;color:var(--charcoal);line-height:1.55;max-width:580px;margin:0 auto 1rem}
+.scripture-quote cite{font-family:var(--sans);font-size:.68rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;font-style:normal}
+
+.tool-block{margin:2rem 0;padding:1.4rem 0;border-top:1px solid var(--border)}
+.tool-block:first-of-type{border-top:none;padding-top:.5rem}
+.tool-num{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--bronze);letter-spacing:.2em;margin-right:.6rem}
+.tool-name{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--charcoal);letter-spacing:.2em}
+
+.appendix-section{background:#FDFBF7;margin-top:2rem;padding:2.5rem 0;border-top:3px solid var(--bronze);border-bottom:1px solid var(--border)}
+.appendix-section .guide-section{border-top:none;padding:0}
+
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
+.related-card{padding:1.6rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);transition:all .25s ease;display:block;text-decoration:none}
+.related-card:hover{border-color:var(--bronze);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.related-card .kind{font-size:.66rem;font-weight:600;color:var(--bronze);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;display:block}
+.related-card h4{font-family:var(--serif);font-size:1.15rem;color:var(--charcoal);margin-bottom:.35rem;font-weight:700;line-height:1.3}
+.related-card p{font-size:.86rem;color:var(--text-body);margin:0;line-height:1.6}
 </style>
 </head>
 <body>
 
-<nav class="nav" id="nav">
+<!-- NAV -->
+<nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Gospel Advance <span>| Andrew Ramirez</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="sermons.html">Watch</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="preachers-guide.html" class="active">Preacher's Guide</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-text">Gospel<span class="logo-accent">Advance</span></div>
+      <div class="logo-divider"></div>
+      <span class="logo-name">Andrew Ramirez</span>
+    </a>
+    <div class="nav-pill">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="sermons.html">Watch</a>
+      <div class="has-dropdown">
+        <a href="#" class="active dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault()">Resources</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="articles.html" role="menuitem">Articles</a>
+          <a href="preachers-guide.html" class="active" role="menuitem">The Preacher's Guide</a>
+        </div>
+      </div>
+      <a href="index.html#gospel">The Gospel</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give">YouTube</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-
 <div class="mobile-nav" id="mobileNav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="sermons.html">Watch</a></li>
-    <li><a href="articles.html">Articles</a></li>
-    <li><a href="preachers-guide.html">Preacher's Guide</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="sermons.html">Watch</a>
+  <div class="mobile-group-label">Resources</div>
+  <a href="articles.html" class="mobile-sub">Articles</a>
+  <a href="preachers-guide.html" class="mobile-sub">The Preacher&#39;s Guide</a>
+  <a href="index.html#gospel">The Gospel</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
+  <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
 </div>
 
-<header class="page-header">
-  <span class="label">A Workbook for First-Time Preachers</span>
-  <h1>The Preacher's<br><em>Preparation Guide</em></h1>
-  <p class="subtitle">A step-by-step framework for turning a biblical passage into a faithful, well-crafted sermon.</p>
-</header>
-
-<section class="intro">
-  <p>This guide is a working tool, not a textbook on preaching theory. It walks you through the same thirteen steps a faithful expository preacher takes every week — from the first quiet moment with an open Bible to the final prayer before walking to the pulpit.</p>
-  <p>It is built on the proven framework of expository preaching as taught by Haddon Robinson, Bryan Chappell, Erwin Lutzer, and others in the same tradition. Every section is designed for someone who has never preached before, but it remains useful long after your first sermon is in the rearview mirror.</p>
-  <p>You can read the guide in full below, or download it as a printable workbook to fill in as you prepare.</p>
-  <div class="divider"></div>
-</section>
-
-<div class="download-cta">
-  <span class="label">Workbook Download</span>
-  <h3>Get the Full Printable Workbook</h3>
-  <p>The complete 13-section guide with fill-in space for every step, a worked example using Matthew 5:13–16, and two appendices on advanced preaching topics.</p>
-  <div class="btn-row">
-    <a href="Preachers_Preparation_Guide.pdf" class="btn" download>Download PDF</a>
-    <a href="Preachers_Preparation_Guide.docx" class="btn btn-secondary" download>Download Word (.docx)</a>
-  </div>
-  <p class="btn-note">The PDF opens on any device. The Word version is editable if you want to fill it in digitally.</p>
-</div>
-
-<aside class="toc">
-  <span class="label">Contents</span>
-  <h3>What's Inside</h3>
-  <div class="toc-section">
-    <h4>The Thirteen Steps</h4>
-    <ol>
-      <li><a href="#section-1">Prayer for Illumination</a></li>
-      <li><a href="#section-2">Familiarization with the Text</a></li>
-      <li><a href="#section-3">Initial Observations</a></li>
-      <li><a href="#section-4">Context</a></li>
-      <li><a href="#section-5">Discovering Authorial Intent</a></li>
-      <li><a href="#section-6">The Exegetical Idea</a></li>
-      <li><a href="#section-7">The Homiletical Idea</a></li>
-      <li><a href="#section-8">Application Focus</a></li>
-      <li><a href="#section-9">Outline the Message</a></li>
-      <li><a href="#section-10">Flesh Out the Outline</a></li>
-      <li><a href="#section-11">The Introduction</a></li>
-      <li><a href="#section-12">The Conclusion</a></li>
-      <li><a href="#section-13">From Workbook to Pulpit</a></li>
-    </ol>
-  </div>
-  <div class="toc-section">
-    <h4>Appendices</h4>
-    <ul class="toc-extras">
-      <li><a href="#appendix-a">Appendix A — Cross-References &amp; Biblical Illustrations</a></li>
-      <li><a href="#appendix-b">Appendix B — Recommended Tools &amp; Resources</a></li>
-    </ul>
-  </div>
-</aside>
-
-<section class="section reveal" id="section-1">
-  <div class="section-number">Section I</div>
-  <h2>Prayer for Illumination</h2>
-  <p class="lead">Before you read a single commentary or write a single word, pause and ask the Holy Spirit to open the text to you. The Spirit who inspired the Scriptures is the same Spirit who illumines them. No amount of study technique can substitute for a heart submitted to God in prayer.</p>
-  <p>Prayer is not the first step you check off and leave behind. It is the air you breathe through every step that follows. Return to it often.</p>
-  <div class="scripture">
-    <blockquote>"But when He, the Spirit of truth, comes, He will guide you into all the truth; for He will not speak from Himself, but whatever He hears, He will speak; and He will disclose to you what is to come."</blockquote>
-    <cite>— John 16:13</cite>
+<!-- GUIDE HERO -->
+<section class="guide-hero">
+  <div class="container">
+    <span class="tag">A Workbook for First-Time Preachers</span>
+    <h1>The Preacher&rsquo;s<br><em>Preparation Guide</em></h1>
+    <p class="subtitle">A step-by-step framework for turning a biblical passage into a faithful, well-crafted sermon.</p>
   </div>
 </section>
 
-<section class="section reveal" id="section-2">
-  <div class="section-number">Section II</div>
-  <h2>Familiarization with the Text</h2>
-  <p class="lead">Before you can preach a passage, you have to live in it. The goal of this section is simple immersion. Don't analyze yet — just read, slowly, repeatedly, and prayerfully.</p>
+<!-- INTRO + DOWNLOADS -->
+<section class="article-page" style="padding-top:60px">
+  <div class="container">
+    <div class="article-container">
+      <a href="articles.html" class="back-link reveal">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Resources
+      </a>
 
-  <h3>Step 1 — Read the passage multiple times</h3>
-  <p class="instruction">Read your passage out loud at least five times. Read it in two or three different translations if you can. Notice what stands out, what feels confusing, what stirs your affections.</p>
+      <div class="article-body">
+        <p class="lead" style="font-size:1.05rem;color:var(--charcoal);margin-bottom:1.4rem">This guide is a working tool, not a textbook on preaching theory. It walks you through the same thirteen steps a faithful expository preacher takes every week &mdash; from the first quiet moment with an open Bible to the final prayer before walking to the pulpit.</p>
+        <p>It is built on the proven framework of expository preaching as taught by Haddon Robinson, Bryan Chappell, Erwin Lutzer, and others in the same tradition. Every section is designed for someone who has never preached before, but it remains useful long after your first sermon is in the rearview mirror.</p>
+        <p>You can read the full guide below, or download it as a printable workbook to fill in as you prepare.</p>
+      </div>
 
-  <h3>Step 2 — Read the passage in the context of its book</h3>
-  <p class="instruction">If the book is short — like James, Galatians, or Ephesians — read it through in one sitting, more than once. If the book is long, read at least the surrounding chapters. Ask: where does this passage fall in the book? Beginning, middle, end? What role does it play in the overall argument or narrative? Understanding the part it plays in the whole feeds directly into your literary context work later.</p>
+      <div class="download-card">
+        <span class="label">Primary Download</span>
+        <h3>Get the Full Printable Workbook</h3>
+        <p>The complete 13-section guide with fill-in space for every step, a worked example using Matthew 5:13&ndash;16, and two appendices on advanced preaching topics.</p>
+        <div class="btn-row">
+          <a href="Preachers_Preparation_Guide.pdf" class="btn-dl" download>Download PDF</a>
+          <a href="Preachers_Preparation_Guide.docx" class="btn-dl outline" download>Download Word (.docx)</a>
+        </div>
+        <p class="btn-note">The PDF opens on any device. The Word version is editable if you want to fill it in digitally.</p>
+      </div>
 
-  <h3>Step 3 — Identify the thought unit</h3>
-  <p class="instruction">Find where the passage naturally begins and ends. Don't let chapter and verse divisions decide for you — they were added centuries after the text was written.</p>
+      <div class="download-card secondary">
+        <span class="label">Companion Tool</span>
+        <h3>Weekly Sermon Outline Template</h3>
+        <p>A clean, single-use outline template for writing a sermon each week. Verse-anchored structure with space for introduction, thesis, three main points, and conclusion.</p>
+        <div class="btn-row">
+          <a href="Sermon_Outline_Template.pdf" class="btn-dl" download>Download PDF</a>
+          <a href="Sermon_Outline_Template.docx" class="btn-dl outline" download>Download Word (.docx)</a>
+        </div>
+        <p class="btn-note">Use this template every week once you&rsquo;ve completed the full guide above.</p>
+      </div>
 
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Thought Unit</div>
-    <p class="meaning">A complete unit of meaning in the biblical text — a single argument, scene, or movement that hangs together as one. The thought unit is the natural preaching portion, regardless of where chapter or verse breaks fall.</p>
-  </div>
+      <div class="toc-box">
+        <span class="label">Contents</span>
+        <h3>What&rsquo;s Inside</h3>
+        <h4>The Thirteen Steps</h4>
+        <ol>
+          <li><a href="#section-1">Prayer for Illumination</a></li>
+          <li><a href="#section-2">Familiarization with the Text</a></li>
+          <li><a href="#section-3">Initial Observations</a></li>
+          <li><a href="#section-4">Context</a></li>
+          <li><a href="#section-5">Discovering Authorial Intent</a></li>
+          <li><a href="#section-6">The Exegetical Idea</a></li>
+          <li><a href="#section-7">The Homiletical Idea</a></li>
+          <li><a href="#section-8">Application Focus</a></li>
+          <li><a href="#section-9">Outline the Message</a></li>
+          <li><a href="#section-10">Flesh Out the Outline</a></li>
+          <li><a href="#section-11">The Introduction</a></li>
+          <li><a href="#section-12">The Conclusion</a></li>
+          <li><a href="#section-13">From Workbook to Pulpit</a></li>
+        </ol>
+        <h4>Appendices</h4>
+        <ul class="extras">
+          <li><a href="#appendix-a">Appendix A &mdash; Cross-References &amp; Biblical Illustrations</a></li>
+          <li><a href="#appendix-b">Appendix B &mdash; Recommended Tools &amp; Resources</a></li>
+        </ul>
+      </div>
+
+      <!-- GUIDE SECTIONS -->
+
+      <section class="guide-section reveal" id="section-1">
+        <span class="section-label">Section I</span>
+        <h2>Prayer for Illumination</h2>
+        <p class="lead">Before you read a single commentary or write a single word, pause and ask the Holy Spirit to open the text to you. The Spirit who inspired the Scriptures is the same Spirit who illumines them. No amount of study technique can substitute for a heart submitted to God in prayer.</p>
+        <p>Prayer is not the first step you check off and leave behind. It is the air you breathe through every step that follows. Return to it often.</p>
+        <div class="scripture-quote">
+          <blockquote>&ldquo;But when He, the Spirit of truth, comes, He will guide you into all the truth; for He will not speak from Himself, but whatever He hears, He will speak; and He will disclose to you what is to come.&rdquo;</blockquote>
+          <cite>&mdash; John 16:13</cite>
+        </div>
+      </section>
+
+      <section class="guide-section reveal" id="section-2">
+        <span class="section-label">Section II</span>
+        <h2>Familiarization with the Text</h2>
+        <p class="lead">Before you can preach a passage, you have to live in it. The goal of this section is simple immersion. Don&rsquo;t analyze yet &mdash; just read, slowly, repeatedly, and prayerfully.</p>
+
+        <h3>Step 1 &mdash; Read the passage multiple times</h3>
+        <p class="instruction">Read your passage out loud at least five times. Read it in two or three different translations if you can. Notice what stands out, what feels confusing, what stirs your affections.</p>
+
+        <h3>Step 2 &mdash; Read the passage in the context of its book</h3>
+        <p class="instruction">If the book is short &mdash; like James, Galatians, or Ephesians &mdash; read it through in one sitting, more than once. If the book is long, read at least the surrounding chapters. Ask: where does this passage fall in the book? Beginning, middle, end? What role does it play in the overall argument or narrative? Understanding the part it plays in the whole feeds directly into your literary context work later.</p>
+
+        <h3>Step 3 &mdash; Identify the thought unit</h3>
+        <p class="instruction">Find where the passage naturally begins and ends. Don&rsquo;t let chapter and verse divisions decide for you &mdash; they were added centuries after the text was written.</p>
+
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Thought Unit</div>
+          <p class="meaning">A complete unit of meaning in the biblical text &mdash; a single argument, scene, or movement that hangs together as one. The thought unit is the natural preaching portion, regardless of where chapter or verse breaks fall.</p>
+        </div>
+      </section>
+
+      <section class="guide-section reveal" id="section-3">
+        <span class="section-label">Section III</span>
+        <h2>Initial Observations</h2>
+        <p class="lead">Before you reach for a commentary, before you dive into context or word studies, stop and listen. The Holy Spirit who inspired this text has more to teach you in the silence of your own attention than you might expect. Many of your best sermon insights will come from this page.</p>
+        <p>Write down any initial observations or thoughts the Holy Spirit brings to your mind. There is no wrong answer here &mdash; this is your first honest encounter with the text. Capture everything: a command you noticed, a vivid word picture, an illustration that came to mind, words or phrases that repeat, things that surprised you, things that confused you, and every question you need answered to truly understand what this passage is saying.</p>
+        <p class="instruction">Categories to consider as you write &mdash; commands, word pictures, illustrations, repeated words, surprises, confusions, questions, connections to other Scripture, things that stirred your affections.</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-4">
+        <span class="section-label">Section IV</span>
+        <h2>Context</h2>
+        <p class="lead">A text without context is a pretext for whatever you want it to mean. Before you can faithfully interpret a passage, you must understand the world it came from &mdash; both its literary world (what kind of writing it is) and its historical world (who wrote it, to whom, and why).</p>
+
+        <h3>Step 1 &mdash; Literary Context</h3>
+        <p class="instruction">What kind of writing is this passage? The genre shapes how you read it.</p>
+        <p>Is it narrative? Poetry? Proverb? Letter? Apocalyptic? Law? Wisdom? Prophecy?</p>
+        <p class="instruction">Now consider the immediate context. Do the verses immediately before or immediately after your passage help you interpret it? Will you need to bring them in to make your text understandable to your audience?</p>
+
+        <h3>Step 2 &mdash; Historical Context</h3>
+        <p class="instruction">Answer the following three questions to locate the passage in its original setting.</p>
+        <p class="prompt">A. Where is this taking place?</p>
+        <p class="prompt">B. Who was this written to?</p>
+        <p class="prompt">C. Who is the author?</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-5">
+        <span class="section-label">Section V</span>
+        <h2>Discovering Authorial Intent</h2>
+        <p class="lead">Here is the central question of all faithful interpretation:</p>
+        <div class="scripture-quote">
+          <blockquote>What is the original author communicating to his original audience?</blockquote>
+        </div>
+
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Authorial Intent</div>
+          <p class="meaning">The meaning the human author of Scripture intended to communicate to his original audience, under the inspiration of the Holy Spirit. The preacher&rsquo;s job is to recover that meaning &mdash; not to invent a new one. Until you know what the text meant then, you cannot know what it means now.</p>
+        </div>
+
+        <h3>Identify and record</h3>
+        <p class="prompt">A. What are the key words in this passage?</p>
+        <p class="instruction">List each key word alongside its meaning in the original language. A simple study Bible, Logos, or Blue Letter Bible will get you there.</p>
+
+        <p class="prompt">B. What are the grammatical clues in this text?</p>
+        <p class="instruction">Words like &ldquo;but,&rdquo; &ldquo;and,&rdquo; &ldquo;therefore,&rdquo; and &ldquo;so that&rdquo; help you trace the author&rsquo;s argument. Circle them in your text and write down what each one signals.</p>
+
+        <p class="prompt">C. Are there any commands in the text?</p>
+        <p class="instruction">Note every imperative. Commands are not suggestions &mdash; they are part of the author&rsquo;s direct intent for his readers.</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-6">
+        <span class="section-label">Section VI</span>
+        <h2>The Exegetical Idea</h2>
+        <p class="lead">Now distill everything you&rsquo;ve learned into one clear sentence. This is the moment of synthesis &mdash; the main thrust of the text, in the author&rsquo;s own world, in his own day.</p>
+
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Exegetical Idea</div>
+          <p class="meaning">The single, central truth the biblical author was communicating to his original audience. It is stated in past-tense, third-person language because it describes what the text meant then. Every sermon should have one &mdash; and only one &mdash; exegetical idea.</p>
+        </div>
+
+        <p class="instruction">Try to summarize the main concept or theme of the passage in a single sentence. If you can&rsquo;t say it in one sentence, you don&rsquo;t yet understand it well enough.</p>
+
+        <h4>Examples</h4>
+        <p><em>Paul is communicating to his original audience that _______________.</em></p>
+        <p><em>John wants his readers to know that _______________.</em></p>
+      </section>
+
+      <section class="guide-section reveal" id="section-7">
+        <span class="section-label">Section VII</span>
+        <h2>The Homiletical Idea</h2>
+        <p class="lead">Now build the bridge from the ancient world to your hearers. The exegetical idea tells you what the text <em>meant</em>. The homiletical idea tells you what it <em>means</em> &mdash; stated in present-tense language for the people sitting in front of you.</p>
+
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Homiletical Idea</div>
+          <p class="meaning">The exegetical idea translated into a timeless, present-tense statement that speaks directly to today&rsquo;s hearer. It carries the same truth as the exegetical idea, but it is phrased to land in the heart of a modern audience without losing the author&rsquo;s original meaning.</p>
+        </div>
+
+        <p class="instruction">Translate your exegetical idea into a homiletical idea. John wants us to know that _______________.</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-8">
+        <span class="section-label">Section VIII</span>
+        <h2>Application Focus</h2>
+        <p class="lead">A sermon is not a lecture. The goal is not merely that your hearers understand the passage, but that they are changed by it. Before you build your outline, get clear on what this text is asking your people to <strong>believe</strong>, <strong>feel</strong>, and <strong>do</strong>.</p>
+        <p>Application is not something you tack on at the end. It should saturate the whole sermon.</p>
+        <p class="prompt">What does this passage call your hearers to BELIEVE?</p>
+        <p class="prompt">What does this passage call your hearers to FEEL?</p>
+        <p class="prompt">What does this passage call your hearers to DO?</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-9">
+        <span class="section-label">Section IX</span>
+        <h2>Outline the Message</h2>
+        <p class="lead">Outlining is the most critical part of taking a mountain of material and making it digestible for the people you are preaching to. To arrange your material into clear, memorable chunks, use the plural noun method.</p>
+        <p>Choose a plural noun that captures the shape of your sermon, then build your points around it.</p>
+
+        <h4>Examples</h4>
+        <ul>
+          <li><em>Tonight we will study three <strong>Truths</strong> from this passage.</em></li>
+          <li><em>What we will see in this text are four <strong>Revelations</strong>.</em></li>
+          <li><em>This passage gives us two <strong>Warnings</strong> and one <strong>Promise</strong>.</em></li>
+        </ul>
+        <p class="instruction">Watch &amp; learn: Erwin Lutzer demonstrates the plural noun method in <a href="https://www.youtube.com/watch?v=6bXXt5MSgj0&amp;t=466s" target="_blank" rel="noopener" style="color:var(--bronze)">this sermon</a> &mdash; a helpful model for seeing the technique at work.</p>
+      </section>
+
+      <section class="guide-section reveal" id="section-10">
+        <span class="section-label">Section X</span>
+        <h2>Flesh Out the Outline</h2>
+        <p class="instruction">Adapted from Haddon Robinson, <em>Biblical Preaching</em> (Baker Academic, 3rd ed., 2014).</p>
+        <p class="lead">Your outline is a skeleton. By itself, it cannot move or breathe or persuade anyone of anything. Robinson puts it bluntly: an outline on its own is the body <em>&ldquo;Exhibit C, Victim of Starvation.&rdquo;</em> What gives a sermon flesh is supporting material &mdash; the explanations, stories, facts, and quotations that hang on the bones of your points and bring them to life.</p>
+        <p>This section gives you six tools for developing each point. Think of them as a palette. For every point you preach, ask which of these six tools that point needs. Most points will need two or three. Few points need all six.</p>
+
+        <div class="tool-block">
+          <div><span class="tool-num">01</span><span class="tool-name">RESTATEMENT</span></div>
+          <p>Restatement is saying the same thing in different words. It is not the same as repetition, which says the same thing in the same words. A reader who gets lost can flip back a page; a listener cannot. When you restate a point two or three different ways, you give your hearers a second and third chance to catch it.</p>
+          <div class="definition">
+            <span class="def-label">Definition</span>
+            <div class="term">Restatement vs. Repetition</div>
+            <p class="meaning">Repetition says the same thing in the same words. Restatement says the same thing in different words. Repetition reinforces; restatement clarifies. Skilled preachers use both.</p>
+          </div>
+        </div>
+
+        <div class="tool-block">
+          <div><span class="tool-num">02</span><span class="tool-name">DEFINITION &amp; EXPLANATION</span></div>
+          <p>A definition sets the limits of a term &mdash; what it includes and excludes. An explanation goes further, showing how an idea relates to other ideas or what it implies in practice. Both serve the same end: making sure your hearers know exactly what you mean.</p>
+          <p>Most people in your pews live in a different intellectual world from yours. You owe them a clear explanation of every term that matters &mdash; especially theological terms. Better to define too many words than too few.</p>
+          <div class="scripture-quote">
+            <blockquote>&ldquo;A mist in the pulpit can easily become a fog in the pew.&rdquo;</blockquote>
+          </div>
+        </div>
+
+        <div class="tool-block">
+          <div><span class="tool-num">03</span><span class="tool-name">FACTUAL INFORMATION</span></div>
+          <p>Facts are observations, examples, statistics, and other data that can be verified apart from you. Facts earn respect for the speaker because hearers can check them. But be careful: much that parades as fact is opinion in disguise. Don&rsquo;t say &ldquo;as a matter of fact&rdquo; when you mean &ldquo;in my opinion.&rdquo;</p>
+          <p>When you use statistics, keep them simple. Round numbers usually serve better than precise ones. Whenever possible, translate raw data into something your hearers can picture.</p>
+        </div>
+
+        <div class="tool-block">
+          <div><span class="tool-num">04</span><span class="tool-name">QUOTATIONS</span></div>
+          <p>There are two reasons to quote someone else: impressiveness and authority. Use a quotation when someone has said the thing better than you ever could, or when their credibility on the subject is greater than yours.</p>
+          <p>Use quotes sparingly &mdash; a sermon should not sound like a term paper. Keep them brief; long quotations lose your audience. And introduce them with a touch of freshness.</p>
+          <p class="instruction">A special case: when the quotation you reach for is another verse of Scripture, you are using a cross-reference &mdash; see <a href="#appendix-a" style="color:var(--bronze)">Appendix A</a>.</p>
+        </div>
+
+        <div class="tool-block">
+          <div><span class="tool-num">05</span><span class="tool-name">NARRATION</span></div>
+          <p>Every passage of Scripture has people in it. Pull aside any doctrine and you will find personalities. Narration brings these people and events to life. Use vivid verbs and concrete nouns. Use dialogue &mdash; the Gospels are full of it.</p>
+          <div class="definition">
+            <span class="def-label">Definition</span>
+            <div class="term">Narration</div>
+            <p class="meaning">Bringing the people and events of a biblical text to life through vivid description, dialogue, and imagination &mdash; always staying tied to what the text actually says.</p>
+          </div>
+        </div>
+
+        <div class="tool-block">
+          <div><span class="tool-num">06</span><span class="tool-name">ILLUSTRATIONS</span></div>
+          <p>An illustration is a window that lets light into the room of your point. Stories, analogies, and examples take an abstract truth and make it visible, memorable, and felt.</p>
+          <p>But illustrations come with a non-negotiable rule. Robinson states it as a transitive verb: an illustration must illustrate something. There is no such thing as a good illustration in the abstract &mdash; only a good illustration of a particular truth.</p>
+          <div class="scripture-quote">
+            <blockquote>&ldquo;Illustrations should illustrate.&rdquo;</blockquote>
+            <cite>&mdash; Haddon Robinson</cite>
+          </div>
+          <p class="instruction">A special case: when your illustration is itself a person, place, or event from the Bible, see <a href="#appendix-a" style="color:var(--bronze)">Appendix A</a> for how to use biblical illustrations well.</p>
+        </div>
+      </section>
+
+      <section class="guide-section reveal" id="section-11">
+        <span class="section-label">Section XI</span>
+        <h2>The Introduction</h2>
+        <p class="lead">Make it interesting. Arouse curiosity. The first sixty seconds of your sermon will determine whether your hearers lean in or check out.</p>
+        <p>A good introduction does two things: it earns attention, and it answers the unspoken question on every listener&rsquo;s mind &mdash; <em>why should I care about this?</em></p>
+
+        <h4>Ideas for opening your sermon</h4>
+        <ul>
+          <li>A notable quotation</li>
+          <li>A stanza from a hymn</li>
+          <li>Historical background</li>
+          <li>A poem</li>
+          <li>A pertinent contemporary situation &mdash; news, recent events, cultural moment</li>
+          <li>A personal experience or shared experience</li>
+          <li>The story of a historical person</li>
+        </ul>
+      </section>
+
+      <section class="guide-section reveal" id="section-12">
+        <span class="section-label">Section XII</span>
+        <h2>The Conclusion</h2>
+        <p class="lead">A sermon does not end &mdash; it lands. The conclusion is where you bring your hearers home with the truth firmly in their hands.</p>
+        <p>Your conclusion should do three things, in this order:</p>
+        <ul>
+          <li><strong>Summarize the lesson</strong> &mdash; briefly remind your hearers of the points you walked through.</li>
+          <li><strong>Provide the main application</strong> &mdash; call them clearly to believe, feel, or do something specific.</li>
+          <li><strong>Restate the big idea</strong> &mdash; leave them with the homiletical idea ringing in their ears.</li>
+        </ul>
+      </section>
+
+      <section class="guide-section reveal" id="section-13">
+        <span class="section-label">Section XIII</span>
+        <h2>From Workbook to Pulpit</h2>
+        <p class="lead">You have done the work. But this workbook is not what you will preach from. A workbook is for preparation. The pulpit requires a different kind of document &mdash; one built for your eyes scanning quickly while you speak.</p>
+
+        <h4>01 &mdash; Choose: Manuscript or Notes</h4>
+        <p>For your first sermon, write a full manuscript &mdash; every word, exactly as you plan to say it. Then condense it into preaching notes: a one-page outline with key phrases, transitions, and the first sentence of each illustration. Bring both to the pulpit.</p>
+
+        <h4>02 &mdash; Format for the Eye</h4>
+        <p>Your preaching notes should be designed for fast scanning, not for reading. Use at least 14pt font, bold every transition, use generous white space, color-code Scripture references, and number every page.</p>
+
+        <h4>03 &mdash; Time It Aloud</h4>
+        <p>Reading silently is two to three times faster than preaching aloud. The only way to know how long your sermon actually is, is to preach it out loud with a timer running. Do this at least twice before Sunday. If it runs long, cut content &mdash; do not preach faster.</p>
+
+        <h4>04 &mdash; Pray Over the Sermon</h4>
+        <p>This guide opened with prayer for illumination as you approached the text. It closes with prayer for power as you approach the pulpit. The same Spirit who opened the Word to you in the study must open the hearts of your hearers in the room.</p>
+
+        <div class="scripture-quote">
+          <blockquote>&ldquo;And my message and my preaching were not in persuasive words of wisdom, but in demonstration of the Spirit and of power, so that your faith would not rest on the wisdom of men, but on the power of God.&rdquo;</blockquote>
+          <cite>&mdash; 1 Corinthians 2:4&ndash;5</cite>
+        </div>
+      </section>
+
+    </div><!-- /.article-container -->
+  </div><!-- /.container -->
 </section>
 
-<section class="section reveal" id="section-3">
-  <div class="section-number">Section III</div>
-  <h2>Initial Observations</h2>
-  <p class="lead">Before you reach for a commentary, before you dive into context or word studies, stop and listen. The Holy Spirit who inspired this text has more to teach you in the silence of your own attention than you might expect. Many of your best sermon insights will come from this page.</p>
-  <p>Write down any initial observations or thoughts the Holy Spirit brings to your mind. There is no wrong answer here — this is your first honest encounter with the text. Capture everything: a command you noticed, a vivid word picture, an illustration that came to mind, words or phrases that repeat, things that surprised you, things that confused you, and every question you need answered to truly understand what this passage is saying.</p>
-  <p class="instruction">Categories to consider as you write — commands, word pictures, illustrations, repeated words, surprises, confusions, questions, connections to other Scripture, things that stirred your affections.</p>
-</section>
+<!-- APPENDICES -->
+<section class="appendix-section">
+  <div class="container">
+    <div class="article-container">
 
-<section class="section reveal" id="section-4">
-  <div class="section-number">Section IV</div>
-  <h2>Context</h2>
-  <p class="lead">A text without context is a pretext for whatever you want it to mean. Before you can faithfully interpret a passage, you must understand the world it came from — both its literary world (what kind of writing it is) and its historical world (who wrote it, to whom, and why).</p>
+      <section class="guide-section" id="appendix-a">
+        <span class="section-label">Appendix A</span>
+        <h2>Cross-References &amp; Biblical Illustrations</h2>
+        <p class="lead">Two of the tools introduced in Section X &mdash; Quotations and Illustrations &mdash; take a special form when the source you reach for is the Bible itself. A quotation from another verse of Scripture is called a cross-reference. An illustration drawn from a biblical person, place, or event is called a biblical illustration.</p>
 
-  <h3>Step 1 — Literary Context</h3>
-  <p class="instruction">What kind of writing is this passage? The genre shapes how you read it.</p>
-  <p>Is it narrative? Poetry? Proverb? Letter? Apocalyptic? Law? Wisdom? Prophecy?</p>
-  <p class="instruction">Now consider the immediate context. Do the verses immediately before or immediately after your passage help you interpret it? Will you need to bring them in to make your text understandable to your audience?</p>
+        <h3>Part 1 &mdash; Using Cross-References</h3>
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Cross-Reference</div>
+          <p class="meaning">A second passage of Scripture brought into a sermon to support, clarify, or deepen the point being made from the primary text. The Bible interprets the Bible &mdash; and a well-chosen cross-reference shows your hearers that the truth you are preaching is not isolated to one verse but woven throughout the whole canon.</p>
+        </div>
+        <p>A cross-reference functions like a quotation, but with greater authority &mdash; because the voice you are quoting is God&rsquo;s. The verse you reference must mean what you are claiming it means in its own context, or you are weaponizing Scripture against itself.</p>
 
-  <h3>Step 2 — Historical Context</h3>
-  <p class="instruction">Answer the following three questions to locate the passage in its original setting.</p>
-  <p class="prompt">A. Where is this taking place?</p>
-  <p class="prompt">B. Who was this written to?</p>
-  <p class="prompt">C. Who is the author?</p>
-</section>
+        <h4>Three rules for cross-references</h4>
+        <ul>
+          <li>Confirm the verse means in its own context what you are claiming it means in your sermon.</li>
+          <li>Choose verses that genuinely deepen the point &mdash; not verses that just contain similar-sounding words.</li>
+          <li>Use cross-references sparingly. Three well-chosen references will preach better than ten thrown at the wall.</li>
+        </ul>
 
-<section class="section reveal" id="section-5">
-  <div class="section-number">Section V</div>
-  <h2>Discovering Authorial Intent</h2>
-  <p class="lead">Here is the central question of all faithful interpretation:</p>
-  <div class="scripture">
-    <blockquote>What is the original author communicating to his original audience?</blockquote>
-  </div>
+        <h3>Part 2 &mdash; Using Biblical Illustrations</h3>
+        <div class="definition">
+          <span class="def-label">Definition</span>
+          <div class="term">Biblical Illustration</div>
+          <p class="meaning">Using a person, place, or event from the Bible to function as an illustration for the point being made from your primary text. Biblical illustrations carry the weight of inspired Scripture, but they require the preacher to bring the audience along.</p>
+        </div>
+        <p>Biblical illustrations can be the most powerful tool in your kit, because they show the same truth playing out in real human lives recorded by the Holy Spirit. But there is a catch. Robinson warns that biblical illustrations often fail because they illustrate the unknown with the unknown &mdash; most modern listeners do not know the Bible well enough to recognize the story without help.</p>
+        <p>The cure is to bring your audience with you. Briefly set the scene before you make the connection to your point.</p>
 
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Authorial Intent</div>
-    <p class="meaning">The meaning the human author of Scripture intended to communicate to his original audience, under the inspiration of the Holy Spirit. The preacher's job is to recover that meaning — not to invent a new one. Until you know what the text meant then, you cannot know what it means now.</p>
-  </div>
+        <h4>Three rules for biblical illustrations</h4>
+        <ul>
+          <li>Briefly set the scene before making the application. Assume your hearers do not know the story.</li>
+          <li>Make sure the illustration genuinely illustrates your point &mdash; don&rsquo;t force a connection that isn&rsquo;t there.</li>
+          <li>Use the story&rsquo;s own emotional weight. Biblical narratives are dramatic for a reason.</li>
+        </ul>
+      </section>
 
-  <h3>Identify and record</h3>
-  <p class="prompt">A. What are the key words in this passage?</p>
-  <p class="instruction">List each key word alongside its meaning in the original language. A simple study Bible, Logos, or Blue Letter Bible will get you there.</p>
+      <section class="guide-section" id="appendix-b">
+        <span class="section-label">Appendix B</span>
+        <h2>Recommended Tools &amp; Resources</h2>
+        <p class="lead">Every tool listed here is one a working preacher would reach for &mdash; and most of them are free. Start with the free tools. Add paid tools only when you outgrow what the free ones can do.</p>
 
-  <p class="prompt">B. What are the grammatical clues in this text?</p>
-  <p class="instruction">Words like "but," "and," "therefore," and "so that" help you trace the author's argument. Circle them in your text and write down what each one signals.</p>
+        <h4>01 &mdash; Reading &amp; Comparing Translations</h4>
+        <ul>
+          <li><strong><a href="https://www.biblegateway.com" target="_blank" rel="noopener" style="color:var(--bronze)">Bible Gateway</a></strong> &mdash; Free. Displays two or three translations in parallel columns.</li>
+          <li><strong><a href="https://www.bible.com" target="_blank" rel="noopener" style="color:var(--bronze)">YouVersion</a></strong> &mdash; Free. Best mobile reading experience.</li>
+          <li><strong><a href="https://www.stepbible.org" target="_blank" rel="noopener" style="color:var(--bronze)">STEP Bible</a></strong> &mdash; Free. Translation comparison plus original-language tools.</li>
+        </ul>
 
-  <p class="prompt">C. Are there any commands in the text?</p>
-  <p class="instruction">Note every imperative. Commands are not suggestions — they are part of the author's direct intent for his readers.</p>
-</section>
+        <h4>02 &mdash; Word Studies &amp; Original Languages</h4>
+        <ul>
+          <li><strong><a href="https://www.blueletterbible.org" target="_blank" rel="noopener" style="color:var(--bronze)">Blue Letter Bible</a></strong> &mdash; Free. The standard word-study tool. Start here.</li>
+          <li><strong><a href="https://netbible.org" target="_blank" rel="noopener" style="color:var(--bronze)">NET Bible</a></strong> &mdash; Free. Over 60,000 translator notes.</li>
+          <li><strong><a href="https://www.logos.com" target="_blank" rel="noopener" style="color:var(--bronze)">Logos Bible Software</a></strong> &mdash; Paid (free starter tier). The serious upgrade once you&rsquo;re preaching weekly.</li>
+        </ul>
 
-<section class="section reveal" id="section-6">
-  <div class="section-number">Section VI</div>
-  <h2>The Exegetical Idea</h2>
-  <p class="lead">Now distill everything you've learned into one clear sentence. This is the moment of synthesis — the main thrust of the text, in the author's own world, in his own day.</p>
+        <h4>03 &mdash; Commentaries</h4>
+        <ul>
+          <li><strong>ESV Study Bible</strong> (Crossway) &mdash; The single best starter resource.</li>
+          <li><strong>The Bible Knowledge Commentary</strong> (Walvoord &amp; Zuck) &mdash; Two volumes, faithful and accessible.</li>
+          <li><strong>Carson&rsquo;s NT Commentary Survey</strong> / <strong>Longman&rsquo;s OT Commentary Survey</strong> &mdash; Guides for choosing commentaries.</li>
+        </ul>
 
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Exegetical Idea</div>
-    <p class="meaning">The single, central truth the biblical author was communicating to his original audience. It is stated in past-tense, third-person language because it describes what the text meant then. Every sermon should have one — and only one — exegetical idea.</p>
-  </div>
+        <h4>04 &mdash; Sermons Worth Listening To</h4>
+        <p>You learn to preach by listening to good preachers. Listen analytically &mdash; for how they introduce, transition, illustrate, and land their points.</p>
+        <ul>
+          <li><strong><a href="https://youtu.be/-a8dLqwTHG0?si=1vSwLoEfe69c_0Nc" target="_blank" rel="noopener" style="color:var(--bronze)">Andrew Ramirez</a></strong> &mdash; Passionate, exegetical, follows this exact sermon process.</li>
+          <li><strong><a href="https://www.gty.org" target="_blank" rel="noopener" style="color:var(--bronze)">John MacArthur</a></strong> &mdash; Decades of verse-by-verse expository preaching.</li>
+          <li><strong><a href="https://www.desiringgod.org" target="_blank" rel="noopener" style="color:var(--bronze)">John Piper</a></strong> &mdash; Passionate, exegetically careful.</li>
+          <li><strong><a href="https://www.mljtrust.org" target="_blank" rel="noopener" style="color:var(--bronze)">Martyn Lloyd-Jones</a></strong> &mdash; The standard for serious expository preaching.</li>
+          <li><strong><a href="https://www.truthforlife.org" target="_blank" rel="noopener" style="color:var(--bronze)">Alistair Begg</a></strong> &mdash; Clear, warm, accessible.</li>
+        </ul>
 
-  <p class="instruction">Try to summarize the main concept or theme of the passage in a single sentence. If you can't say it in one sentence, you don't yet understand it well enough.</p>
+        <div class="scripture-quote">
+          <blockquote>Tools sharpen the workman, but they do not replace the work. Spend more time in the text than in the tools.</blockquote>
+        </div>
+      </section>
 
-  <h4>Examples</h4>
-  <p><em>Paul is communicating to his original audience that _______________.</em></p>
-  <p><em>John wants his readers to know that _______________.</em></p>
-</section>
-
-<section class="section reveal" id="section-7">
-  <div class="section-number">Section VII</div>
-  <h2>The Homiletical Idea</h2>
-  <p class="lead">Now build the bridge from the ancient world to your hearers. The exegetical idea tells you what the text <em>meant</em>. The homiletical idea tells you what it <em>means</em> — stated in present-tense language for the people sitting in front of you.</p>
-
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Homiletical Idea</div>
-    <p class="meaning">The exegetical idea translated into a timeless, present-tense statement that speaks directly to today's hearer. It carries the same truth as the exegetical idea, but it is phrased to land in the heart of a modern audience without losing the author's original meaning.</p>
-  </div>
-
-  <p class="instruction">Translate your exegetical idea into a homiletical idea. John wants us to know that _______________.</p>
-</section>
-
-<section class="section reveal" id="section-8">
-  <div class="section-number">Section VIII</div>
-  <h2>Application Focus</h2>
-  <p class="lead">A sermon is not a lecture. The goal is not merely that your hearers understand the passage, but that they are changed by it. Before you build your outline, get clear on what this text is asking your people to <strong>believe</strong>, <strong>feel</strong>, and <strong>do</strong>.</p>
-  <p>Application is not something you tack on at the end. It should saturate the whole sermon.</p>
-
-  <p class="prompt">What does this passage call your hearers to BELIEVE?</p>
-  <p class="prompt">What does this passage call your hearers to FEEL?</p>
-  <p class="prompt">What does this passage call your hearers to DO?</p>
-</section>
-
-<section class="section reveal" id="section-9">
-  <div class="section-number">Section IX</div>
-  <h2>Outline the Message</h2>
-  <p class="lead">Outlining is the most critical part of taking a mountain of material and making it digestible for the people you are preaching to. To arrange your material into clear, memorable chunks, use the plural noun method.</p>
-  <p>Choose a plural noun that captures the shape of your sermon, then build your points around it.</p>
-
-  <h4>Examples</h4>
-  <ul>
-    <li><em>Tonight we will study three <strong>Truths</strong> from this passage.</em></li>
-    <li><em>What we will see in this text are four <strong>Revelations</strong>.</em></li>
-    <li><em>This passage gives us two <strong>Warnings</strong> and one <strong>Promise</strong>.</em></li>
-  </ul>
-  <p class="instruction">Watch &amp; learn: Erwin Lutzer demonstrates the plural noun method in <a href="https://www.youtube.com/watch?v=6bXXt5MSgj0&amp;t=466s" target="_blank" rel="noopener">this sermon</a> — a helpful model for seeing the technique at work.</p>
-</section>
-
-<section class="section reveal" id="section-10">
-  <div class="section-number">Section X</div>
-  <h2>Flesh Out the Outline</h2>
-  <p class="instruction">Adapted from Haddon Robinson, <em>Biblical Preaching</em> (Baker Academic, 3rd ed., 2014).</p>
-  <p class="lead">Your outline is a skeleton. By itself, it cannot move or breathe or persuade anyone of anything. Robinson puts it bluntly: an outline on its own is the body <em>"Exhibit C, Victim of Starvation."</em> What gives a sermon flesh is supporting material — the explanations, stories, facts, and quotations that hang on the bones of your points and bring them to life.</p>
-  <p>This section gives you six tools for developing each point in your outline. Think of them as a palette. For every point you preach, ask which of these six tools that point needs. Most points will need two or three. Few points need all six.</p>
-
-  <div class="tool">
-    <div><span class="tool-number">01</span><span class="tool-name">RESTATEMENT</span></div>
-    <p>Restatement is saying the same thing in different words. It is not the same as repetition, which says the same thing in the same words. A reader who gets lost can flip back a page; a listener cannot. When you restate a point two or three different ways, you give your hearers a second and third chance to catch it.</p>
-    <p>Restatement also impresses the idea on the listener's mind. Advertisers spend millions doing exactly this. You should too — but with eternal truth instead of toothpaste.</p>
-    <div class="definition">
-      <span class="label">Definition</span>
-      <div class="term">Restatement vs. Repetition</div>
-      <p class="meaning">Repetition says the same thing in the same words. Restatement says the same thing in different words. Repetition reinforces; restatement clarifies. Skilled preachers use both.</p>
     </div>
   </div>
-
-  <div class="tool">
-    <div><span class="tool-number">02</span><span class="tool-name">DEFINITION &amp; EXPLANATION</span></div>
-    <p>A definition sets the limits of a term — what it includes and excludes. An explanation goes further, showing how an idea relates to other ideas or what it implies in practice. Both serve the same end: making sure your hearers know exactly what you mean.</p>
-    <p>Most people in your pews live in a different intellectual world from yours. They support you financially so that you can study what they cannot. You owe them a clear explanation of every term that matters — especially theological terms. Better to define too many words than too few.</p>
-    <div class="scripture">
-      <blockquote>"A mist in the pulpit can easily become a fog in the pew."</blockquote>
-    </div>
-  </div>
-
-  <div class="tool">
-    <div><span class="tool-number">03</span><span class="tool-name">FACTUAL INFORMATION</span></div>
-    <p>Facts are observations, examples, statistics, and other data that can be verified apart from you. Facts earn respect for the speaker because hearers can check them. But be careful: much that parades as fact is opinion in disguise. Don't say "as a matter of fact" when you mean "in my opinion."</p>
-    <p>When you use statistics, keep them simple. Round numbers usually serve better than precise ones. And whenever possible, translate raw data into something your hearers can picture: <em>"That temple was longer than a football field, with columns taller than a five-story building."</em></p>
-  </div>
-
-  <div class="tool">
-    <div><span class="tool-number">04</span><span class="tool-name">QUOTATIONS</span></div>
-    <p>There are two reasons to quote someone else: impressiveness and authority. Use a quotation when someone has said the thing better than you ever could, or when their credibility on the subject is greater than yours.</p>
-    <p>A few rules. Use quotes sparingly — a sermon should not sound like a term paper. Keep them brief; long quotations lose your audience. And introduce them with a touch of freshness: not just "Spurgeon said," but "When Spurgeon faced this same question, he wrote…"</p>
-    <p class="instruction">A special case: when the quotation you reach for is another verse of Scripture, you are using a cross-reference — a powerful tool with its own rules. See <a href="#appendix-a">Appendix A</a> for a full treatment.</p>
-    <div class="definition">
-      <span class="label">Definition</span>
-      <div class="term">Choosing Authorities Wisely</div>
-      <p class="meaning">Before quoting an expert, ask: Are they qualified to speak on this subject? Is their testimony firsthand? Are they prejudiced? Will my audience recognize and respect them? An obscure name needs a one-line introduction so your hearers know why to listen.</p>
-    </div>
-  </div>
-
-  <div class="tool">
-    <div><span class="tool-number">05</span><span class="tool-name">NARRATION</span></div>
-    <p>Every passage of Scripture has people in it. Sometimes they stand out in the open — laughing, cursing, praying, plotting. Sometimes they hide and you have to look for them. But there is always someone writing and someone reading. Pull aside any doctrine and you will find personalities.</p>
-    <p>Narration brings these people and events to life. Use vivid verbs and concrete nouns. Use dialogue — the Gospels are full of it. When only one character is present, soliloquy can work, but use it sparingly: speaking in another person's voice is harder to deliver than it looks, and a first sermon is rarely the place to attempt it.</p>
-    <div class="definition">
-      <span class="label">Definition</span>
-      <div class="term">Narration</div>
-      <p class="meaning">Bringing the people and events of a biblical text to life through vivid description, dialogue, and imagination — always staying tied to what the text actually says. Imagination is half-brother to interpretation: both work from the text, never against it.</p>
-    </div>
-  </div>
-
-  <div class="tool">
-    <div><span class="tool-number">06</span><span class="tool-name">ILLUSTRATIONS</span></div>
-    <p>An illustration is a window that lets light into the room of your point. Stories, analogies, and examples take an abstract truth and make it visible, memorable, and felt. Well-chosen illustrations can restate, explain, prove, and apply your ideas all at once — which is why they are the most powerful tool in this section.</p>
-    <p>But illustrations come with a non-negotiable rule. Robinson states it as a transitive verb: an illustration must illustrate something. There is no such thing as a good illustration in the abstract — only a good illustration of a particular truth. A story told for its own sake may entertain your hearers, but it gets in the way of your sermon.</p>
-    <div class="scripture">
-      <blockquote>"Illustrations should illustrate."</blockquote>
-      <cite>— Haddon Robinson</cite>
-    </div>
-    <p>The best illustrations come from experiences your hearers have actually lived. A story about something you and they have both been through will always land harder than a story about Alexander the Great. When you must use a distant example, work hard to bring it close.</p>
-    <p class="instruction">A special case: when your illustration is itself a person, place, or event from the Bible, you are using a biblical illustration — powerful, but it requires care to bring your audience along. See <a href="#appendix-a">Appendix A</a> for a full treatment.</p>
-    <div class="definition">
-      <span class="label">Definition</span>
-      <div class="term">Three Rules for Personal Illustrations</div>
-      <p class="meaning">(1) It must be true. Never claim something happened to you that did not. (2) It must be modest. You should not always be the hero. (3) It must never violate a confidence. If a story involves someone in your church, ask their permission — every time, without exception.</p>
-    </div>
-  </div>
-
-  <h3>The Worksheet</h3>
-  <p>Take each point from your outline and walk it through a two-step process. First, circle the 2 or 3 tools that point most needs — resist the temptation to circle all six. Second, draft only the tools you circled. The printable workbook includes a fill-in worksheet for each of your three points.</p>
 </section>
 
-<section class="section reveal" id="section-11">
-  <div class="section-number">Section XI</div>
-  <h2>The Introduction</h2>
-  <p class="lead">Make it interesting. Arouse curiosity. The first sixty seconds of your sermon will determine whether your hearers lean in or check out.</p>
-  <p>A good introduction does two things: it earns attention, and it answers the unspoken question on every listener's mind — <em>why should I care about this?</em></p>
-
-  <h4>Ideas for opening your sermon</h4>
-  <ul>
-    <li>A notable quotation</li>
-    <li>A stanza from a hymn</li>
-    <li>Historical background</li>
-    <li>A poem</li>
-    <li>A pertinent contemporary situation — news, recent events, cultural moment</li>
-    <li>A personal experience or shared experience</li>
-    <li>The story of a historical person</li>
-  </ul>
-
-  <p class="instruction">Why should your people care about this passage? How will it change their life? Try to communicate the value to them in your introduction: "If you listen to this sermon, you will get _______ out of it."</p>
-</section>
-
-<section class="section reveal" id="section-12">
-  <div class="section-number">Section XII</div>
-  <h2>The Conclusion</h2>
-  <p class="lead">A sermon does not end — it lands. The conclusion is where you bring your hearers home with the truth firmly in their hands.</p>
-  <p>Your conclusion should do three things, in this order:</p>
-  <ul>
-    <li><strong>Summarize the lesson</strong> — briefly remind your hearers of the points you walked through.</li>
-    <li><strong>Provide the main application</strong> — call them clearly to believe, feel, or do something specific.</li>
-    <li><strong>Restate the big idea</strong> — leave them with the homiletical idea ringing in their ears.</li>
-  </ul>
-</section>
-
-<section class="section reveal" id="section-13">
-  <div class="section-number">Section XIII</div>
-  <h2>From Workbook to Pulpit</h2>
-  <p class="lead">You have done the work. The text has been studied, the ideas distilled, the outline built and fleshed out, the introduction and conclusion drafted. But this workbook is not what you will preach from. A workbook is for preparation. The pulpit requires a different kind of document — one built for your eyes scanning quickly while you speak.</p>
-
-  <h4>01 — Choose: Manuscript or Notes</h4>
-  <p>For your first sermon, write a full manuscript — every word, exactly as you plan to say it. This forces you to think through your phrasing in advance and protects you from rambling. Then, after your manuscript is finished, condense it into preaching notes: a one-page outline with key phrases, transitions, and the first sentence of each illustration. Bring both to the pulpit. Preach from the notes; keep the manuscript nearby as a safety net.</p>
-
-  <h4>02 — Format for the Eye</h4>
-  <p>Your preaching notes should be designed for fast scanning, not for reading. The goal is that a single glance tells you where you are.</p>
-  <ul>
-    <li>Use a font size of at least 14pt — 18pt is better.</li>
-    <li>Bold every transition. Transitions are the moments you are most likely to lose your place.</li>
-    <li>Use generous white space between points.</li>
-    <li>Print Scripture references in a different color so your eye finds them instantly.</li>
-    <li>Mark your illustrations with a symbol or color in the margin.</li>
-    <li>Number every page and never staple them.</li>
-  </ul>
-
-  <h4>03 — Time It Aloud</h4>
-  <p>A sermon that reads like 25 minutes on the page will preach like 40 minutes from the pulpit. Reading silently is two to three times faster than preaching aloud. The only way to know how long your sermon actually is, is to preach it out loud, all the way through, with a timer running.</p>
-  <p>Do this at least twice before Sunday. If it runs long, cut content — do not preach faster. Preachers who speed up to fit the clock lose their hearers in the first three minutes.</p>
-
-  <h4>04 — Pray Over the Sermon</h4>
-  <p>This guide opened with prayer for illumination as you approached the text. It closes with prayer for power as you approach the pulpit. The same Spirit who opened the Word to you in the study must open the hearts of your hearers in the room. No amount of preparation, formatting, or rehearsal can substitute for this.</p>
-
-  <div class="scripture">
-    <blockquote>"And my message and my preaching were not in persuasive words of wisdom, but in demonstration of the Spirit and of power, so that your faith would not rest on the wisdom of men, but on the power of God."</blockquote>
-    <cite>— 1 Corinthians 2:4–5</cite>
-  </div>
-</section>
-
-<section class="section appendix reveal" id="appendix-a">
-  <div class="section-number">Appendix A</div>
-  <h2>Cross-References &amp; Biblical Illustrations</h2>
-  <p class="lead">Two of the tools introduced in Section X — Quotations and Illustrations — take a special form when the source you reach for is the Bible itself. A quotation from another verse of Scripture is called a cross-reference. An illustration drawn from a biblical person, place, or event is called a biblical illustration. Both are powerful. Both can be misused.</p>
-
-  <h3>Part 1 — Using Cross-References</h3>
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Cross-Reference</div>
-    <p class="meaning">A second passage of Scripture brought into a sermon to support, clarify, or deepen the point being made from the primary text. The Bible interprets the Bible — and a well-chosen cross-reference shows your hearers that the truth you are preaching is not isolated to one verse but woven throughout the whole canon.</p>
-  </div>
-
-  <p>A cross-reference functions like a quotation, but with greater authority — because the voice you are quoting is God's. That authority is also what makes the misuse of cross-references so dangerous. The verse you reference must mean what you are claiming it means in its own context, or you are not strengthening your point with Scripture; you are weaponizing Scripture against itself.</p>
-
-  <h4>Three rules for cross-references</h4>
-  <ul>
-    <li>Confirm the verse means in its own context what you are claiming it means in your sermon.</li>
-    <li>Choose verses that genuinely deepen the point — not verses that just contain similar-sounding words.</li>
-    <li>Use cross-references sparingly. Three well-chosen references will preach better than ten thrown at the wall.</li>
-  </ul>
-
-  <h3>Part 2 — Using Biblical Illustrations</h3>
-  <div class="definition">
-    <span class="label">Definition</span>
-    <div class="term">Biblical Illustration</div>
-    <p class="meaning">Using a person, place, or event from the Bible to function as an illustration for the point being made from your primary text. Biblical illustrations carry the weight of inspired Scripture, but they require the preacher to bring the audience along — most modern hearers no longer share the biblical literacy that earlier generations could assume.</p>
-  </div>
-
-  <p>Biblical illustrations can be the most powerful tool in your kit, because they show the same truth playing out in real human lives recorded by the Holy Spirit. But there is a catch. Robinson warns that biblical illustrations often fail because they illustrate the unknown with the unknown — most modern listeners do not know the Bible well enough to recognize the story you are referencing without help.</p>
-  <p>The cure is not to abandon biblical illustrations. The cure is to bring your audience with you. When you reach for a biblical illustration, briefly set the scene before you make the connection to your point. Otherwise the story will land in confusion instead of clarity.</p>
-
-  <h4>Three rules for biblical illustrations</h4>
-  <ul>
-    <li>Briefly set the scene before making the application. Assume your hearers do not know the story.</li>
-    <li>Make sure the illustration genuinely illustrates your point — don't force a connection that isn't there.</li>
-    <li>Use the story's own emotional weight. Biblical narratives are dramatic for a reason — let them be.</li>
-  </ul>
-
-  <div class="scripture">
-    <blockquote>The Bible is the most powerful supporting material in your sermon — but only when you handle it with the same care you handle the primary text.</blockquote>
-  </div>
-</section>
-
-<section class="section appendix reveal" id="appendix-b">
-  <div class="section-number">Appendix B</div>
-  <h2>Recommended Tools &amp; Resources</h2>
-  <p class="lead">The workbook tells you to read in multiple translations, do word studies, check the original languages, and consult commentaries. This appendix tells you what to actually use. Every tool listed here is one a working preacher would reach for — and most of them are free.</p>
-  <p>Start with the free tools. They will carry you through your first year of preaching with room to spare. Add paid tools only when you outgrow what the free ones can do.</p>
-
-  <h4>01 — Reading &amp; Comparing Translations</h4>
-  <ul>
-    <li><strong><a href="https://www.biblegateway.com" target="_blank" rel="noopener">Bible Gateway</a></strong> — Free. Displays two or three translations in parallel columns.</li>
-    <li><strong><a href="https://www.bible.com" target="_blank" rel="noopener">YouVersion</a></strong> — Free. Best mobile reading experience; audio Bible built in.</li>
-    <li><strong><a href="https://www.stepbible.org" target="_blank" rel="noopener">STEP Bible</a></strong> — Free. Translation comparison plus original-language tools in one interface.</li>
-  </ul>
-
-  <h4>02 — Word Studies &amp; Original Languages</h4>
-  <ul>
-    <li><strong><a href="https://www.blueletterbible.org" target="_blank" rel="noopener">Blue Letter Bible</a></strong> — Free. The standard word-study tool. Start here.</li>
-    <li><strong><a href="https://netbible.org" target="_blank" rel="noopener">NET Bible</a></strong> — Free. Over 60,000 translator notes on grammar and word choice.</li>
-    <li><strong><a href="https://www.logos.com" target="_blank" rel="noopener">Logos Bible Software</a></strong> — Paid (free starter tier). The serious upgrade once you're preaching weekly.</li>
-  </ul>
-
-  <h4>03 — Commentaries</h4>
-  <ul>
-    <li><strong>ESV Study Bible</strong> (Crossway) — The single best starter resource.</li>
-    <li><strong>The Bible Knowledge Commentary</strong> (Walvoord &amp; Zuck) — Two volumes, faithful and accessible.</li>
-    <li><strong>Carson's NT Commentary Survey</strong> / <strong>Longman's OT Commentary Survey</strong> — Guides for choosing book-specific commentaries.</li>
-    <li><strong><a href="https://www.studylight.org" target="_blank" rel="noopener">StudyLight</a></strong> — Free. Hosts public-domain commentaries.</li>
-  </ul>
-
-  <h4>04 — Sermons Worth Listening To</h4>
-  <p>You learn to preach by listening to good preachers. Listen analytically — for how they introduce, transition, illustrate, and land their points.</p>
-  <ul>
-    <li><strong><a href="https://youtu.be/-a8dLqwTHG0?si=1vSwLoEfe69c_0Nc" target="_blank" rel="noopener">Andrew Ramirez</a></strong> — Passionate, exegetical, follows this exact sermon process.</li>
-    <li><strong><a href="https://www.gty.org" target="_blank" rel="noopener">John MacArthur</a></strong> — Decades of verse-by-verse expository preaching.</li>
-    <li><strong><a href="https://www.desiringgod.org" target="_blank" rel="noopener">John Piper</a></strong> — Passionate, exegetically careful.</li>
-    <li><strong><a href="https://www.mljtrust.org" target="_blank" rel="noopener">Martyn Lloyd-Jones</a></strong> — The standard for serious expository preaching.</li>
-    <li><strong><a href="https://www.truthforlife.org" target="_blank" rel="noopener">Alistair Begg</a></strong> — Clear, warm, accessible.</li>
-  </ul>
-
-  <div class="scripture">
-    <blockquote>Tools sharpen the workman, but they do not replace the work. Spend more time in the text than in the tools.</blockquote>
-  </div>
-</section>
-
-<section class="related">
-  <div class="related-header">
-    <span class="label">Continue</span>
+<!-- CTA -->
+<section class="articles-cta">
+  <div class="container reveal">
     <h2>Related Resources</h2>
-  </div>
-  <div class="related-grid">
-    <a href="articles.html#seven-components" class="related-card">
-      <span class="kind">Article</span>
-      <h3>The Seven Key Components of the Gospel Message</h3>
-      <p>A companion to Sections V–VII: the core content every preacher must faithfully communicate from the pulpit.</p>
-    </a>
-    <a href="sermons.html" class="related-card">
-      <span class="kind">Watch</span>
-      <h3>Sermon Archive</h3>
-      <p>Listen to expository preaching through the Gospel of John and other books as a model for your own work.</p>
-    </a>
-  </div>
-</section>
-
-<section class="final-cta">
-  <span class="label">Ready to Preach</span>
-  <h2>Download the Full Workbook</h2>
-  <p>The complete guide includes fill-in space for every step, a worked example using Matthew 5:13–16, and appendices on cross-references, biblical illustrations, and recommended tools.</p>
-  <div class="btn-row">
-    <a href="Preachers_Preparation_Guide.pdf" class="btn" download>Download PDF</a>
-    <a href="Preachers_Preparation_Guide.docx" class="btn btn-secondary-dark" download>Download Word (.docx)</a>
+    <p style="margin-bottom:2rem">Continue learning with companion content on the Gospel Advance site.</p>
+    <div class="related-grid" style="text-align:left">
+      <a href="articles.html#seven-components" class="related-card">
+        <span class="kind">Article</span>
+        <h4>The Seven Key Components of the Gospel Message</h4>
+        <p>A companion to Sections V&ndash;VII: the core content every preacher must faithfully communicate from the pulpit.</p>
+      </a>
+      <a href="sermons.html" class="related-card">
+        <span class="kind">Watch</span>
+        <h4>Sermon Archive</h4>
+        <p>Listen to expository preaching as a model for your own work.</p>
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="logo">Gospel Advance <span style="color:var(--bronze);font-weight:400">| Andrew Ramirez</span></span>
-      <p>Equipping and encouraging you to shine the light of the Gospel to advance the kingdom of God in an ever-darkening world.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+          <div style="font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;line-height:1.1">Gospel<span style="color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600">Advance</span></div>
+          <div style="width:1px;height:34px;background:rgba(28,28,28,.2)"></div>
+          <span style="font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap">Andrew Ramirez</span>
+        </div>
+        <p class="footer-tagline">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Gospel Advance</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="sermons.html">Watch</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="preachers-guide.html">The Preacher&rsquo;s Guide</a></li>
+          <li><a href="index.html#gospel">The Gospel</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Devotionals</a></li>
+          <li><a href="#">Evangelism</a></li>
+          <li><a href="#">Topical</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank">YouTube</a></li>
+          <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sermons.html">Watch</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="preachers-guide.html">Preacher's Guide</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="index.html#gospel">The Gospel</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank" rel="noopener">Instagram</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Gospel Advance. All rights reserved.
+    <div class="footer-bottom">Faithfully Proclaiming the Word of God &mdash; Jesus for Every Generation.</div>
   </div>
 </footer>
 
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
-
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-document.getElementById('year').textContent = new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const menuToggle=document.getElementById('menuToggle');
+const mobileNav=document.getElementById('mobileNav');
+const mobileClose=document.getElementById('mobileClose');
+menuToggle.addEventListener('click',()=>{mobileNav.classList.add('open');menuToggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
+function closeMobile(){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+mobileClose.addEventListener('click',closeMobile);
+mobileNav.addEventListener('click',e=>{if(e.target.matches('a'))closeMobile()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileNav.classList.contains('open'))closeMobile()});
 </script>
-
 </body>
 </html>
