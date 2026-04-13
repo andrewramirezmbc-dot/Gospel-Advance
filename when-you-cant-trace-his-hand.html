@@ -250,19 +250,86 @@
         color: var(--charcoal);
         font-weight: 600;
       }
-      .mobile-nav .mobile-group-label {
+      .mobile-nav .mobile-resources-trigger {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        background: none;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+      .mobile-nav .mobile-resources-trigger:hover {
+        color: var(--bronze);
+      }
+      .mobile-nav .mobile-resources-trigger svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        transition: transform 0.3s ease;
+      }
+      .mobile-resources-popup {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--white);
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      .mobile-resources-popup.open {
+        display: flex;
+      }
+      .mobile-resources-popup .mobile-resources-back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
         font-family: var(--sans);
-        font-size: 0.68rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--warm-gray);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        padding: 8px;
+        transition: color 0.3s ease;
+      }
+      .mobile-resources-popup .mobile-resources-back:hover {
+        color: var(--bronze);
+      }
+      .mobile-resources-popup .mobile-resources-back svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+      .mobile-resources-popup .mobile-resources-title {
+        font-family: var(--sans);
+        font-size: 0.72rem;
         font-weight: 600;
         letter-spacing: 0.2em;
-        color: var(--bronze);
         text-transform: uppercase;
-        margin-top: 0.5rem;
+        color: var(--bronze);
       }
-      .mobile-nav .mobile-sub {
-        font-size: 1.15rem !important;
-        color: var(--warm-gray) !important;
-        font-family: var(--serif) !important;
+      .mobile-resources-popup a {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        transition: color 0.3s ease;
+      }
+      .mobile-resources-popup a:hover {
+        color: var(--bronze);
       }
       .nav-right {
         display: flex;
@@ -740,11 +807,10 @@
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="sermons.html">Watch</a>
-      <div class="mobile-group-label">Resources</div>
-      <a href="articles.html" class="mobile-sub">Articles</a>
-      <a href="preachers-guide.html" class="mobile-sub"
-        >The Preacher&#39;s Guide</a
-      >
+      <button class="mobile-resources-trigger" id="mobileResourcesOpen">
+        Resources
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
+      </button>
       <a href="index.html#gospel">The Gospel</a>
       <a href="index.html#contact">Contact</a>
       <a href="https://stirring-babka-630d70.netlify.app/" target="_blank"
@@ -757,6 +823,17 @@
         style="margin-top: 8px"
         >YouTube</a
       >
+    </div>
+
+    <!-- Mobile Resources Popup -->
+    <div class="mobile-resources-popup" id="mobileResourcesPopup">
+      <button class="mobile-resources-back" id="mobileResourcesBack">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        Back
+      </button>
+      <span class="mobile-resources-title">Resources</span>
+      <a href="articles.html">Articles</a>
+      <a href="preachers-guide.html">The Preacher&#39;s Guide</a>
     </div>
 
     <!-- ARTICLE HEADER -->
@@ -1309,6 +1386,25 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && mobileNav.classList.contains("open"))
           closeMobile();
+      });
+      const resPopup = document.getElementById("mobileResourcesPopup");
+      const resOpen = document.getElementById("mobileResourcesOpen");
+      const resBack = document.getElementById("mobileResourcesBack");
+      resOpen.addEventListener("click", () => {
+        resPopup.classList.add("open");
+      });
+      resBack.addEventListener("click", () => {
+        resPopup.classList.remove("open");
+      });
+      resPopup.addEventListener("click", (e) => {
+        if (e.target.matches("a")) {
+          resPopup.classList.remove("open");
+          closeMobile();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && resPopup.classList.contains("open"))
+          resPopup.classList.remove("open");
       });
     </script>
   </body>

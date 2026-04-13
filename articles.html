@@ -1,299 +1,1101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles | Gospel Advance — Andrew Ramirez</title>
-<meta name="description" content="Articles on evangelism, discipleship, and theology by Andrew Ramirez. Biblical truth for the next generation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --charcoal:#1C1C1C;--cream:#F5F0E8;--bronze:#B8965A;--light-gold:#D4C4A0;
-  --sage:#E4E8E0;--warm-gray:#8A8478;--slate:#4A5B6A;--deep-slate:#2A3640;
-  --white:#FFFFFF;--text-body:#4A4A4A;--border:rgba(28,28,28,.08);
-  --serif:'Playfair Display',Georgia,serif;
-  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-  --radius:12px;
-}
-html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
-body{font-family:var(--sans);color:var(--charcoal);background:var(--white);overflow-x:hidden;line-height:1.6}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button{border:none;cursor:pointer;font-family:inherit}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles | Gospel Advance — Andrew Ramirez</title>
+    <meta
+      name="description"
+      content="Articles on evangelism, discipleship, and theology by Andrew Ramirez. Biblical truth for the next generation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --charcoal: #1c1c1c;
+        --cream: #f5f0e8;
+        --bronze: #b8965a;
+        --light-gold: #d4c4a0;
+        --sage: #e4e8e0;
+        --warm-gray: #8a8478;
+        --slate: #4a5b6a;
+        --deep-slate: #2a3640;
+        --white: #ffffff;
+        --text-body: #4a4a4a;
+        --border: rgba(28, 28, 28, 0.08);
+        --serif: "Playfair Display", Georgia, serif;
+        --sans:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          sans-serif;
+        --radius: 12px;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        font-family: var(--sans);
+        color: var(--charcoal);
+        background: var(--white);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
 
-.container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 60px);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.2s;
+      }
+      .d3 {
+        transition-delay: 0.3s;
+      }
+      .d4 {
+        transition-delay: 0.4s;
+      }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px clamp(20px,5vw,60px);transition:all .4s ease;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:14px}
-.logo-text{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);line-height:1.1}
-.logo-accent{color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600}
-.logo-divider{width:1px;height:34px;background:rgba(28,28,28,.2)}
-.logo-name{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap}
-.nav-pill{display:flex;align-items:center;gap:2px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.nav-pill a{font-size:.78rem;font-weight:500;color:var(--text-body);padding:8px 16px;border-radius:100px;transition:all .25s ease}
-.nav-pill a:hover{color:var(--charcoal);background:var(--cream)}
-.nav-pill a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
-.nav-pill .has-dropdown{position:relative}
-.nav-pill .dropdown-toggle{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
-.nav-pill .dropdown-toggle::after{content:"▾";font-size:.55rem;opacity:.6;transition:transform .25s ease}
-.nav-pill .has-dropdown:hover .dropdown-toggle::after,
-.nav-pill .has-dropdown:focus-within .dropdown-toggle::after{transform:rotate(180deg)}
-.nav-pill .dropdown-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:200px;background:var(--white);border:1px solid rgba(28,28,28,.1);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:6px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s ease;z-index:100}
-.nav-pill .has-dropdown:hover .dropdown-menu,
-.nav-pill .has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav-pill .dropdown-menu::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
-.nav-pill .dropdown-menu a{display:block;padding:10px 14px;font-size:.82rem;font-weight:500;color:var(--text-body);border-radius:8px;background:transparent;text-align:left}
-.nav-pill .dropdown-menu a:hover{background:var(--cream);color:var(--charcoal)}
-.nav-pill .dropdown-menu a.active{background:var(--cream);color:var(--charcoal);font-weight:600}
-.mobile-nav .mobile-group-label{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-top:.5rem}
-.mobile-nav .mobile-sub{font-size:1.15rem !important;color:var(--warm-gray) !important;font-family:var(--serif) !important}
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 16px clamp(20px, 5vw, 60px);
+        transition: all 0.4s ease;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 1px 0 var(--border);
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo-text {
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        line-height: 1.1;
+      }
+      .logo-accent {
+        color: var(--bronze);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        display: block;
+        font-weight: 600;
+      }
+      .logo-divider {
+        width: 1px;
+        height: 34px;
+        background: rgba(28, 28, 28, 0.2);
+      }
+      .logo-name {
+        font-family: var(--sans);
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--warm-gray);
+        white-space: nowrap;
+      }
+      .nav-pill {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: var(--white);
+        border: 1px solid rgba(28, 28, 28, 0.1);
+        border-radius: 100px;
+        padding: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .nav-pill a {
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--text-body);
+        padding: 8px 16px;
+        border-radius: 100px;
+        transition: all 0.25s ease;
+      }
+      .nav-pill a:hover {
+        color: var(--charcoal);
+        background: var(--cream);
+      }
+      .nav-pill a.active {
+        background: var(--cream);
+        color: var(--charcoal);
+        font-weight: 600;
+      }
+      .nav-pill .has-dropdown {
+        position: relative;
+      }
+      .nav-pill .dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .nav-pill .dropdown-toggle::after {
+        content: "▾";
+        font-size: 0.55rem;
+        opacity: 0.6;
+        transition: transform 0.25s ease;
+      }
+      .nav-pill .has-dropdown:hover .dropdown-toggle::after,
+      .nav-pill .has-dropdown:focus-within .dropdown-toggle::after {
+        transform: rotate(180deg);
+      }
+      .nav-pill .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        min-width: 200px;
+        background: var(--white);
+        border: 1px solid rgba(28, 28, 28, 0.1);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        padding: 6px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          visibility 0.25s ease;
+        z-index: 100;
+      }
+      .nav-pill .has-dropdown:hover .dropdown-menu,
+      .nav-pill .has-dropdown:focus-within .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .nav-pill .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+      }
+      .nav-pill .dropdown-menu a {
+        display: block;
+        padding: 10px 14px;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-body);
+        border-radius: 8px;
+        background: transparent;
+        text-align: left;
+      }
+      .nav-pill .dropdown-menu a:hover {
+        background: var(--cream);
+        color: var(--charcoal);
+      }
+      .nav-pill .dropdown-menu a.active {
+        background: var(--cream);
+        color: var(--charcoal);
+        font-weight: 600;
+      }
+      .mobile-nav .mobile-resources-trigger {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        background: none;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+      .mobile-nav .mobile-resources-trigger:hover {
+        color: var(--bronze);
+      }
+      .mobile-nav .mobile-resources-trigger svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        transition: transform 0.3s ease;
+      }
+      .mobile-resources-popup {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--white);
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      .mobile-resources-popup.open {
+        display: flex;
+      }
+      .mobile-resources-popup .mobile-resources-back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
+        font-family: var(--sans);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--warm-gray);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        padding: 8px;
+        transition: color 0.3s ease;
+      }
+      .mobile-resources-popup .mobile-resources-back:hover {
+        color: var(--bronze);
+      }
+      .mobile-resources-popup .mobile-resources-back svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+      .mobile-resources-popup .mobile-resources-title {
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--bronze);
+      }
+      .mobile-resources-popup a {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        transition: color 0.3s ease;
+      }
+      .mobile-resources-popup a:hover {
+        color: var(--bronze);
+      }
 
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-give{padding:8px 22px;background:var(--bronze);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:100px;transition:all .3s ease}
-.nav-give:hover{background:var(--charcoal);transform:translateY(-1px)}
-.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
-.menu-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-give {
+        padding: 8px 22px;
+        background: var(--bronze);
+        color: var(--white);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        border-radius: 100px;
+        transition: all 0.3s ease;
+      }
+      .nav-give:hover {
+        background: var(--charcoal);
+        transform: translateY(-1px);
+      }
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        padding: 8px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--charcoal);
+        transition: all 0.3s ease;
+      }
 
-/* MOBILE NAV */
-.mobile-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s ease}
-.mobile-nav.open{opacity:1;pointer-events:all}
-.mobile-nav a{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);transition:color .3s ease}
-.mobile-nav a:hover{color:var(--bronze)}
-.mobile-close{position:absolute;top:20px;right:20px;background:none;color:var(--charcoal);font-size:1.5rem;padding:8px}
+      /* MOBILE NAV */
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--white);
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+      }
+      .mobile-nav.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .mobile-nav a {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        transition: color 0.3s ease;
+      }
+      .mobile-nav a:hover {
+        color: var(--bronze);
+      }
+      .mobile-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        color: var(--charcoal);
+        font-size: 1.5rem;
+        padding: 8px;
+      }
 
-/* PAGE HEADER */
-.page-header{padding:140px 0 60px;text-align:center}
-.page-header h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
-.page-header p{font-size:clamp(.92rem,1.1vw,1.05rem);color:var(--warm-gray);max-width:520px;margin:0 auto;line-height:1.65}
+      /* PAGE HEADER */
+      .page-header {
+        padding: 140px 0 60px;
+        text-align: center;
+      }
+      .page-header h1 {
+        font-family: var(--serif);
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        font-weight: 800;
+        color: var(--charcoal);
+        margin-bottom: 0.8rem;
+      }
+      .page-header p {
+        font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+        color: var(--warm-gray);
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.65;
+      }
 
-/* ARTICLES GRID */
-.articles-section{padding:0 0 100px}
-.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.article-card{display:block;padding:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s ease;cursor:pointer}
-.article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,28,28,.08);border-color:rgba(184,150,90,.2)}
-.article-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px}
-.article-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--charcoal);line-height:1.3;margin-bottom:10px}
-.article-card p{font-size:.86rem;line-height:1.6;color:var(--text-body);margin-bottom:16px}
-.article-card .meta{font-size:.7rem;font-weight:500;color:var(--warm-gray);letter-spacing:.02em}
-.article-card .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:600;color:var(--bronze);margin-top:4px;letter-spacing:.02em;transition:gap .3s ease}
-.article-card:hover .read-more{gap:10px}
-.read-more svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+      /* ARTICLES GRID */
+      .articles-section {
+        padding: 0 0 100px;
+      }
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      .article-card {
+        display: block;
+        padding: 32px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .article-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(28, 28, 28, 0.08);
+        border-color: rgba(184, 150, 90, 0.2);
+      }
+      .article-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bronze);
+        margin-bottom: 14px;
+      }
+      .article-card h3 {
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--charcoal);
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      .article-card p {
+        font-size: 0.86rem;
+        line-height: 1.6;
+        color: var(--text-body);
+        margin-bottom: 16px;
+      }
+      .article-card .meta {
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--warm-gray);
+        letter-spacing: 0.02em;
+      }
+      .article-card .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--bronze);
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+        transition: gap 0.3s ease;
+      }
+      .article-card:hover .read-more {
+        gap: 10px;
+      }
+      .read-more svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
 
-/* CTA */
-.articles-cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
-.articles-cta h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--charcoal);margin-bottom:.8rem}
-.articles-cta p{font-size:.92rem;color:var(--text-body);max-width:420px;margin:0 auto 1.5rem;line-height:1.6}
-.btn-yt{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--charcoal);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;transition:all .3s ease}
-.btn-yt:hover{background:#c4302b;transform:translateY(-2px)}
-.btn-ig{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--charcoal);font-size:.82rem;font-weight:600;letter-spacing:.04em;border-radius:100px;border:1px solid rgba(28,28,28,.15);transition:all .3s ease}
-.btn-ig:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
-.btn-ig svg{width:18px;height:18px;fill:currentColor}
+      /* CTA */
+      .articles-cta {
+        padding: 80px 0;
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+      .articles-cta h2 {
+        font-family: var(--serif);
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: var(--charcoal);
+        margin-bottom: 0.8rem;
+      }
+      .articles-cta p {
+        font-size: 0.92rem;
+        color: var(--text-body);
+        max-width: 420px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.6;
+      }
+      .btn-yt {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        background: var(--charcoal);
+        color: var(--white);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        border-radius: 100px;
+        transition: all 0.3s ease;
+      }
+      .btn-yt:hover {
+        background: #c4302b;
+        transform: translateY(-2px);
+      }
+      .btn-ig {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        background: transparent;
+        color: var(--charcoal);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        border-radius: 100px;
+        border: 1px solid rgba(28, 28, 28, 0.15);
+        transition: all 0.3s ease;
+      }
+      .btn-ig:hover {
+        border-color: var(--bronze);
+        color: var(--bronze);
+        transform: translateY(-2px);
+      }
+      .btn-ig svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
 
-/* FOOTER */
-footer{padding:60px 0 40px;border-top:1px solid var(--border)}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-tagline{font-size:.85rem;line-height:1.6;color:var(--text-body);margin-bottom:20px;max-width:280px}
-.footer-socials{display:flex;gap:10px}
-.footer-socials a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(28,28,28,.08);color:var(--charcoal);transition:all .3s ease}
-.footer-socials a:hover{border-color:var(--bronze);color:var(--bronze)}
-.footer-socials svg{width:13px;height:13px;fill:currentColor}
-.footer-col h5{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col a{font-size:.84rem;color:var(--text-body);transition:color .3s ease}
-.footer-col a:hover{color:var(--bronze)}
-.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);font-size:.7rem;color:var(--warm-gray);letter-spacing:.04em}
+      /* FOOTER */
+      footer {
+        padding: 60px 0 40px;
+        border-top: 1px solid var(--border);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-tagline {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: var(--text-body);
+        margin-bottom: 20px;
+        max-width: 280px;
+      }
+      .footer-socials {
+        display: flex;
+        gap: 10px;
+      }
+      .footer-socials a {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(28, 28, 28, 0.08);
+        color: var(--charcoal);
+        transition: all 0.3s ease;
+      }
+      .footer-socials a:hover {
+        border-color: var(--bronze);
+        color: var(--bronze);
+      }
+      .footer-socials svg {
+        width: 13px;
+        height: 13px;
+        fill: currentColor;
+      }
+      .footer-col h5 {
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-bottom: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col a {
+        font-size: 0.84rem;
+        color: var(--text-body);
+        transition: color 0.3s ease;
+      }
+      .footer-col a:hover {
+        color: var(--bronze);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 28px;
+        border-top: 1px solid var(--border);
+        font-size: 0.7rem;
+        color: var(--warm-gray);
+        letter-spacing: 0.04em;
+      }
 
-a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
-@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
-@media(max-width:1024px){.articles-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-pill{display:none}.menu-toggle{display:flex}.mobile-nav{display:flex}.articles-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--bronze);
+        outline-offset: 2px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      @media (max-width: 1024px) {
+        .articles-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .nav-pill {
+          display: none;
+        }
+        .menu-toggle {
+          display: flex;
+        }
+        .mobile-nav {
+          display: flex;
+        }
+        .articles-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-text">
+            Gospel<span class="logo-accent">Advance</span>
+          </div>
+          <div class="logo-divider"></div>
+          <span class="logo-name">Andrew Ramirez</span>
+        </a>
+        <div class="nav-pill">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="sermons.html">Watch</a>
+          <div class="has-dropdown">
+            <a
+              href="#"
+              class="active dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+              onclick="event.preventDefault()"
+              >Resources</a
+            >
+            <div class="dropdown-menu" role="menu">
+              <a href="articles.html" class="active" role="menuitem"
+                >Articles</a
+              >
+              <a href="preachers-guide.html" role="menuitem"
+                >The Preacher's Guide</a
+              >
+            </div>
+          </div>
+          <a href="index.html#gospel">The Gospel</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="https://stirring-babka-630d70.netlify.app/" target="_blank"
+            >Bible 101</a
+          >
+        </div>
+        <div class="nav-right">
+          <a
+            href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1"
+            target="_blank"
+            class="nav-give"
+            >YouTube</a
+          >
+        </div>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-text">Gospel<span class="logo-accent">Advance</span></div>
-      <div class="logo-divider"></div>
-      <span class="logo-name">Andrew Ramirez</span>
-    </a>
-    <div class="nav-pill">
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+        &times;
+      </button>
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="sermons.html">Watch</a>
-      <div class="has-dropdown">
-        <a href="#" class="active dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault()">Resources</a>
-        <div class="dropdown-menu" role="menu">
-          <a href="articles.html" class="active" role="menuitem">Articles</a>
-          <a href="preachers-guide.html"  role="menuitem">The Preacher's Guide</a>
-        </div>
-      </div>
+      <button class="mobile-resources-trigger" id="mobileResourcesOpen">
+        Resources
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
+      </button>
       <a href="index.html#gospel">The Gospel</a>
       <a href="index.html#contact">Contact</a>
-      <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
+      <a href="https://stirring-babka-630d70.netlify.app/" target="_blank"
+        >Bible 101</a
+      >
+      <a
+        href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1"
+        target="_blank"
+        class="nav-give"
+        style="margin-top: 8px"
+        >YouTube</a
+      >
     </div>
-    <div class="nav-right">
-      <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give">YouTube</a>
+
+    <!-- Mobile Resources Popup -->
+    <div class="mobile-resources-popup" id="mobileResourcesPopup">
+      <button class="mobile-resources-back" id="mobileResourcesBack">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        Back
+      </button>
+      <span class="mobile-resources-title">Resources</span>
+      <a href="articles.html">Articles</a>
+      <a href="preachers-guide.html">The Preacher&#39;s Guide</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
 
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
-  <a href="index.html">Home</a>
-  <a href="index.html#about">About</a>
-  <a href="sermons.html">Watch</a>
-  <div class="mobile-group-label">Resources</div>
-  <a href="articles.html" class="mobile-sub">Articles</a>
-  <a href="preachers-guide.html" class="mobile-sub">The Preacher&#39;s Guide</a>
-  <a href="index.html#gospel">The Gospel</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a>
-  <a href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1" target="_blank" class="nav-give" style="margin-top:8px;">YouTube</a>
-</div>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Articles</h1>
+        <p>
+          Biblical truth for the next generation. Evangelism, discipleship,
+          theology, and the Christian life.
+        </p>
+      </div>
+    </section>
 
-<!-- PAGE HEADER -->
-<section class="page-header">
-  <div class="container">
-    <h1>Articles</h1>
-    <p>Biblical truth for the next generation. Evangelism, discipleship, theology, and the Christian life.</p>
-  </div>
-</section>
+    <!-- ARTICLES LISTING -->
+    <section class="articles-section">
+      <div class="container">
+        <div class="articles-grid">
+          <a
+            href="when-you-cant-trace-his-hand.html"
+            class="article-card reveal"
+          >
+            <span class="article-tag">Suffering</span>
+            <h3>When You Can&rsquo;t Trace His Hand</h3>
+            <p>
+              Reflections on grief, trust, and being a light to hurting people
+              &mdash; written in the wake of losing a dear friend. Three lessons
+              on walking with God through suffering.
+            </p>
+            <div class="meta">
+              Andrew Ramirez &middot; April 2026 &middot; 11 min read
+            </div>
+            <span class="read-more"
+              >Read Article
+              <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg
+            ></span>
+          </a>
 
-<!-- ARTICLES LISTING -->
-<section class="articles-section">
-  <div class="container">
-    <div class="articles-grid">
+          <a href="seven-components.html" class="article-card reveal d1">
+            <span class="article-tag">Gospel</span>
+            <h3>The Seven Key Components of the Gospel Message</h3>
+            <p>
+              Every Gospel conversation must communicate the full, biblical
+              message of salvation. Here are the seven essential truths rooted
+              in Scripture.
+            </p>
+            <div class="meta">
+              Andrew Ramirez &middot; February 2026 &middot; 12 min read
+            </div>
+            <span class="read-more"
+              >Read Article
+              <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg
+            ></span>
+          </a>
 
-      <a href="when-you-cant-trace-his-hand.html" class="article-card reveal">
-        <span class="article-tag">Suffering</span>
-        <h3>When You Can&rsquo;t Trace His Hand</h3>
-        <p>Reflections on grief, trust, and being a light to hurting people &mdash; written in the wake of losing a dear friend. Three lessons on walking with God through suffering.</p>
-        <div class="meta">Andrew Ramirez &middot; April 2026 &middot; 11 min read</div>
-        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
-      </a>
+          <a href="discipleship.html" class="article-card reveal d2">
+            <span class="article-tag">Discipleship</span>
+            <h3>Discipleship According to Scripture</h3>
+            <p>
+              What did Jesus intend when he commanded his apostles to
+              &ldquo;make disciples&rdquo;? A biblical study of life-on-life
+              training and its application in today&rsquo;s church.
+            </p>
+            <div class="meta">
+              Andrew Ramirez &middot; May 2025 &middot; 18 min read
+            </div>
+            <span class="read-more"
+              >Read Article
+              <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg
+            ></span>
+          </a>
 
-      <a href="seven-components.html" class="article-card reveal d1">
-        <span class="article-tag">Gospel</span>
-        <h3>The Seven Key Components of the Gospel Message</h3>
-        <p>Every Gospel conversation must communicate the full, biblical message of salvation. Here are the seven essential truths rooted in Scripture.</p>
-        <div class="meta">Andrew Ramirez &middot; February 2026 &middot; 12 min read</div>
-        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
-      </a>
-
-      <a href="discipleship.html" class="article-card reveal d2">
-        <span class="article-tag">Discipleship</span>
-        <h3>Discipleship According to Scripture</h3>
-        <p>What did Jesus intend when he commanded his apostles to &ldquo;make disciples&rdquo;? A biblical study of life-on-life training and its application in today&rsquo;s church.</p>
-        <div class="meta">Andrew Ramirez &middot; May 2025 &middot; 18 min read</div>
-        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
-      </a>
-
-      <a href="problem-of-evil.html" class="article-card reveal d3">
-        <span class="article-tag">Theology</span>
-        <h3>The Problem of Evil</h3>
-        <p>If there is a loving God, then why do humans experience evil and suffering? A personal and biblical answer to one of life&rsquo;s hardest questions.</p>
-        <div class="meta">Andrew Ramirez &middot; October 2024 &middot; 14 min read</div>
-        <span class="read-more">Read Article <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="articles-cta">
-  <div class="container reveal">
-    <h2>Hear the Word preached.</h2>
-    <p>Watch sermons from the Gospel of John series and beyond.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="sermons.html" class="btn-yt">
-        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2"><polygon points="5,3 19,12 5,21" fill="currentColor" stroke="none"/></svg>
-        Watch Sermons
-      </a>
-      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" class="btn-ig">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        Follow on Instagram
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand-col">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
-          <div style="font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;line-height:1.1">Gospel<span style="color:var(--bronze);font-size:.75rem;letter-spacing:.2em;display:block;font-weight:600">Advance</span></div>
-          <div style="width:1px;height:34px;background:rgba(28,28,28,.2)"></div>
-          <span style="font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;color:var(--warm-gray);white-space:nowrap">Andrew Ramirez</span>
+          <a href="problem-of-evil.html" class="article-card reveal d3">
+            <span class="article-tag">Theology</span>
+            <h3>The Problem of Evil</h3>
+            <p>
+              If there is a loving God, then why do humans experience evil and
+              suffering? A personal and biblical answer to one of life&rsquo;s
+              hardest questions.
+            </p>
+            <div class="meta">
+              Andrew Ramirez &middot; October 2024 &middot; 14 min read
+            </div>
+            <span class="read-more"
+              >Read Article
+              <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg
+            ></span>
+          </a>
         </div>
-        <p class="footer-tagline">Faithfully proclaiming the word of God through evangelism, preaching, and discipling the next generation.</p>
-        <div class="footer-socials">
-          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://www.instagram.com/andrewpramirez/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="articles-cta">
+      <div class="container reveal">
+        <h2>Hear the Word preached.</h2>
+        <p>Watch sermons from the Gospel of John series and beyond.</p>
+        <div
+          style="
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <a href="sermons.html" class="btn-yt">
+            <svg
+              viewBox="0 0 24 24"
+              style="
+                width: 18px;
+                height: 18px;
+                fill: none;
+                stroke: currentColor;
+                stroke-width: 2;
+              "
+            >
+              <polygon
+                points="5,3 19,12 5,21"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+            Watch Sermons
+          </a>
+          <a
+            href="https://www.instagram.com/andrewpramirez/"
+            target="_blank"
+            class="btn-ig"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            Follow on Instagram
+          </a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Gospel Advance</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="sermons.html">Watch</a></li>
-          <li><a href="articles.html">Articles</a></li>
-          <li><a href="preachers-guide.html">The Preacher&rsquo;s Guide</a></li>
-          <li><a href="index.html#gospel">The Gospel</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="https://stirring-babka-630d70.netlify.app/" target="_blank">Bible 101</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Categories</h5>
-        <ul>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">Devotionals</a></li>
-          <li><a href="#">Evangelism</a></li>
-          <li><a href="#">Topical</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Connect</h5>
-        <ul>
-          <li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank">YouTube</a></li>
-          <li><a href="https://www.instagram.com/andrewpramirez/" target="_blank">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">Faithfully Proclaiming the Word of God &mdash; Jesus for Every Generation.</div>
-  </div>
-</footer>
+    </section>
 
-<script>
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const menuToggle=document.getElementById('menuToggle');
-const mobileNav=document.getElementById('mobileNav');
-const mobileClose=document.getElementById('mobileClose');
-menuToggle.addEventListener('click',()=>{mobileNav.classList.add('open');menuToggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
-function closeMobile(){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-mobileClose.addEventListener('click',closeMobile);
-mobileNav.addEventListener('click',e=>{if(e.target.matches('a'))closeMobile()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileNav.classList.contains('open'))closeMobile()});
-</script>
-</body>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin-bottom: 12px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--sans);
+                  font-weight: 700;
+                  font-size: 1rem;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  line-height: 1.1;
+                "
+              >
+                Gospel<span
+                  style="
+                    color: var(--bronze);
+                    font-size: 0.75rem;
+                    letter-spacing: 0.2em;
+                    display: block;
+                    font-weight: 600;
+                  "
+                  >Advance</span
+                >
+              </div>
+              <div
+                style="
+                  width: 1px;
+                  height: 34px;
+                  background: rgba(28, 28, 28, 0.2);
+                "
+              ></div>
+              <span
+                style="
+                  font-family: var(--sans);
+                  font-size: 0.82rem;
+                  font-weight: 500;
+                  letter-spacing: 0.08em;
+                  color: var(--warm-gray);
+                  white-space: nowrap;
+                "
+                >Andrew Ramirez</span
+              >
+            </div>
+            <p class="footer-tagline">
+              Faithfully proclaiming the word of God through evangelism,
+              preaching, and discipling the next generation.
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://www.youtube.com/@AndrewRamirez-Sermons"
+                target="_blank"
+                aria-label="YouTube"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  /></svg
+              ></a>
+              <a
+                href="https://www.instagram.com/andrewpramirez/"
+                target="_blank"
+                aria-label="Instagram"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Gospel Advance</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="sermons.html">Watch</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li>
+                <a href="preachers-guide.html">The Preacher&rsquo;s Guide</a>
+              </li>
+              <li><a href="index.html#gospel">The Gospel</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li>
+                <a
+                  href="https://stirring-babka-630d70.netlify.app/"
+                  target="_blank"
+                  >Bible 101</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Categories</h5>
+            <ul>
+              <li><a href="#">Messages</a></li>
+              <li><a href="#">Devotionals</a></li>
+              <li><a href="#">Evangelism</a></li>
+              <li><a href="#">Topical</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Connect</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.youtube.com/@AndrewRamirez-Sermons"
+                  target="_blank"
+                  >YouTube</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/andrewpramirez/"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          Faithfully Proclaiming the Word of God &mdash; Jesus for Every
+          Generation.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -30px 0px" },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      const mobileClose = document.getElementById("mobileClose");
+      menuToggle.addEventListener("click", () => {
+        mobileNav.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      });
+      function closeMobile() {
+        mobileNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      mobileClose.addEventListener("click", closeMobile);
+      mobileNav.addEventListener("click", (e) => {
+        if (e.target.matches("a")) closeMobile();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileNav.classList.contains("open"))
+          closeMobile();
+      });
+      const resPopup = document.getElementById("mobileResourcesPopup");
+      const resOpen = document.getElementById("mobileResourcesOpen");
+      const resBack = document.getElementById("mobileResourcesBack");
+      resOpen.addEventListener("click", () => {
+        resPopup.classList.add("open");
+      });
+      resBack.addEventListener("click", () => {
+        resPopup.classList.remove("open");
+      });
+      resPopup.addEventListener("click", (e) => {
+        if (e.target.matches("a")) {
+          resPopup.classList.remove("open");
+          closeMobile();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && resPopup.classList.contains("open"))
+          resPopup.classList.remove("open");
+      });
+    </script>
+  </body>
 </html>
