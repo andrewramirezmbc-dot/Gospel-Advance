@@ -10,779 +10,90 @@
       name="description"
       content="Every Gospel conversation must communicate the full, biblical message of salvation. Seven essential truths rooted in Scripture by Andrew Ramirez."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      :root {
-        --charcoal: #1c1c1c;
-        --cream: #f5f0e8;
-        --bronze: #b8965a;
-        --light-gold: #d4c4a0;
-        --sage: #e4e8e0;
-        --warm-gray: #8a8478;
-        --slate: #4a5b6a;
-        --deep-slate: #2a3640;
-        --white: #ffffff;
-        --text-body: #4a4a4a;
-        --border: rgba(28, 28, 28, 0.08);
-        --serif: "Playfair Display", Georgia, serif;
-        --sans:
-          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-          sans-serif;
-        --radius: 12px;
-      }
-      html {
-        scroll-behavior: smooth;
-        font-size: 16px;
-        -webkit-font-smoothing: antialiased;
-      }
-      body {
-        font-family: var(--sans);
-        color: var(--charcoal);
-        background: var(--white);
-        overflow-x: hidden;
-        line-height: 1.6;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      button {
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-      }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 clamp(20px, 5vw, 60px);
-      }
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .d1 {
-        transition-delay: 0.1s;
-      }
-      .d2 {
-        transition-delay: 0.2s;
-      }
-      .d3 {
-        transition-delay: 0.3s;
-      }
-      .d4 {
-        transition-delay: 0.4s;
-      }
 
-      /* NAV */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: 16px clamp(20px, 5vw, 60px);
-        transition: all 0.4s ease;
-        background: rgba(255, 255, 255, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        box-shadow: 0 1px 0 var(--border);
-      }
-      .nav-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .nav-logo {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .logo-text {
-        font-family: var(--sans);
-        font-weight: 700;
-        font-size: 1rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--charcoal);
-        line-height: 1.1;
-      }
-      .logo-accent {
-        color: var(--bronze);
-        font-size: 0.75rem;
-        letter-spacing: 0.2em;
-        display: block;
-        font-weight: 600;
-      }
-      .logo-divider {
-        width: 1px;
-        height: 34px;
-        background: rgba(28, 28, 28, 0.2);
-      }
-      .logo-name {
-        font-family: var(--sans);
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        color: var(--warm-gray);
-        white-space: nowrap;
-      }
-      .nav-pill {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        background: var(--white);
-        border: 1px solid rgba(28, 28, 28, 0.1);
-        border-radius: 100px;
-        padding: 4px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-      .nav-pill a {
-        font-size: 0.78rem;
-        font-weight: 500;
-        color: var(--text-body);
-        padding: 8px 16px;
-        border-radius: 100px;
-        transition: all 0.25s ease;
-      }
-      .nav-pill a:hover {
-        color: var(--charcoal);
-        background: var(--cream);
-      }
-      .nav-pill a.active {
-        background: var(--cream);
-        color: var(--charcoal);
-        font-weight: 600;
-      }
-      .nav-pill .has-dropdown {
-        position: relative;
-      }
-      .nav-pill .dropdown-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        cursor: pointer;
-      }
-      .nav-pill .dropdown-toggle::after {
-        content: "▾";
-        font-size: 0.55rem;
-        opacity: 0.6;
-        transition: transform 0.25s ease;
-      }
-      .nav-pill .has-dropdown:hover .dropdown-toggle::after,
-      .nav-pill .has-dropdown:focus-within .dropdown-toggle::after {
-        transform: rotate(180deg);
-      }
-      .nav-pill .dropdown-menu {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 50%;
-        transform: translateX(-50%) translateY(-6px);
-        min-width: 200px;
-        background: var(--white);
-        border: 1px solid rgba(28, 28, 28, 0.1);
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        padding: 6px;
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
-        visibility: hidden;
-        transition:
-          opacity 0.25s ease,
-          transform 0.25s ease,
-          visibility 0.25s ease;
-        z-index: 100;
-      }
-      .nav-pill .has-dropdown:hover .dropdown-menu,
-      .nav-pill .has-dropdown:focus-within .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
-      }
-      .nav-pill .dropdown-menu::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 0;
-        right: 0;
-        height: 10px;
-      }
-      .nav-pill .dropdown-menu a {
-        display: block;
-        padding: 10px 14px;
-        font-size: 0.82rem;
-        font-weight: 500;
-        color: var(--text-body);
-        border-radius: 8px;
-        background: transparent;
-        text-align: left;
-      }
-      .nav-pill .dropdown-menu a:hover {
-        background: var(--cream);
-        color: var(--charcoal);
-      }
-      .nav-pill .dropdown-menu a.active {
-        background: var(--cream);
-        color: var(--charcoal);
-        font-weight: 600;
-      }
-      .mobile-nav .mobile-resources-trigger {
-        font-family: var(--serif);
-        font-size: 1.5rem;
-        color: var(--charcoal);
-        background: none;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition: color 0.3s ease;
-        cursor: pointer;
-      }
-      .mobile-nav .mobile-resources-trigger:hover {
-        color: var(--bronze);
-      }
-      .mobile-nav .mobile-resources-trigger svg {
-        width: 14px;
-        height: 14px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2;
-        transition: transform 0.3s ease;
-      }
-      .mobile-resources-popup {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: var(--white);
-        z-index: 1000;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 24px;
-      }
-      .mobile-resources-popup.open {
-        display: flex;
-      }
-      .mobile-resources-popup .mobile-resources-back {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: none;
-        border: none;
-        font-family: var(--sans);
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: var(--warm-gray);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        padding: 8px;
-        transition: color 0.3s ease;
-      }
-      .mobile-resources-popup .mobile-resources-back:hover {
-        color: var(--bronze);
-      }
-      .mobile-resources-popup .mobile-resources-back svg {
-        width: 16px;
-        height: 16px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2;
-      }
-      .mobile-resources-popup .mobile-resources-title {
-        font-family: var(--sans);
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--bronze);
-      }
-      .mobile-resources-popup a {
-        font-family: var(--serif);
-        font-size: 1.5rem;
-        color: var(--charcoal);
-        transition: color 0.3s ease;
-      }
-      .mobile-resources-popup a:hover {
-        color: var(--bronze);
-      }
-      .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .nav-give {
-        padding: 8px 22px;
-        background: var(--bronze);
-        color: var(--white);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        border-radius: 100px;
-        transition: all 0.3s ease;
-      }
-      .nav-give:hover {
-        background: var(--charcoal);
-        transform: translateY(-1px);
-      }
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        padding: 8px;
-      }
-      .menu-toggle span {
-        display: block;
-        width: 22px;
-        height: 1.5px;
-        background: var(--charcoal);
-        transition: all 0.3s ease;
-      }
 
-      /* MOBILE NAV */
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: var(--white);
-        z-index: 999;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 24px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-      }
-      .mobile-nav.open {
-        opacity: 1;
-        pointer-events: all;
-      }
-      .mobile-nav a {
-        font-family: var(--serif);
-        font-size: 1.5rem;
-        color: var(--charcoal);
-        transition: color 0.3s ease;
-      }
-      .mobile-nav a:hover {
-        color: var(--bronze);
-      }
-      .mobile-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        color: var(--charcoal);
-        font-size: 1.5rem;
-        padding: 8px;
-      }
 
-      /* BACK LINK */
-      .back-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.78rem;
-        font-weight: 500;
-        color: var(--bronze);
-        letter-spacing: 0.04em;
-        transition: color 0.3s ease;
-        margin-bottom: 2rem;
-      }
-      .back-link:hover {
-        color: var(--charcoal);
-      }
-      .back-link svg {
-        width: 16px;
-        height: 16px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2;
-      }
-
-      /* ARTICLE */
-      .article-page {
-        padding: 140px 0 80px;
-      }
-      .article-container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      .article-tag {
-        display: inline-block;
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--bronze);
-        margin-bottom: 16px;
-      }
-      .article-container h1 {
-        font-family: var(--serif);
-        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-        font-weight: 800;
-        color: var(--charcoal);
-        line-height: 1.15;
-        margin-bottom: 1rem;
-      }
-      .article-meta {
-        font-size: 0.82rem;
-        color: var(--warm-gray);
-        margin-bottom: 2.5rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .article-body h3 {
-        font-family: var(--serif);
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--charcoal);
-        margin: 2.5rem 0 1rem;
-        line-height: 1.3;
-      }
-      .article-body h4 {
-        font-family: var(--serif);
-        font-size: 1.08rem;
-        font-weight: 700;
-        color: var(--charcoal);
-        margin: 2rem 0 0.8rem;
-        line-height: 1.3;
-      }
-      .article-body p {
-        font-size: 0.95rem;
-        line-height: 1.85;
-        color: var(--text-body);
-        margin-bottom: 1.2rem;
-      }
-      .article-body blockquote {
-        margin: 1.5rem 0;
-        padding: 1.5rem 2rem;
-        border-left: 3px solid var(--bronze);
-        background: var(--cream);
-        border-radius: 0 var(--radius) var(--radius) 0;
-        font-family: var(--serif);
-        font-size: 0.95rem;
-        font-style: italic;
-        line-height: 1.75;
-        color: var(--charcoal);
-      }
-      .article-body blockquote cite {
-        display: block;
-        margin-top: 0.8rem;
-        font-family: var(--sans);
-        font-style: normal;
-        font-size: 0.78rem;
-        color: var(--bronze);
-        letter-spacing: 0.04em;
-      }
-      .article-body .conclusion {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--border);
-      }
-      .article-attribution {
-        margin-top: 3rem;
-        padding: 24px 28px;
-        background: rgba(184, 150, 90, 0.06);
-        border: 1px solid rgba(184, 150, 90, 0.15);
-        border-radius: var(--radius);
-        text-align: center;
-      }
-      .article-attribution p {
-        font-size: 0.78rem;
-        line-height: 1.7;
-        color: var(--warm-gray);
-        margin-bottom: 0;
-        letter-spacing: 0.02em;
-      }
-      .article-attribution .institution {
-        font-weight: 600;
-        color: var(--charcoal);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        display: block;
-        margin-top: 6px;
-      }
-
-      /* CTA */
-      .articles-cta {
-        padding: 80px 0;
-        text-align: center;
-        border-top: 1px solid var(--border);
-      }
-      .articles-cta h2 {
-        font-family: var(--serif);
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        font-weight: 800;
-        color: var(--charcoal);
-        margin-bottom: 0.8rem;
-      }
-      .articles-cta p {
-        font-size: 0.92rem;
-        color: var(--text-body);
-        max-width: 420px;
-        margin: 0 auto 1.5rem;
-        line-height: 1.6;
-      }
-      .btn-back {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 28px;
-        background: var(--charcoal);
-        color: var(--white);
-        font-size: 0.82rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        border-radius: 100px;
-        transition: all 0.3s ease;
-      }
-      .btn-back:hover {
-        background: var(--bronze);
-        transform: translateY(-2px);
-      }
-
-      /* FOOTER */
-      footer {
-        padding: 60px 0 40px;
-        border-top: 1px solid var(--border);
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: 40px;
-        margin-bottom: 40px;
-      }
-      .footer-tagline {
-        font-size: 0.85rem;
-        line-height: 1.6;
-        color: var(--text-body);
-        margin-bottom: 20px;
-        max-width: 280px;
-      }
-      .footer-socials {
-        display: flex;
-        gap: 10px;
-      }
-      .footer-socials a {
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid rgba(28, 28, 28, 0.08);
-        color: var(--charcoal);
-        transition: all 0.3s ease;
-      }
-      .footer-socials a:hover {
-        border-color: var(--bronze);
-        color: var(--bronze);
-      }
-      .footer-socials svg {
-        width: 13px;
-        height: 13px;
-        fill: currentColor;
-      }
-      .footer-col h5 {
-        font-family: var(--sans);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--charcoal);
-        margin-bottom: 16px;
-      }
-      .footer-col ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .footer-col a {
-        font-size: 0.84rem;
-        color: var(--text-body);
-        transition: color 0.3s ease;
-      }
-      .footer-col a:hover {
-        color: var(--bronze);
-      }
-      .footer-bottom {
-        text-align: center;
-        padding-top: 28px;
-        border-top: 1px solid var(--border);
-        font-size: 0.7rem;
-        color: var(--warm-gray);
-        letter-spacing: 0.04em;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--bronze);
-        outline-offset: 2px;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .reveal {
-          transition: none;
-          opacity: 1;
-          transform: none;
-        }
-        html {
-          scroll-behavior: auto;
-        }
-      }
-      @media (max-width: 1024px) {
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 768px) {
-        .nav-pill {
-          display: none;
-        }
-        .menu-toggle {
-          display: flex;
-        }
-        .mobile-nav {
-          display: flex;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-        blockquote {
-          padding: 1rem 1.2rem;
-        }
-        .article-attribution {
-          padding: 18px 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav>
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <div class="logo-text">
-            Gospel<span class="logo-accent">Advance</span>
-          </div>
-          <div class="logo-divider"></div>
-          <span class="logo-name">Andrew Ramirez</span>
-        </a>
-        <div class="nav-pill">
-          <a href="index.html">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="sermons.html">Watch</a>
-          <div class="has-dropdown">
-            <a
-              href="#"
-              class="active dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-              onclick="event.preventDefault()"
-              >Resources</a
-            >
-            <div class="dropdown-menu" role="menu">
-              <a href="articles.html" class="active" role="menuitem"
-                >Articles</a
-              >
-              <a href="preachers-guide.html" role="menuitem"
-                >The Preacher's Guide</a
-              >
-            </div>
-          </div>
-          <a href="index.html#gospel">The Gospel</a>
-          <a href="index.html#contact">Contact</a>
-          <a href="https://stirring-babka-630d70.netlify.app/" target="_blank"
-            >Bible 101</a
-          >
-        </div>
-        <div class="nav-right">
-          <a
-            href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1"
-            target="_blank"
-            class="nav-give"
-            >YouTube</a
-          >
-        </div>
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          aria-controls="mobileNav"
-        >
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+      <link rel="stylesheet" href="assets/subpages.css" />
+    <script src="assets/subpages.js" defer></script>
+</head>
+  <body class="ga-subpage">
+<a class="ga-skip" href="#main">Skip to content</a>
+<header class="ga-header" id="gaHeader">
+  <div class="ga-shell ga-header-inner">
+    <div class="ga-header-socials">
+      <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><img class="ga-icon" src="assets/icons/youtube.svg" alt="" /></a>
+      <a href="https://www.instagram.com/andrewpramirez/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><img class="ga-icon" src="assets/icons/instagram.svg" alt="" /></a>
+    </div>
+    <div class="ga-header-utility"><button type="button" data-search-open>Search <img class="ga-icon" src="assets/icons/search.svg" alt="" /></button><a href="index.html#contact">Contact</a></div>
+    <nav class="ga-desktop-nav ga-nav-left" aria-label="Mission navigation">
+      <button class="ga-nav-trigger" type="button" aria-expanded="false" aria-controls="gaMissionMenu">The Mission <img class="ga-icon" src="assets/icons/chevron-down.svg" alt="" /></button>
+      <a href="index.html#conversations">Campus Conversations</a>
     </nav>
-    <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-close" id="mobileClose" aria-label="Close menu">
-        &times;
-      </button>
-      <a href="index.html">Home</a>
+    <a class="ga-brand" href="index.html" aria-label="Gospel Advance home"><span class="ga-wordmark">Gospel <span>Advance</span></span></a>
+    <nav class="ga-desktop-nav ga-nav-right" aria-label="Organization navigation">
       <a href="index.html#about">About</a>
-      <a href="sermons.html">Watch</a>
-      <button class="mobile-resources-trigger" id="mobileResourcesOpen">
-        Resources
-        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
-      </button>
-      <a href="index.html#gospel">The Gospel</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="https://stirring-babka-630d70.netlify.app/" target="_blank"
-        >Bible 101</a
-      >
-      <a
-        href="https://www.youtube.com/@AndrewRamirez-Sermons?sub_confirmation=1"
-        target="_blank"
-        class="nav-give"
-        style="margin-top: 8px"
-        >YouTube</a
-      >
+      <button class="ga-nav-trigger" type="button" aria-expanded="false" aria-controls="gaResourcesMenu">Resources <img class="ga-icon" src="assets/icons/chevron-down.svg" alt="" /></button>
+      <a class="ga-button ga-header-partner" href="index.html#partner">Partner With Us</a>
+    </nav>
+    <button class="ga-menu-toggle ga-icon-button" id="gaMenuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="gaMobileNav"><img class="ga-icon " src="assets/icons/menu.svg" alt="" width="20" height="20" aria-hidden="true" /></button>
+  </div>
+  <section class="ga-mega-panel" id="gaMissionMenu" aria-label="The Mission" hidden>
+    <div class="ga-shell ga-mega-grid">
+      <div class="ga-mega-intro"><p class="ga-eyebrow">The mission</p><h2>One conversation.<br />An eternal difference.</h2><a class="ga-text-link" href="index.html#mission">Meet the mission <img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" /></a></div>
+      <a class="ga-mega-feature" href="index.html#conversations"><img src="assets/images/campus-conversation-hero.jpg" alt="An outdoor campus conversation filmed for Gospel Advance" width="420" height="220" /><strong>On campus</strong><span>Honest questions. The hope of Jesus.</span></a>
+      <div class="ga-mega-links"><h3>Be part of the work</h3><a href="index.html#partner">Partner with the mission</a><a href="index.html#contact" data-interest="Prayer partnership">Pray with us</a><a href="index.html#contact" data-interest="Campus connection">Connect us with a campus</a><a href="index.html#gospel">The gospel we share</a></div>
     </div>
-
-    <!-- Mobile Resources Popup -->
-    <div class="mobile-resources-popup" id="mobileResourcesPopup">
-      <button class="mobile-resources-back" id="mobileResourcesBack">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
-        Back
-      </button>
-      <span class="mobile-resources-title">Resources</span>
-      <a href="articles.html">Articles</a>
-      <a href="preachers-guide.html">The Preacher&#39;s Guide</a>
+  </section>
+  <section class="ga-mega-panel" id="gaResourcesMenu" aria-label="Resources" hidden>
+    <div class="ga-shell ga-mega-grid">
+      <div class="ga-mega-intro"><p class="ga-eyebrow">Grow in the Word</p><h2>Truth for life.<br />Hope to share.</h2><a class="ga-text-link" href="articles.html">Explore articles <img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" /></a></div>
+      <div class="ga-mega-links"><h3>Watch and learn</h3><a href="sermons.html">Sermons</a><a href="index.html#conversations">Campus Conversations</a><a href="https://stirring-babka-630d70.netlify.app/" target="_blank" rel="noopener">Bible 101 <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a></div>
+      <div class="ga-mega-links"><h3>Study and prepare</h3><a href="articles.html">Articles</a><a href="preachers-guide.html">The Preacher's Guide</a><a href="Sermon_Outline_Template.pdf" target="_blank" rel="noopener">Sermon Outline Template <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a></div>
     </div>
+  </section>
+</header>
+<button class="ga-menu-backdrop" id="gaMenuBackdrop" type="button" aria-label="Close expanded navigation" tabindex="-1" hidden></button>
+<dialog class="ga-mobile-menu" id="gaMobileNav" aria-label="Navigation">
+  <div class="ga-mobile-top"><a class="ga-brand" href="index.html"><span class="ga-wordmark">Gospel <span>Advance</span></span></a><a class="ga-button ga-button-red ga-mobile-partner" href="index.html#partner">Partner</a><button class="ga-icon-button" id="gaMenuClose" aria-label="Close navigation"><img class="ga-icon" src="assets/icons/x.svg" alt="" /></button></div>
+  <div class="ga-mobile-viewport">
+    <div class="ga-mobile-root" id="gaMobileRoot">
+      <button class="ga-mobile-search" type="button" data-search-open>Search Gospel Advance <img class="ga-icon" src="assets/icons/search.svg" alt="" /></button>
+      <nav aria-label="Mobile navigation">
+        <button type="button" data-mobile-panel="gaMobileMission" aria-controls="gaMobileMission" aria-expanded="false">The Mission <img class="ga-icon" src="assets/icons/chevron-down.svg" alt="" /></button>
+        <a href="index.html#conversations">Campus Conversations</a><a href="index.html#about">About Andrew</a>
+        <button type="button" data-mobile-panel="gaMobileResources" aria-controls="gaMobileResources" aria-expanded="false">Resources <img class="ga-icon" src="assets/icons/chevron-down.svg" alt="" /></button>
+        <a href="index.html#partner">Partner With Us</a><a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="ga-mobile-bottom"><span>Follow the mission</span><a href="https://www.youtube.com/@AndrewRamirez-Sermons" aria-label="YouTube"><img class="ga-icon" src="assets/icons/youtube.svg" alt="" /></a><a href="https://www.instagram.com/andrewpramirez/" aria-label="Instagram"><img class="ga-icon" src="assets/icons/instagram.svg" alt="" /></a></div>
+    </div>
+    <section class="ga-mobile-panel" id="gaMobileMission" aria-label="Mission links" hidden>
+      <button class="ga-mobile-back" type="button" data-mobile-back><img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" />Main menu</button>
+      <h2>The Mission</h2>
+      <a class="ga-mobile-feature" href="index.html#conversations"><img src="assets/images/campus-conversation-hero.jpg" alt="An outdoor campus conversation filmed for Gospel Advance" /><strong>On campus. In conversation.</strong></a>
+      <nav aria-label="Mobile mission links"><a href="index.html#mission">Our mission</a><a href="index.html#gospel">The gospel we share</a><a href="index.html#contact" data-interest="Prayer partnership">Pray with us</a><a href="index.html#contact" data-interest="Campus connection">Connect us with a campus</a></nav>
+    </section>
+    <section class="ga-mobile-panel" id="gaMobileResources" aria-label="Resource links" hidden>
+      <button class="ga-mobile-back" type="button" data-mobile-back><img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" />Main menu</button>
+      <h2>Watch and learn</h2>
+      <nav aria-label="Mobile watch links"><a href="sermons.html">Sermons</a><a href="index.html#conversations">Campus Conversations</a><a href="https://stirring-babka-630d70.netlify.app/" target="_blank" rel="noopener">Bible 101 <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a></nav>
+      <h2>Study and prepare</h2>
+      <nav aria-label="Mobile study links"><a href="articles.html">Articles</a><a href="preachers-guide.html">The Preacher's Guide</a><a href="Sermon_Outline_Template.pdf" target="_blank" rel="noopener">Sermon Outline Template <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a></nav>
+    </section>
+  </div>
+</dialog>
+<dialog class="ga-search-dialog" id="gaSearchDialog" aria-labelledby="gaSearchTitle">
+  <div class="ga-search-top"><h2 id="gaSearchTitle">Explore Gospel Advance</h2><button type="button" class="ga-icon-button" id="gaSearchClose" aria-label="Close search"><img class="ga-icon" src="assets/icons/x.svg" alt="" /></button></div>
+  <form role="search" id="gaSearchForm"><label for="gaSearchInput">Search the site</label><div class="ga-search-input"><img class="ga-icon" src="assets/icons/search.svg" alt="" /><input id="gaSearchInput" type="search" placeholder="Mission, sermons, articles..." autocomplete="off" /></div></form>
+  <p class="ga-search-status" id="gaSearchStatus" role="status" aria-live="polite"></p><ul id="gaSearchResults" class="ga-search-results"></ul>
+</dialog>
 
     <!-- ARTICLE -->
-    <section class="article-page">
+    <main id="main">
+<section class="article-page">
       <div class="container">
         <div class="article-container">
           <a href="articles.html" class="back-link reveal">
@@ -1084,136 +395,17 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                gap: 14px;
-                margin-bottom: 12px;
-              "
-            >
-              <div
-                style="
-                  font-family: var(--sans);
-                  font-weight: 700;
-                  font-size: 1rem;
-                  letter-spacing: 0.15em;
-                  text-transform: uppercase;
-                  line-height: 1.1;
-                "
-              >
-                Gospel<span
-                  style="
-                    color: var(--bronze);
-                    font-size: 0.75rem;
-                    letter-spacing: 0.2em;
-                    display: block;
-                    font-weight: 600;
-                  "
-                  >Advance</span
-                >
-              </div>
-              <div
-                style="
-                  width: 1px;
-                  height: 34px;
-                  background: rgba(28, 28, 28, 0.2);
-                "
-              ></div>
-              <span
-                style="
-                  font-family: var(--sans);
-                  font-size: 0.82rem;
-                  font-weight: 500;
-                  letter-spacing: 0.08em;
-                  color: var(--warm-gray);
-                  white-space: nowrap;
-                "
-                >Andrew Ramirez</span
-              >
-            </div>
-            <p class="footer-tagline">
-              Faithfully proclaiming the word of God through evangelism,
-              preaching, and discipling the next generation.
-            </p>
-            <div class="footer-socials">
-              <a
-                href="https://www.youtube.com/@AndrewRamirez-Sermons"
-                target="_blank"
-                aria-label="YouTube"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                  /></svg
-              ></a>
-              <a
-                href="https://www.instagram.com/andrewpramirez/"
-                target="_blank"
-                aria-label="Instagram"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                  /></svg
-              ></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h5>Gospel Advance</h5>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="sermons.html">Watch</a></li>
-              <li><a href="articles.html">Articles</a></li>
-              <li><a href="index.html#gospel">The Gospel</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
-              <li>
-                <a
-                  href="https://stirring-babka-630d70.netlify.app/"
-                  target="_blank"
-                  >Bible 101</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Categories</h5>
-            <ul>
-              <li><a href="#">Messages</a></li>
-              <li><a href="#">Devotionals</a></li>
-              <li><a href="#">Evangelism</a></li>
-              <li><a href="#">Topical</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Connect</h5>
-            <ul>
-              <li>
-                <a
-                  href="https://www.youtube.com/@AndrewRamirez-Sermons"
-                  target="_blank"
-                  >YouTube</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/andrewpramirez/"
-                  target="_blank"
-                  >Instagram</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          Faithfully Proclaiming the Word of God &mdash; Jesus for Every
-          Generation.
-        </div>
-      </div>
-    </footer>
+</main>
+<footer class="ga-footer">
+  <div class="ga-shell">
+    <div class="ga-footer-top">
+      <div><a class="ga-brand" href="index.html"><span class="ga-wordmark">Gospel <span>Advance</span></span></a><p>Reaching the next generation for Christ.</p></div>
+      <nav class="ga-footer-nav" aria-label="Footer navigation"><a href="index.html#mission">The Mission</a><a href="index.html#conversations">Campus Conversations</a><a href="index.html#about">About</a><a href="index.html#partner">Partner With Us</a></nav>
+      <div class="ga-socials"><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener"><img class="ga-icon " src="assets/icons/youtube.svg" alt="" width="20" height="20" aria-hidden="true" /> YouTube</a><a href="https://www.instagram.com/andrewpramirez/" target="_blank" rel="noopener"><img class="ga-icon " src="assets/icons/instagram.svg" alt="" width="20" height="20" aria-hidden="true" /> Instagram</a></div>
+    </div>
+    <div class="ga-footer-bottom"><span>&copy; <span data-year>2026</span> Gospel Advance. All rights reserved.</span><span>Real people. An eternal hope.</span></div>
+  </div>
+</footer>
 
     <script>
       const observer = new IntersectionObserver(
@@ -1227,46 +419,6 @@
       document
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileNav = document.getElementById("mobileNav");
-      const mobileClose = document.getElementById("mobileClose");
-      menuToggle.addEventListener("click", () => {
-        mobileNav.classList.add("open");
-        menuToggle.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      });
-      function closeMobile() {
-        mobileNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-      mobileClose.addEventListener("click", closeMobile);
-      mobileNav.addEventListener("click", (e) => {
-        if (e.target.matches("a")) closeMobile();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && mobileNav.classList.contains("open"))
-          closeMobile();
-      });
-      const resPopup = document.getElementById("mobileResourcesPopup");
-      const resOpen = document.getElementById("mobileResourcesOpen");
-      const resBack = document.getElementById("mobileResourcesBack");
-      resOpen.addEventListener("click", () => {
-        resPopup.classList.add("open");
-      });
-      resBack.addEventListener("click", () => {
-        resPopup.classList.remove("open");
-      });
-      resPopup.addEventListener("click", (e) => {
-        if (e.target.matches("a")) {
-          resPopup.classList.remove("open");
-          closeMobile();
-        }
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && resPopup.classList.contains("open"))
-          resPopup.classList.remove("open");
-      });
     </script>
   </body>
 </html>

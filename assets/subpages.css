@@ -1,0 +1,185 @@
+/* Shared reading and resource layouts for Gospel Advance. */
+.ga-subpage {
+  --charcoal: var(--ga-carbon);
+  --cream: #efefec;
+  --bronze: #b83227;
+  --light-gold: var(--ga-line);
+  --warm-gray: #646464;
+  --white: #fff;
+  --text-body: #414141;
+  --border: var(--ga-line);
+  --radius: 6px;
+  margin: 0;
+  background: var(--ga-paper);
+  color: var(--ga-carbon);
+  font: 16px/1.65 var(--ga-body);
+}
+.ga-subpage * { letter-spacing: 0; }
+.ga-subpage :focus-visible { outline: 3px solid var(--ga-red); outline-offset: 5px; }
+.ga-subpage h1, .ga-subpage h2, .ga-subpage h3, .ga-subpage h4, .ga-subpage p { margin: 0; }
+.ga-subpage h1, .ga-subpage h2, .ga-subpage h3, .ga-subpage h4 { font-weight: 700; line-height: 1.2; }
+.ga-subpage a { color: inherit; text-decoration: none; }
+.ga-subpage button, .ga-subpage input { font: inherit; }
+.ga-subpage img { max-width: 100%; }
+.ga-subpage .container { width: calc(100% - 128px); max-width: 1320px; margin-inline: auto; }
+.ga-subpage main { min-height: 60vh; }
+.ga-subpage main svg { width: 20px; height: 20px; flex-shrink: 0; }
+.ga-subpage .page-header, .ga-subpage .guide-hero, .ga-subpage .article-header {
+  padding: 205px 0 56px;
+  border-bottom: 1px solid var(--ga-line);
+}
+.ga-subpage .page-header h1 { font-size: 72px; }
+.ga-subpage .page-header h1::after { content: '.'; color: var(--ga-red); }
+.ga-subpage .page-header p { font-size: 20px; max-width: 730px; margin-top: 22px; color: var(--text-body); }
+.ga-subpage .section-label, .ga-subpage .article-tag, .ga-subpage .tag, .ga-subpage .label, .ga-subpage .def-label {
+  display: block; font: 500 12px/1.5 var(--ga-mono); text-transform: uppercase; color: #b83227;
+}
+.ga-subpage .section-header { margin-bottom: 24px; }
+.ga-subpage .articles-section, .ga-subpage .featured, .ga-subpage .all-sermons { padding: 48px 0 64px; border-bottom: 1px solid var(--ga-line); }
+.ga-subpage .articles-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.ga-subpage .article-card { display: flex; flex-direction: column; align-items: flex-start; padding: 32px 0; border-top: 1px solid var(--ga-line); }
+.ga-subpage .article-card h3 { font-size: 32px; margin: 16px 0; max-width: 600px; transition: color .18s; }
+.ga-subpage .article-card:hover h3 { color: #b83227; }
+.ga-subpage .article-card p { color: var(--text-body); font-size: 16px; margin-bottom: 24px; }
+.ga-subpage .meta, .ga-subpage .article-meta { font-size: 12px; color: #646464; }
+.ga-subpage .article-card .meta { margin-top: auto; }
+.ga-subpage .read-more { display: inline-flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 700; margin-top: 20px; }
+.ga-subpage .read-more svg, .ga-subpage .back-link svg { stroke: currentColor; fill: none; stroke-width: 2; }
+.ga-subpage .article-card:hover .read-more svg { transform: translateX(4px); }
+.ga-subpage .articles-cta, .ga-subpage .sermons-cta { background: var(--ga-carbon); color: white; padding: 64px 0; text-align: center; }
+.ga-subpage .articles-cta h2, .ga-subpage .sermons-cta h2 { font-size: 42px; margin-bottom: 18px; }
+.ga-subpage .articles-cta p, .ga-subpage .sermons-cta p { max-width: 700px; margin: 0 auto 28px; color: #dededb; }
+.ga-subpage .btn-yt, .ga-subpage .btn-ig, .ga-subpage .btn-dl {
+  display: inline-flex; gap: 12px; justify-content: center; align-items: center;
+  min-height: 48px; padding: 13px 22px; font-size: 14px; line-height: 1.45; font-weight: 700;
+  background: var(--ga-red); border: 1px solid var(--ga-red); color: #fff; border-radius: 16px;
+  transition: background .18s;
+}
+.ga-subpage .btn-yt:hover, .ga-subpage .btn-dl:hover { background: #b83227; }
+.ga-subpage .btn-ig { background: transparent; border-color: #888; }
+.ga-subpage .btn-ig:hover { background: #333; }
+.ga-subpage .btn-yt svg, .ga-subpage .btn-ig svg { fill: currentColor; }
+.ga-subpage .back-link { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; margin-bottom: 30px; }
+.ga-subpage .back-link:hover { color: #b83227; }
+.ga-subpage .article-page { padding: 200px 0 72px; }
+.ga-subpage .article-container, .ga-subpage .article-header .container { max-width: 820px; }
+.ga-subpage .article-container { margin-inline: auto; }
+.ga-subpage .article-page h1, .ga-subpage .article-header h1 { font-size: 52px; margin: 20px 0 24px; }
+.ga-subpage .article-meta { margin: 18px 0 36px; padding-bottom: 28px; border-bottom: 1px solid var(--ga-line); }
+.ga-subpage .article-full { padding: 48px 0 72px; }
+.ga-subpage .article-header .subtitle { color: var(--text-body); font-size: 20px; margin-top: 20px; }
+.ga-subpage .article-body, .ga-subpage .guide-section { font-size: 18px; line-height: 1.85; color: var(--text-body); }
+.ga-subpage .article-body p, .ga-subpage .guide-section p { margin-bottom: 24px; }
+.ga-subpage .article-body h2, .ga-subpage .guide-section h2 { font-size: 34px; color: var(--ga-carbon); margin: 40px 0 24px; }
+.ga-subpage .article-body h3, .ga-subpage .guide-section h3 { font-size: 26px; color: var(--ga-carbon); margin: 36px 0 20px; }
+.ga-subpage .article-body h4, .ga-subpage .guide-section h4 { font-size: 21px; color: var(--ga-carbon); margin: 28px 0 16px; }
+.ga-subpage .article-body a, .ga-subpage .guide-section a { text-decoration: underline; text-underline-offset: 4px; }
+.ga-subpage .article-body a:hover, .ga-subpage .guide-section a:hover { color: #b83227; }
+.ga-subpage .article-body ul, .ga-subpage .article-body ol, .ga-subpage .guide-section ul, .ga-subpage .guide-section ol { padding-left: 26px; }
+.ga-subpage .article-body li, .ga-subpage .guide-section li { margin-bottom: 12px; }
+.ga-subpage main blockquote { margin: 32px 0; padding: 8px 0 8px 26px; border-left: 3px solid var(--ga-red); font-size: 21px; line-height: 1.7; color: var(--ga-carbon); }
+.ga-subpage main blockquote p:last-child { margin: 0; }
+.ga-subpage main cite { display: block; font: 600 13px/1.6 var(--ga-body); color: #646464; margin-top: 18px; }
+.ga-subpage .conclusion { border-top: 1px solid var(--ga-line); margin-top: 40px; padding-top: 12px; }
+.ga-subpage .article-attribution { font-size: 14px; padding: 24px 0; margin-top: 36px; border-top: 1px solid var(--ga-line); color: #646464; }
+.ga-subpage .institution { display: block; font-weight: 600; }
+.ga-subpage .guide-hero h1 { font-size: 60px; max-width: 1100px; margin: 22px 0; }
+.ga-subpage .guide-hero h1 em { font-family: var(--ga-accent); font-weight: 400; color: var(--ga-red); }
+.ga-subpage .guide-hero .subtitle { max-width: 720px; font-size: 20px; color: var(--text-body); }
+.ga-subpage .download-card { padding: 32px 0; margin: 32px 0 0; border-top: 1px solid var(--ga-line); }
+.ga-subpage .download-card h3 { font-size: 28px; margin: 14px 0; }
+.ga-subpage .download-card p { font-size: 16px; color: var(--text-body); margin-bottom: 22px; }
+.ga-subpage .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 14px; }
+.ga-subpage .btn-dl::before { content: ''; width: 18px; height: 18px; background: url('icons/download.svg') center / contain no-repeat; filter: invert(1); }
+.ga-subpage .btn-dl.outline { background: transparent; color: var(--ga-carbon); border-color: #888; }
+.ga-subpage .btn-dl.outline::before { filter: none; }
+.ga-subpage .btn-dl.outline:hover { background: #e5e5e2; }
+.ga-subpage .download-card .btn-note { font-size: 12px; margin-bottom: 0; }
+.ga-subpage .toc-box { margin: 40px 0; padding: 32px 0; border-block: 1px solid var(--ga-line); }
+.ga-subpage .toc-box h3 { margin: 12px 0 24px; font-size: 30px; }
+.ga-subpage .toc-box h4 { font-size: 14px; margin: 24px 0 12px; }
+.ga-subpage .toc-box ol { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 36px; padding-left: 22px; }
+.ga-subpage .toc-box li { padding: 8px 0; font-size: 14px; border-bottom: 1px solid var(--ga-line); }
+.ga-subpage .toc-box li::marker { color: #b83227; font-weight: 700; }
+.ga-subpage .toc-box a:hover { color: #b83227; text-decoration: underline; }
+.ga-subpage .toc-box .extras { padding-left: 22px; }
+.ga-subpage .guide-section { padding: 40px 0; border-top: 1px solid var(--ga-line); scroll-margin-top: 100px; }
+.ga-subpage .guide-section h2 { margin-top: 14px; }
+.ga-subpage .instruction { padding-left: 22px; border-left: 2px solid var(--ga-line); }
+.ga-subpage .prompt { font-weight: 700; color: var(--ga-carbon); }
+.ga-subpage .definition { padding: 24px; background: #ececea; border-left: 3px solid var(--ga-red); margin: 28px 0; }
+.ga-subpage .term { display: block; font-size: 23px; font-weight: 700; margin: 12px 0; }
+.ga-subpage .meaning { margin: 0; }
+.ga-subpage .scripture-quote { margin: 28px 0; }
+.ga-subpage .scripture-quote blockquote { margin-bottom: 12px; }
+.ga-subpage .tool-block { border-top: 1px solid var(--ga-line); padding-top: 24px; margin-top: 24px; }
+.ga-subpage .tool-num { color: #b83227; margin-right: 10px; }
+.ga-subpage .tool-name { font-weight: 700; }
+.ga-subpage .appendix-section { padding: 48px 0; border-top: 3px solid var(--ga-red); }
+.ga-subpage .appendix-section .guide-section { border: 0; }
+.ga-subpage .related-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; margin-top: 32px; }
+.ga-subpage .related-card { display: block; padding-block: 24px; border-top: 1px solid var(--ga-line); }
+.ga-subpage .related-card h4 { font-size: 22px; margin: 12px 0; }
+.ga-subpage .related-card .kind { font: 12px var(--ga-mono); color: #b83227; }
+.ga-subpage .featured-grid { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); gap: 40px; }
+.ga-subpage .featured-main-thumb { position: relative; aspect-ratio: 16 / 9; background: #111; overflow: hidden; }
+.ga-subpage .sermon-play { display: block; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer; background: #111; }
+.ga-subpage .sermon-play > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ga-subpage .sermon-play-icon { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%,-50%); width: 64px; height: 64px; display: grid; place-items: center; background: var(--ga-red); border-radius: 50%; }
+.ga-subpage .sermon-play-icon img { width: 26px; height: 26px; filter: invert(1); }
+.ga-subpage .sermon-play:hover .sermon-play-icon { background: #b83227; }
+.ga-subpage .sermon-play:focus-visible { outline-offset: -5px; }
+.ga-subpage .featured-main-body { padding-top: 24px; }
+.ga-subpage .cat { color: #b83227; font-weight: 700; }
+.ga-subpage .featured-main-body h3 { font-size: 30px; margin: 14px 0 18px; }
+.ga-subpage .featured-main-body p { color: var(--text-body); }
+.ga-subpage .author-row { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+.ga-subpage .author-avatar { display: grid; place-items: center; width: 30px; height: 30px; background: #e6e6e2; border-radius: 50%; font-size: 10px; font-weight: 700; }
+.ga-subpage .author-name { font-size: 12px; }
+.ga-subpage .featured-sidebar { display: flex; flex-direction: column; }
+.ga-subpage .sidebar-item { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0,1fr); gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--ga-line); }
+.ga-subpage .sidebar-item:first-child { padding-top: 0; }
+.ga-subpage .sidebar-thumb { aspect-ratio: 16 / 9; overflow: hidden; }
+.ga-subpage .sidebar-thumb img { display: block; }
+.ga-subpage .sidebar-info h4 { font-size: 16px; margin-top: 8px; line-height: 1.45; }
+.ga-subpage .sidebar-info .author-row { margin-top: 14px; }
+.ga-subpage .sermon-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px 28px; }
+.ga-subpage .sermon-thumb { aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 18px; background: #111; }
+.ga-subpage .sermon-thumb img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .2s; }
+.ga-subpage .sermon-card h3 { font-size: 22px; margin-top: 12px; }
+.ga-subpage .sermon-card:hover img { transform: scale(1.025); }
+.ga-subpage .sermon-card:hover h3, .ga-subpage .sidebar-item:hover h4 { color: #b83227; }
+@media (max-width: 1100px) {
+  .ga-subpage .container { width: calc(100% - 64px); }
+  .ga-subpage .featured-grid { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); gap: 28px; }
+  .ga-subpage .sidebar-item { grid-template-columns: 1fr; gap: 12px; }
+  .ga-subpage .sidebar-info .author-row { display: none; }
+}
+@media (max-width: 800px) {
+  .ga-subpage .page-header, .ga-subpage .guide-hero, .ga-subpage .article-header { padding: 130px 0 36px; }
+  .ga-subpage .page-header h1 { font-size: 54px; }
+  .ga-subpage .guide-hero h1, .ga-subpage .article-page h1, .ga-subpage .article-header h1 { font-size: 40px; }
+  .ga-subpage .article-page { padding-top: 130px; }
+  .ga-subpage .article-card h3 { font-size: 26px; }
+  .ga-subpage .articles-grid { gap: 0 28px; }
+  .ga-subpage .featured-grid { grid-template-columns: 1fr; }
+  .ga-subpage .sidebar-item { grid-template-columns: minmax(0,.6fr) minmax(0,1fr); }
+  .ga-subpage .sermon-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .ga-subpage .container { width: calc(100% - 40px); }
+  .ga-subpage .page-header h1 { font-size: 46px; }
+  .ga-subpage .guide-hero h1, .ga-subpage .article-page h1, .ga-subpage .article-header h1 { font-size: 34px; }
+  .ga-subpage .page-header p, .ga-subpage .guide-hero .subtitle { font-size: 17px; }
+  .ga-subpage .articles-grid, .ga-subpage .sermon-grid, .ga-subpage .related-grid, .ga-subpage .toc-box ol { grid-template-columns: 1fr; }
+  .ga-subpage .article-body, .ga-subpage .guide-section { font-size: 17px; line-height: 1.8; }
+  .ga-subpage .article-body h2, .ga-subpage .guide-section h2 { font-size: 28px; }
+  .ga-subpage .article-body h3, .ga-subpage .guide-section h3 { font-size: 23px; }
+  .ga-subpage main blockquote { font-size: 19px; padding-left: 18px; }
+  .ga-subpage .articles-cta h2, .ga-subpage .sermons-cta h2 { font-size: 32px; }
+  .ga-subpage .featured-main-body h3 { font-size: 26px; }
+  .ga-subpage .download-card h3 { font-size: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ga-subpage * { transition: none !important; }
+}
