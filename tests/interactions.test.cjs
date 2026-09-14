@@ -7,7 +7,7 @@ const root = path.join(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/site.js'), 'utf8');
 
 // Small DOM doubles exercise state transitions; browser checks cover native focus and rendering.
-function fixture({ video = false, reducedMotion = false } = {}) {
+function fixture({ video = false, reducedMotion = false, mobile = false } = {}) {
   const elements = new Map();
   const timers = new Map();
   let timerId = 0;
@@ -91,7 +91,7 @@ function fixture({ video = false, reducedMotion = false } = {}) {
   const window = make('window');
   window.scrollY = 0;
   window.matchMedia = query => {
-    if (!mediaQueries.has(query)) { const result = make(query); result.matches = query.includes('reduced-motion') ? reducedMotion : false; mediaQueries.set(query, result); }
+    if (!mediaQueries.has(query)) { const result = make(query); result.matches = query.includes('reduced-motion') ? reducedMotion : query === '(max-width: 767px)' && mobile; mediaQueries.set(query, result); }
     return mediaQueries.get(query);
   };
   const observers = [];
@@ -115,7 +115,7 @@ function fixture({ video = false, reducedMotion = false } = {}) {
     const watch = make('watchTrailer');
     watch.dataset.media = 'trailer';
     document.queries['[data-media]'] = [watch];
-    window.GOSPEL_ADVANCE_MEDIA = { heroPreview: 'https://example.test/campus.mp4' };
+    window.GOSPEL_ADVANCE_MEDIA = { heroPreview: 'https://example.test/campus.mp4', heroPreviewMobile: 'https://example.test/mobile.mp4', heroHasAudio: false };
     dialogPlayer.queries.video = [];
   }
   vm.runInNewContext(source, {
@@ -253,6 +253,7 @@ test('hero pauses behind dialogs and offscreen, while preserving explicit pause'
   hero.emit('loadedmetadata');
   assert.equal(hero.paused, false);
   assert.equal(hero.muted, true);
+  assert.equal(f.elements.get('heroMute').hidden, true);
   f.elements.get('watchTrailer').emit('click');
   assert.equal(hero.paused, true);
   f.elements.get('mediaDialog').close();
@@ -280,14 +281,21 @@ test('hero pauses behind dialogs and offscreen, while preserving explicit pause'
 test('reduced-motion hero starts paused, permits an explicit play, and has an error fallback', () => {
   const f = fixture({ video: true, reducedMotion: true });
   const hero = f.elements.get('heroVideo');
+  assert.equal(hero.src, undefined, 'reduced motion does not fetch the video until requested');
   hero.emit('loadedmetadata');
   assert.equal(hero.paused, true);
   f.elements.get('heroPlay').emit('click');
   assert.equal(hero.paused, false);
+  assert.equal(hero.src, 'https://example.test/campus.mp4');
   hero.emit('error');
   assert.equal(hero.hidden, true);
   assert.equal(f.elements.get('heroFilmTools').hidden, true);
   assert.match(f.elements.get('heroFilmLabel').textContent, /unavailable/);
+});
+
+test('mobile hero selects the portrait export without loading the desktop source', () => {
+  const f = fixture({ video: true, mobile: true });
+  assert.equal(f.elements.get('heroVideo').src, 'https://example.test/mobile.mp4');
 });
 
 test('shared navigation stays identical on all public pages', () => {

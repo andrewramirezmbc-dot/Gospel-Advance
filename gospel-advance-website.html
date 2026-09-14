@@ -87,7 +87,11 @@
 </dialog>
 <main id="main">
   <section class="ga-hero" aria-labelledby="hero-title">
-    <video id="heroVideo" class="ga-hero-video" muted playsinline loop preload="none" aria-label="Gospel Advance mission film preview" hidden></video>
+    <picture class="ga-hero-poster" aria-hidden="true">
+      <source media="(max-width: 767px)" srcset="assets/video/hero-campus-mobile.jpg">
+      <img src="assets/video/hero-campus-desktop.jpg" alt="" width="1600" height="900" fetchpriority="high">
+    </picture>
+    <video id="heroVideo" class="ga-hero-video" muted playsinline loop preload="none" aria-hidden="true" hidden></video>
     <div class="ga-hero-shade" aria-hidden="true"></div>
     <div class="ga-shell ga-hero-content">
       <h1 id="hero-title"><span class="ga-hero-statement">Reach a<br />generation.</span><em class="ga-hero-accent">With the hope of Jesus.</em></h1>

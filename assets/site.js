@@ -416,18 +416,26 @@
     syncScrollLock();
   });
 
-  const preview = mediaSource(config.heroPreview);
+  const mobilePreview = window.matchMedia('(max-width: 767px)');
+  const preview = mediaSource(mobilePreview.matches && config.heroPreviewMobile ? config.heroPreviewMobile : config.heroPreview);
   if (!hero || !preview || preview.type !== 'video') return;
   const controls = document.getElementById('heroFilmTools');
   const label = document.getElementById('heroFilmLabel');
   const play = document.getElementById('heroPlay');
   const mute = document.getElementById('heroMute');
   const progress = document.getElementById('heroFilmProgress');
+  mute.hidden = config.heroHasAudio === false;
+  const fullFilm = controls.querySelector('[data-media="trailer"]');
+  if (fullFilm) fullFilm.hidden = !config.trailer;
+  label.textContent = config.heroLabel || 'Gospel Advance / Mission film';
   let wantsPlayback = !motion.matches;
   let heroVisible = window.scrollY < hero.parentElement.offsetHeight;
   syncHeroPlayback = () => {
     const blocked = document.hidden || menu?.open || searchDialog?.open || mediaDialog.open || header?.classList.contains('menu-open');
-    if (wantsPlayback && heroVisible && !blocked) hero.play().catch(() => {});
+    if (wantsPlayback && heroVisible && !blocked) {
+      if (!hero.getAttribute('src')) hero.src = preview.src;
+      hero.play().catch(() => { updateControls(); });
+    }
     else hero.pause();
   };
   const updateControls = () => {
@@ -446,7 +454,7 @@
   });
   hero.addEventListener('loadedmetadata', () => {
     controls.hidden = false;
-    label.textContent = 'Gospel Advance / Mission film';
+    label.textContent = config.heroLabel || 'Gospel Advance / Mission film';
     updateControls();
     syncHeroPlayback();
   }, { once: true });
@@ -466,5 +474,9 @@
   }, { threshold: .1 }).observe(hero.parentElement);
   hero.muted = true;
   hero.preload = 'metadata';
-  hero.src = preview.src;
+  // Reduced-motion visitors get the poster without downloading the video until Play.
+  if (motion.matches) {
+    controls.hidden = false;
+    updateControls();
+  } else hero.src = preview.src;
 })();

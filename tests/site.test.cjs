@@ -112,10 +112,16 @@ test('interviews use real source frames and retain a separate mission trailer', 
   assert.match(media.conversation1, /kb5IJw_TKBM/);
   assert.match(media.conversation2, /K_fDMT9DLFo/);
   assert.equal(media.trailer, '');
-  assert.equal(media.heroPreview, '');
+  assert.equal(media.heroHasAudio, false);
+  for (const file of [media.heroPreview, media.heroPreviewMobile]) {
+    assert.match(file, /^assets\/video\/hero-campus-(desktop|mobile)\.mp4$/);
+    assert(fs.statSync(path.join(root, file)).size > 100000);
+  }
   const hero = home.match(/<section class="ga-hero"[\s\S]*?<\/section>/)[0];
   assert.match(hero, /<video id="heroVideo"[^>]*muted playsinline loop/);
   assert.doesNotMatch(hero, /ga-hero-image|poster=|assets\/images\//);
+  assert.match(hero, /hero-campus-desktop\.jpg/);
+  assert.match(hero, /hero-campus-mobile\.jpg/);
   assert.doesNotMatch(home, /rel="preload"[^>]*campus-conversation/);
 });
 
