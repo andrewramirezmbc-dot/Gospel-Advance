@@ -8,9 +8,6 @@
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const config = window.GOSPEL_ADVANCE_MEDIA || {};
   const isHome = !!document.querySelector('.ga-home');
-  if (isHome) document.querySelectorAll('a[href^="index.html#"]').forEach(link => {
-    link.setAttribute('href', link.getAttribute('href').slice('index.html'.length));
-  });
   const iconPath = name => `assets/icons/${name}.svg`;
   let syncHeroPlayback = () => {};
   const syncScrollLock = () => {
@@ -30,7 +27,7 @@
     if (!['index.html', 'gospel-advance-website.html'].includes(currentFile)) {
       header.querySelector('[aria-controls="gaResourcesMenu"]')?.classList.add('ga-current');
       document.querySelectorAll('.ga-header a, .ga-mobile-menu a').forEach(link => {
-        if (link.getAttribute('href') === currentFile) link.setAttribute('aria-current', 'page');
+        if (link.getAttribute('href') === `/${currentFile}`) link.setAttribute('aria-current', 'page');
       });
     }
     let active = null;
@@ -133,13 +130,13 @@
       ['Partner With Us', '/#partner', 'Get involved', 'give giving financial prayer support donate'],
       ['Contact Gospel Advance', '/#contact', 'Contact', 'connect campus church invite'],
       ['The Gospel We Share', '/#gospel', 'The gospel', 'Jesus salvation faith believe Bible Scripture'],
-      ['Sermons', 'sermons.html', 'Watch', 'messages Bible John preaching'],
-      ['Articles', 'articles.html', 'Read', 'writing Bible study'],
-      ["The Preacher's Preparation Guide", 'preachers-guide.html', 'Resources', 'sermon preparation outline template'],
-      ['Seven Components of a Sermon', 'seven-components.html', 'Article', 'preaching preparation'],
-      ['Discipleship', 'discipleship.html', 'Article', 'following Jesus growth'],
-      ['The Problem of Evil', 'problem-of-evil.html', 'Article', 'suffering God apologetics'],
-      ["When You Can't Trace His Hand", 'when-you-cant-trace-his-hand.html', 'Article', 'trust faith God suffering'],
+      ['Sermons', '/sermons.html', 'Watch', 'messages Bible John preaching'],
+      ['Articles', '/articles.html', 'Read', 'writing Bible study'],
+      ["The Preacher's Preparation Guide", '/preachers-guide.html', 'Resources', 'sermon preparation outline template'],
+      ['Seven Components of the Gospel', '/seven-components.html', 'Article', 'evangelism gospel conversation'],
+      ['Discipleship', '/discipleship.html', 'Article', 'following Jesus growth'],
+      ['The Problem of Evil', '/problem-of-evil.html', 'Article', 'suffering God apologetics'],
+      ["When You Can't Trace His Hand", '/when-you-cant-trace-his-hand.html', 'Article', 'trust faith God suffering'],
     ];
     const renderResults = () => {
       const words = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);

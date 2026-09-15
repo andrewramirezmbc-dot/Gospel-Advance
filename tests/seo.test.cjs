@@ -119,7 +119,9 @@ test('article pages expose Article JSON-LD without invented ministry claims', ()
     const article = (data['@graph'] || []).find(node => node['@type'] === 'Article');
     assert(article, file);
     assert.equal(article.author['@id'], 'https://thegospeladvance.org/#andrew');
-    assert.match(article.datePublished, /^\d{4}-\d{2}$/);
+    assert.equal(article.datePublished, undefined, 'Month-only bylines must not invent a publication day');
+    assert.equal(meta(html, 'article:published_time', 'property'), null);
+    assert.equal(meta(html, 'article:author', 'property'), 'https://thegospeladvance.org/#andrew');
     assert.doesNotMatch(html, /testimonial|nonprofit status|501\(c\)/i);
   }
 });
@@ -156,4 +158,35 @@ test('favicon assets exist and 404 is present with a home link', () => {
   assert.match(notFound, /<h1>Page not found<\/h1>/);
   assert.match(notFound, /href="\/"/);
   assert.equal(meta(notFound, 'robots'), 'noindex, follow');
+});
+
+test('local links, fragments, and social images resolve to real files', () => {
+  for (const file of [...publicPages, '404.html']) {
+    const html = read(file);
+    for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
+      if (/^(https?:|mailto:)/.test(href)) continue;
+      const url = new URL(href, `https://thegospeladvance.org/${file}`);
+      const target = decodeURIComponent(url.pathname.slice(1)) || 'index.html';
+      assert(fs.existsSync(path.join(root, target)), `${file}: missing ${target}`);
+      if (url.hash && target.endsWith('.html')) {
+        assert(read(target).includes(`id="${decodeURIComponent(url.hash.slice(1))}"`), `${file}: missing ${href}`);
+      }
+      assert(!/^[^/#]+\.html/.test(href), `${file}: use root-relative page links`);
+    }
+    const image = meta(html, 'og:image', 'property');
+    assert.equal(meta(html, 'twitter:image'), image, file);
+    assert(fs.existsSync(path.join(root, new URL(image).pathname)), `${file}: missing social image`);
+    assert(!jsonLd(html)['@graph'].some(entity => entity.founder || entity['@type'] === 'NonprofitOrganization'), file);
+    for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
+      assert(/\balt="[^"]+"/.test(tag) || /src="assets\/icons\//.test(tag) || /src="assets\/video\/hero-campus-desktop.jpg"/.test(tag), `${file}: meaningful image needs alt: ${tag}`);
+    }
+  }
+  assert.match(read('robots.txt'), /Disallow: \/gospel-advance-website\.html/);
+});
+
+test('404 assets use root paths even when the missing URL is nested', () => {
+  const html = read('404.html');
+  for (const [, asset] of html.matchAll(/(?:href|src)="([^"]*assets\/[^" ]+)"/g)) {
+    assert(asset.startsWith('/assets/'), asset);
+  }
 });

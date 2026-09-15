@@ -238,7 +238,7 @@ test('search closes navigation, matches topics, and safely handles unmatched inp
   f.input.value = 'EVIL';
   f.input.emit('input');
   assert.equal(f.results.children.length, 1);
-  assert.equal(f.results.children[0].children[0].href, 'problem-of-evil.html');
+  assert.equal(f.results.children[0].children[0].href, '/problem-of-evil.html');
   f.input.value = '<img src=x onerror=alert(1)>';
   f.input.emit('input');
   assert.match(f.elements.get('gaSearchStatus').textContent, /No results/);
