@@ -242,7 +242,7 @@ test('search closes navigation, matches topics, and safely handles unmatched inp
   f.input.value = '<img src=x onerror=alert(1)>';
   f.input.emit('input');
   assert.match(f.elements.get('gaSearchStatus').textContent, /No results/);
-  assert.equal(f.results.children[0].children[0].href, 'index.html#contact');
+  assert.equal(f.results.children[0].children[0].href, '/#contact');
   f.search.close();
   assert.equal(f.document.body.style.overflow, '');
 });

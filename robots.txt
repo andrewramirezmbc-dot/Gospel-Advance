@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Working copy of the homepage; canonical is /
+Disallow: /gospel-advance-website.html
+
+Sitemap: https://thegospeladvance.org/sitemap.xml
