@@ -8,9 +8,6 @@
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const config = window.GOSPEL_ADVANCE_MEDIA || {};
   const isHome = !!document.querySelector('.ga-home');
-  if (isHome) document.querySelectorAll('a[href^="index.html#"]').forEach(link => {
-    link.setAttribute('href', link.getAttribute('href').slice('index.html'.length));
-  });
   const iconPath = name => `assets/icons/${name}.svg`;
   let syncHeroPlayback = () => {};
   const syncScrollLock = () => {
@@ -30,7 +27,7 @@
     if (!['index.html', 'gospel-advance-website.html'].includes(currentFile)) {
       header.querySelector('[aria-controls="gaResourcesMenu"]')?.classList.add('ga-current');
       document.querySelectorAll('.ga-header a, .ga-mobile-menu a').forEach(link => {
-        if (link.getAttribute('href') === currentFile) link.setAttribute('aria-current', 'page');
+        if (link.getAttribute('href') === `/${currentFile}`) link.setAttribute('aria-current', 'page');
       });
     }
     let active = null;
@@ -127,20 +124,19 @@
     const results = document.getElementById('gaSearchResults');
     const status = document.getElementById('gaSearchStatus');
     const pages = [
-      ['The Mission', 'index.html#mission', 'Ministry', 'campus evangelism students Jesus'],
-      ['Campus Conversations', 'index.html#conversations', 'Films', 'interviews videos students'],
-      ['Meet Andrew Ramirez', 'index.html#about', 'About', 'evangelist biography'],
-      ['Partner With Us', 'index.html#partner', 'Get involved', 'give giving financial prayer support donate'],
-      ['Contact Gospel Advance', 'index.html#contact', 'Contact', 'connect campus church invite'],
-      ['The Gospel We Share', 'index.html#gospel', 'The gospel', 'Jesus salvation faith believe'],
-      ['Sermons', 'sermons.html', 'Watch', 'messages Bible John preaching'],
-      ['Articles', 'articles.html', 'Read', 'writing Bible study'],
-      ["The Preacher's Preparation Guide", 'preachers-guide.html', 'Resources', 'sermon preparation outline template'],
-      ['Seven Components of a Sermon', 'seven-components.html', 'Article', 'preaching preparation'],
-      ['Discipleship', 'discipleship.html', 'Article', 'following Jesus growth'],
-      ['The Problem of Evil', 'problem-of-evil.html', 'Article', 'suffering God apologetics'],
-      ["When You Can't Trace His Hand", 'when-you-cant-trace-his-hand.html', 'Article', 'trust faith God suffering'],
-      ['Bible 101', 'https://stirring-babka-630d70.netlify.app/', 'Bible study', 'learn Scripture basics'],
+      ['The Mission', '/#mission', 'Ministry', 'campus evangelism students Jesus'],
+      ['Campus Conversations', '/#conversations', 'Films', 'interviews videos students'],
+      ['Meet Andrew Ramirez', '/#about', 'About', 'evangelist biography'],
+      ['Partner With Us', '/#partner', 'Get involved', 'give giving financial prayer support donate'],
+      ['Contact Gospel Advance', '/#contact', 'Contact', 'connect campus church invite'],
+      ['The Gospel We Share', '/#gospel', 'The gospel', 'Jesus salvation faith believe Bible Scripture'],
+      ['Sermons', '/sermons.html', 'Watch', 'messages Bible John preaching'],
+      ['Articles', '/articles.html', 'Read', 'writing Bible study'],
+      ["The Preacher's Preparation Guide", '/preachers-guide.html', 'Resources', 'sermon preparation outline template'],
+      ['Seven Components of the Gospel', '/seven-components.html', 'Article', 'evangelism gospel conversation'],
+      ['Discipleship', '/discipleship.html', 'Article', 'following Jesus growth'],
+      ['The Problem of Evil', '/problem-of-evil.html', 'Article', 'suffering God apologetics'],
+      ["When You Can't Trace His Hand", '/when-you-cant-trace-his-hand.html', 'Article', 'trust faith God suffering'],
     ];
     const renderResults = () => {
       const words = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
@@ -151,7 +147,7 @@
         const link = document.createElement('a');
         const label = document.createElement('span');
         const tag = document.createElement('small');
-        link.href = isHome && href.startsWith('index.html#') ? href.slice('index.html'.length) : href;
+        link.href = isHome && href.startsWith('/#') ? href.slice(1) : href;
         label.textContent = title;
         tag.textContent = category;
         link.append(label, tag);
@@ -162,7 +158,7 @@
       if (!matches.length) {
         const item = document.createElement('li');
         const link = document.createElement('a');
-        link.href = 'index.html#contact';
+        link.href = '/#contact';
         link.textContent = 'Contact Gospel Advance';
         item.append(link);
         results.append(item);
