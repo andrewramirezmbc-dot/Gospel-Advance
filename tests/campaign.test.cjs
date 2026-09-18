@@ -128,8 +128,13 @@ test('campaign assets are shared without importing reference-site integrations',
   const root = path.join(__dirname, '..');
   for (const file of ['gospel-advance-website.html', 'index.html', 'articles.html', 'sermons.html', 'preachers-guide.html', 'seven-components.html', 'discipleship.html', 'problem-of-evil.html', 'when-you-cant-trace-his-hand.html']) {
     const html = fs.readFileSync(path.join(root, file), 'utf8');
-    assert.equal((html.match(/href="assets\/campaign.css"/g) || []).length, 1, file);
+    assert.equal((html.match(/href="assets\/campaign.css(?:\?[^" ]+)?"/g) || []).length, 1, file);
     assert.equal((html.match(/src="assets\/campaign.js"/g) || []).length, 1, file);
     assert.doesNotMatch(html, /thesend\.org|webflow|typekit|GTM-TS3K9XK5/);
   }
+});
+
+test('hero logo does not depend on luminance masks on mobile browsers', () => {
+  const css = fs.readFileSync(path.join(__dirname, '../assets/campaign.css'), 'utf8');
+  assert.match(css, /\.ga-hero \.ga-hero-wordmark\s*\{[^}]*-webkit-mask-image: none;[^}]*mask-image: none;[^}]*mix-blend-mode: screen;/);
 });
