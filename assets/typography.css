@@ -1,0 +1,46 @@
+/* Two voices: straightforward sans headings and expressive italic statements. */
+.ga-home { --campaign-display: 'Plus Jakarta Sans', Arial, sans-serif; --campaign-sans: 'Plus Jakarta Sans', Arial, sans-serif; }
+.ga-home .ga-trailer-title,
+.ga-home .ga-campaign-heading h2,
+.ga-home .ga-strategy-heading h3,
+.ga-home .ga-resources h2,
+.ga-home .ga-contact-form h2,
+.ga-home .gospel h2 { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-weight: 800; text-transform: none; line-height: 1.08; letter-spacing: 0; }
+.ga-home .ga-trailer-title { font-size: 80px; }
+.ga-home .ga-generation .ga-campaign-heading h2 { font-size: 64px; line-height: 1.08; }
+.ga-home .ga-generation .ga-stat-number { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-weight: 800; font-size: 112px; }
+.ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 220px; }
+.ga-home .ga-generation .ga-stat-number-long { font-size: 76px; }
+.ga-home .ga-generation .ga-stat h3 { font: 700 24px/1.15 'Plus Jakarta Sans', Arial, sans-serif; text-transform: none; }
+.ga-home .ga-generation .ga-stat-church h3 { font-size: 36px; }
+.ga-home .ga-about .ga-section-copy > .ga-letter-lead { font: italic 700 56px/1.02 'Bodoni Moda', Georgia, serif; text-transform: none; }
+.ga-home .ga-about .ga-letter-lead em { font-style: inherit; }
+.ga-home .ga-belief p { font: italic 700 44px/1.22 'Bodoni Moda', Georgia, serif; text-transform: none; }
+.ga-home .ga-about .ga-campaign-heading h2,
+.ga-home .ga-about .ga-section-copy > .ga-byline,
+.ga-home .ga-about .ga-personal-message .ga-text-link,
+.ga-home .ga-partner .ga-campaign-film-title > span:first-child { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-weight: 700; font-size: 14px; text-transform: none; }
+.ga-home .ga-partner .ga-campaign-film-title,
+.ga-home .ga-partner .ga-campaign-film:nth-child(2) .ga-campaign-film-title { font: 800 40px/1.08 'Plus Jakarta Sans', Arial, sans-serif; text-transform: none; }
+.ga-home .ga-strategy-card h4 { font-family: 'Plus Jakarta Sans', Arial, sans-serif; text-transform: none; }
+.ga-home .ga-strategy-card p { font-family: 'Plus Jakarta Sans', Arial, sans-serif; }
+@media (max-width: 1199px) {
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 48px; }
+  .ga-home .ga-generation .ga-stat-number { font-size: 88px; }
+  .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 160px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 54px; }
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 42px; }
+  .ga-home .ga-partner .ga-campaign-film-title,
+  .ga-home .ga-partner .ga-campaign-film:nth-child(2) .ga-campaign-film-title { font-size: 30px; }
+}
+@media (max-width: 767px) {
+  .ga-home .ga-trailer-title { font-size: 48px; }
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 38px; }
+  .ga-generation .ga-stat-grid { margin-top: 24px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 46px; }
+  .ga-home .ga-generation .ga-stat h3 { font-size: 23px; }
+  .ga-home .ga-generation .ga-stat-church h3 { font-size: 30px; }
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 30px; }
+  .ga-home .ga-about .ga-campaign-heading h2 { font-size: 12px; }
+  .ga-home .ga-belief p { font-size: 30px; }
+}

@@ -114,7 +114,7 @@
     header.addEventListener('click', event => { if (event.target.closest('a')) closeMegaMenu(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape' && active) closeMegaMenu(true); });
     document.addEventListener('focusin', event => { if (active && !header.contains(event.target)) closeMegaMenu(); });
-    window.matchMedia('(max-width: 1099px)').addEventListener('change', event => {
+    window.matchMedia('(max-width: 1199px)').addEventListener('change', event => {
       if (event.matches && active) { closeMegaMenu(); menuToggle?.focus(); }
     });
   }
@@ -125,7 +125,7 @@
     const status = document.getElementById('gaSearchStatus');
     const pages = [
       ['The Mission', '/#mission', 'Ministry', 'campus evangelism students Jesus'],
-      ['Campus Conversations', '/#conversations', 'Films', 'interviews videos students'],
+      ['Campus Conversations', 'https://www.youtube.com/@AndrewRamirez-Sermons', 'Films', 'interviews videos students'],
       ['Meet Andrew Ramirez', '/#about', 'About', 'evangelist biography'],
       ['Partner With Us', '/#partner', 'Get involved', 'give giving financial prayer support donate'],
       ['Contact Gospel Advance', '/#contact', 'Contact', 'connect campus church invite'],
@@ -241,7 +241,7 @@
       menuToggle.setAttribute('aria-expanded', 'false');
       syncScrollLock();
     });
-    window.matchMedia('(min-width: 1100px)').addEventListener('change', event => {
+    window.matchMedia('(min-width: 1200px)').addEventListener('change', event => {
       if (event.matches && menu.open) menu.close();
     });
   }
@@ -277,10 +277,9 @@
   const form = document.getElementById('contactForm');
   document.querySelectorAll('[data-interest]').forEach(link => {
     link.addEventListener('click', () => {
-      if (!form) {
-        try { window.sessionStorage.setItem('ga-interest', link.dataset.interest); } catch { /* Storage is optional. */ }
-        return;
-      }
+      // Root-relative links can reload a homepage opened with a preview query.
+      try { window.sessionStorage.setItem('ga-interest', link.dataset.interest); } catch { /* Storage is optional. */ }
+      if (!form) return;
       document.getElementById('contactInterest').value = link.dataset.interest;
       const note = document.getElementById('contactInterestNote');
       note.textContent = `Interested in: ${link.dataset.interest}`;

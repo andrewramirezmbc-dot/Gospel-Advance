@@ -1,4 +1,18 @@
 @font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/bodoni-moda-bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Vina Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/vina-sans-regular.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Barlow Condensed';
   font-style: normal;
   font-weight: 600;

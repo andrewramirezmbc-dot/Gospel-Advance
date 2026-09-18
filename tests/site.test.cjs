@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const source = fs.readFileSync(path.join(__dirname, '../assets/site.js'), 'utf8');
 
-function fixture(fetchResult) {
+function fixture(fetchResult, saved = new Map()) {
   const elements = new Map();
   const requests = [];
   function element(id) {
@@ -36,7 +36,8 @@ function fixture(fetchResult) {
   const context = {
     document,
     location: { hash: '', href: 'https://example.test/' },
-    window: { scrollY: 0, addEventListener() {}, matchMedia: () => ({ matches: false, addEventListener() {} }) },
+    window: { scrollY: 0, addEventListener() {}, matchMedia: () => ({ matches: false, addEventListener() {} }),
+      sessionStorage: { getItem: key => saved.get(key), setItem: (key, value) => saved.set(key, value), removeItem: key => saved.delete(key) } },
     requestAnimationFrame: callback => callback(),
     setTimeout, clearTimeout, AbortController, URL,
     FormData: class { constructor() { this.interest = elements.get('contactInterest').value; } },
@@ -63,6 +64,17 @@ test('partnership choice reaches the submitted form data', async () => {
   assert.equal(f.elements.get('formStatus').dataset.state, 'success');
   assert.equal(f.form.resetCalled, true);
   assert.equal(f.elements.get('contactBtn').disabled, false);
+});
+
+test('giving selection survives a root-relative reload from a preview URL', () => {
+  const saved = new Map();
+  const preview = fixture({ ok: true }, saved);
+  preview.partner.events.click();
+  assert.equal(saved.get('ga-interest'), 'Financial partnership');
+  const destination = fixture({ ok: true }, saved);
+  assert.equal(destination.elements.get('contactInterest').value, 'Financial partnership');
+  assert.equal(destination.elements.get('contactInterestNote').hidden, false);
+  assert(!saved.has('ga-interest'));
 });
 
 test('server errors retain the inquiry and restore the submit button', async () => {
@@ -111,7 +123,7 @@ test('interviews use real source frames and retain a separate mission trailer', 
   const media = context.window.GOSPEL_ADVANCE_MEDIA;
   assert.match(media.conversation1, /kb5IJw_TKBM/);
   assert.match(media.conversation2, /K_fDMT9DLFo/);
-  assert.equal(media.trailer, '');
+  assert.equal(media.trailer, '/assets/video/gospel-advance-trailer.mp4');
   assert.equal(media.heroHasAudio, false);
   for (const file of [media.heroPreview, media.heroPreviewMobile]) {
     assert.match(file, /^assets\/video\/hero-campus-(desktop|mobile)\.mp4$/);
@@ -125,25 +137,32 @@ test('interviews use real source frames and retain a separate mission trailer', 
   assert.doesNotMatch(home, /rel="preload"[^>]*campus-conversation/);
 });
 
-test('process illustrations stay scoped and About uses the original preaching photo', () => {
+test('removed conversations and process sections stay absent; original preaching photo remains', () => {
   const root = path.join(__dirname, '..');
   const home = fs.readFileSync(path.join(root, 'gospel-advance-website.html'), 'utf8');
-  for (const name of ['process-engage', 'process-share-christ', 'process-connect']) {
-    assert(home.includes(`assets/images/${name}.jpg`));
-    assert(fs.statSync(path.join(root, `assets/images/${name}.jpg`)).size > 0);
-  }
+  assert.doesNotMatch(home, /Real questions|ga-conversations|ga-process|process-engage\.jpg|process-share-christ\.jpg|process-connect\.jpg/);
   assert.doesNotMatch(home, /ga-resource-photo/);
   assert.doesNotMatch(home, /andrew-portrait-refined/);
   assert.match(home, /class="ga-andrew-photo" src="andrew-ramirez.jpg"[^>]*width="600" height="800"/);
   assert(fs.existsSync(path.join(root, 'andrew-ramirez.jpg')));
 });
 
-test('mission section is an image-free statement of campus evangelism and connection', () => {
+test('mission section is the scrolling film without numbered section labels', () => {
   const home = fs.readFileSync(path.join(__dirname, '../gospel-advance-website.html'), 'utf8');
   const mission = home.match(/<section[^>]*id="mission"[\s\S]*?<\/section>/)[0];
-  assert.doesNotMatch(mission, /<img|role="img"|ga-scene|ga-calling-photo/);
-  assert.match(mission, /Reaching college students/);
-  assert.match(mission, /the gospel of Jesus Christ/);
-  assert.match(mission, /invite them to follow Christ/);
-  assert.match(mission, /existing Christian ministries on their campus/);
+  assert.match(mission, /id="missionTrailer"/);
+  assert.match(mission, /id="trailerStage"/);
+  assert.doesNotMatch(home, /\[0\d \/|ga-mission-divider|ga-mission-statement|ga-trailer-heading/);
+});
+
+test('editorial homepage uses original branding and working supporter pathways', () => {
+  const home = fs.readFileSync(path.join(__dirname, '../gospel-advance-website.html'), 'utf8');
+  assert.match(home, /ga-wordmark ga-hero-wordmark/);
+  assert.match(home, /ga-watch ga-button ga-button-red" href="#mission"/);
+  assert.match(home, /data-interest="Prayer partnership"/);
+  assert.match(home, /data-interest="Financial partnership"/);
+  assert.match(home, /data-interest="Campus connection"/);
+  assert.doesNotMatch(home, /href="\/?#conversations"/);
+  assert.doesNotMatch(home, /thesend\.org|webflow|typekit|GTM-TS3K9XK5/);
+  assert.equal((home.match(/<h1\b/g) || []).length, 1);
 });

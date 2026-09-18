@@ -449,7 +449,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
 .ga-hero-video, .ga-hero-poster img { filter: grayscale(.65) contrast(1.08); }
 .ga-hero-shade { background: linear-gradient(180deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.38) 35%,rgba(0,0,0,.68) 100%); }
 .ga-hero-content { width: calc(100% - 96px); max-width: 1420px; padding-top: 200px; padding-bottom: 38px; text-align: center; flex-shrink: 0; }
-.ga-home .ga-hero h1 { font: 400 140px/.76 var(--ga-impact); max-width: 1380px; margin: 0 auto 14px; text-transform: none; }
+.ga-home .ga-hero h1 { font: 800 120px/.88 var(--ga-logo); max-width: 1380px; margin: 0 auto 14px; text-transform: none; }
 .ga-home .ga-hero-statement { display: block; color: #fff; text-transform: uppercase; transform: translateY(22px) scaleX(.9); }
 .ga-hero-accent { display: block; width: max-content; position: relative; left: 50%; translate: -50% 0; transform: scaleX(.79) skewX(-5deg); color: #ef4432; font: italic 400 106px/.96 var(--ga-accent); -webkit-text-stroke: 2.2px currentColor; margin-top: 8px; white-space: nowrap; }
 .ga-hero-content > p { font-size: 18px; max-width: 1000px; margin-inline: auto; }
@@ -492,13 +492,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
 .ga-enter { animation: ga-panel-in .6s ease-out both; }
 @keyframes ga-panel-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @media (min-width: 1400px) {
-  .ga-home .ga-hero h1 { font-size: 174px; }
+  .ga-home .ga-hero h1 { font-size: 148px; }
   .ga-home .ga-hero-statement { transform: translateY(26px) scaleX(.9); }
   .ga-hero-accent { font-size: 132px; }
   .ga-hero-content > p { font-size: 21px; }
 }
 @media (min-width: 1600px) {
-  .ga-home .ga-hero h1 { font-size: 190px; }
+  .ga-home .ga-hero h1 { font-size: 160px; }
   .ga-hero-accent { font-size: 144px; }
 }
 @media (max-width: 1199px) {
@@ -583,4 +583,59 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
   .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { font-size: 19px; }
   .ga-header .ga-header-socials { gap: 8px; }
   .ga-mobile-menu .ga-mobile-root nav > a, .ga-mobile-menu .ga-mobile-root nav > button { font-size: 18px; }
+}
+.ga-trailer { background: #f3f3f0; padding: 72px 0 40px; border-block: 1px solid #e8e8e3; }
+.ga-trailer-title { margin: 0 24px 24px; text-align: center; font: 700 44px/1.15 Georgia, serif; text-transform: none; color: #171717; }
+.ga-trailer-stage { min-height: 145svh; }
+.ga-trailer-sticky { position: sticky; top: 100px; padding: 24px 56px 64px; }
+.ga-trailer-frame { position: relative; width: min(1280px, 100%, calc((100svh - 240px) * 16 / 9)); margin: 0 auto; padding: 8px; border: 1px solid #d5d5d0; border-radius: 28px; background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.08); transform-origin: center top; overflow: hidden; }
+.ga-trailer-frame video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #171717; border-radius: 20px; }
+.ga-trailer-watch { position: absolute; inset: auto auto 64px 50%; transform: translateX(-50%); white-space: nowrap; }
+.ga-trailer-error { text-align: center; margin: 20px; }
+.ga-trailer-error a { text-decoration: underline; }
+@media (max-width: 767px) {
+  .ga-trailer { padding: 36px 0 16px; }
+  .ga-trailer-title { font-size: 32px; margin-bottom: 28px; }
+  .ga-trailer-stage { min-height: 0; }
+  .ga-trailer-sticky { position: static; padding: 0 20px 24px; }
+  .ga-trailer-frame { width: 100%; padding: 5px; border-radius: 19px; }
+  .ga-trailer-frame video { border-radius: 14px; }
+  .ga-trailer-watch { bottom: 44px; padding: 10px 16px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ga-trailer-stage { min-height: 0; }
+  .ga-trailer-sticky { position: static; }
+}
+
+/* Use the supplied artwork as a luminance mask, preserving its letterforms. */
+.ga-wordmark {
+  display: block;
+  width: 200px;
+  aspect-ratio: 1130 / 470;
+  flex: none;
+  background: currentColor;
+  mask-image: url('images/gospel-advance-logo.png');
+  mask-mode: luminance;
+  mask-repeat: no-repeat;
+  mask-size: 147.965% 200.213%;
+  mask-position: 49.815% 47.771%;
+}
+.ga-header .ga-wordmark { width: 220px; }
+.ga-header.scrolled .ga-wordmark { width: 145px; }
+.ga-mobile-menu .ga-wordmark { width: 130px; }
+.ga-footer .ga-wordmark { width: 280px; max-width: 100%; }
+.ga-personal-message { grid-template-columns: minmax(0,1fr) minmax(0,420px); gap: 72px; }
+.ga-personal-message .ga-ministry-note { margin-top: 24px; }
+.ga-andrew-frame { margin: 0; padding: 8px; border: 1px solid #d5d5d0; border-radius: 28px; background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.07); overflow: hidden; }
+.ga-andrew-frame .ga-andrew-photo { display: block; width: 100%; height: auto; border-radius: 20px; }
+@media (max-width: 900px) {
+  .ga-personal-message { grid-template-columns: minmax(0,1fr) minmax(0,320px); gap: 32px; }
+}
+@media (max-width: 649px) {
+  .ga-personal-message { grid-template-columns: 1fr; }
+  .ga-andrew-frame { width: min(100%, 304px); justify-self: center; padding: 6px; border-radius: 22px; }
+  .ga-andrew-frame .ga-andrew-photo { border-radius: 16px; }
+}
+@media (max-width: 1099px) {
+.ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 140px; }
 }

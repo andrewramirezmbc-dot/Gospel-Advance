@@ -219,11 +219,11 @@ test('Arrow Down enters the panel and outside click or focus dismisses it', () =
 test('responsive transitions close the obsolete menu and unlock scrolling', () => {
   const f = fixture();
   f.mission.emit('click');
-  f.mediaQueries.get('(max-width: 1099px)').emit('change', { matches: true });
+  f.mediaQueries.get('(max-width: 1199px)').emit('change', { matches: true });
   assert.equal(f.missionPanel.inert, true);
   f.elements.get('gaMenuToggle').emit('click');
   assert.equal(f.menu.open, true);
-  f.mediaQueries.get('(min-width: 1100px)').emit('change', { matches: true });
+  f.mediaQueries.get('(min-width: 1200px)').emit('change', { matches: true });
   assert.equal(f.menu.open, false);
   assert.equal(f.document.body.style.overflow, '');
 });

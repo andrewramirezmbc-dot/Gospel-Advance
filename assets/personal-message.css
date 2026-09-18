@@ -1,0 +1,46 @@
+/* Original preaching photograph, with an overlapping editorial message. */
+.ga-home .ga-about { position: relative; isolation: isolate; padding: 120px 0 48px 8.2%; background: #f4f2ed; color: #171717; overflow: hidden; }
+.ga-home .ga-about::after { content: ''; position: absolute; z-index: 3; inset: 0 0 auto; height: 112px; background: linear-gradient(to bottom, #141414 0%, rgba(20,20,20,.88) 18%, rgba(20,20,20,.42) 52%, rgba(20,20,20,0) 100%); pointer-events: none; }
+.ga-about > .ga-shell { position: static; width: 100%; max-width: none; margin: 0; transform: none !important; animation: none !important; opacity: 1; }
+.ga-about .ga-campaign-heading { position: absolute; inset: 0 auto 0 0; width: 8.2%; margin: 0; background: #e44436; display: flex; justify-content: center; padding-top: 120px; }
+.ga-home .ga-about .ga-campaign-heading h2 { writing-mode: vertical-rl; transform: rotate(180deg); align-self: flex-start; color: #fff; font: 700 22px/1 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0; }
+.ga-about .ga-personal-message { display: block; }
+.ga-about .ga-section-copy { position: relative; z-index: 2; width: 50.5%; padding: 36px 4.4% 32px; background: #f9f8f5; }
+.ga-home .ga-about .ga-section-copy > .ga-letter-lead { max-width: none; margin: 0; color: #080808; font: 400 54px/.98 'Times New Roman', Times, serif; text-transform: uppercase; letter-spacing: 0; text-wrap: initial; }
+.ga-about .ga-letter-lead em { color: #df3c2e; font-style: normal; }
+.ga-home .ga-about .ga-section-copy > p { margin-top: 26px; font: 400 19px/1.45 var(--campaign-sans); color: #626262; }
+.ga-home .ga-about .ga-section-copy > .ga-byline { margin-top: 34px; font: 600 17px/1.4 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.ga-about .ga-personal-message .ga-text-link { display: inline-flex; padding: 0; margin-top: 22px; border: 0; border-radius: 0; color: #df3c2e; font: 600 19px/1.3 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.ga-about .ga-personal-message .ga-text-link .ga-icon { filter: none; }
+.ga-about .ga-andrew-frame { position: absolute; z-index: -1; inset: 0 0 0 33.5%; width: auto; margin: 0; padding: 0; border: 0; border-radius: 0; background: #253e45 url('images/andrew-wall-texture.jpg') center / 620px 620px; box-shadow: none; }
+.ga-about .ga-andrew-frame .ga-andrew-photo { display: block; position: absolute; right: 0; width: auto; height: 100%; max-width: 100%; aspect-ratio: 3 / 4; object-fit: contain; object-position: right center; border-radius: 0; mask-image: linear-gradient(90deg, transparent, #000 48px); }
+.ga-about .ga-ministry-note { color: #626262; font-size: 12px; }
+.ga-about .ga-ministry-note .about-quote { color: #333; }
+@media (min-width: 1600px) {
+  .ga-home .ga-about { padding-top: 138px; padding-bottom: 52px; }
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 64px; }
+  .ga-home .ga-about .ga-section-copy > p { font-size: 22px; }
+}
+@media (max-width: 1199px) {
+  .ga-home .ga-about::after { height: 76px; }
+  .ga-about .ga-campaign-heading { padding-top: 84px; }
+  .ga-home .ga-about { padding-top: 80px; }
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 42px; }
+  .ga-home .ga-about .ga-section-copy > p { font-size: 16px; }
+  .ga-about .ga-section-copy { width: 56%; padding: 32px; }
+}
+@media (max-width: 767px) {
+  .ga-home .ga-about { padding: 0 0 0 36px; }
+  .ga-about .ga-campaign-heading { width: 36px; padding-top: 84px; }
+  .ga-home .ga-about .ga-campaign-heading h2 { font-size: 16px; }
+  .ga-about .ga-personal-message { display: flex; flex-direction: column; gap: 0; }
+  .ga-about .ga-andrew-frame { position: relative; z-index: 0; inset: auto; order: -1; width: 100%; height: 410px; }
+  .ga-about .ga-andrew-frame .ga-andrew-photo { position: static; width: 100%; object-fit: contain; object-position: center; mask-image: none; }
+  .ga-about .ga-section-copy { width: calc(100% - 16px); margin-top: -42px; padding: 26px 22px; }
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 28px; }
+  .ga-home .ga-about .ga-section-copy > p { font-size: 16px; }
+  .ga-about .ga-personal-message .ga-text-link { font-size: 17px; }
+}
+@media (max-width: 359px) {
+  .ga-home .ga-about .ga-section-copy > .ga-letter-lead { font-size: 28px; }
+}

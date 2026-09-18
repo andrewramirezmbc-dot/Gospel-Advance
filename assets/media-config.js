@@ -6,7 +6,7 @@ window.GOSPEL_ADVANCE_MEDIA = Object.freeze({
   heroPreviewMobile: 'assets/video/hero-campus-mobile.mp4',
   heroHasAudio: false,
   heroLabel: 'Gospel Advance / Campus life',
-  trailer: '',
+  trailer: '/assets/video/gospel-advance-trailer.mp4',
   conversation1: 'https://www.youtube.com/watch?v=kb5IJw_TKBM',
   conversation2: 'https://www.youtube.com/watch?v=K_fDMT9DLFo',
   conversation3: '',

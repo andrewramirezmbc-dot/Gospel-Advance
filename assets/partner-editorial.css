@@ -1,0 +1,50 @@
+.ga-home .ga-partner { padding: 0; background: #f7f7f5; color: #171717; }
+.ga-home .ga-partner > .ga-shell { width: 100%; max-width: none; }
+.ga-partner-editorial { position: relative; padding: 40px 3% 64px; }
+.ga-partner-rail { position: absolute; inset: 0 0 0 auto; width: 6.8%; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; background: #e44436; color: #fff; text-transform: uppercase; font: 600 28px/1 'Barlow Condensed',sans-serif; }
+.ga-partner .ga-giving-heading { position: relative; display: block; max-width: none; padding: 0; margin: 0 0 44px; }
+.ga-partner-kicker { position: absolute; left: 2.6%; top: 20px; font: 600 26px/1.4 'Barlow Condensed',sans-serif; text-transform: uppercase; color: #294952; }
+.ga-home .ga-partner .ga-giving-heading h2 { max-width: none; color: #171717; font: 700 64px/1.02 'Bodoni Moda',Times,serif; font-optical-sizing: auto; text-transform: uppercase; text-align: center; text-wrap: initial; letter-spacing: 0; }
+.ga-partner .ga-giving-heading h2 em { font-style: normal; color: #d9362a; }
+.ga-home .ga-partner .ga-giving-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: none; margin: 24px 0 0; }
+.ga-partner .ga-giving-copy p { margin: 0; color: #444; font: 400 25px/1.35 'Times New Roman',Times,serif; }
+.ga-partner .ga-campaign-films { grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; }
+.ga-partner .ga-campaign-film { aspect-ratio: 1.86; border-radius: 0; padding: 42px; place-items: end start; }
+.ga-partner .ga-campaign-film:nth-child(2) { aspect-ratio: 1.66; padding: 32px; }
+.ga-partner .ga-campaign-film > img { filter: brightness(.8) saturate(.8); }
+.ga-partner .ga-campaign-film-title { align-items: flex-start; text-align: left; font: 400 54px/.98 'Times New Roman',Times,serif; color: #fff; gap: 6px; }
+.ga-partner .ga-campaign-film:nth-child(2) .ga-campaign-film-title { font-size: 36px; }
+.ga-partner .ga-campaign-film-title > span:first-child { color: #f14b3c; font: 700 26px/1.1 'Barlow Condensed',sans-serif; }
+.ga-partner .ga-film-play { width: 62px; height: 62px; border-width: 2px; margin-top: 10px; }
+.ga-partner .ga-campaign-film:focus-visible { outline-color: #e44436; }
+.ga-partner .ga-strategy-heading, .ga-partner .ga-strategy-grid { margin-left: 6%; margin-right: 6%; }
+.ga-partner .ga-strategy-grid { padding-bottom: 70px; }
+.ga-partner .ga-strategy-heading > .ga-icon { filter: none; }
+@media (min-width: 1600px) {
+  .ga-home .ga-partner .ga-giving-heading h2 { font-size: 72px; }
+  .ga-partner .ga-giving-copy p { font-size: 28px; }
+}
+@media (max-width: 1199px) {
+  .ga-home .ga-partner .ga-giving-heading h2 { font-size: 46px; }
+  .ga-partner-kicker { font-size: 20px; }
+  .ga-partner .ga-giving-copy p { font-size: 21px; }
+  .ga-partner .ga-campaign-film { padding: 24px; }
+  .ga-partner .ga-campaign-film-title { font-size: 40px; }
+  .ga-partner .ga-campaign-film:nth-child(2) { padding: 20px; }
+  .ga-partner .ga-campaign-film:nth-child(2) .ga-campaign-film-title { font-size: 28px; }
+}
+@media (max-width: 767px) {
+  .ga-partner-editorial { padding: 36px 20px; }
+  .ga-partner-rail { width: 32px; font-size: 18px; }
+  .ga-partner .ga-giving-heading { padding-left: 0; }
+  .ga-partner-kicker { position: static; display: block; margin-bottom: 20px; }
+  .ga-partner-kicker br { display: none; }
+  .ga-home .ga-partner .ga-giving-heading h2 { font-size: 36px; }
+  .ga-home .ga-partner .ga-giving-copy { grid-template-columns: 1fr; gap: 16px; }
+  .ga-partner .ga-giving-copy p { font-size: 21px; }
+  .ga-partner .ga-campaign-films { grid-template-columns: 1fr; gap: 20px; }
+  .ga-partner .ga-campaign-film, .ga-partner .ga-campaign-film:nth-child(2) { aspect-ratio: 1.2; padding: 20px; }
+  .ga-partner .ga-campaign-film-title, .ga-partner .ga-campaign-film:nth-child(2) .ga-campaign-film-title { font-size: 32px; }
+  .ga-partner .ga-campaign-film-title > span:first-child { font-size: 22px; }
+  .ga-partner .ga-film-play { width: 48px; height: 48px; }
+}

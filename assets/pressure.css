@@ -1,0 +1,64 @@
+/* Editorial statistics: live text over fictional illustrative photography. */
+.ga-home .ga-generation { background: #141414; color: #f7f7f5; padding-block: 80px 56px; }
+.ga-generation .ga-shell { max-width: 1440px; }
+.ga-generation .ga-campaign-heading { position: relative; z-index: 2; width: 57%; margin: 0; pointer-events: none; }
+.ga-generation .ga-campaign-heading::before { content: ''; display: block; width: 140px; height: 6px; margin-bottom: 24px; background: var(--ga-red); }
+.ga-home .ga-generation .ga-campaign-heading h2 { font-size: 100px; line-height: .94; text-wrap: initial; }
+.ga-generation .ga-stat-grid { grid-template-columns: 55% 45%; grid-template-rows: 290px 290px; border: 0; margin-top: -64px; }
+.ga-generation .ga-stat-grid > .ga-stat { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: 44px 24px; border: 0; border-radius: 0; }
+.ga-generation .ga-stat-grid > .ga-stat-church { grid-row: 1 / 3; padding: 92px 0 40px; }
+.ga-generation .ga-stat-grid > .ga-stat-overdose { border-left: 1px solid #777; }
+.ga-generation .ga-stat-grid > .ga-stat-care { border-left: 1px solid #777; border-top: 1px solid #777; }
+.ga-stat-image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+.ga-stat-church .ga-stat-image { object-position: 65% center; }
+.ga-generation .ga-stat::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#141414d9, #14141455 52%,#14141418), linear-gradient(0deg,#141414 0%,transparent 35%,transparent 78%,#14141488); }
+.ga-generation .ga-stat-church::after { background: linear-gradient(90deg,#141414b8,transparent 80%), linear-gradient(0deg,#141414,transparent 42%,transparent 78%,#141414); }
+.ga-home .ga-generation .ga-stat-number { min-height: 0; margin: 0; padding: 0; font-size: 148px; line-height: .95; color: #ef4436; }
+.ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 290px; }
+.ga-generation .ga-stat-percent { font-size: 132px; }
+.ga-generation .ga-stat-number [data-count] { min-width: 0; }
+.ga-home .ga-generation .ga-stat-number-long { font-size: 98px; margin-top: 16px; }
+.ga-home .ga-generation .ga-stat h3 { margin-top: 16px; font-size: 34px; line-height: 1.05; color: #fff; }
+.ga-home .ga-generation .ga-stat-church h3 { font-size: 52px; max-width: 380px; }
+.ga-generation .ga-stat-sources { max-width: none; padding-top: 32px; color: #aaa; font-size: 12px; }
+.ga-stat-context-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; margin-bottom: 24px; }
+.ga-stat-context-grid strong { display: block; color: #ddd; margin-bottom: 8px; }
+.ga-stat-context-grid a { display: block; margin-top: 8px; color: #ddd; }
+.ga-stat-imagery-note { margin-top: 12px; }
+@media (max-width: 1199px) {
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 76px; }
+  .ga-generation .ga-stat-grid { grid-template-rows: 250px 250px; margin-top: -40px; }
+  .ga-generation .ga-stat-grid > .ga-stat { padding: 36px 20px; }
+  .ga-generation .ga-stat-grid > .ga-stat-church { padding: 70px 0 32px; }
+  .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 230px; }
+  .ga-home .ga-generation .ga-stat-number { font-size: 120px; }
+  .ga-generation .ga-stat-percent { font-size: 100px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 76px; }
+  .ga-home .ga-generation .ga-stat h3 { font-size: 28px; }
+  .ga-home .ga-generation .ga-stat-church h3 { font-size: 44px; }
+}
+@media (max-width: 899px) {
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 62px; }
+  .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 190px; }
+  .ga-generation .ga-stat-percent { font-size: 76px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 62px; }
+}
+@media (max-width: 767px) {
+  .ga-home .ga-generation { padding-top: 48px; }
+  .ga-generation .ga-campaign-heading { width: 100%; }
+  .ga-generation .ga-campaign-heading::before { width: 92px; height: 4px; margin-bottom: 20px; }
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 60px; }
+  .ga-generation .ga-stat-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: 420px 260px 260px; margin-top: 16px; }
+  .ga-generation .ga-stat-grid > .ga-stat { padding: 36px 16px; border: 0; }
+  .ga-generation .ga-stat-grid > .ga-stat-church { grid-row: auto; padding: 40px 0; }
+  .ga-generation .ga-stat-grid > .ga-stat + .ga-stat { border-top: 1px solid #777; }
+  .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 220px; }
+  .ga-home .ga-generation .ga-stat-church h3 { font-size: 42px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 76px; }
+  .ga-home .ga-generation .ga-stat h3 { font-size: 30px; }
+  .ga-stat-context-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 359px) {
+  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 50px; }
+  .ga-home .ga-generation .ga-stat-number-long { font-size: 64px; }
+}

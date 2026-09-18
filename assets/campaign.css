@@ -1,0 +1,287 @@
+/* Close-reference campaign layout, using Gospel Advance content and assets. */
+:root { --campaign-banner: 64px; --campaign-nav: 96px; --campaign-sans: Arial, Helvetica, sans-serif; --campaign-display: 'Vina Sans', 'Barlow Condensed', sans-serif; --hero-notch: clamp(28px,6vw,100px); }
+html { scroll-padding-top: calc(var(--campaign-banner) + var(--campaign-nav) + 20px); }
+html.ga-announcement-dismissed { --campaign-banner: 0px; }
+.ga-home { background: var(--ga-carbon); color: var(--ga-paper); }
+.ga-home .ga-shell, .ga-header .ga-shell { width: calc(100% - 152px); max-width: 1280px; }
+.ga-header, .ga-header.scrolled, .ga-home .ga-header, .ga-home .ga-header.scrolled {
+  inset: 0 0 auto; padding: 0; border-radius: 0; background: var(--ga-paper); color: var(--ga-carbon); box-shadow: none;
+}
+.ga-announcement { position: relative; min-height: var(--campaign-banner); padding: 8px 64px; display: flex; justify-content: center; align-items: center; gap: 24px; background: var(--ga-red); color: white; }
+.ga-announcement p { margin: 0; font: 600 14px/1.4 var(--campaign-sans); }
+.ga-announcement > a { background: #171717; padding: 12px 26px; font: 600 12px/1.4 var(--campaign-sans); }
+.ga-announcement > button { position: absolute; right: 32px; top: 8px; }
+.ga-announcement .ga-icon { filter: invert(1); }
+.ga-header-inner, .ga-header.scrolled .ga-header-inner { display: grid; grid-template-columns: minmax(150px,1fr) auto minmax(60px,1fr) auto; grid-template-rows: var(--campaign-nav); gap: 0 24px; }
+.ga-header .ga-brand { grid-area: 1 / 1; align-self: center; justify-content: start; margin: 0; }
+.ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 134px; }
+.ga-header .ga-nav-left { grid-area: 1 / 2; justify-content: flex-start; gap: 20px; }
+.ga-header .ga-nav-right { grid-area: 1 / 4; justify-content: flex-end; gap: 14px; }
+.ga-header .ga-nav-trigger, .ga-header .ga-desktop-nav > a { font: 600 14px/1.4 var(--campaign-sans); }
+.ga-header .ga-nav-trigger, .ga-header .ga-nav-left > a { padding: 14px 4px; border-radius: 5px; white-space: nowrap; transition: background .2s; }
+.ga-header .ga-nav-trigger:hover, .ga-header .ga-nav-left > a:hover, .ga-header .ga-nav-trigger[aria-expanded=true] { background: #1717170d; }
+.ga-header .ga-header-socials, .ga-header.scrolled .ga-header-socials { grid-area: 1 / 3; justify-self: end; display: flex; visibility: visible; opacity: 1; pointer-events: auto; gap: 14px; }
+.ga-header .ga-header-utility, .ga-header.scrolled .ga-header-utility { display: none; }
+.ga-header-utility > a { display: none; }
+.ga-header-utility button { font-size: 0; padding: 8px; }
+.ga-header-utility .ga-icon { width: 18px; height: 18px; }
+.ga-header .ga-header-partner, .ga-header.scrolled .ga-header-partner { min-width: 0; min-height: 48px; padding: 14px 18px; background: var(--ga-red); color: white; border: 3px solid var(--ga-red); border-radius: 6px; white-space: nowrap; }
+.ga-header .ga-header-donate, .ga-subpage .ga-header .ga-header-donate { min-height: 48px; padding: 14px 18px; border: 3px solid var(--ga-carbon); background: transparent; color: var(--ga-carbon); border-radius: 6px; }
+.ga-header .ga-header-donate:hover, .ga-subpage .ga-header .ga-header-donate:hover { background: var(--ga-carbon); color: white; transform: none; }
+.ga-header .ga-header-partner:hover, .ga-header.scrolled .ga-header-partner:hover { background: #bb3026; border-color: #bb3026; color: white; transform: none; }
+.ga-home .ga-header:not(.scrolled):not(.menu-open) .ga-icon { filter: none; }
+.ga-home .ga-header:not(.scrolled):not(.menu-open) .ga-announcement .ga-icon { filter: invert(1); }
+.ga-header.menu-open { border-radius: 0; }
+.ga-mega-panel { border-radius: 0 0 8px 8px; }
+.ga-header .ga-mega-panel, .ga-header.scrolled .ga-mega-panel { max-height: calc(100dvh - var(--campaign-banner) - var(--campaign-nav) - 20px); }
+.ga-button { border-radius: 6px; font-family: var(--campaign-sans); }
+.ga-home .ga-hero {
+  margin-top: calc(var(--campaign-banner) + var(--campaign-nav)); padding: 0; min-height: 820px;
+  height: 110svh; max-height: 1400px;
+  justify-content: stretch;
+  z-index: 1;
+  clip-path: polygon(0 0,100% 0,100% calc(100% - var(--hero-notch)),50% 100%,0 calc(100% - var(--hero-notch)));
+}
+.ga-hero-content { display: grid; grid-template-rows: 1fr auto; flex: 1; padding: 64px 0 calc(80px + var(--hero-notch)); text-align: left; }
+.ga-hero-wordmark { width: min(500px,64%); justify-self: center; align-self: center; margin: 30px 0; color: #fff; }
+.ga-hero-bottom { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; }
+.ga-hero-actions { margin: 0; }
+.ga-watch.ga-button { padding: 17px 28px; min-height: 60px; border: 3px solid #f7f7f5; border-radius: 6px; background: transparent; font: 700 14px/1.3 var(--campaign-sans) !important; }
+.ga-watch.ga-button:hover { background: var(--ga-paper); color: var(--ga-carbon) !important; transform: none; }
+.ga-watch-play { display: none; }
+.ga-hero-action-note { display: flex; align-items: center; gap: 18px; width: fit-content; font: 700 19px/1.1 var(--campaign-sans); text-transform: uppercase; }
+.ga-hero-action-note .ga-icon { filter: invert(1); width: 28px; height: 28px; }
+.ga-home .ga-film-toolbar { width: auto; max-width: none; margin: 0; right: 24px; bottom: calc(80px + var(--hero-notch)); }
+.ga-home .ga-shell.ga-film-toolbar { width: auto; max-width: none; margin: 0; left: auto; }
+.ga-film-tools .ga-icon-button { width: 30px; height: 30px; padding: 6px; }
+.ga-hero-video, .ga-hero-poster img { filter: grayscale(.6) contrast(1.1); }
+.ga-hero-shade { background: #0008; }
+.ga-home .ga-section, .ga-trailer { padding: 96px 0; border: 0; background: var(--ga-carbon); color: var(--ga-paper); }
+.ga-trailer { position: relative; margin-top: calc(-1 * var(--hero-notch)); padding-top: calc(var(--hero-notch) + 48px); }
+.ga-campaign-heading, .ga-film-intro { display: block; margin-bottom: 56px; }
+.ga-giving-heading { max-width: 1060px; }
+.ga-home .ga-giving-copy { max-width: 800px; margin-top: 28px; font: 400 20px/1.65 var(--campaign-sans); color: #dededb; }
+.ga-home .ga-campaign-heading h2, .ga-home .ga-partner h2 { font: 400 66px/.88 var(--campaign-display); text-transform: uppercase; text-align: left; text-wrap: balance; margin: 0; }
+.ga-home .ga-trailer-title { font: 400 132px/.88 var(--campaign-display); color: var(--ga-paper); text-transform: uppercase; text-align: left; text-wrap: initial; letter-spacing: 0; margin: 0; }
+.ga-trailer-stage { min-height: 0; }
+.ga-trailer-sticky { position: static; padding: 0 76px; }
+.ga-trailer-frame { width: min(1280px,100%); border: 1px solid #ffffff30; border-radius: 8px; padding: 0; background: #000; box-shadow: none; }
+.ga-trailer-frame video { border-radius: 7px; }
+.ga-trailer-watch { border: 2px solid white; background: #171717; color: white; border-radius: 6px; }
+.ga-trailer-watch:hover { background: #333; transform: translateX(-50%); }
+.ga-trailer-error { color: white; }
+.ga-home .ga-generation { background: var(--ga-paper); color: var(--ga-carbon); }
+.ga-generation .ga-campaign-heading { margin-bottom: 32px; }
+.ga-home .ga-stat-population { margin-bottom: 24px; font: 500 12px/1.6 var(--ga-mono); text-transform: uppercase; color: #555; }
+.ga-stat-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-block: 1px solid #17171730; }
+.ga-stat { min-width: 0; opacity: 1; transform: none; transition: opacity .65s ease, transform .65s ease; }
+.ga-stat-waiting { opacity: 0; transform: translateY(24px); }
+.ga-stat-grid > .ga-stat { padding: 40px 32px; border-left: 1px solid #17171730; }
+.ga-stat-grid > .ga-stat:first-child { padding-left: 0; border-left: 0; }
+.ga-stat-grid > .ga-stat:last-child { padding-right: 0; }
+.ga-home .ga-stat-number { display: flex; align-items: baseline; min-height: 112px; font: 400 112px/1 var(--campaign-display); color: var(--ga-red); font-variant-numeric: tabular-nums; }
+.ga-home .ga-stat-number-long { padding-top: 32px; font-size: 72px; }
+.ga-stat-source { display: inline-block; margin-top: 20px; font: 500 11px/1.7 var(--ga-mono); text-decoration: underline; text-underline-offset: 4px; }
+.ga-stat-number [data-count] { display: inline-block; min-width: 2ch; }
+.ga-stat-percent { font-size: 64px; }
+.ga-home .ga-stat h3 { margin-top: 20px; font: 400 36px/1.05 var(--campaign-display); text-transform: uppercase; }
+.ga-home .ga-stat-description { max-width: 330px; margin-top: 14px; font: 400 16px/1.65 var(--campaign-sans); color: #444; }
+.ga-stat-sources { max-width: 1000px; padding-top: 24px; font: 400 12px/1.7 var(--campaign-sans); color: #555; }
+.ga-stat-sources a, .ga-demographic-context a { text-decoration: underline; text-underline-offset: 3px; }
+.ga-demographic-context { margin-top: 32px; border-top: 1px solid #17171730; }
+.ga-demographic-context summary { padding: 20px 0; cursor: pointer; font: 500 13px/1.6 var(--ga-mono); }
+.ga-demographic-stat { display: grid; grid-template-columns: 180px minmax(0,680px); gap: 32px; padding-block: 8px 24px; }
+.ga-home .ga-demographic-stat .ga-stat-number { min-height: 72px; font-size: 72px; color: var(--ga-carbon); }
+.ga-demographic-stat .ga-stat-percent { font-size: 36px; }
+.ga-demographic-stat > div { font: 400 16px/1.6 var(--campaign-sans); }
+.ga-home .ga-demographic-note { margin-block: 12px; color: #555; font-size: 13px; }
+.ga-demographic-stat a { font-size: 12px; }
+.ga-personal-message { grid-template-columns: minmax(0,1fr) minmax(0,480px); gap: 100px; align-items: center; }
+.ga-about .ga-section-copy > p { margin-top: 24px; font: 400 17px/1.85 var(--campaign-sans); color: #d3d3d0; max-width: 620px; }
+.ga-about .ga-section-copy > .ga-letter-lead { margin-top: 0; font: 700 38px/1.12 var(--campaign-sans); color: var(--ga-paper); }
+.ga-about .ga-section-copy > .ga-byline { font: 500 13px/1.5 var(--ga-mono); text-transform: uppercase; margin-top: 32px; color: white; }
+.ga-personal-message .ga-text-link { margin-top: 24px; padding: 16px 20px; border: 2px solid #f7f7f5; border-radius: 6px; font: 700 13px/1.4 var(--campaign-sans); }
+.ga-personal-message .ga-text-link .ga-icon { filter: invert(1); }
+.ga-andrew-frame { border: 1px solid #ffffff50; padding: 8px; border-radius: 8px; background: transparent; box-shadow: none; }
+.ga-andrew-frame .ga-andrew-photo { border-radius: 4px; }
+.ga-ministry-note { color: #c5c5c1; }
+.ga-partner-options { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 0; border: 0; }
+.ga-action-card { display: flex; flex-direction: column; gap: 32px; padding: 44px; border-radius: 8px; color: var(--ga-carbon); }
+.ga-action-support { background: var(--ga-red); color: white; }
+.ga-action-campus { background: var(--ga-paper); }
+.ga-action-card-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.ga-home .ga-action-card h3 { font: 400 50px/.92 var(--campaign-display); text-transform: uppercase; }
+.ga-action-card-top > .ga-icon { width: 60px; height: 60px; }
+.ga-action-support .ga-icon { filter: invert(1); }
+.ga-action-photo { width: 100%; height: auto; aspect-ratio: 2.3 / 1; object-fit: cover; border: 2px solid currentColor; border-radius: 0; }
+.ga-action-copy { display: grid; grid-template-columns: .8fr 1.4fr; gap: 24px; font: 500 12px/1.65 var(--ga-mono); text-transform: uppercase; }
+.ga-action-copy strong { font-size: 14px; }
+.ga-partner-options .ga-action-button, .ga-partner-options .ga-action-button:last-child { display: flex; width: 100%; margin-top: auto; padding: 16px 12px; min-height: 60px; border: 3px solid currentColor; border-radius: 6px; font: 700 13px/1.4 var(--campaign-sans); flex-direction: row; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+.ga-partner-options .ga-action-button:hover { background: #171717; color: white; transform: none; }
+.ga-partner-options .ga-action-button:hover .ga-icon { filter: invert(1); }
+.ga-action-card .ga-action-button .ga-icon { width: 18px; height: 18px; }
+.ga-partner-options .ga-action-prayer { display: flex; flex-direction: row; justify-content: center; gap: 10px; border: 0; padding: 0; font: 600 13px/1.4 var(--campaign-sans); }
+.ga-action-campus { padding-bottom: 94px; }
+.ga-action-campus .ga-icon { filter: none; }
+.ga-campaign-films { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.ga-campaign-film { position: relative; isolation: isolate; display: grid; place-items: center; width: 100%; aspect-ratio: 1.5; padding: 24px; overflow: hidden; border: 0; border-radius: 6px; background: #080808; color: white; cursor: pointer; }
+.ga-campaign-film > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease, filter .6s ease; filter: brightness(.55) saturate(.65); z-index: -1; }
+.ga-campaign-film:hover > img { transform: scale(1.045); filter: brightness(.7) saturate(.9); }
+.ga-campaign-film:focus-visible { outline: 3px solid white; outline-offset: 6px; }
+.ga-campaign-film-title { display: flex; flex-direction: column; align-items: center; gap: 12px; font: 400 48px/.95 var(--campaign-display); text-transform: uppercase; text-align: center; color: #ff675b; }
+.ga-campaign-film-title > span:first-child { font-size: 22px; }
+.ga-film-play { display: grid; place-items: center; width: 48px; height: 48px; margin-top: 4px; border: 1px solid white; border-radius: 50%; transition: opacity .2s; }
+.ga-film-play .ga-icon { width: 18px; filter: invert(1); }
+.ga-strategy-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin: 100px 0 56px; }
+.ga-home .ga-strategy-heading h3 { font: 700 48px/1.1 var(--campaign-sans); }
+.ga-strategy-heading > .ga-icon { width: 56px; height: 56px; filter: invert(1); }
+.ga-strategy-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; padding-bottom: 36px; }
+.ga-strategy-card { display: flex; flex-direction: column; min-width: 0; padding: 30px; border-radius: 6px; background: #e7e7e4; color: #171717; }
+.ga-strategy-card:nth-child(2) { position: relative; top: 18px; background: #d9d9d6; }
+.ga-strategy-card:nth-child(3) { position: relative; top: 36px; background: #c9c9c6; }
+.ga-strategy-top { display: flex; justify-content: space-between; align-items: start; font: 500 11px/1.5 var(--ga-mono); }
+.ga-strategy-arrow { display: grid; place-items: center; width: 60px; height: 60px; border: 3px solid var(--ga-red); border-radius: 50%; }
+.ga-strategy-arrow .ga-icon { width: 36px; height: 36px; }
+.ga-home .ga-strategy-card h4 { margin-top: 48px; font: 700 18px/1.3 var(--ga-mono); text-transform: uppercase; }
+.ga-strategy-card p { margin: 24px 0 32px; font: 400 13px/1.8 var(--ga-mono); }
+.ga-strategy-card > a { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-top: auto; padding-top: 20px; border-top: 1px solid #17171740; font: 700 13px/1.5 var(--campaign-sans); }
+.ga-strategy-card > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ga-strategy-card > a .ga-icon { flex: 0 0 20px; }
+.ga-video-cursor { position: fixed; left: 0; top: 0; z-index: 90; pointer-events: none; display: grid; place-items: center; width: 88px; height: 88px; border-radius: 50%; background: #f7f7f5; color: #171717; font: 700 12px/1 var(--ga-mono); opacity: 0; transform: translate(-50%,-50%) scale(.6); transition: opacity .15s, transform .2s; }
+.ga-video-cursor.is-visible { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.ga-cursor-active, .ga-cursor-active * { cursor: none !important; }
+.ga-cursor-active .ga-film-play { opacity: 0; }
+.ga-home .ga-belief { padding-block: 100px 140px; }
+.ga-belief p { max-width: 1100px; margin: auto !important; text-align: center; text-transform: uppercase; font: 500 42px/1.5 var(--ga-mono); color: #d1d1cd; }
+.ga-belief mark { color: white; background: var(--ga-red); padding: 0 5px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.ga-home .ga-contact { background: var(--ga-paper); color: var(--ga-carbon); }
+.ga-contact-grid { grid-template-columns: 1fr 1fr; gap: 100px; }
+.ga-home .ga-resources h2, .ga-home .ga-contact-form h2 { font: 400 66px/.88 var(--campaign-display); text-transform: uppercase; }
+.ga-resources a { font: 700 18px/1.4 var(--campaign-sans); padding: 24px 0; }
+.ga-contact-form { border: 0; padding: 0; gap: 14px; }
+.ga-contact-form > p:not(.ga-form-status):not(.ga-interest-note) { font: 400 14px/1.6 var(--campaign-sans); }
+.ga-contact-form input:not([type=hidden]), .ga-contact-form textarea { border-radius: 6px; font-size: 16px; padding: 14px; }
+.ga-home .ga-gospel-wrap { width: 100%; max-width: none; padding: 0 max(24px,calc((100% - 1280px)/2)) 40px; background: var(--ga-paper); color: var(--ga-carbon); }
+.ga-home .ga-gospel-details h2 { font: 400 50px/1 var(--campaign-display); text-transform: uppercase; }
+.ga-footer { background: #101010; padding: 80px 0 32px; }
+.ga-footer-top { align-items: flex-start; }
+.ga-footer .ga-wordmark { width: 320px; color: #fff; }
+.ga-footer-nav { max-width: 200px; font: 500 13px/1.8 var(--ga-mono); text-transform: uppercase; }
+.ga-footer .ga-socials { border: 0; }
+.ga-footer-bottom { border-top: 1px solid #ffffff30; padding-top: 24px; }
+.ga-subpage .page-header, .ga-subpage .guide-hero, .ga-subpage .article-header, .ga-subpage .article-page { padding-top: calc(var(--campaign-banner) + var(--campaign-nav) + 64px); }
+.ga-subpage :is(.page-header,.guide-hero,.article-header,main) :is(h1,h2,h3) { font-family: var(--campaign-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0; }
+.ga-subpage .page-header h1, .ga-subpage .guide-hero h1 { font-size: 84px; line-height: .9; }
+.ga-subpage .guide-hero h1 em { font: inherit; }
+.ga-subpage .article-page h1, .ga-subpage .article-header h1 { font-size: 66px; line-height: .95; }
+.ga-subpage .articles-cta h2, .ga-subpage .sermons-cta h2 { font-size: 66px; line-height: .9; }
+.ga-subpage .article-card h3 { font-size: 42px; line-height: 1; }
+.ga-subpage .article-body h2, .ga-subpage .guide-section h2 { font-size: 42px; line-height: 1.05; }
+.ga-subpage .article-body h3, .ga-subpage .guide-section h3 { font-size: 34px; line-height: 1.1; }
+.ga-reveal-in { animation: ga-campaign-rise .65s ease-out both; }
+@keyframes ga-campaign-rise { from { opacity: .3; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1199px) {
+  .ga-home .ga-stat-number-long { font-size: 56px; padding-top: 48px; }
+  .ga-home .ga-stat-number { min-height: 112px; font-size: 112px; }
+  .ga-stat-percent { font-size: 48px; }
+  .ga-stat-grid > .ga-stat { padding-inline: 24px; }
+  .ga-header-inner, .ga-header.scrolled .ga-header-inner { grid-template-columns: 1fr auto; grid-template-rows: var(--campaign-nav); }
+  .ga-header .ga-desktop-nav, .ga-header .ga-header-socials, .ga-header.scrolled .ga-header-socials { display: none; }
+  .ga-header .ga-menu-toggle { display: flex; grid-area: 1 / 2; }
+  .ga-home .ga-header:not(.scrolled) .ga-menu-toggle .ga-icon { filter: none; }
+  .ga-header .ga-nav-right { gap: 20px; }
+  .ga-home .ga-shell, .ga-header .ga-shell { width: calc(100% - 80px); }
+  .ga-home .ga-campaign-heading h2, .ga-home .ga-partner h2 { font-size: 58px; }
+  .ga-home .ga-trailer-title { font-size: 104px; }
+  .ga-personal-message { gap: 50px; grid-template-columns: 1fr 380px; }
+  .ga-action-card { padding: 28px; }
+  .ga-action-campus { padding-bottom: 78px; }
+  .ga-action-copy { grid-template-columns: 1fr; gap: 12px; }
+  .ga-contact-grid { gap: 48px; }
+}
+@media (max-width: 1099px) {
+  :root { --campaign-nav: 76px; }
+  .ga-header-inner, .ga-header.scrolled .ga-header-inner { grid-template-columns: 1fr auto; grid-template-rows: var(--campaign-nav); }
+  .ga-header .ga-header-socials, .ga-header.scrolled .ga-header-socials, .ga-header .ga-header-utility, .ga-header.scrolled .ga-header-utility { display: none; }
+  .ga-header .ga-menu-toggle { grid-area: 1 / 2; }
+  .ga-home .ga-header:not(.scrolled) .ga-menu-toggle .ga-icon { filter: none; }
+  .ga-hero-bottom { grid-template-columns: 1fr auto 1fr; }
+  .ga-home .ga-film-toolbar { right: 32px; }
+  .ga-hero-action-note { font-size: 16px; }
+}
+@media (max-width: 767px) {
+  .ga-home .ga-stat-number-long { font-size: 72px; padding-top: 32px; }
+  .ga-campaign-films, .ga-strategy-grid { grid-template-columns: 1fr; }
+  .ga-campaign-film-title { font-size: 40px; }
+  .ga-strategy-heading { margin: 64px 0 32px; }
+  .ga-home .ga-strategy-heading h3 { font-size: 36px; }
+  .ga-strategy-heading > .ga-icon { width: 40px; height: 40px; }
+  .ga-strategy-grid { padding-bottom: 0; }
+  .ga-strategy-card:nth-child(2), .ga-strategy-card:nth-child(3) { top: 0; }
+  .ga-home .ga-strategy-card h4 { margin-top: 32px; }
+  .ga-stat-grid { grid-template-columns: 1fr; }
+  .ga-stat-grid > .ga-stat, .ga-stat-grid > .ga-stat:first-child, .ga-stat-grid > .ga-stat:last-child { padding: 32px 0; border-left: 0; }
+  .ga-stat-grid > .ga-stat + .ga-stat { border-top: 1px solid #17171730; }
+  .ga-home .ga-stat h3 { margin-top: 12px; font-size: 32px; }
+  .ga-demographic-stat { grid-template-columns: 1fr; gap: 16px; }
+  :root { --campaign-banner: 64px; --campaign-nav: 72px; }
+  .ga-home .ga-shell, .ga-header .ga-shell { width: calc(100% - 40px); }
+  .ga-announcement { padding: 8px 44px 8px 20px; gap: 14px; justify-content: space-between; }
+  .ga-announcement p { max-width: 160px; font-size: 11px; }
+  .ga-announcement > a { padding: 10px; white-space: nowrap; font-size: 11px; }
+  .ga-announcement > button { right: 2px; top: 12px; }
+  .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 112px; }
+  .ga-home .ga-hero { min-height: 680px; height: 100svh; padding: 0; }
+  .ga-hero-content { padding: 40px 0 calc(92px + var(--hero-notch)); }
+  .ga-hero-wordmark { width: min(440px,92%); margin: 30px 0; }
+  .ga-hero-bottom { display: flex; justify-content: center; }
+  .ga-hero-action-note { display: none; }
+  .ga-watch.ga-button { min-height: 54px; padding: 14px 24px; }
+  .ga-home .ga-film-toolbar { bottom: calc(16px + var(--hero-notch)); right: 20px; }
+  .ga-home .ga-section, .ga-trailer { padding: 56px 0; }
+  .ga-trailer { padding-top: calc(var(--hero-notch) + 40px); }
+  .ga-campaign-heading, .ga-film-intro { margin-bottom: 36px; }
+  .ga-home .ga-giving-copy { margin-top: 24px; font-size: 17px; }
+  .ga-home .ga-campaign-heading h2, .ga-home .ga-partner h2 { font-size: 46px; }
+  .ga-home .ga-trailer-title { font-size: 76px; }
+  .ga-trailer-sticky { padding: 0 20px; }
+  .ga-trailer-watch { bottom: 44px; font-size: 11px; padding: 8px 12px; }
+  .ga-personal-message { grid-template-columns: 1fr; gap: 36px; }
+  .ga-about .ga-section-copy > .ga-letter-lead { font-size: 32px; }
+  .ga-about .ga-section-copy > p { font-size: 16px; }
+  .ga-andrew-frame { width: min(100%,360px); justify-self: center; }
+  .ga-partner-options { grid-template-columns: 1fr; gap: 24px; }
+  .ga-action-card { padding: 24px; gap: 24px; }
+  .ga-home .ga-action-card h3 { font-size: 38px; }
+  .ga-action-card-top > .ga-icon { width: 40px; height: 40px; }
+  .ga-action-photo { aspect-ratio: 1.8 / 1; }
+  .ga-partner-options .ga-action-button { font-size: 12px; }
+  .ga-home .ga-belief { padding-block: 48px 72px; }
+  .ga-belief p { font-size: 24px; line-height: 1.6; text-align: left; }
+  .ga-contact-grid { grid-template-columns: 1fr; gap: 64px; }
+  .ga-home .ga-resources h2, .ga-home .ga-contact-form h2 { font-size: 46px; }
+  .ga-home .ga-gospel-details h2 { font-size: 36px; }
+  .ga-subpage .page-header h1, .ga-subpage .guide-hero h1 { font-size: 56px; }
+  .ga-subpage .article-page h1, .ga-subpage .article-header h1, .ga-subpage .articles-cta h2, .ga-subpage .sermons-cta h2 { font-size: 46px; }
+  .ga-subpage .article-card h3, .ga-subpage .article-body h2, .ga-subpage .guide-section h2 { font-size: 36px; }
+  .ga-subpage .article-body h3, .ga-subpage .guide-section h3 { font-size: 30px; }
+  .ga-footer { padding-top: 56px; }
+  .ga-footer-top { flex-direction: column; align-items: start; }
+  .ga-footer .ga-wordmark { width: min(100%,300px); }
+  .ga-footer-nav { max-width: none; font-size: 11px; }
+  .ga-footer .ga-socials { padding: 0; }
+}
+@media (max-width: 359px) {
+  .ga-home .ga-stat-number-long { font-size: 60px; }
+  .ga-home .ga-trailer-title { font-size: 64px; }
+  .ga-home .ga-action-card h3 { font-size: 32px; }
+  .ga-action-card-top { gap: 12px; }
+  .ga-action-card-top > .ga-icon { width: 28px; height: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ga-campaign-film > img { transition: none; }
+  .ga-campaign-film:hover > img { transform: none; }
+  .ga-video-cursor { display: none; }
+  .ga-reveal-in { animation: none; }
+  .ga-stat { transition: none; transform: none; opacity: 1; }
+}

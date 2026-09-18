@@ -1,0 +1,81 @@
+(() => {
+  'use strict';
+  const video = document.getElementById('missionTrailer');
+  const stage = document.getElementById('trailerStage');
+  if (!video || !stage) return;
+  const frame = document.getElementById('trailerFrame');
+  const watch = document.getElementById('trailerWatch');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const narrow = window.matchMedia('(max-width: 767px)');
+  let visible = false;
+  let userPaused = false;
+  let automaticPause = false;
+  let failed = false;
+  let started = false;
+  let raf = 0;
+  const blocked = () => document.hidden || !!document.querySelector('dialog[open], .ga-header.menu-open');
+  const pause = () => {
+    if (!video.paused) {
+      automaticPause = true;
+      video.pause();
+    }
+  };
+  const sync = () => {
+    if (!visible || blocked() || failed || userPaused || (motion.matches && !started)) {
+      pause();
+      return;
+    }
+    video.play().catch(() => { watch.hidden = false; });
+  };
+  const layout = () => {
+    raf = 0;
+    const progress = Math.max(0, Math.min(1, (innerHeight * .85 - stage.getBoundingClientRect().top) / (innerHeight * .75)));
+    const scale = motion.matches || narrow.matches ? 1 : .88 + .12 * progress;
+    frame.style.transform = `scale(${scale})`;
+  };
+  const scheduleLayout = () => { if (!raf) raf = requestAnimationFrame(layout); };
+  watch.hidden = false;
+  video.muted = true;
+  watch.addEventListener('click', () => {
+    started = true;
+    userPaused = false;
+    video.currentTime = 0;
+    video.muted = false;
+    watch.hidden = true;
+    video.play().catch(() => { watch.hidden = false; });
+  });
+  video.addEventListener('play', () => {
+    userPaused = false;
+    if (motion.matches || !video.muted) started = true;
+  });
+  video.addEventListener('pause', () => {
+    if (automaticPause) automaticPause = false;
+    else userPaused = true;
+  });
+  video.addEventListener('volumechange', () => {
+    if (!video.muted) started = true;
+    watch.hidden = !video.muted;
+  });
+  video.addEventListener('ended', () => { userPaused = true; });
+  video.addEventListener('error', () => {
+    failed = true;
+    watch.hidden = true;
+    document.getElementById('trailerError').hidden = false;
+  });
+  new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .35;
+    sync();
+  }, { threshold: [0, .35] }).observe(video);
+  // Menus and modal films must never compete with the inline trailer's audio.
+  const observer = new MutationObserver(sync);
+  document.querySelectorAll('dialog, .ga-header').forEach(el => observer.observe(el, { attributes: true, attributeFilter: ['open', 'class'] }));
+  document.addEventListener('visibilitychange', sync);
+  motion.addEventListener('change', () => {
+    if (motion.matches) userPaused = true;
+    layout();
+    sync();
+  });
+  window.addEventListener('scroll', scheduleLayout, { passive: true });
+  window.addEventListener('resize', scheduleLayout, { passive: true });
+  layout();
+})();
