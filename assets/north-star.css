@@ -67,9 +67,8 @@
 .ga-home .ga-hero { margin-top: 0; min-height: 760px; height: 100svh; }
 .ga-home .ga-hero-content { display: flex; align-items: center; justify-content: center; padding: 130px 0 100px; }
 .ga-hero-editorial { width: 100%; text-align: center; }
-.ga-hero-artwork-link { display: block; width: 100%; max-width: 1400px; margin-inline: auto; }
-.ga-hero-artwork-link img { display: block; width: 100%; height: auto; }
-.ga-hero-artwork-link:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.ga-hero-artwork-image { display: block; width: 100%; max-width: 1400px; margin-inline: auto; aspect-ratio: 1672 / 740; overflow: hidden; }
+.ga-hero-artwork-image img { display: block; width: 100%; height: auto; }
 .ga-hero-eyebrow { margin: 0 0 32px; font: 500 13px/1.5 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
 .ga-hero-eyebrow::after { content: ''; display: block; width: 56px; height: 1px; margin: 24px auto 0; background: #ffffffb0; }
 .ga-home .ga-hero .ga-hero-mission { margin: 0 auto; color: white; font: 700 136px/.9 'Bodoni Moda',Georgia,serif; text-align: center; text-transform: none; letter-spacing: 0; }
@@ -212,3 +211,132 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 @media (max-width: 389px) {
   .ga-home .ga-trailer .ga-trailer-title { font-size: 26px; }
 }
+.ga-campus-invite { padding: 72px 0 44px; background: linear-gradient(90deg, #080b0dd1, #080b0d85), url('video/hero-campus-desktop.jpg') center / cover; color: #f7f7f5; }
+.ga-home .ga-campus-invite h2, .ga-home .ga-mission-faq h2 { margin: 0; font: 700 52px/1.12 'Plus Jakarta Sans', sans-serif; letter-spacing: 0; }
+.ga-home .ga-campus-invite h2 { font: 700 68px/1.06 'Bodoni Moda', Georgia, serif; text-transform: none; }
+.ga-campus-label { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; font-size: 12px; text-transform: uppercase; }
+.ga-campus-label::before { content: ""; width: 56px; height: 3px; background: #e44436; }
+.ga-campus-period { color: #e44436; }
+.ga-campus-invite-intro > p { margin: 22px 0 0; font-size: 20px; color: #efefed; }
+.ga-campus-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+.ga-campus-paths > div { position: relative; padding: 32px 28px 32px 108px; border: 1px solid #ffffff80; border-radius: 8px; background: #23232399; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; align-items: flex-start; }
+.ga-campus-icon { position: absolute; left: 28px; top: 30px; display: grid; place-items: center; width: 58px; height: 58px; border: 2px solid #e44436; border-radius: 50%; }
+.ga-campus-icon img { filter: invert(1); }
+.ga-home .ga-campus-paths h3 { font: 700 30px/1.15 'Bodoni Moda', Georgia, serif; margin: 8px 0 0; letter-spacing: 0; text-transform: none; }
+.ga-campus-paths p { max-width: 520px; font-size: 17px; line-height: 1.6; color: #dededb; margin: 22px 0; }
+.ga-campus-paths a { display: inline-flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; margin-top: auto; padding: 16px 22px; border-radius: 32px; background: #c52129; border: 1px solid #ed3940; font-size: 15px; font-weight: 600; color: #fff; }
+.ga-campus-paths a img { filter: invert(1); flex-shrink: 0; }
+.ga-campus-paths a:hover { color: #fff; background: #a91d24; }
+.ga-campus-footnote { display: flex; align-items: center; gap: 28px; margin-top: 36px; font-size: 11px; text-transform: uppercase; }
+.ga-campus-footnote::after { content: ""; flex: 1; height: 1px; background: #ffffff70; }
+.ga-campus-footnote > span:last-child { order: 1; color: #e44436; font-size: 28px; }
+@media (max-width: 1100px) {
+  .ga-home .ga-campus-invite h2 { font-size: 54px; }
+  .ga-campus-paths > div { padding: 28px; }
+  .ga-campus-icon { position: static; margin-bottom: 16px; }
+}
+.ga-mission-faq { padding: 96px 0; background: #f7f7f5; color: #171717; }
+.ga-faq-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; }
+.ga-home .ga-mission-faq h2 { font-size: 40px; }
+.ga-faq-contact { display: inline-flex; align-items: center; gap: 16px; padding-block: 16px; margin-top: 20px; }
+.ga-faq-items details { border-top: 1px solid #ccc; }
+.ga-faq-items details:last-child { border-bottom: 1px solid #ccc; }
+.ga-faq-items summary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 24px; cursor: pointer; font-size: 18px; font-weight: 600; list-style: none; }
+.ga-faq-items summary::-webkit-details-marker { display: none; }
+.ga-faq-items summary img { width: 22px; height: 22px; flex-shrink: 0; }
+.ga-faq-items details[open] summary img { transform: rotate(180deg); }
+.ga-faq-items details p { margin: 0 0 24px; font-size: 16px; line-height: 1.7; color: #484848; }
+.ga-faq-items p a { text-decoration: underline; text-underline-offset: 3px; }
+.ga-campus-invite a:focus-visible, .ga-mission-faq a:focus-visible, .ga-faq-items summary:focus-visible { outline: 2px solid #e44436; outline-offset: 5px; }
+@media (max-width: 767px) {
+  .ga-campus-invite, .ga-mission-faq { padding: 56px 0; }
+  .ga-home .ga-campus-invite h2, .ga-home .ga-mission-faq h2 { font-size: 32px; }
+  .ga-campus-paths, .ga-faq-layout { grid-template-columns: 1fr; gap: 32px; }
+  .ga-campus-paths { margin-top: 32px; }
+  .ga-home .ga-campus-invite h2 { font-size: 38px; }
+  .ga-home .ga-campus-paths h3 { font-size: 28px; }
+  .ga-campus-paths > div { padding: 24px; }
+  .ga-campus-paths a { padding: 14px 18px; }
+  .ga-faq-items summary { font-size: 17px; }
+}
+.ga-media-library { padding: 72px 0; background: #171717; color: #f7f7f5; }
+.ga-media-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 32px; }
+.ga-home .ga-media-heading h2 { margin: 0; font: 700 42px/1.15 'Plus Jakarta Sans', sans-serif; letter-spacing: 0; text-transform: none; }
+.ga-media-heading > p { color: #bdbdb8; margin: 0; }
+.ga-media-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.ga-media-card { min-width: 0; color: inherit; text-decoration: none; }
+.ga-media-image { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; background: #303030; }
+.ga-media-image > img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.ga-media-card:first-child .ga-media-image > img { object-position: center 24%; }
+.ga-media-symbol { position: absolute; bottom: 14px; right: 14px; display: grid; place-items: center; width: 42px; height: 42px; background: #e44436; border-radius: 50%; }
+.ga-media-symbol img { width: 22px; height: 22px; filter: invert(1); }
+.ga-media-status { position: absolute; left: 14px; bottom: 14px; padding: 6px 10px; background: #171717e6; font-size: 12px; }
+.ga-media-film-cover { display: block; }
+.ga-media-film-links { display: grid; gap: 10px; }
+.ga-media-film-links a { display: flex; justify-content: space-between; gap: 12px; color: #ddd; font-size: 14px; line-height: 1.5; }
+.ga-media-film-links a:hover { color: #ff786c; }
+.ga-media-card a:focus-visible { outline: 2px solid #e44436; outline-offset: 4px; }
+.ga-home .ga-media-card h3 { margin: 18px 0 8px; font: 700 21px/1.3 'Plus Jakarta Sans', sans-serif; letter-spacing: 0; text-transform: none; }
+.ga-media-card p { margin: 0; color: #bdbdb8; font-size: 15px; line-height: 1.6; }
+a.ga-media-card:hover .ga-media-image > img { transform: scale(1.035); }
+a.ga-media-card:focus-visible { outline: 2px solid #e44436; outline-offset: 7px; }
+@media (max-width: 1000px) { .ga-media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; } .ga-media-heading { display: block; } .ga-media-heading > p { margin-top: 14px; } }
+@media (max-width: 550px) { .ga-media-library { padding: 48px 0; } .ga-home .ga-media-heading h2 { font-size: 30px; } .ga-media-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .ga-media-image > img { transition: none; } }
+.ga-media-library { background: #101213; }
+.ga-media-heading { position: relative; padding-top: 20px; }
+.ga-media-heading::before { content: ""; position: absolute; left: 0; top: 0; width: 42px; height: 2px; background: #e44436; }
+.ga-home .ga-media-heading h2 { font: 700 48px/1.12 'Bodoni Moda', Georgia, serif; }
+.ga-media-grid { grid-template-columns: .95fr 1fr 1.08fr; grid-template-rows: 310px 230px; gap: 18px; }
+.ga-media-card { position: relative; overflow: hidden; border: 1px solid #ffffff40; border-radius: 8px; isolation: isolate; }
+.ga-media-testimony { grid-row: 1 / 3; }
+.ga-media-films { grid-column: 2 / 4; }
+.ga-media-card .ga-media-image { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; z-index: -1; }
+.ga-media-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, #080a0bf5 0%, #080a0b80 30%, transparent 70%); pointer-events: none; }
+.ga-media-testimony .ga-media-image > img { object-position: center top; }
+.ga-media-films .ga-media-image > img { object-position: center; }
+.ga-media-films .ga-media-image::after { background: linear-gradient(0deg, #080a0bd9, transparent 75%); }
+.ga-media-kicker, .ga-home .ga-media-card h3.ga-media-kicker { position: absolute; top: 22px; left: 22px; margin: 0; font: 600 11px/1.5 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0; }
+.ga-media-kicker::after { content: ""; display: block; margin-top: 12px; width: 26px; height: 1px; background: #ffffff90; }
+.ga-media-copy { position: absolute; bottom: 22px; left: 22px; right: 22px; }
+.ga-home .ga-media-copy h3 { margin: 0 0 10px; font: 700 32px/1.06 'Bodoni Moda', Georgia, serif; }
+.ga-home .ga-media-testimony h3 { font-size: 40px; }
+.ga-media-copy p { font-size: 14px; color: #d0d0cc; padding-right: 44px; }
+.ga-media-testimony .ga-media-copy p { padding: 0; }
+.ga-media-testimony .ga-media-status { position: static; display: inline-block; margin-top: 20px; padding: 8px 12px; border: 1px solid #ffffff50; background: #17171790; }
+.ga-media-symbol { z-index: 2; bottom: 22px; right: 22px; background: #1116; border: 1px solid white; }
+.ga-media-films .ga-media-symbol { background: #e44436; border: 0; }
+.ga-media-film-links { position: absolute; left: 22px; bottom: 20px; width: min(310px, calc(100% - 100px)); gap: 8px; }
+.ga-media-film-links a { align-items: center; color: #fff; font-size: 13px; }
+.ga-media-film-links a > img { width: 66px; height: 42px; object-fit: cover; border: 1px solid #ffffff40; border-radius: 4px; }
+.ga-media-film-links a > span:nth-child(2) { flex: 1; }
+@media (max-width: 1000px) {
+  .ga-media-grid { grid-template-rows: 290px 230px; grid-template-columns: .95fr 1fr 1fr; }
+  .ga-home .ga-media-heading h2 { font-size: 40px; }
+  .ga-home .ga-media-copy h3 { font-size: 27px; }
+}
+@media (max-width: 767px) {
+  .ga-media-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 340px 260px 230px; }
+  .ga-media-testimony { grid-row: 1; grid-column: 1 / 3; }
+  .ga-media-testimony .ga-media-image > img { object-position: center 24%; }
+  .ga-media-films { grid-column: 1 / 3; }
+  .ga-media-conversations, .ga-media-resources { grid-row: 3; }
+  .ga-home .ga-media-heading h2 { font-size: 34px; }
+}
+@media (max-width: 550px) {
+  .ga-media-grid { display: flex; flex-direction: column; gap: 16px; }
+  .ga-media-card { min-height: 250px; }
+  .ga-media-testimony { min-height: 460px; }
+  .ga-media-films { min-height: 290px; }
+}
+#contactPanel { width: min(680px, calc(100% - 32px)); padding: 24px 32px 32px; }
+#contactPanel .ga-contact-grid { display: block; }
+#contactPanel .ga-contact-form { padding: 0; border: 0; gap: 10px; width: 100%; }
+#contactPanel .ga-contact-form h2 { font: 700 36px/1.2 'Plus Jakarta Sans', sans-serif; text-transform: none; margin: 0 0 20px; }
+#contactPanel .ga-contact-form > label { margin-top: 12px; font-size: 14px; font-weight: 600; }
+#contactPanel .ga-contact-form select { width: 100%; min-height: 50px; padding: 12px; font: inherit; font-size: 16px; color: #171717; border: 1px solid #c5c5c3; border-radius: 6px; background: #fff; }
+#contactPanel .ga-contact-form input:not([type=hidden]), #contactPanel .ga-contact-form textarea { background: #fff; }
+#contactPanel .ga-contact-form textarea { min-height: 140px; }
+#contactPanel select:focus-visible { outline: 2px solid #e44436; outline-offset: 2px; }
+#contactPanel #contactBtn { width: 100%; justify-content: center; margin-top: 16px; }
+@media (max-width: 767px) { #contactPanel { padding: 20px; } #contactPanel .ga-contact-form h2 { font-size: 30px; } }

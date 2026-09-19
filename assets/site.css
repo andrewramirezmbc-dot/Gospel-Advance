@@ -647,3 +647,28 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
 @media (max-width: 649px) {
   .ga-footer-actions { grid-template-columns: 1fr; gap: 8px; }
 }
+.ga-footer-giving { position: relative; isolation: isolate; display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 24px; padding: 20px 0 32px; margin-bottom: 32px; border-bottom: 1px solid #ffffff30; }
+.ga-footer-giving::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url('images/andrew-wall-texture.jpg') center/cover; opacity: .07; pointer-events: none; }
+.ga-giving-copy { position: relative; z-index: 1; }
+.ga-giving-label { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; font: 600 13px/1.5 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0; }
+.ga-giving-label::before { content: ""; width: 64px; height: 4px; background: #e44436; }
+.ga-footer .ga-footer-giving h2 { margin: 0; font: 700 48px/1.03 'Bodoni Moda', Georgia, serif; color: #f7f7f5; letter-spacing: 0; text-transform: none; }
+.ga-footer .ga-footer-giving h2 em { font-family: inherit; font-weight: 700; }
+.ga-footer .ga-footer-giving p { max-width: 540px; margin: 18px 0 0; color: #b9b9b5; font: 400 17px/1.5 'Plus Jakarta Sans', sans-serif; }
+.ga-giving-actions { display: flex; align-items: center; gap: 28px; margin-top: 22px; }
+.ga-giving-actions > a { flex-shrink: 0; white-space: normal; }
+.ga-giving-note, .ga-giving-caption { color: #a4a4a0; font: 500 11px/1.9 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0; }
+.ga-giving-collage { position: relative; min-width: 0; aspect-ratio: 1.35; }
+.ga-giving-campus { position: absolute; left: 3%; top: 3%; width: 72%; height: 90%; object-fit: cover; border: 12px solid #141414; transform: rotate(-5deg); }
+.ga-giving-conversation { position: absolute; right: 0; top: 27%; width: 54%; height: 43%; object-fit: cover; filter: grayscale(1); transform: rotate(4deg); box-shadow: 0 12px 24px #0005; }
+.ga-giving-caption { position: absolute; right: 1%; top: 1%; }
+.ga-giving-signoff { position: absolute; right: 2%; bottom: 0; color: #aaa; font: italic 400 26px/1.2 'DM Serif Display', Georgia, serif; transform: rotate(-7deg); }
+@media (min-width: 1500px) { .ga-footer .ga-footer-giving h2 { font-size: 54px; } }
+@media (max-width: 1100px) { .ga-footer .ga-footer-giving h2 { font-size: 36px; } .ga-giving-actions { gap: 16px; flex-wrap: wrap; } }
+@media (max-width: 767px) {
+  .ga-footer-giving { grid-template-columns: 1fr; gap: 24px; padding: 12px 0 28px; margin-bottom: 28px; }
+  .ga-footer .ga-footer-giving h2 { font-size: 38px; }
+  .ga-footer .ga-footer-giving p { font-size: 16px; }
+  .ga-giving-collage { width: 100%; max-width: 500px; justify-self: center; }
+  .ga-giving-label { margin-bottom: 24px; }
+}

@@ -106,8 +106,8 @@
 <script src="assets/campaign.js" defer></script>
 <script src="assets/statistics.js" defer></script>
 <script src="assets/video-cursor.js" defer></script>
-<link rel="stylesheet" href="/assets/donate.css" />
-<script src="/assets/donate.js" defer></script>
+<link rel="stylesheet" href="assets/donate.css" />
+<script src="assets/donate.js" defer></script>
 </head>
 <body class="ga-home" id="top">
 <a class="ga-skip" href="#main">Skip to content</a>
@@ -193,7 +193,7 @@
     <div class="ga-shell ga-hero-content">
       <div class="ga-hero-editorial ga-hero-artwork" id="hero-title">
         <h1 class="ga-hero-mission"><span class="ga-sr-only">Reaching this generation with the hope of Christ.</span></h1>
-        <a class="ga-hero-artwork-link" href="#mission" aria-label="Watch the mission"><img src="assets/images/hero-mission-artwork.png" width="1672" height="941" alt="On campus. In conversation. For Christ. Reaching this generation with the hope of Christ." fetchpriority="high" /></a>
+        <div class="ga-hero-artwork-image"><img src="assets/images/hero-mission-artwork.png" width="1672" height="941" alt="On campus. In conversation. For Christ. Reaching this generation with the hope of Christ." fetchpriority="high" /></div>
       </div>
       <div class="ga-hero-bottom">
         <a class="ga-hero-action-note" href="#partner">Be part of<br />the mission <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
@@ -276,6 +276,31 @@
     <p class="ga-frontlines-note">For the soul of<br />the next generation.</p>
   </section>
 
+  <section class="ga-media-library" id="media" aria-labelledby="media-title">
+    <div class="ga-shell">
+      <div class="ga-media-heading"><h2 id="media-title">Faith worth sharing.</h2><p>Faith. Film. Real conversations.</p></div>
+      <div class="ga-media-grid">
+        <article class="ga-media-card ga-media-testimony">
+          <div class="ga-media-image"><img src="andrew-ramirez.jpg" alt="Andrew Ramirez preaching" loading="lazy" /></div>
+          <span class="ga-media-kicker">Testimony</span>
+          <div class="ga-media-copy"><h3>Andrew's<br />testimony</h3><p>The story behind the mission.</p><span class="ga-media-status">Coming soon</span></div>
+        </article>
+        <article class="ga-media-card ga-media-films">
+          <a class="ga-media-image ga-media-film-cover" href="https://www.youtube.com/watch?v=sQ1BRF8YHw0" target="_blank" rel="noopener" aria-label="Watch How God meets you in your suffering"><img src="https://i.ytimg.com/vi/sQ1BRF8YHw0/hqdefault.jpg" alt="How God meets you in your suffering film thumbnail" loading="lazy" /><span class="ga-media-symbol"><img src="assets/icons/play.svg" alt="" /></span></a>
+          <h3 class="ga-media-kicker">Film projects</h3>
+          <div class="ga-media-film-links"><a href="https://www.youtube.com/watch?v=sQ1BRF8YHw0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sQ1BRF8YHw0/mqdefault.jpg" alt="How God meets you in your suffering" loading="lazy" /><span>How God meets you<br />in your suffering</span><span aria-hidden="true">&rarr;</span></a><a href="https://www.youtube.com/watch?v=s5L9IxdpwiQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/s5L9IxdpwiQ/mqdefault.jpg" alt="The True Meaning of Christmas" loading="lazy" /><span>The True Meaning<br />of Christmas</span><span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <a class="ga-media-card ga-media-conversations" href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener">
+          <div class="ga-media-image"><img src="assets/images/campus-conversation-hero.jpg" alt="Andrew talking with a student on campus" loading="lazy" /><span class="ga-media-symbol"><img src="assets/icons/arrow-up-right.svg" alt="" /></span></div>
+          <span class="ga-media-kicker">Conversations</span><div class="ga-media-copy"><h3>Conversations</h3><p>Honest conversations about faith and life.</p></div>
+        </a>
+        <a class="ga-media-card ga-media-resources" href="/preachers-guide.html">
+          <div class="ga-media-image"><img src="assets/images/studio-host.jpg" alt="Bible teaching in the studio" loading="lazy" /><span class="ga-media-symbol"><img src="assets/icons/arrow-up-right.svg" alt="" /></span></div>
+          <span class="ga-media-kicker">Resources</span><div class="ga-media-copy"><h3>Resources</h3><p>Explore tools for studying<br />and sharing the Word.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
   <section class="ga-approach" id="strategy" aria-labelledby="strategy-title">
     <div class="ga-shell">
       <div class="ga-approach-heading"><h2 id="strategy-title"><img class="ga-strategy-lettering" src="assets/images/strategy-lettering.png" width="2172" height="724" alt="The Strategy" /></h2><p>How Gospel Advance reaches<br />the next generation.</p></div>
@@ -301,21 +326,47 @@
       </div>
     </div>
   </section>
+  <section class="ga-campus-invite" id="bring-the-mission" aria-labelledby="campus-invite-title">
+    <div class="ga-shell">
+      <div class="ga-campus-invite-intro">
+        <span class="ga-campus-label">Gospel Advance</span>
+        <h2 id="campus-invite-title">Bring Gospel Advance<br />to your campus<span class="ga-campus-period">.</span></h2>
+        <p>The next conversation can start with an introduction.</p>
+      </div>
+      <div class="ga-campus-paths">
+        <div><span class="ga-campus-icon"><img src="assets/icons/users.svg" alt="" width="32" height="32" /></span><h3>Students</h3><p>Connect us with your campus or Christian student group. Tell us where you are and who we should meet.</p><a href="#contact" data-interest="Campus connection">Connect us with your campus <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24" /></a></div>
+        <div><span class="ga-campus-icon"><img src="assets/icons/church.svg" alt="" width="32" height="32" /></span><h3>Pastors &amp; ministry leaders</h3><p>Invite Andrew or start a conversation about partnering in campus outreach.</p><a href="#contact" data-interest="Ministry partnership">Start a partnership conversation <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24" /></a></div>
+      </div>
+      <div class="ga-campus-footnote"><span>The gospel on every campus</span><span aria-hidden="true">//</span></div>
+    </div>
+  </section>
+  <section class="ga-mission-faq" id="mission-questions" aria-labelledby="mission-questions-title">
+    <div class="ga-shell ga-faq-layout">
+      <div><h2 id="mission-questions-title">Questions about<br />the mission.</h2><a class="ga-faq-contact" href="#contact">Ask us a question <img src="assets/icons/arrow-up-right.svg" alt="" width="24" height="24" /></a></div>
+      <div class="ga-faq-items">
+        <details><summary>What happens during a campus visit?<img src="assets/icons/chevron-down.svg" alt="" /></summary><p>We engage students in honest conversations about faith and life, share the gospel, and invite them to consider who Jesus is. To discuss a visit to your campus, <a href="#contact" data-interest="Campus connection">get in touch</a>.</p></details>
+        <details><summary>What happens after a conversation?<img src="assets/icons/chevron-down.svg" alt="" /></summary><p>We help interested students connect with Christian ministries on their campus so they can grow in faith and community.</p></details>
+        <details><summary>What does financial support help fund?<img src="assets/icons/chevron-down.svg" alt="" /></summary><p>Support helps fund campus outreach, gospel conversations, travel, and the work of reaching the next generation with Jesus Christ.</p></details>
+        <details><summary>Are gifts tax-deductible?<img src="assets/icons/chevron-down.svg" alt="" /></summary><p>Gospel Advance is not currently a registered nonprofit, and we do not represent gifts as tax-deductible charitable contributions. Please consult your tax adviser about your own circumstances.</p></details>
+        <details><summary>How can I manage monthly support?<img src="assets/icons/chevron-down.svg" alt="" /></summary><p>To request a change or cancellation, <a href="#contact">contact us</a> with the email address used for your gift. Please do not send card numbers or other payment credentials.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 <dialog class="ga-content-dialog" id="contactPanel" aria-labelledby="contact-title">
   <button class="ga-panel-close" type="button" aria-label="Close contact panel">Close</button>
   <section class="ga-section ga-contact" id="contact" aria-labelledby="contact-title">
     <div class="ga-shell">
       <div class="ga-contact-grid">
-        <div class="ga-resources"><h2>Grow deeper<br />in the Word.</h2><ul><li><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener">Campus Conversations <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a></li><li><a href="/sermons.html">Sermons <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a></li><li><a href="/articles.html">Articles <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a></li><li><a href="#gospel">The Gospel <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a></li><li><a href="/preachers-guide.html">The Preacher's Guide <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a></li></ul></div>
         <form class="ga-contact-form" id="contactForm" action="https://formspree.io/f/mvzbqgwq" method="POST">
           <h2 id="contact-title">Let's connect.</h2>
           <input type="hidden" name="_subject" value="Gospel Advance partnership inquiry" /><input type="hidden" name="interest" id="contactInterest" value="General inquiry" />
           <div class="ga-honeypot" aria-hidden="true"><label for="company-website">Leave this field blank</label><input type="text" name="_gotcha" id="company-website" tabindex="-1" autocomplete="off" /></div>
-          <label class="ga-sr-only" for="contactName">Name</label><input id="contactName" name="name" placeholder="Name" autocomplete="name" required maxlength="150" />
-          <label class="ga-sr-only" for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" placeholder="Email" autocomplete="email" required maxlength="254" />
-          <label class="ga-sr-only" for="contactOrg">Church or Organization (Optional)</label><input id="contactOrg" name="organization" placeholder="Church or Organization (Optional)" autocomplete="organization" maxlength="200" />
-          <label class="ga-sr-only" for="contactMessage">Message</label><textarea id="contactMessage" name="message" placeholder="Message" required maxlength="6000"></textarea>
+          <label for="contactName">Name</label><input id="contactName" name="name" placeholder="Name" autocomplete="name" required maxlength="150" />
+          <label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" placeholder="Email" autocomplete="email" required maxlength="254" />
+          <label for="contactType">I'm a...</label><select id="contactType" name="contact_type" required><option value="" disabled selected>Select an option</option><option value="Student">Student</option><option value="Church">Church</option><option value="Organization">Organization</option><option value="Individual">Individual / supporter</option></select>
+          <label for="contactOrg">Campus, church, or organization (optional)</label><input id="contactOrg" name="organization" placeholder="Name of your campus, church, or organization" autocomplete="organization" maxlength="200" />
+          <label for="contactMessage">Message</label><textarea id="contactMessage" name="message" placeholder="Message" required maxlength="6000"></textarea>
           <p class="ga-interest-note" id="contactInterestNote" hidden></p>
           <button class="ga-button ga-button-red" id="contactBtn" type="submit">Let's Connect <img class="ga-icon " src="assets/icons/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></button>
           <p id="formStatus" class="ga-form-status" role="status" aria-live="polite" hidden></p>
@@ -392,11 +443,23 @@
 </dialog>
 <footer class="ga-footer">
   <div class="ga-shell">
-    <nav class="ga-footer-actions" aria-label="Get involved">
-      <a href="/#contact" data-interest="Financial partnership">Give <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
-      <a href="/#contact" data-interest="Ministry partnership">Invite Andrew <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
-      <a href="/#contact" data-interest="Campus connection">Connect Us With a Campus <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
-    </nav>
+    <section class="ga-footer-giving" aria-label="Support Gospel Advance">
+      <div class="ga-giving-copy">
+        <span class="ga-giving-label">Partner with us</span>
+        <h2>Help take the gospel<br />to the <em>next generation.</em></h2>
+        <p>Support campus outreach and gospel conversations with a one-time or monthly gift.</p>
+        <div class="ga-giving-actions">
+          <a class="ga-button ga-button-red" href="/#contact" data-interest="Financial partnership">Support the mission <img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" /></a>
+          <span class="ga-giving-note">Real students.<br />Real conversations.<br />Eternal impact.</span>
+        </div>
+      </div>
+      <div class="ga-giving-collage" aria-hidden="true">
+        <img class="ga-giving-campus" src="assets/images/generation-church.jpg" alt="A student approaching a campus church" loading="lazy" />
+        <img class="ga-giving-conversation" src="assets/images/campus-conversation-hero.jpg" alt="A gospel conversation on campus" loading="lazy" />
+        <span class="ga-giving-caption">On campus.<br />In conversation.<br />For Christ.</span>
+        <span class="ga-giving-signoff">A generation<br />is waiting.</span>
+      </div>
+    </section>
     <div class="ga-footer-top">
       <div><a class="ga-brand" href="#top"><span class="ga-wordmark" role="img" aria-label="Gospel Advance"></span></a><p>Reaching the next generation for Christ.</p></div>
       <nav class="ga-footer-nav" aria-label="Footer navigation"><a href="#mission">The Mission</a><a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener">Campus Conversations</a><a href="#about">About</a><a href="#partner">Partner With Us</a></nav>

@@ -3,7 +3,7 @@
   dialog.className = 'ga-donate-dialog';
   dialog.setAttribute('aria-labelledby', 'donate-title');
   dialog.innerHTML = `<button class="ga-donate-close" aria-label="Close donation window" type="button">Close</button>
-    <div class="ga-donate-layout"><div class="ga-donate-story"><img src="/assets/video/hero-campus-desktop.jpg" alt="A tree-lined college campus" width="1600" height="900" />
+    <div class="ga-donate-layout"><div class="ga-donate-story"><img src="assets/video/hero-campus-desktop.jpg" alt="A tree-lined college campus" width="1600" height="900" />
     <div><h2 id="donate-title">Partner with Gospel Advance</h2><p>Your gift supports campus outreach, gospel conversations, travel, and the work of reaching the next generation with Jesus Christ.</p></div></div>
     <form class="ga-donate-form"><h3>Give to the mission</h3>
     <fieldset><legend>Frequency</legend><label><input type="radio" name="frequency" value="once" checked /> Give once</label><label><input type="radio" name="frequency" value="monthly" /> Monthly</label></fieldset>
