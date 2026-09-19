@@ -298,6 +298,8 @@ a.ga-media-card:focus-visible { outline: 2px solid #e44436; outline-offset: 7px;
 .ga-media-films .ga-media-image::after { background: linear-gradient(0deg, #080a0bd9, transparent 75%); }
 .ga-media-kicker, .ga-home .ga-media-card h3.ga-media-kicker { position: absolute; top: 22px; left: 22px; margin: 0; font: 600 11px/1.5 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0; }
 .ga-media-kicker::after { content: ""; display: block; margin-top: 12px; width: 26px; height: 1px; background: #ffffff90; }
+.ga-home .ga-media-films h3.ga-media-kicker { z-index: 2; padding: 9px 13px; background: #101213; color: #fff; border-left: 3px solid #e44436; }
+.ga-media-films .ga-media-kicker::after { display: none; }
 .ga-media-copy { position: absolute; bottom: 22px; left: 22px; right: 22px; }
 .ga-home .ga-media-copy h3 { margin: 0 0 10px; font: 700 32px/1.06 'Bodoni Moda', Georgia, serif; }
 .ga-home .ga-media-testimony h3 { font-size: 40px; }
