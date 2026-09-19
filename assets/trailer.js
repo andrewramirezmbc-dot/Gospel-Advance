@@ -26,7 +26,6 @@
       pause();
       return;
     }
-    video.play().catch(() => { watch.hidden = false; });
   };
   const layout = () => {
     raf = 0;
@@ -44,26 +43,27 @@
   watch.hidden = false;
   video.muted = true;
   watch.addEventListener('click', () => {
-    started = true;
     userPaused = false;
-    video.currentTime = 0;
+    if (!started) video.currentTime = 0;
+    started = true;
     video.muted = false;
     watch.hidden = true;
     video.play().catch(() => { watch.hidden = false; });
   });
   video.addEventListener('play', () => {
+    watch.hidden = true;
     userPaused = false;
     if (motion.matches || !video.muted) started = true;
   });
   video.addEventListener('pause', () => {
+    watch.hidden = false;
     if (automaticPause) automaticPause = false;
     else userPaused = true;
   });
   video.addEventListener('volumechange', () => {
     if (!video.muted) started = true;
-    watch.hidden = !video.muted;
   });
-  video.addEventListener('ended', () => { userPaused = true; });
+  video.addEventListener('ended', () => { userPaused = true; started = false; watch.hidden = false; });
   video.addEventListener('error', () => {
     failed = true;
     watch.hidden = true;

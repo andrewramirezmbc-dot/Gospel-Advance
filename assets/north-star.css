@@ -82,7 +82,7 @@
 .ga-home .ga-hero-shade { background: linear-gradient(180deg,#0007,#0005 60%,#171717); }
 
 .ga-home .ga-about { padding: 90px 0 64px 4%; background: #f7f7f5; }
-.ga-home .ga-about::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 4%; background: url('images/process-engage.jpg') 40% center / auto 100% no-repeat; filter: grayscale(1) contrast(1.15); pointer-events: none; }
+.ga-home .ga-about::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 4%; background: url('images/andrew-wall-texture.jpg') center / 240px 240px, url('video/hero-campus-desktop.jpg') left top / auto 160% no-repeat; background-blend-mode: screen; filter: grayscale(1) contrast(1.65) brightness(.72); pointer-events: none; }
 .ga-about .ga-campaign-heading { z-index: 4; inset: 46px auto auto 8%; width: auto; padding: 0; background: none; }
 .ga-home .ga-about .ga-campaign-heading h2 { writing-mode: horizontal-tb; transform: none; font: 600 11px/1.4 'Plus Jakarta Sans',sans-serif; color: #171717; text-transform: uppercase; }
 .ga-about .ga-campaign-heading h2::after { content: ''; display: inline-block; width: 54px; height: 1px; margin: 0 0 4px 24px; background: #171717; }
@@ -129,3 +129,65 @@
 .ga-content-dialog .ga-section { padding: 32px 0; }
 .ga-content-dialog .ga-shell { width: 100%; }
 body:has(.ga-content-dialog[open]) { overflow: hidden; }
+.ga-home .ga-trailer { isolation: isolate; overflow: hidden; }
+.ga-home .ga-trailer::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, #171717 0%, #171717a8 22%, #171717c4 76%, #171717 100%), url('video/hero-campus-desktop.jpg') center 40% / cover no-repeat; filter: grayscale(1); pointer-events: none; }
+.ga-home .ga-trailer .ga-trailer-title { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.ga-home .ga-trailer .ga-trailer-title::before,
+.ga-home .ga-trailer .ga-trailer-title::after { content: ''; width: 52px; height: 1px; background: #ffffff50; }
+.ga-approach { padding: 88px 0 96px; background: #f7f7f5; color: #171717; }
+.ga-approach-label { display: flex; align-items: center; gap: 24px; margin: 0 0 16px; font-size: 12px; text-transform: uppercase; }
+.ga-approach-label::after { content: ''; width: 80px; height: 1px; background: #171717; }
+.ga-approach-heading { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
+.ga-home .ga-approach-heading h2 { margin: 0; font: italic 700 88px/1.1 'Bodoni Moda', Georgia, serif; letter-spacing: 0; }
+.ga-approach-heading > p { margin: 0; font: 400 15px/1.6 'IBM Plex Mono', monospace; text-transform: uppercase; }
+.ga-approach-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.ga-approach-card { position: relative; isolation: isolate; overflow: hidden; padding: 30px 30px 66px; border: 1px solid #d3d1cd; border-radius: 8px; background: #f5f4f1; }
+.ga-approach-card::before { content: ''; position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(90deg, #f7f7f5ed, #f7f7f5b8), var(--approach-photo); background-size: cover; background-position: center; filter: grayscale(1); }
+.ga-approach-campus { --approach-photo: url('video/hero-campus-desktop.jpg'); }
+.ga-approach-film { --approach-photo: url('images/campus-conversation-hero.jpg'); }
+.ga-approach-community { --approach-photo: url('images/generation-church.jpg'); }
+.ga-approach-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 30px; font-size: 18px; font-weight: 700; }
+.ga-approach-icon { display: grid; place-items: center; width: 64px; height: 64px; border: 3px solid #e44436; border-radius: 50%; background: #ffffffa8; }
+.ga-approach-icon img { width: 36px; height: 36px; }
+.ga-approach-film .ga-approach-icon { border-color: white; }
+.ga-approach-community .ga-approach-icon { border-color: #d6a533; }
+.ga-home .ga-approach-card h3 { margin: 0; min-height: 126px; font: italic 700 32px/1.15 'Bodoni Moda', Georgia, serif; letter-spacing: 0; }
+.ga-approach-card > p { margin: 24px 0 0; font-size: 16px; line-height: 1.65; }
+.ga-approach-card > p::before { content: ''; display: block; width: 42px; height: 1px; margin-bottom: 24px; background: #171717; }
+.ga-approach-card > a { position: absolute; bottom: 16px; right: 18px; display: grid; place-items: center; width: 44px; height: 44px; }
+.ga-approach-card > a img { width: 28px; height: 28px; }
+.ga-approach-card > a:hover { background: #ffffffa8; }
+.ga-approach-card > a:focus-visible { outline: 2px solid #e44436; outline-offset: 2px; }
+@media (max-width: 1000px) {
+  .ga-home .ga-approach-heading h2 { font-size: 64px; }
+  .ga-approach-card { padding: 24px 20px 66px; }
+  .ga-home .ga-approach-card h3 { font-size: 27px; }
+}
+@media (max-width: 767px) {
+  .ga-approach { padding: 48px 0; }
+  .ga-approach-heading { display: block; margin-bottom: 28px; }
+  .ga-home .ga-approach-heading h2 { font-size: 46px; }
+  .ga-approach-heading > p { margin-top: 16px; font-size: 12px; }
+  .ga-approach-grid { grid-template-columns: 1fr; }
+  .ga-home .ga-approach-card h3 { min-height: 0; font-size: 32px; }
+}
+
+/* Deliberate playback: the poster is one large, keyboard-accessible play target. */
+.ga-home .ga-trailer-watch { inset: 0 0 48px; width: 100%; transform: none; border: 0; border-radius: 0; background: transparent; display: grid; place-items: center; padding: 20px; white-space: normal; }
+.ga-home .ga-trailer-watch[hidden] { display: none; }
+.ga-home .ga-trailer-watch:hover { transform: none; background: #0001; }
+.ga-trailer-play-label { display: flex; flex-direction: column; align-items: center; gap: 16px; color: white; font-size: 16px; text-shadow: 0 2px 12px #000; }
+.ga-trailer-play-label .ga-icon { width: 88px; height: 88px; padding: 26px; border: 1px solid black; border-radius: 50%; filter: invert(1); }
+.ga-cursor-active .ga-trailer-play-label { opacity: 0; }
+.ga-home .ga-trailer-watch:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+.ga-video-cursor { width: 112px; height: 112px; }
+.ga-home .ga-trailer { padding-bottom: 112px; }
+.ga-home .ga-generation { padding-block: 112px 120px; border-top: 1px solid #ffffff24; }
+.ga-home .ga-about { border-top: 32px solid #f7f7f5; border-bottom: 64px solid #f7f7f5; }
+.ga-home .ga-frontlines { padding-top: 120px; padding-bottom: 120px; border-top: 1px solid #ffffff24; }
+@media (max-width: 767px) {
+  .ga-home .ga-trailer { padding-bottom: 64px; }
+  .ga-home .ga-generation { padding-block: 64px 72px; }
+  .ga-home .ga-about { border-top-width: 24px; border-bottom-width: 40px; }
+  .ga-home .ga-frontlines { padding-top: 72px; padding-bottom: 72px; }
+}

@@ -26,11 +26,12 @@ function fixture(reduced = false) {
   return {video,nodes,motion,document,visible(value){intersect([{isIntersecting:value,intersectionRatio:value?1:0}]);},block(value){blocked=value;mutation();}};
 }
 
-test('trailer plays muted only in view and pauses behind a dialog or hidden tab',()=>{
+test('trailer never autoplays on entry or after closing a dialog',()=>{
   const f=fixture();assert.equal(f.video.plays,0);
-  f.visible(true);assert.equal(f.video.paused,false);assert.equal(f.video.muted,true);
+  f.visible(true);assert.equal(f.video.paused,true);assert.equal(f.video.plays,0);
+  f.nodes.trailerWatch.listeners.click();assert.equal(f.video.paused,false);
   f.block(true);assert.equal(f.video.paused,true);
-  f.block(false);assert.equal(f.video.paused,false);
+  f.block(false);assert.equal(f.video.paused,true);
   f.document.hidden=true;f.document.listeners.visibilitychange();assert.equal(f.video.paused,true);
 });
 
@@ -52,9 +53,12 @@ test('desktop reveal lifts and expands the trailer without enabling audio',()=>{
   assert.equal(f.video.muted,true);
 });
 
-test('offscreen pause resumes while ended and failed trailers stay stopped',()=>{
-  const f=fixture();f.visible(true);f.visible(false);assert.equal(f.video.paused,true);
-  f.visible(true);assert.equal(f.video.paused,false);
+test('offscreen pause requires another click and preserves playback position',()=>{
+  const f=fixture();f.visible(true);f.nodes.trailerWatch.listeners.click();
+  f.video.currentTime=25;f.visible(false);assert.equal(f.video.paused,true);
+  f.visible(true);assert.equal(f.video.paused,true);
+  f.nodes.trailerWatch.listeners.click();assert.equal(f.video.currentTime,25);
+  f.video.pause();
   f.video.listeners.ended();f.visible(false);f.visible(true);assert.equal(f.video.paused,true);
   f.video.listeners.error();assert.equal(f.nodes.trailerError.hidden,false);
   f.block(false);assert.equal(f.video.paused,true);

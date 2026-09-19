@@ -219,7 +219,7 @@
             <source src="/assets/video/gospel-advance-trailer.mp4" type="video/mp4" />
             <a href="/assets/video/gospel-advance-trailer.mp4">Watch the Gospel Advance mission trailer</a>
           </video>
-          <button class="ga-button ga-button-red ga-trailer-watch" id="trailerWatch" type="button" hidden><img class="ga-icon" src="assets/icons/volume-2.svg" alt="" />Watch with sound</button>
+          <button class="ga-button ga-button-red ga-trailer-watch" id="trailerWatch" type="button" data-video-cursor aria-label="Play mission trailer with sound" hidden><span class="ga-trailer-play-label"><img class="ga-icon" src="assets/icons/play.svg" alt="" />Watch the mission</span></button>
         </div>
         <p class="ga-trailer-error" id="trailerError" role="status" hidden>This film could not load. <a href="/assets/video/gospel-advance-trailer.mp4">Open the video directly</a>.</p>
       </div>
@@ -283,6 +283,32 @@
     <p class="ga-frontlines-note">For the soul of<br />the next generation.</p>
   </section>
 
+  <section class="ga-approach" id="strategy" aria-labelledby="strategy-title">
+    <div class="ga-shell">
+      <p class="ga-approach-label">Our approach</p>
+      <div class="ga-approach-heading"><h2 id="strategy-title">The Strategy</h2><p>How Gospel Advance reaches<br />the next generation.</p></div>
+      <div class="ga-approach-grid">
+        <article class="ga-approach-card ga-approach-campus">
+          <div class="ga-approach-top"><span class="ga-approach-icon"><img src="assets/icons/arrow-right.svg" alt="" /></span><span>#1</span></div>
+          <h3>Go Where<br />Students Are</h3>
+          <p>We step onto college campuses and into public spaces to start real gospel conversations with the next generation.</p>
+          <a href="#contact" data-interest="Campus connection" aria-label="Connect Gospel Advance with a campus"><img src="assets/icons/arrow-up-right.svg" alt="" /></a>
+        </article>
+        <article class="ga-approach-card ga-approach-film">
+          <div class="ga-approach-top"><span class="ga-approach-icon"><img src="assets/icons/youtube.svg" alt="" /></span><span>#2</span></div>
+          <h3>Create Conversations<br />That Matter</h3>
+          <p>Through filmed interviews, honest dialogue, and digital media, we turn meaningful encounters into lasting gospel impact.</p>
+          <a href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener" aria-label="Watch Gospel Advance campus conversations"><img src="assets/icons/arrow-up-right.svg" alt="" /></a>
+        </article>
+        <article class="ga-approach-card ga-approach-community">
+          <div class="ga-approach-top"><span class="ga-approach-icon"><img src="assets/icons/users.svg" alt="" /></span><span>#3</span></div>
+          <h3>Connect Students<br />To Ongoing Discipleship</h3>
+          <p>We help connect interested students with trusted local churches, campus ministries, and next steps for spiritual growth.</p>
+          <a href="#contact" data-interest="Ministry partnership" aria-label="Connect with Gospel Advance about discipleship"><img src="assets/icons/arrow-up-right.svg" alt="" /></a>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
 <dialog class="ga-content-dialog" id="contactPanel" aria-labelledby="contact-title">
   <button class="ga-panel-close" type="button" aria-label="Close contact panel">Close</button>
