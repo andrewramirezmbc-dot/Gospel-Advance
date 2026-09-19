@@ -66,9 +66,10 @@ test('heading sections omit supporting captions without removing body content', 
     assert.doesNotMatch(section[1], /<p\b/);
   }
   assert.doesNotMatch(html, /class="ga-hero-corners"|class="ga-hero-bottom-note"/);
-  assert.match(html, /<h1 class="ga-hero-mission" id="hero-title"><span>Reaching this<\/span><em>generation<\/em><small>with the hope of Christ\.<\/small>/);
+  assert.match(html, /<h1 class="ga-hero-mission"><span class="ga-sr-only">Reaching this generation with the hope of Christ\.<\/span>/);
+  assert.match(html, /src="assets\/images\/hero-mission-artwork\.png"/);
   assert.doesNotMatch(html, /class="ga-wordmark ga-hero-wordmark"/);
-  assert.match(html, /class="ga-hero-film-link" href="#mission"/);
+  assert.match(html, /class="ga-hero-artwork-link" href="#mission"/);
   assert.match(html, /class="ga-letter-lead"/);
   assert.match(html, /src="assets\/images\/personal-lettering\.svg"/);
   assert.match(html, /class="ga-personal-lettering-text">I want college<br \/>students to know<br \/>the hope of<br \/><em>Jesus Christ\.<\/em>/);

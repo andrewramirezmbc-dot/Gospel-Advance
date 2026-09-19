@@ -106,6 +106,8 @@
 <script src="assets/campaign.js" defer></script>
 <script src="assets/statistics.js" defer></script>
 <script src="assets/video-cursor.js" defer></script>
+<link rel="stylesheet" href="/assets/donate.css" />
+<script src="/assets/donate.js" defer></script>
 </head>
 <body class="ga-home" id="top">
 <a class="ga-skip" href="#main">Skip to content</a>
@@ -189,10 +191,9 @@
     <video id="heroVideo" class="ga-hero-video" muted playsinline loop preload="none" aria-hidden="true" hidden></video>
     <div class="ga-hero-shade" aria-hidden="true"></div>
     <div class="ga-shell ga-hero-content">
-      <div class="ga-hero-editorial">
-        <p class="ga-hero-eyebrow">On campus. In conversation. For Christ.</p>
-        <h1 class="ga-hero-mission" id="hero-title"><span>Reaching this</span><em>generation</em><small>with the hope of Christ.</small></h1>
-        <a class="ga-hero-film-link" href="#mission"><span><img class="ga-icon" src="assets/icons/play.svg" alt="" /></span>Watch the mission</a>
+      <div class="ga-hero-editorial ga-hero-artwork" id="hero-title">
+        <h1 class="ga-hero-mission"><span class="ga-sr-only">Reaching this generation with the hope of Christ.</span></h1>
+        <a class="ga-hero-artwork-link" href="#mission" aria-label="Watch the mission"><img src="assets/images/hero-mission-artwork.png" width="1672" height="941" alt="On campus. In conversation. For Christ. Reaching this generation with the hope of Christ." fetchpriority="high" /></a>
       </div>
       <div class="ga-hero-bottom">
         <a class="ga-hero-action-note" href="#partner">Be part of<br />the mission <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
@@ -254,15 +255,7 @@
     <div class="ga-shell" id="conversations">
       <div class="ga-campaign-heading"><h2 id="about-title">A personal message</h2></div>
       <div class="ga-two-col ga-about-grid ga-personal-message">
-        <div class="ga-section-copy"><p class="ga-letter-lead"><span class="ga-personal-lettering-text">I want college<br />students to know<br />the hope of<br /><em>Jesus Christ.</em></span><img class="ga-personal-lettering" src="assets/images/personal-lettering.svg" width="600" height="368" alt="I want college students to know the hope of Jesus Christ." aria-hidden="true" /></p><p>Through Gospel Advance, I engage students in honest conversations about faith and life, share the gospel, and invite them to consider who Jesus is.</p><p>The conversation is just the beginning. We help interested students connect with Christian ministries on their campus so they can grow in faith and community.</p><p class="ga-byline">Andrew Ramirez / Evangelist</p><a class="ga-text-link" href="https://www.youtube.com/@AndrewRamirez-Sermons" target="_blank" rel="noopener">Watch the campus conversations <img class="ga-icon" src="assets/icons/arrow-up-right.svg" alt="" /></a>
-          <details class="ga-ministry-note"><summary>Our heart for ministry</summary><div class="about-quote reveal d4">
-              <blockquote>
-                &ldquo;His preaching was a continuation of his prayers. In both,
-                he spoke from within the veil, his hand on the mercy seat and
-                his eye fixed on the things invisible.&rdquo;
-              </blockquote>
-              <cite>&mdash; Robert Murray M&rsquo;Cheyne</cite>
-            </div></details>
+        <div class="ga-section-copy"><p class="ga-letter-lead"><span class="ga-personal-lettering-text">I want college<br />students to know<br />the hope of<br /><em>Jesus Christ.</em></span><img class="ga-personal-lettering" src="assets/images/personal-lettering.svg" width="600" height="368" alt="I want college students to know the hope of Jesus Christ." aria-hidden="true" /></p><p>Through Gospel Advance, I engage students in honest conversations about faith and life, share the gospel, and invite them to consider who Jesus is.</p><p>The conversation is just the beginning. We help interested students connect with Christian ministries on their campus so they can grow in faith and community.</p><p class="ga-byline">Andrew Ramirez / Evangelist</p>
         </div>
         <figure class="ga-andrew-frame"><img class="ga-andrew-photo" src="andrew-ramirez.jpg" alt="Andrew Ramirez preaching with an open Bible at the lectern" width="600" height="800" loading="lazy" /></figure>
         <div class="ga-message-collage" aria-hidden="true"></div>
@@ -285,8 +278,7 @@
 
   <section class="ga-approach" id="strategy" aria-labelledby="strategy-title">
     <div class="ga-shell">
-      <p class="ga-approach-label">Our approach</p>
-      <div class="ga-approach-heading"><h2 id="strategy-title">The Strategy</h2><p>How Gospel Advance reaches<br />the next generation.</p></div>
+      <div class="ga-approach-heading"><h2 id="strategy-title"><img class="ga-strategy-lettering" src="assets/images/strategy-lettering.png" width="2172" height="724" alt="The Strategy" /></h2><p>How Gospel Advance reaches<br />the next generation.</p></div>
       <div class="ga-approach-grid">
         <article class="ga-approach-card ga-approach-campus">
           <div class="ga-approach-top"><span class="ga-approach-icon"><img src="assets/icons/arrow-right.svg" alt="" /></span><span>#1</span></div>

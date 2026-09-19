@@ -131,7 +131,7 @@ test('interviews use real source frames and retain a separate mission trailer', 
   }
   const hero = home.match(/<section class="ga-hero"[\s\S]*?<\/section>/)[0];
   assert.match(hero, /<video id="heroVideo"[^>]*muted playsinline loop/);
-  assert.doesNotMatch(hero, /ga-hero-image|poster=|assets\/images\/(?!hero-mission-lettering(?:-mobile)?\.svg)/);
+  assert.doesNotMatch(hero, /ga-hero-image|poster=|assets\/images\/(?!hero-mission-artwork\.png|hero-mission-lettering(?:-mobile)?\.svg)/);
   assert.match(hero, /hero-campus-desktop\.jpg/);
   assert.match(hero, /hero-campus-mobile\.jpg/);
   assert.doesNotMatch(home, /rel="preload"[^>]*campus-conversation/);
@@ -152,7 +152,8 @@ test('mission section is the scrolling film without numbered section labels', ()
   const mission = home.match(/<section[^>]*id="mission"[\s\S]*?<\/section>/)[0];
   assert.match(mission, /id="missionTrailer"/);
   assert.match(mission, /id="trailerStage"/);
-  assert.doesNotMatch(home, /\[0\d \/|ga-mission-divider|ga-mission-statement|ga-trailer-heading/);
+  assert.doesNotMatch(home, /\[0\d \/|class="ga-mission-divider"|ga-mission-statement|ga-trailer-heading/);
+  assert.doesNotMatch(home, /class="ga-mission-divider-arrow"/);
 });
 
 test('editorial homepage uses original branding and working supporter pathways', () => {

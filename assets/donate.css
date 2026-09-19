@@ -1,0 +1,21 @@
+.ga-donate-dialog { width: min(1040px, calc(100% - 32px)); max-height: 92svh; padding: 24px; border: 0; border-radius: 8px; background: #f7f7f5; color: #171717; }
+.ga-donate-dialog::backdrop { background: #000b; }
+body:has(.ga-donate-dialog[open]) { overflow: hidden; }
+.ga-donate-close { display: block; margin: 0 0 16px auto; padding: 10px 16px; cursor: pointer; }
+.ga-donate-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
+.ga-donate-story > img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
+.ga-donate-story h2 { font: 700 32px/1.15 'Plus Jakarta Sans',sans-serif; margin: 24px 0 16px; }
+.ga-donate-story p, .ga-donate-note { font-size: 16px; line-height: 1.6; }
+.ga-donate-form h3 { font: 700 26px/1.2 'Plus Jakarta Sans',sans-serif; margin: 0 0 24px; }
+.ga-donate-form fieldset { display: flex; gap: 20px; padding: 16px; margin: 0 0 20px; border: 1px solid #bbb; }
+.ga-donate-form input[type=radio] { accent-color: #e44436; }
+.ga-donate-amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+.ga-donate-amounts button { min-height: 48px; border: 1px solid #aaa; border-radius: 6px; background: white; font-size: 18px; cursor: pointer; }
+.ga-donate-amounts button[aria-pressed=true] { border: 2px solid #e44436; background: #fff0ee; }
+.ga-donate-form > input { display: block; width: 100%; box-sizing: border-box; padding: 16px; margin-top: 8px; font-size: 24px; border: 1px solid #aaa; border-radius: 6px; }
+.ga-donate-submit { width: 100%; min-height: 52px; background: #e44436; color: white; border: 0; border-radius: 6px; font-size: 18px; cursor: pointer; }
+.ga-donate-submit:disabled { opacity: .6; cursor: wait; }
+.ga-donate-note { font-size: 13px; color: #555; }
+.ga-donate-status { min-height: 24px; font-size: 14px; }
+.ga-donate-dialog :focus-visible { outline: 2px solid #171717; outline-offset: 3px; }
+@media(max-width: 700px) { .ga-donate-layout { grid-template-columns: 1fr; } .ga-donate-story > img { display: none; } .ga-donate-story h2 { margin-top: 0; font-size: 26px; } }

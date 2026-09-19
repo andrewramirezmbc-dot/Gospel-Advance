@@ -3,8 +3,8 @@
 .ga-frontlines-photo { position: absolute; z-index: -2; inset: 0 0 0 42%; background: url('images/participation-scenes.png') 100% center / 300% auto no-repeat; filter: grayscale(1) brightness(.65); mask-image: linear-gradient(90deg,transparent,#000 55%); }
 .ga-frontlines::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg,#141414 12%,#141414ed 36%,#14141488 64%,#14141418 100%); }
 .ga-frontlines-content { max-width: 1120px; }
-.ga-home .ga-frontlines-kicker { margin: 0 0 50px; font: 500 12px/1.5 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
-.ga-frontlines-kicker::after { content: ''; display: inline-block; width: 72px; height: 1px; margin: 0 0 4px 32px; background: #ffffff90; }
+.ga-home .ga-frontlines-kicker { display: flex; align-items: center; gap: 40px; margin: 0 0 50px; font: 600 24px/1.5 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
+.ga-frontlines-kicker::after { content: ''; display: block; flex: 0 1 160px; height: 2px; background: #ffffff90; }
 .ga-home .ga-frontlines h2 { margin: 0; color: #f7f7f5; font: 700 82px/1.03 'Bodoni Moda',Georgia,serif; text-transform: uppercase; letter-spacing: 0; }
 .ga-frontlines h2 em { color: #e44436; font-style: italic; }
 .ga-home .ga-frontlines-copy { max-width: 650px; margin: 30px 0 38px; font: 400 21px/1.6 'Plus Jakarta Sans',sans-serif; color: #dededb; }
@@ -22,8 +22,9 @@
   .ga-frontlines { padding: 48px 24px 64px; }
   .ga-frontlines-photo { inset: 0; opacity: .45; }
   .ga-frontlines::before { background: linear-gradient(90deg,#141414e8,#14141488); }
-  .ga-home .ga-frontlines-kicker { margin-bottom: 30px; font-size: 10px; }
-  .ga-frontlines-kicker::after, .ga-frontlines-note { display: none; }
+  .ga-home .ga-frontlines-kicker { margin-bottom: 30px; font-size: 16px; gap: 16px; }
+  .ga-frontlines-kicker::after { flex-basis: 48px; }
+  .ga-frontlines-note { display: none; }
   .ga-home .ga-frontlines h2 { font-size: 38px; line-height: 1.12; }
   .ga-home .ga-frontlines-copy { font-size: 16px; }
   .ga-frontlines-action { width: 100%; padding: 18px 22px; font-size: 14px; }
@@ -66,13 +67,16 @@
 .ga-home .ga-hero { margin-top: 0; min-height: 760px; height: 100svh; }
 .ga-home .ga-hero-content { display: flex; align-items: center; justify-content: center; padding: 130px 0 100px; }
 .ga-hero-editorial { width: 100%; text-align: center; }
+.ga-hero-artwork-link { display: block; width: 100%; max-width: 1400px; margin-inline: auto; }
+.ga-hero-artwork-link img { display: block; width: 100%; height: auto; }
+.ga-hero-artwork-link:focus-visible { outline: 2px solid white; outline-offset: 4px; }
 .ga-hero-eyebrow { margin: 0 0 32px; font: 500 13px/1.5 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
 .ga-hero-eyebrow::after { content: ''; display: block; width: 56px; height: 1px; margin: 24px auto 0; background: #ffffffb0; }
-.ga-home .ga-hero .ga-hero-mission { margin: 0 auto; color: white; font: 700 110px/.95 'Bodoni Moda',Georgia,serif; text-align: center; text-transform: none; letter-spacing: 0; }
+.ga-home .ga-hero .ga-hero-mission { margin: 0 auto; color: white; font: 700 136px/.9 'Bodoni Moda',Georgia,serif; text-align: center; text-transform: none; letter-spacing: 0; }
 .ga-hero-mission > span, .ga-hero-mission > em, .ga-hero-mission > small { display: block; }
 .ga-home .ga-hero .ga-hero-mission > span { color: white; }
-.ga-hero-mission > em { font-style: italic; }
-.ga-home .ga-hero-mission > small { margin-top: 20px; font: italic 400 48px/1.15 'Bodoni Moda',Georgia,serif; color: #f7f7f5; }
+.ga-hero-mission > em { margin-top: 4px; font-style: italic; font-weight: 900; }
+.ga-home .ga-hero-mission > small { margin-top: 18px; font: italic 400 54px/1.15 'Bodoni Moda',Georgia,serif; color: #e2e0dc; }
 .ga-hero-film-link { display: inline-flex; align-items: center; gap: 18px; margin-top: 36px; font: 600 13px/1.4 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; color: white; }
 .ga-hero-film-link > span { display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid white; border-radius: 50%; transition: background .2s; }
 .ga-hero-film-link:hover > span { background: #e44436; }
@@ -99,7 +103,7 @@
 .ga-message-collage { position: absolute; z-index: 2; width: 28%; height: 250px; right: 16%; bottom: 0; background: url('video/hero-campus-desktop.jpg') center / cover; filter: grayscale(1); border: 8px solid #f7f7f5; }
 .ga-message-caption { position: absolute; top: 50px; right: 4%; z-index: 4; color: white; font: 500 11px/1.8 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
 @media (max-width: 1199px) {
-  .ga-home .ga-hero .ga-hero-mission { font-size: 88px; }
+  .ga-home .ga-hero .ga-hero-mission { font-size: 100px; }
   .ga-home .ga-about .ga-section-copy > p { font-size: 15px; }
   .ga-message-collage { height: 210px; }
 }
@@ -140,6 +144,11 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 .ga-approach-heading { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
 .ga-home .ga-approach-heading h2 { margin: 0; font: italic 700 88px/1.1 'Bodoni Moda', Georgia, serif; letter-spacing: 0; }
 .ga-approach-heading > p { margin: 0; font: 400 15px/1.6 'IBM Plex Mono', monospace; text-transform: uppercase; }
+.ga-approach-heading > h2 { min-width: 0; width: min(680px, 60%); }
+.ga-strategy-lettering { display: block; width: 100%; height: auto; }
+@media (max-width: 767px) {
+  .ga-approach-heading > h2 { width: 100%; }
+}
 .ga-approach-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .ga-approach-card { position: relative; isolation: isolate; overflow: hidden; padding: 30px 30px 66px; border: 1px solid #d3d1cd; border-radius: 8px; background: #f5f4f1; }
 .ga-approach-card::before { content: ''; position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(90deg, #f7f7f5ed, #f7f7f5b8), var(--approach-photo); background-size: cover; background-position: center; filter: grayscale(1); }
@@ -185,9 +194,21 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 .ga-home .ga-generation { padding-block: 112px 120px; border-top: 1px solid #ffffff24; }
 .ga-home .ga-about { border-top: 32px solid #f7f7f5; border-bottom: 64px solid #f7f7f5; }
 .ga-home .ga-frontlines { padding-top: 120px; padding-bottom: 120px; border-top: 1px solid #ffffff24; }
+.ga-home .ga-trailer .ga-film-intro { padding-block: 64px 32px; margin-bottom: 40px; }
+.ga-home .ga-trailer .ga-trailer-title { display: block; max-width: 1200px; margin-inline: auto; font-size: 88px; line-height: 1.1; font-weight: 800; letter-spacing: 0; white-space: nowrap; }
+.ga-home .ga-trailer .ga-trailer-title::before,
+.ga-home .ga-trailer .ga-trailer-title::after { display: none; }
+@media (max-width: 1199px) {
+  .ga-home .ga-trailer .ga-trailer-title { font-size: 60px; }
+}
 @media (max-width: 767px) {
+  .ga-home .ga-trailer .ga-film-intro { padding-block: 40px 16px; margin-bottom: 24px; }
+  .ga-home .ga-trailer .ga-trailer-title { font-size: 32px; line-height: 1.1; }
   .ga-home .ga-trailer { padding-bottom: 64px; }
   .ga-home .ga-generation { padding-block: 64px 72px; }
   .ga-home .ga-about { border-top-width: 24px; border-bottom-width: 40px; }
   .ga-home .ga-frontlines { padding-top: 72px; padding-bottom: 72px; }
+}
+@media (max-width: 389px) {
+  .ga-home .ga-trailer .ga-trailer-title { font-size: 26px; }
 }
