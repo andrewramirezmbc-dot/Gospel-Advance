@@ -44,3 +44,17 @@
   .ga-home .ga-about .ga-campaign-heading h2 { font-size: 12px; }
   .ga-home .ga-belief p { font-size: 30px; }
 }
+
+/* A continuous film surface from the hero into the mission player. */
+.ga-home .ga-hero { --hero-notch: 0px; clip-path: none; }
+.ga-home .ga-hero-shade { background: linear-gradient(to bottom, #0008 0%, #0008 62%, #171717 100%); }
+.ga-home .ga-trailer { margin-top: -1px; padding: 12px 0 80px; background: #171717; }
+.ga-home .ga-trailer .ga-film-intro { margin-bottom: 24px; text-align: center; }
+.ga-home .ga-trailer .ga-trailer-title { margin: 0; color: #f7f7f5; font: 700 18px/1.4 'Plus Jakarta Sans', Arial, sans-serif; text-align: center; text-transform: none; }
+.ga-home .ga-trailer-sticky { padding: 0 4%; }
+.ga-home .ga-trailer-frame { width: min(1440px, 100%); transform-origin: center center; }
+@media (max-width: 767px) {
+  .ga-home .ga-trailer { padding: 8px 0 48px; }
+  .ga-home .ga-trailer-sticky { padding: 0 20px; }
+  .ga-home .ga-trailer .ga-trailer-title { font-size: 16px; }
+}

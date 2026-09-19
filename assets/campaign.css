@@ -44,6 +44,12 @@ html.ga-announcement-dismissed { --campaign-banner: 0px; }
 }
 .ga-hero-content { display: grid; grid-template-rows: 1fr auto; flex: 1; padding: 64px 0 calc(80px + var(--hero-notch)); text-align: left; }
 .ga-hero-wordmark { width: min(500px,64%); justify-self: center; align-self: center; margin: 30px 0; color: #fff; }
+.ga-home .ga-hero .ga-hero-mission { width: 100%; max-width: 1100px; justify-self: center; align-self: center; margin: 30px 0; padding: 0; }
+.ga-hero-mission picture, .ga-hero-mission img { display: block; width: 100%; height: auto; }
+@media (max-width: 767px) {
+  .ga-home .ga-hero .ga-hero-mission { max-width: 540px; }
+  .ga-hero-mission img { aspect-ratio: 600 / 316; }
+}
 /* Screen blends the artwork's black background away without iOS luminance masks. */
 .ga-hero .ga-hero-wordmark {
   -webkit-mask-image: none;

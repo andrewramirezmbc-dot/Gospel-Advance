@@ -39,11 +39,7 @@ test('touch, reduced motion and dialogs retain native cursors', () => {
   f.document.dialog = true; f.move(); assert(!f.cursor.classes.has('is-visible'));
   f.document.dialog = false; f.move(); f.motion.change(); assert(!f.cursor.classes.has('is-visible'));
 });
-test('campaign retains real films, three actions and the exact mission invitation', () => {
+test('removed campaign films and action cards stay absent', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-  assert.match(html, /data-media="trailer" data-video-cursor/);
-  assert.match(html, /data-media="conversation1" data-video-cursor/);
-  assert.equal((html.match(/class="ga-strategy-card"/g) || []).length, 3);
-  const invitation = html.match(/<section class="ga-belief[\s\S]*?<\/section>/)[0].replace(/<[^>]+>/g, '');
-  assert.equal(invitation, 'Help take the gospel to the next generation. Stand with Gospel Advance as we engage students, share Christ, and connect them with Christian community.');
+  assert.doesNotMatch(html, /class="ga-campaign-film"|class="ga-strategy-card"|class="ga-belief/);
 });

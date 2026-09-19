@@ -131,7 +131,7 @@ test('interviews use real source frames and retain a separate mission trailer', 
   }
   const hero = home.match(/<section class="ga-hero"[\s\S]*?<\/section>/)[0];
   assert.match(hero, /<video id="heroVideo"[^>]*muted playsinline loop/);
-  assert.doesNotMatch(hero, /ga-hero-image|poster=|assets\/images\//);
+  assert.doesNotMatch(hero, /ga-hero-image|poster=|assets\/images\/(?!hero-mission-lettering(?:-mobile)?\.svg)/);
   assert.match(hero, /hero-campus-desktop\.jpg/);
   assert.match(hero, /hero-campus-mobile\.jpg/);
   assert.doesNotMatch(home, /rel="preload"[^>]*campus-conversation/);
@@ -157,11 +157,9 @@ test('mission section is the scrolling film without numbered section labels', ()
 
 test('editorial homepage uses original branding and working supporter pathways', () => {
   const home = fs.readFileSync(path.join(__dirname, '../gospel-advance-website.html'), 'utf8');
-  assert.match(home, /ga-wordmark ga-hero-wordmark/);
+  assert.match(home, /class="ga-hero-mission"/);
   assert.match(home, /ga-watch ga-button ga-button-red" href="#mission"/);
-  assert.match(home, /data-interest="Prayer partnership"/);
   assert.match(home, /data-interest="Financial partnership"/);
-  assert.match(home, /data-interest="Campus connection"/);
   assert.doesNotMatch(home, /href="\/?#conversations"/);
   assert.doesNotMatch(home, /thesend\.org|webflow|typekit|GTM-TS3K9XK5/);
   assert.equal((home.match(/<h1\b/g) || []).length, 1);

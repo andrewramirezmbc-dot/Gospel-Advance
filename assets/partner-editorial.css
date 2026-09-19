@@ -4,8 +4,16 @@
 .ga-partner-rail { position: absolute; inset: 0 0 0 auto; width: 6.8%; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; background: #e44436; color: #fff; text-transform: uppercase; font: 600 28px/1 'Barlow Condensed',sans-serif; }
 .ga-partner .ga-giving-heading { position: relative; display: block; max-width: none; padding: 0; margin: 0 0 44px; }
 .ga-partner-kicker { position: absolute; left: 2.6%; top: 20px; font: 600 26px/1.4 'Barlow Condensed',sans-serif; text-transform: uppercase; color: #294952; }
-.ga-home .ga-partner .ga-giving-heading h2 { max-width: none; color: #171717; font: 700 64px/1.02 'Bodoni Moda',Times,serif; font-optical-sizing: auto; text-transform: uppercase; text-align: center; text-wrap: initial; letter-spacing: 0; }
-.ga-partner .ga-giving-heading h2 em { font-style: normal; color: #d9362a; }
+.ga-home .ga-partner .ga-giving-heading h2 { max-width: none; color: #171717; font: italic 900 64px/1.08 'Playfair Display',Georgia,serif; font-optical-sizing: auto; text-transform: none; text-align: center; text-wrap: initial; letter-spacing: 0; }
+.ga-partner .ga-giving-heading h2 em { font-style: inherit; color: #d9362a; }
+.ga-home .ga-partner .ga-giving-heading .ga-mission-lettering { position: relative; margin: 0; }
+.ga-mission-lettering picture { display: block; max-width: 1440px; margin: 0 auto; }
+.ga-mission-lettering img { display: block; width: 100%; height: auto; }
+.ga-mission-lettering .ga-mission-text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 767px) {
+  .ga-mission-lettering picture { max-width: 540px; }
+  .ga-mission-lettering img { aspect-ratio: 600 / 416; }
+}
 .ga-home .ga-partner .ga-giving-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: none; margin: 24px 0 0; }
 .ga-partner .ga-giving-copy p { margin: 0; color: #444; font: 400 25px/1.35 'Times New Roman',Times,serif; }
 .ga-partner .ga-campaign-films { grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; }

@@ -46,6 +46,12 @@ test('reduced motion has no autoplay or scale animation but allows deliberate pl
   f.nodes.trailerWatch.listeners.click();assert.equal(f.video.paused,false);
 });
 
+test('desktop reveal lifts and expands the trailer without enabling audio',()=>{
+  const f=fixture();
+  assert.match(f.nodes.trailerFrame.style.transform, /^translateY\([\d.]+px\) scale\(0\.[\d]+\)$/);
+  assert.equal(f.video.muted,true);
+});
+
 test('offscreen pause resumes while ended and failed trailers stay stopped',()=>{
   const f=fixture();f.visible(true);f.visible(false);assert.equal(f.video.paused,true);
   f.visible(true);assert.equal(f.video.paused,false);

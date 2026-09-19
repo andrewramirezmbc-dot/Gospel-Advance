@@ -7,6 +7,7 @@
   const watch = document.getElementById('trailerWatch');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = window.matchMedia('(max-width: 767px)');
+  const heroTitle = document.getElementById('hero-title');
   let visible = false;
   let userPaused = false;
   let automaticPause = false;
@@ -30,8 +31,14 @@
   const layout = () => {
     raf = 0;
     const progress = Math.max(0, Math.min(1, (innerHeight * .85 - stage.getBoundingClientRect().top) / (innerHeight * .75)));
-    const scale = motion.matches || narrow.matches ? 1 : .88 + .12 * progress;
-    frame.style.transform = `scale(${scale})`;
+    const still = motion.matches || narrow.matches;
+    const scale = still ? 1 : .88 + .12 * progress;
+    frame.style.transform = still ? 'scale(1)' : `translateY(${32 * (1 - progress)}px) scale(${scale})`;
+    if (heroTitle) {
+      const fade = still ? 0 : Math.max(0, Math.min(1, (innerHeight - stage.getBoundingClientRect().top) / (innerHeight * .8)));
+      heroTitle.style.opacity = String(1 - fade);
+      heroTitle.style.transform = `translateY(${-48 * fade}px)`;
+    }
   };
   const scheduleLayout = () => { if (!raf) raf = requestAnimationFrame(layout); };
   watch.hidden = false;

@@ -639,3 +639,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
 @media (max-width: 1099px) {
 .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 140px; }
 }
+.ga-footer-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-bottom: 28px; margin-bottom: 36px; border-bottom: 1px solid #ffffff30; }
+.ga-footer-actions a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; color: #fff; font-size: 17px; font-weight: 600; }
+.ga-footer-actions a:hover { color: #e44436; }
+.ga-footer-actions a:focus-visible { outline: 2px solid #e44436; outline-offset: 5px; }
+.ga-footer-actions .ga-icon { flex: 0 0 22px; width: 22px; height: 22px; filter: invert(1); }
+@media (max-width: 649px) {
+  .ga-footer-actions { grid-template-columns: 1fr; gap: 8px; }
+}

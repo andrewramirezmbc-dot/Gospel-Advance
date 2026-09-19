@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/playfair-display-black-italic.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Bodoni Moda';
   font-style: normal;
   font-weight: 700;

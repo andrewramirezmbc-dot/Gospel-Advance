@@ -43,7 +43,7 @@ function fixture({ reduced = false, stored = false } = {}) {
 test('home leads into the newly titled film without the interactive arrow section', () => {
   const html = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
   assert.doesNotMatch(html + source, /ga-mission-scroll|ga-mission-arrow|ga-scroll-enabled/);
-  assert.match(html, /id="mission-film-title">The Mission\.<br \/>In Motion\.<\/h2>/);
+  assert.match(html, /id="mission-film-title">Watch the mission<\/h2>/);
   assert.match(html, /id="missionTrailer"/);
 });
 
@@ -66,8 +66,12 @@ test('heading sections omit supporting captions without removing body content', 
     assert.doesNotMatch(section[1], /<p\b/);
   }
   assert.doesNotMatch(html, /class="ga-hero-corners"|class="ga-hero-bottom-note"/);
-  assert.match(html, /<h1 class="ga-sr-only" id="hero-title">/);
+  assert.match(html, /<h1 class="ga-hero-mission" id="hero-title"><span>Reaching this<\/span><em>generation<\/em><small>with the hope of Christ\.<\/small>/);
+  assert.doesNotMatch(html, /class="ga-wordmark ga-hero-wordmark"/);
+  assert.match(html, /class="ga-hero-film-link" href="#mission"/);
   assert.match(html, /class="ga-letter-lead"/);
+  assert.match(html, /src="assets\/images\/personal-lettering\.svg"/);
+  assert.match(html, /class="ga-personal-lettering-text">I want college<br \/>students to know<br \/>the hope of<br \/><em>Jesus Christ\.<\/em>/);
   for (const file of ['articles.html', 'sermons.html', 'preachers-guide.html']) {
     const page = fs.readFileSync(path.join(root, file), 'utf8');
     const header = page.match(/<section class="(?:page-header|guide-hero)">([\s\S]*?)<\/section>/);
@@ -86,11 +90,12 @@ test('announcement dismissal restores focus and persists for the session', () =>
   assert.equal(fixture({ stored: true }).banner.hidden, true);
 });
 
-test('giving section keeps its headline and inquiry destination without supporting paragraphs', () => {
+test('giving section ends the homepage content', () => {
   const html = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
-  assert.match(html, /id="partner-title">To reach this generation with<br \/>the hope of <em>Jesus Christ\.<\/em>/);
-  assert(!html.includes('class="ga-giving-copy"'));
-  assert.match(html, /href="#contact" data-interest="Financial partnership">Help Take the Gospel to Campus/);
+  assert.match(html, /id="frontlines-title"/);
+  assert.match(html, /href="#contact" data-interest="Financial partnership">Fuel the mission/);
+  assert.doesNotMatch(html, /id="partner-title"|class="ga-strategy-card"|class="ga-belief/);
+  assert.match(html, /<dialog class="ga-content-dialog" id="contactPanel"/);
 });
 
 test('hero and footer use white wordmarks', () => {
