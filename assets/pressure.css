@@ -1,10 +1,10 @@
 /* Editorial statistics: live text over fictional illustrative photography. */
 .ga-home .ga-generation { background: #141414; color: #f7f7f5; padding-block: 80px 56px; }
 .ga-generation .ga-shell { max-width: 1440px; }
-.ga-generation .ga-campaign-heading { position: relative; z-index: 2; width: 57%; margin: 0; pointer-events: none; }
+.ga-generation .ga-campaign-heading { position: relative; z-index: 2; width: 100%; margin: 0; pointer-events: none; }
 .ga-generation .ga-campaign-heading::before { content: ''; display: block; width: 140px; height: 6px; margin-bottom: 24px; background: var(--ga-red); }
 .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 100px; line-height: .94; text-wrap: initial; }
-.ga-generation .ga-stat-grid { grid-template-columns: 55% 45%; grid-template-rows: 290px 290px; border: 0; margin-top: -64px; }
+.ga-generation .ga-stat-grid { grid-template-columns: 55% 45%; grid-template-rows: minmax(320px, auto) minmax(320px, auto); border: 0; margin-top: 32px; }
 .ga-generation .ga-stat-grid > .ga-stat { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: 44px 24px; border: 0; border-radius: 0; }
 .ga-generation .ga-stat-grid > .ga-stat-church { grid-row: 1 / 3; padding: 92px 0 40px; }
 .ga-generation .ga-stat-grid > .ga-stat-overdose { border-left: 1px solid #777; }
@@ -20,14 +20,22 @@
 .ga-home .ga-generation .ga-stat-number-long { font-size: 98px; margin-top: 16px; }
 .ga-home .ga-generation .ga-stat h3 { margin-top: 16px; font-size: 34px; line-height: 1.05; color: #fff; }
 .ga-home .ga-generation .ga-stat-church h3 { font-size: 52px; max-width: 380px; }
-.ga-generation .ga-stat-sources { max-width: none; padding-top: 32px; color: #aaa; font-size: 12px; }
+.ga-generation .ga-stat-sources { max-width: none; padding-top: 32px; color: #bbb; font-size: 14px; }
+.ga-generation .ga-stat-context { max-width: 430px; margin: 18px 0 0; color: #e3e3e0; font: 400 15px/1.6 'Plus Jakarta Sans', sans-serif; }
+.ga-stat-context a { text-decoration: underline; text-underline-offset: 3px; }
+.ga-stat-source-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; }
+.ga-stat-source-links a { scroll-margin-top: 110px; }
+.ga-stat-methodology { max-width: 850px; margin-top: 12px; }
+.ga-stat-methodology summary { width: fit-content; cursor: pointer; }
+.ga-stat-methodology p { margin-top: 12px; }
+.ga-stat-sources strong, .ga-stat-sources a { color: #e3e3e0; }
 .ga-stat-context-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; margin-bottom: 24px; }
 .ga-stat-context-grid strong { display: block; color: #ddd; margin-bottom: 8px; }
 .ga-stat-context-grid a { display: block; margin-top: 8px; color: #ddd; }
 .ga-stat-imagery-note { margin-top: 12px; }
 @media (max-width: 1199px) {
   .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 76px; }
-  .ga-generation .ga-stat-grid { grid-template-rows: 250px 250px; margin-top: -40px; }
+  .ga-generation .ga-stat-grid { grid-template-rows: minmax(300px, auto) minmax(320px, auto); }
   .ga-generation .ga-stat-grid > .ga-stat { padding: 36px 20px; }
   .ga-generation .ga-stat-grid > .ga-stat-church { padding: 70px 0 32px; }
   .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 230px; }
@@ -48,7 +56,7 @@
   .ga-generation .ga-campaign-heading { width: 100%; }
   .ga-generation .ga-campaign-heading::before { width: 92px; height: 4px; margin-bottom: 20px; }
   .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 60px; }
-  .ga-generation .ga-stat-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: 420px 260px 260px; margin-top: 16px; }
+  .ga-generation .ga-stat-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto auto; margin-top: 16px; }
   .ga-generation .ga-stat-grid > .ga-stat { padding: 36px 16px; border: 0; }
   .ga-generation .ga-stat-grid > .ga-stat-church { grid-row: auto; padding: 40px 0; }
   .ga-generation .ga-stat-grid > .ga-stat + .ga-stat { border-top: 1px solid #777; }

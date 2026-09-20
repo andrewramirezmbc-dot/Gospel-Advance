@@ -13,7 +13,7 @@
 .ga-frontlines-action:hover { background: #b92e23; }
 .ga-frontlines-action:focus-visible { outline: 3px solid white; outline-offset: 5px; }
 .ga-frontlines-action .ga-icon { width: 28px; height: 28px; filter: invert(1); }
-.ga-frontlines-note { position: absolute; right: 6%; bottom: 70px; font: 500 11px/1.8 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
+.ga-frontlines-note { position: absolute; right: 6%; bottom: 66px; max-width: 310px; font: 700 26px/1.35 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; }
 .ga-frontlines-note::before { content: ''; display: block; width: 54px; height: 1px; margin-bottom: 22px; background: #ffffff90; }
 @media (max-width: 1199px) {
   .ga-home .ga-frontlines h2 { font-size: 62px; }
@@ -25,7 +25,7 @@
   .ga-frontlines::before { background: linear-gradient(90deg,#141414e8,#14141488); }
   .ga-home .ga-frontlines-kicker { margin-bottom: 30px; font-size: 16px; gap: 16px; }
   .ga-frontlines-kicker::after { flex-basis: 48px; }
-  .ga-frontlines-note { display: none; }
+  .ga-frontlines-note { position: relative; inset: auto; margin: 40px 0 0; font-size: 24px; }
   .ga-home .ga-frontlines h2 { font-size: 38px; line-height: 1.12; }
   .ga-home .ga-frontlines-copy { font-size: 16px; }
   .ga-frontlines-action { width: 100%; padding: 18px 22px; font-size: 14px; }
@@ -88,7 +88,7 @@
 .ga-home .ga-about { padding: 90px 0 64px 4%; background: #f7f7f5; }
 .ga-home .ga-about::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 4%; background: url('images/andrew-wall-texture.jpg') center / 240px 240px, url('video/hero-campus-desktop.jpg') left top / auto 160% no-repeat; background-blend-mode: screen; filter: grayscale(1) contrast(1.65) brightness(.72); pointer-events: none; }
 .ga-about .ga-campaign-heading { z-index: 4; inset: 46px auto auto 8%; width: auto; padding: 0; background: none; }
-.ga-home .ga-about .ga-campaign-heading h2 { writing-mode: horizontal-tb; transform: none; font: 600 11px/1.4 'Plus Jakarta Sans',sans-serif; color: #171717; text-transform: uppercase; }
+.ga-home .ga-about .ga-campaign-heading h2 { writing-mode: horizontal-tb; transform: none; font: 600 24px/1.4 'Plus Jakarta Sans',sans-serif; color: #171717; text-transform: uppercase; }
 .ga-about .ga-campaign-heading h2::after { content: ''; display: inline-block; width: 54px; height: 1px; margin: 0 0 4px 24px; background: #171717; }
 .ga-about .ga-section-copy { width: 56%; padding: 30px 5% 36px 4%; background: #f7f7f5; }
 .ga-about .ga-personal-lettering { max-width: none; }
@@ -107,6 +107,9 @@
   .ga-home .ga-about .ga-section-copy > p { font-size: 15px; }
   .ga-message-collage { height: 210px; }
 }
+@media (min-width: 768px) and (max-width: 900px) {
+  .ga-about .ga-campaign-heading h2::after { display: none; }
+}
 @media (max-width: 767px) {
   .ga-home .ga-hero { min-height: 700px; }
   .ga-home .ga-hero .ga-hero-mission { font-size: 54px; }
@@ -116,6 +119,8 @@
   .ga-home .ga-about { padding: 0 0 32px; }
   .ga-home .ga-about::before { display: none; }
   .ga-about .ga-campaign-heading { position: relative; inset: auto; padding: 34px 24px 20px; }
+  .ga-home .ga-about .ga-campaign-heading h2 { font-size: 24px; }
+  .ga-about .ga-campaign-heading h2::after { display: none; }
   .ga-about .ga-section-copy { width: calc(100% - 32px); padding: 28px 24px; margin: -24px 16px 0; }
   .ga-about .ga-andrew-frame { inset: auto; width: 100%; height: 460px; }
   .ga-about .ga-andrew-frame .ga-andrew-photo { top: 0; height: 100%; object-fit: contain; mask-image: none; }
@@ -143,7 +148,7 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 .ga-approach-label::after { content: ''; width: 80px; height: 1px; background: #171717; }
 .ga-approach-heading { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
 .ga-home .ga-approach-heading h2 { margin: 0; font: italic 700 88px/1.1 'Bodoni Moda', Georgia, serif; letter-spacing: 0; }
-.ga-approach-heading > p { margin: 0; font: 400 15px/1.6 'IBM Plex Mono', monospace; text-transform: uppercase; }
+.ga-approach-heading > p { max-width: 470px; margin: 0; font: 400 24px/1.5 'IBM Plex Mono', monospace; text-transform: uppercase; }
 .ga-approach-heading > h2 { min-width: 0; width: min(680px, 60%); }
 .ga-strategy-lettering { display: block; width: 100%; height: auto; }
 @media (max-width: 767px) {
@@ -176,7 +181,7 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
   .ga-approach { padding: 48px 0; }
   .ga-approach-heading { display: block; margin-bottom: 28px; }
   .ga-home .ga-approach-heading h2 { font-size: 46px; }
-  .ga-approach-heading > p { margin-top: 16px; font-size: 12px; }
+  .ga-approach-heading > p { margin-top: 16px; font-size: 20px; }
   .ga-approach-grid { grid-template-columns: 1fr; }
   .ga-home .ga-approach-card h3 { min-height: 0; font-size: 32px; }
 }
@@ -241,29 +246,40 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 @media (max-width: 389px) {
   .ga-home .ga-trailer .ga-trailer-title { font-size: 26px; }
 }
-.ga-campus-invite { padding: 72px 0 44px; background: linear-gradient(90deg, #080b0dd1, #080b0d85), url('video/hero-campus-desktop.jpg') center / cover; color: #f7f7f5; }
-.ga-home .ga-campus-invite h2, .ga-home .ga-mission-faq h2 { margin: 0; font: 700 52px/1.12 'Plus Jakarta Sans', sans-serif; letter-spacing: 0; }
-.ga-home .ga-campus-invite h2 { font: 700 68px/1.06 'Bodoni Moda', Georgia, serif; text-transform: none; }
-.ga-campus-label { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; font-size: 12px; text-transform: uppercase; }
+.ga-campus-invite { background: #171717; color: #f7f7f5; }
+.ga-campus-split { display: grid; grid-template-columns: 54% 46%; }
+.ga-campus-invite-intro { padding: 76px 7.5% 64px; align-self: center; }
+.ga-home .ga-campus-invite h2 { margin: 0; font: 700 82px/1.02 'Bodoni Moda', Georgia, serif; text-transform: none; letter-spacing: 0; text-wrap: initial; }
+.ga-campus-invite h2 > span { display: block; }
+.ga-campus-invite h2 em { color: #e44436; font: italic 400 1em/1.02 'DM Serif Display', Georgia, serif; }
+.ga-campus-label { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; font-size: 12px; text-transform: uppercase; }
 .ga-campus-label::before { content: ""; width: 56px; height: 3px; background: #e44436; }
-.ga-campus-period { color: #e44436; }
-.ga-campus-invite-intro > p { margin: 22px 0 0; font-size: 20px; color: #efefed; }
-.ga-campus-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
-.ga-campus-paths > div { position: relative; padding: 32px 28px 32px 108px; border: 1px solid #ffffff80; border-radius: 8px; background: #23232399; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; align-items: flex-start; }
-.ga-campus-icon { position: absolute; left: 28px; top: 30px; display: grid; place-items: center; width: 58px; height: 58px; border: 2px solid #e44436; border-radius: 50%; }
-.ga-campus-icon img { filter: invert(1); }
-.ga-home .ga-campus-paths h3 { font: 700 30px/1.15 'Bodoni Moda', Georgia, serif; margin: 8px 0 0; letter-spacing: 0; text-transform: none; }
-.ga-campus-paths p { max-width: 520px; font-size: 17px; line-height: 1.6; color: #dededb; margin: 22px 0; }
-.ga-campus-paths a { display: inline-flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; margin-top: auto; padding: 16px 22px; border-radius: 32px; background: #c52129; border: 1px solid #ed3940; font-size: 15px; font-weight: 600; color: #fff; }
-.ga-campus-paths a img { filter: invert(1); flex-shrink: 0; }
-.ga-campus-paths a:hover { color: #fff; background: #a91d24; }
-.ga-campus-footnote { display: flex; align-items: center; gap: 28px; margin-top: 36px; font-size: 11px; text-transform: uppercase; }
-.ga-campus-footnote::after { content: ""; flex: 1; height: 1px; background: #ffffff70; }
-.ga-campus-footnote > span:last-child { order: 1; color: #e44436; font-size: 28px; }
-@media (max-width: 1100px) {
-  .ga-home .ga-campus-invite h2 { font-size: 54px; }
-  .ga-campus-paths > div { padding: 28px; }
-  .ga-campus-icon { position: static; margin-bottom: 16px; }
+.ga-campus-invite-intro > p { max-width: 530px; margin: 30px 0; font-size: 24px; line-height: 1.5; }
+.ga-home .ga-campus-connect { display: inline-flex; align-items: center; justify-content: space-between; gap: 60px; min-width: 280px; min-height: 64px; padding: 18px 28px; background: #c52129; color: white; font-size: 18px; font-weight: 600; transition: background-color .2s; }
+.ga-campus-connect img { filter: invert(1); flex-shrink: 0; }
+.ga-home .ga-campus-connect:hover { background: #a91d24; }
+.ga-campus-photo { position: relative; min-width: 0; min-height: 560px; overflow: hidden; }
+.ga-campus-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; }
+.ga-campus-offerings-band { background: #252727; color: #f7f7f5; padding: 40px 0 48px; }
+.ga-campus-offerings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.ga-campus-offerings > div { padding: 4px 36px 12px; border-left: 1px solid #ffffff40; }
+.ga-campus-offerings > div:first-child { padding-left: 0; border: 0; }
+.ga-campus-offerings > div:last-child { padding-right: 0; }
+.ga-offering-number { display: block; margin-bottom: 20px; color: #ff6559; font: 500 15px/1.4 'Plus Jakarta Sans', sans-serif; }
+.ga-home .ga-campus-offerings h3 { margin: 0 0 12px; font: 700 22px/1.3 'Plus Jakarta Sans', sans-serif; text-transform: none; }
+.ga-campus-offerings p { color: #dededb; font-size: 16px; line-height: 1.6; }
+@media (min-width: 1600px) { .ga-home .ga-campus-invite h2 { font-size: 96px; } }
+@media (max-width: 1399px) { .ga-home .ga-campus-invite h2 { font-size: 68px; } }
+@media (max-width: 1199px) {
+  .ga-home .ga-campus-invite h2 { font-size: 58px; }
+  .ga-campus-invite-intro { padding-block: 56px; }
+  .ga-campus-invite-intro > p { font-size: 20px; }
+  .ga-campus-photo { min-height: 500px; }
+  .ga-campus-offerings > div { padding-inline: 24px; }
+}
+@media (max-width: 999px) {
+  .ga-home .ga-campus-invite h2 { font-size: 44px; }
+  .ga-home .ga-campus-offerings h3 { font-size: 19px; }
 }
 .ga-mission-faq { padding: 96px 0; background: #f7f7f5; color: #171717; }
 .ga-faq-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; }
@@ -279,16 +295,25 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
 .ga-faq-items p a { text-decoration: underline; text-underline-offset: 3px; }
 .ga-campus-invite a:focus-visible, .ga-mission-faq a:focus-visible, .ga-faq-items summary:focus-visible { outline: 2px solid #e44436; outline-offset: 5px; }
 @media (max-width: 767px) {
-  .ga-campus-invite, .ga-mission-faq { padding: 56px 0; }
-  .ga-home .ga-campus-invite h2, .ga-home .ga-mission-faq h2 { font-size: 32px; }
-  .ga-campus-paths, .ga-faq-layout { grid-template-columns: 1fr; gap: 32px; }
-  .ga-campus-paths { margin-top: 32px; }
-  .ga-home .ga-campus-invite h2 { font-size: 38px; }
-  .ga-home .ga-campus-paths h3 { font-size: 28px; }
-  .ga-campus-paths > div { padding: 24px; }
-  .ga-campus-paths a { padding: 14px 18px; }
+  .ga-mission-faq { padding: 56px 0; }
+  .ga-home .ga-mission-faq h2 { font-size: 32px; }
+  .ga-faq-layout { grid-template-columns: 1fr; gap: 32px; }
+  .ga-campus-split { grid-template-columns: 1fr; }
+  .ga-campus-invite-intro { padding: 48px 24px; }
+  .ga-home .ga-campus-invite h2 { font-size: 54px; }
+  .ga-campus-invite-intro > p { font-size: 19px; }
+  .ga-campus-photo { min-height: 0; aspect-ratio: 4 / 3; }
+  .ga-campus-photo img { object-position: center; }
+  .ga-home .ga-campus-connect { min-width: 0; width: min(100%, 300px); font-size: 17px; }
+  .ga-campus-offerings { grid-template-columns: 1fr; gap: 24px; }
+  .ga-campus-offerings > div, .ga-campus-offerings > div:first-child, .ga-campus-offerings > div:last-child { padding: 24px 0 0; border: 0; border-top: 1px solid #ffffff40; }
+  .ga-campus-offerings > div:first-child { border: 0; padding-top: 0; }
+  .ga-home .ga-campus-offerings h3 { font-size: 22px; }
+  .ga-offering-number { margin-bottom: 12px; }
   .ga-faq-items summary { font-size: 17px; }
 }
+@media (max-width: 450px) { .ga-home .ga-campus-invite h2 { font-size: 42px; } }
+@media (max-width: 359px) { .ga-home .ga-campus-invite h2 { font-size: 34px; } }
 .ga-media-library { padding: 72px 0; background: #171717; color: #f7f7f5; }
 .ga-media-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 32px; }
 .ga-home .ga-media-heading h2 { margin: 0; font: 700 42px/1.15 'Plus Jakarta Sans', sans-serif; letter-spacing: 0; text-transform: none; }
@@ -365,6 +390,64 @@ a.ga-media-card:focus-visible { outline: 2px solid #e44436; outline-offset: 7px;
   .ga-media-testimony { min-height: 460px; }
   .ga-media-films { min-height: 290px; }
 }
+.ga-media-grid { grid-template-rows: 380px 260px; gap: 22px; }
+.ga-film-carousel { background: transparent; border: 0; border-radius: 0; }
+.ga-home .ga-film-carousel h3.ga-media-kicker { top: 0; left: 0; padding: 5px 14px; background: transparent; }
+.ga-film-slide { position: absolute; inset: 40px 32% 48px 0; overflow: hidden; }
+.ga-film-slide[hidden] { display: none; }
+.ga-film-backdrop { width: 100%; height: 100%; object-fit: cover; background: #050607; }
+.ga-film-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #050607ed, #05060760 34%, transparent 66%); pointer-events: none; }
+.ga-film-copy { position: absolute; z-index: 1; inset: auto 80px 22px 24px; }
+.ga-home .ga-film-copy h4 { margin: 0 0 10px; color: white; font: 700 36px/1.06 'Bodoni Moda', Georgia, serif; }
+.ga-film-copy p { color: #efefed; font-size: 14px; line-height: 1.5; margin: 0; }
+.ga-film-play { position: absolute; z-index: 2; bottom: 24px; right: 18px; width: 48px; height: 48px; border: 0; border-radius: 50%; background: #e44436; cursor: pointer; }
+.ga-film-play img { width: 26px; height: 26px; filter: invert(1); }
+.ga-film-preview { position: absolute; top: 40px; bottom: 48px; right: 0; width: calc(32% - 24px); display: flex; flex-direction: column; justify-content: flex-end; padding: 0; border: 0; border-radius: 0; background: transparent; color: white; text-align: left; cursor: pointer; }
+.ga-film-preview-label { display: block; margin-bottom: 14px; font: 600 11px/1.5 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; }
+.ga-film-preview-label::after { content: ''; display: block; width: 24px; height: 1px; margin-top: 10px; background: #f7f7f5; }
+.ga-film-preview img { width: 100%; height: auto; aspect-ratio: 4 / 3; min-height: 0; object-fit: cover; transition: filter .2s; }
+.ga-film-preview:hover img { filter: brightness(1.15); }
+.ga-film-preview span { display: block; padding: 12px 0 0; font: 700 24px/1.1 'Bodoni Moda',Georgia,serif; }
+.ga-film-progress { position: absolute; left: 0; right: 180px; bottom: 18px; height: 2px; background: #ffffff30; }
+.ga-film-progress span { display: block; width: 50%; height: 100%; background: #e44436; transition: transform .2s; }
+.ga-film-carousel[data-active-film="1"] .ga-film-progress span { transform: translateX(100%); }
+.ga-film-nav { position: absolute; bottom: 0; z-index: 3; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid #ffffff90; border-radius: 50%; background: #101213bb; cursor: pointer; }
+.ga-film-prev { right: 48px; }
+.ga-film-next { right: 0; }
+.ga-film-nav img { width: 20px; height: 20px; filter: invert(1); transform: rotate(-90deg); }
+.ga-film-prev img { transform: rotate(90deg); }
+.ga-film-counter { position: absolute; bottom: 10px; right: 108px; color: #ddd; font-size: 12px; }
+.ga-film-carousel button:focus-visible { outline: 2px solid white; outline-offset: -4px; }
+@media (max-width: 1100px) {
+  .ga-media-grid { grid-template-rows: 350px 260px; }
+  .ga-home .ga-film-copy h4 { font-size: 28px; }
+  .ga-film-copy { left: 18px; right: 68px; bottom: 18px; }
+  .ga-film-play { right: 12px; bottom: 18px; width: 44px; height: 44px; }
+  .ga-film-preview { width: calc(32% - 16px); }
+  .ga-film-preview span { font-size: 20px; }
+}
+@media (max-width: 767px) { .ga-media-grid { grid-template-rows: 340px 360px 250px; } }
+@media (max-width: 550px) {
+  .ga-media-films { min-height: 500px; }
+  .ga-film-slide { inset: 40px 0 auto; height: 300px; }
+  .ga-film-preview { top: 356px; bottom: 48px; width: 100%; display: grid; grid-template-columns: 112px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 16px; justify-content: initial; }
+  .ga-film-preview img { grid-column: 1; grid-row: 1 / 3; height: 100%; aspect-ratio: auto; }
+  .ga-film-preview-label { grid-column: 2; margin: 0; font-size: 10px; }
+  .ga-film-preview-label::after { display: none; }
+  .ga-film-preview span { grid-column: 2; font-size: 20px; padding: 5px 0 0; }
+  .ga-film-copy { inset: auto 68px 20px 18px; }
+  .ga-home .ga-film-copy h4 { font-size: 30px; }
+  .ga-film-progress { right: 176px; }
+}
+@media (max-width: 359px) {
+  .ga-home .ga-film-copy h4 { font-size: 26px; }
+  .ga-film-preview { grid-template-columns: 96px minmax(0, 1fr); gap: 0 12px; }
+  .ga-film-preview span { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .ga-film-preview img, .ga-film-progress span, .ga-campus-connect { transition: none; } }
+.ga-home .ga-mission-faq { padding-bottom: 48px; }
+.ga-home .ga-footer { padding-top: 28px; }
+.ga-home .ga-giving-label { position: relative; top: -16px; }
 #contactPanel { width: min(680px, calc(100% - 32px)); padding: 24px 32px 32px; }
 #contactPanel .ga-contact-grid { display: block; }
 #contactPanel .ga-contact-form { padding: 0; border: 0; gap: 10px; width: 100%; }

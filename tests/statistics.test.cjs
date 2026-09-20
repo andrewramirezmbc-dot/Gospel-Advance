@@ -100,7 +100,7 @@ test('invalid statistics remain static instead of animating fabricated values', 
   assert.equal(f.observed.size, 0);
 });
 
-test('statistics precede Andrew, with accessible values and research preserved in project notes', () => {
+test('statistics precede Andrew, with accessible values and visible research context', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert(html.indexOf('id="generation"') < html.indexOf('id="about"'));
   assert.match(html, /src="assets\/statistics.js" defer/);
@@ -111,7 +111,23 @@ test('statistics precede Andrew, with accessible values and research preserved i
   assert.match(notes, /Young-Adult-Church-Dropout-Report-2017.pdf/);
   assert.match(notes, /cdc.gov\/nchs\/products\/databriefs\/db549.htm/);
   assert.match(notes, /2025-nsduh-annual-national-report.pdf/);
-  assert(!html.includes('class="ga-stat-sources"'));
+  assert(html.includes('class="ga-stat-sources"'));
+  assert.match(html, /This generation<br \/>is under pressure/);
+  assert.match(html, /not Gen Z as a whole/);
+  assert.match(html, /ages 15&ndash;24\. In one year\./);
+  assert.match(html, /ages 12&ndash;17\. Use over one year\./);
+  assert.match(html, /3,810 overdose deaths[\s\S]*?in 2024/);
+  assert.match(html, /SAMHSA 2025 NSDUH/);
+  assert.match(html, /break of at least one year/);
+  assert.doesNotMatch(html, /average per year/i);
+  assert.match(html, /<details class="ga-stat-methodology"><summary>About the data<\/summary>/);
+  for (const caption of html.matchAll(/<p class="ga-stat-context">(.*?)<\/p>/g)) {
+    assert(caption[1].replace(/<[^>]*>/g, '').split(/\s+/).length <= 24);
+  }
+  for (const source of ['church', 'overdose', 'care']) {
+    assert(html.includes(`href="#stat-source-${source}"`));
+    assert(html.includes(`id="stat-source-${source}"`));
+  }
   assert.match(html, /href="assets\/pressure.css"/);
   for (const name of ['church', 'pressure', 'care']) {
     assert(html.includes(`assets/images/generation-${name}.jpg`));

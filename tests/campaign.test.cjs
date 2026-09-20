@@ -106,15 +106,17 @@ test('hero and footer use white wordmarks', () => {
   assert.match(css, /\.ga-footer \.ga-wordmark\s*\{[^}]*color: #fff;/);
 });
 
-test('all public pages share the adapted five-link header and two action buttons', () => {
+test('all public pages share the four-link header and two action buttons', () => {
   for (const file of ['index.html', 'articles.html', 'sermons.html', 'preachers-guide.html', 'seven-components.html', 'discipleship.html', 'problem-of-evil.html', 'when-you-cant-trace-his-hand.html']) {
     const html = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
     const header = html.match(/<header\b[\s\S]*?<\/header>/)[0];
     assert.match(header, /aria-controls="gaMissionMenu">About/);
-    for (const label of ['On Campus', 'Take Action', 'Pastors &amp; Leaders', 'Resources', 'Give', 'Get Involved']) assert(header.includes(`>${label}`), `${file}: ${label}`);
+    for (const label of ['On Campus', 'Take Action', 'Resources', 'Give', 'Get Involved']) assert(header.includes(`>${label}`), `${file}: ${label}`);
+    assert.doesNotMatch(html, />Pastors &amp; Leaders<\/a>/);
     assert.match(header, /class="ga-button ga-header-donate" href="\/#contact" data-interest="Financial partnership"/);
     assert.doesNotMatch(header, /thesend\.org|ticketspice|tiktok|facebook/);
-    assert.equal((header.match(/aria-controls="gaResourcesMenu"/g) || []).length, 1);
+    assert.match(header, /href="\/resources.html">Resources<\/a>/);
+    assert.doesNotMatch(header, /gaResourcesMenu|preachers-guide.html/);
   }
 });
 

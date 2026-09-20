@@ -1,5 +1,9 @@
 # Generated Site Imagery
 
+## Film Artwork - September 20, 2026
+
+`film-darkness-artwork.jpg` and `film-christmas-artwork.jpg` are text-free AI-reconstructed illustrations based on Andrew's supplied media-section north-star image. They are promotional film artwork, not extracted video frames or documentary photographs. The first depicts a woman on a rainy bus; the second depicts the nativity. Generated with the built-in image tool and exported as JPEGs. Titles and controls remain live HTML, while the existing YouTube film destinations are unchanged.
+
 ## Preaching Photo Background Extension - September 18, 2026
 
 `andrew-wall-texture.jpg` is an AI-generated, finely mottled teal wall texture referenced from `andrew-ramirez.jpg`. It replaces the flat-color fill beside the original portrait. The original photograph is unchanged; CSS lightly feathers its left edge into the generated background. No person, lettering, or ministry event was generated for this asset.

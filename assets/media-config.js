@@ -8,6 +8,8 @@ window.GOSPEL_ADVANCE_MEDIA = Object.freeze({
   heroLabel: 'Gospel Advance / Campus life',
   trailer: '/assets/video/gospel-advance-trailer.mp4',
   testimony: 'assets/video/andrew-ramirez-testimony.mp4',
+  filmSuffering: 'https://www.youtube.com/watch?v=sQ1BRF8YHw0',
+  filmChristmas: 'https://www.youtube.com/watch?v=s5L9IxdpwiQ',
   conversation1: 'https://www.youtube.com/watch?v=kb5IJw_TKBM',
   conversation2: 'https://www.youtube.com/watch?v=K_fDMT9DLFo',
   conversation3: '',

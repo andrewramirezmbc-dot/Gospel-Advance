@@ -25,7 +25,7 @@
     const backdrop = document.getElementById('gaMenuBackdrop');
     const currentFile = location.pathname?.split('/').pop() || 'index.html';
     if (!['index.html', 'gospel-advance-website.html'].includes(currentFile)) {
-      header.querySelector('[aria-controls="gaResourcesMenu"]')?.classList.add('ga-current');
+      header.querySelector('a[href="/resources.html"]')?.classList.add('ga-current');
       document.querySelectorAll('.ga-header a, .ga-mobile-menu a').forEach(link => {
         if (link.getAttribute('href') === `/${currentFile}`) link.setAttribute('aria-current', 'page');
       });
@@ -125,14 +125,14 @@
     const status = document.getElementById('gaSearchStatus');
     const pages = [
       ['The Mission', '/#mission', 'Ministry', 'campus evangelism students Jesus'],
-      ['Campus Conversations', 'https://www.youtube.com/@AndrewRamirez-Sermons', 'Films', 'interviews videos students'],
+      ['Campus Conversations', 'https://www.youtube.com/@gospeladvance', 'Films', 'interviews videos students'],
       ['Meet Andrew Ramirez', '/#about', 'About', 'evangelist biography'],
       ['Partner With Us', '/#partner', 'Get involved', 'give giving financial prayer support donate'],
       ['Contact Gospel Advance', '/#contact', 'Contact', 'connect campus church invite'],
       ['The Gospel We Share', '/#gospel', 'The gospel', 'Jesus salvation faith believe Bible Scripture'],
       ['Sermons', '/sermons.html', 'Watch', 'messages Bible John preaching'],
       ['Articles', '/articles.html', 'Read', 'writing Bible study'],
-      ["The Preacher's Preparation Guide", '/preachers-guide.html', 'Resources', 'sermon preparation outline template'],
+      ['Resources', '/resources.html', 'Study and grow', 'Bible gospel articles sermons discipleship'],
       ['Seven Components of the Gospel', '/seven-components.html', 'Article', 'evangelism gospel conversation'],
       ['Discipleship', '/discipleship.html', 'Article', 'following Jesus growth'],
       ['The Problem of Evil', '/problem-of-evil.html', 'Article', 'suffering God apologetics'],
@@ -415,7 +415,7 @@
       empty.hidden = !!source;
       if (source?.type === 'youtube') {
         const iframe = document.createElement('iframe');
-        iframe.title = titles[key];
+        iframe.title = titles[key] || button.getAttribute('aria-label') || 'Gospel Advance film';
         iframe.src = source.src;
         iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         iframe.allowFullscreen = true;

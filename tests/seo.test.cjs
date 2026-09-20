@@ -7,6 +7,7 @@ const root = path.join(__dirname, '..');
 const publicPages = [
   'index.html',
   'gospel-advance-website.html',
+  'resources.html',
   'articles.html',
   'sermons.html',
   'preachers-guide.html',
@@ -55,6 +56,7 @@ test('sitemap lists every public HTML page except the working copy and 404', () 
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
   assert.deepEqual(locs, [
     'https://thegospeladvance.org/',
+    'https://thegospeladvance.org/resources.html',
     'https://thegospeladvance.org/articles.html',
     'https://thegospeladvance.org/sermons.html',
     'https://thegospeladvance.org/preachers-guide.html',
@@ -104,9 +106,9 @@ test('every public page has unique title, description, canonical, social tags, a
     descriptions.add(description);
     canonicals.add(canonical);
   }
-  assert.equal(titles.size, 8);
-  assert.equal(descriptions.size, 8);
-  assert.equal(canonicals.size, 8);
+  assert.equal(titles.size, 9);
+  assert.equal(descriptions.size, 9);
+  assert.equal(canonicals.size, 9);
   assert.equal(title(read('index.html')), title(read('gospel-advance-website.html')));
   assert.equal(meta(read('index.html'), 'description'), meta(read('gospel-advance-website.html'), 'description'));
 });
@@ -147,7 +149,7 @@ test('each public page has one H1 and homepage chrome is not extra H2s', () => {
   assert.match(home, /<h2 id="gaSearchTitle">/);
   assert.match(header, /ga-mega-heading/);
   assert.match(mobile, /ga-mobile-heading/);
-  assert.match(header, /href="\/#gospel">The Gospel/);
+  assert.match(header, /href="\/#gospel">The gospel we share/);
 });
 
 test('favicon assets exist and 404 is present with a home link', () => {
