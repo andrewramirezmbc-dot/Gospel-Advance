@@ -198,6 +198,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
 .ga-media-dialog-top h2 { font-size: 28px; }
 .ga-media-dialog-top .ga-icon { filter: invert(1); }
 .ga-dialog-player:empty { display: none; }
+.ga-media-dialog.ga-media-portrait { width: min(480px,calc(100% - 32px)); }
+.ga-media-portrait .ga-dialog-player video { aspect-ratio: 9/16; max-height: calc(100dvh - 130px); object-fit: contain; }
 .ga-dialog-player video, .ga-dialog-player iframe { width: 100%; aspect-ratio: 16/9; display: block; border: 0; background: black; }
 .ga-media-empty { padding: 64px 42px; text-align: center; }
 .ga-media-empty .ga-eyebrow { color: #bbb; }

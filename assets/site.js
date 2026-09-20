@@ -381,7 +381,7 @@
   const empty = document.getElementById('mediaEmpty');
   const emptyCopy = document.getElementById('mediaEmptyCopy');
   const hero = document.getElementById('heroVideo');
-  const titles = { trailer: 'The Gospel Advance Mission', conversation1: 'A Campus Conversation About the Gospel', conversation2: 'A Testimony of Freedom in Christ', conversation3: 'Campus Conversation' };
+  const titles = { testimony: "Andrew's Testimony", trailer: 'The Gospel Advance Mission', conversation1: 'A Campus Conversation About the Gospel', conversation2: 'A Testimony of Freedom in Christ', conversation3: 'Campus Conversation' };
   function mediaSource(value) {
     if (!value || !value.trim()) return null;
     try {
@@ -408,6 +408,7 @@
     }
     button.addEventListener('click', () => {
       const key = button.dataset.media;
+      mediaDialog.classList.toggle('ga-media-portrait', key === 'testimony');
       hero?.pause();
       document.getElementById('mediaTitle').textContent = titles[key] || 'Gospel Advance';
       player.replaceChildren();

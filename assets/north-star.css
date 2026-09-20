@@ -338,6 +338,10 @@ a.ga-media-card:focus-visible { outline: 2px solid #e44436; outline-offset: 7px;
 .ga-media-testimony .ga-media-status { position: static; display: inline-block; margin-top: 20px; padding: 8px 12px; border: 1px solid #ffffff50; background: #17171790; }
 .ga-media-symbol { z-index: 2; bottom: 22px; right: 22px; background: #1116; border: 1px solid white; }
 .ga-media-films .ga-media-symbol { background: #e44436; border: 0; }
+.ga-media-testimony button.ga-media-status { color: white; font: inherit; cursor: pointer; }
+.ga-media-testimony button.ga-media-status img { vertical-align: middle; margin-right: 6px; filter: invert(1); }
+.ga-media-testimony button.ga-media-status:hover { background: #e44436; }
+.ga-media-testimony button.ga-media-status:focus-visible { outline: 2px solid white; outline-offset: 4px; }
 .ga-media-film-links { position: absolute; left: 22px; bottom: 20px; width: min(310px, calc(100% - 100px)); gap: 8px; }
 .ga-media-film-links a { align-items: center; color: #fff; font-size: 13px; }
 .ga-media-film-links a > img { width: 66px; height: 42px; object-fit: cover; border: 1px solid #ffffff40; border-radius: 4px; }
