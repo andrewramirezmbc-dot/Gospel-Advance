@@ -246,14 +246,53 @@
     });
   }
 
-  if (isHome && 'IntersectionObserver' in window) {
-    const entrance = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (!motion.matches) entry.target.classList.add('ga-enter');
+  if ('IntersectionObserver' in window && Element.prototype.animate) {
+    const activeEntrances = new Set();
+    const cardSelector = '.ga-media-card, .ga-approach-card, .ga-campus-paths > div, .article-card, .sermon-card';
+    const candidates = document.querySelectorAll(
+      'main h1, main h2, main h3, .ga-footer h2, main .reveal, .ga-hero-artwork-image, ' +
+      '.ga-frontlines-copy, .ga-frontlines-action, .ga-giving-collage, ' +
+      '.ga-campus-invite-intro > p, .ga-faq-items details, ' + cardSelector
+    );
+    // Animate on arrival without hiding content if JavaScript or an observer fails.
+    const track = animation => {
+      activeEntrances.add(animation);
+      animation.onfinish = animation.oncancel = () => activeEntrances.delete(animation);
+    };
+    const entrance = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
         entrance.unobserve(entry.target);
-      }
-    }), { threshold: .08 });
-    document.querySelectorAll('.ga-section > .ga-shell').forEach(section => entrance.observe(section));
+        if (motion.matches || entry.target.matches(':focus-within')) return;
+        const el = entry.target;
+        const heading = /^H[1-3]$/.test(el.tagName);
+        const siblings = [...el.parentElement.children];
+        const delay = el.matches(cardSelector) ? Math.min(siblings.indexOf(el), 3) * 75 : 0;
+        const frames = heading ? [
+          { opacity: 0, filter: 'blur(9px)', clipPath: 'inset(-20% 100% -20% -3%)', transform: 'translateX(-14px)' },
+          { opacity: .8, filter: 'blur(3px)', clipPath: 'inset(-20% 35% -20% -3%)', transform: 'translateX(-3px)', offset: .55 },
+          { opacity: 1, filter: 'blur(0px)', clipPath: 'inset(-20% -3% -20% -3%)', transform: 'translateX(0)' }
+        ] : [
+          { opacity: 0, transform: 'translateY(28px) scale(.985)' },
+          { opacity: 1, transform: 'translateY(0) scale(1)' }
+        ];
+        const animation = el.animate(frames, {
+          duration: heading ? 1100 : 600, delay,
+          easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards'
+        });
+        track(animation);
+      });
+    }, { threshold: .15, rootMargin: '0px 0px -12% 0px' });
+    candidates.forEach(el => {
+      if (el.closest('dialog') || el.querySelector('.ga-sr-only')) return;
+      // Text headings are owned by the React TextBlurIn island.
+      if (/^H[1-3]$/.test(el.tagName) && !el.querySelector('img, svg')) return;
+      if (!/^H[1-3]$/.test(el.tagName) && el.parentElement.closest(cardSelector + ', .reveal')) return;
+      entrance.observe(el);
+    });
+    const cancelEntrances = () => [...activeEntrances].forEach(animation => animation.cancel());
+    motion.addEventListener('change', event => { if (event.matches) cancelEntrances(); });
+    document.addEventListener('focusin', cancelEntrances);
   }
 
   const gospelDetails = document.querySelector('#gospel > details');
