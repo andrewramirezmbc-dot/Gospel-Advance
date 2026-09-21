@@ -16,6 +16,16 @@ const publicPages = [
   'problem-of-evil.html',
   'when-you-cant-trace-his-hand.html',
 ];
+
+test('public pages have static verification slots, guarded analytics and Academy footer links', () => {
+  for (const file of publicPages) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    assert(html.includes('<!-- search-console-verification -->'), file);
+    assert(html.includes('/assets/analytics.js?v=1'), file);
+    assert.match(html, /<footer[\s\S]*href="https:\/\/101bible.org\/"/, file);
+    assert(!html.includes('name="google-site-verification"'), 'No fabricated verification token');
+  }
+});
 const articlePages = [
   'seven-components.html',
   'discipleship.html',
