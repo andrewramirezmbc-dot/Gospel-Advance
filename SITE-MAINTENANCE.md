@@ -56,6 +56,42 @@ The previous red/condensed-font mockup build is also saved at `/Users/Andrew_1/G
 
 ## Verification
 
+### September 21 Mission Feedback Preview
+
+The public navigation now routes Take Action and Get Involved to
+`/get-involved.html`, On Campus to `/on-campus.html`, and the About menu's
+ministry link to `/about.html`. New pages retain the shared header, footer,
+search, and existing contact handoff. Host and local outreach inquiries use
+the existing Formspree inbox; no chapter program or mailing list is implied.
+
+Only the homepage includes Follow the Mission, within its media section.
+Public pages retain the fixed desktop social rail. Instagram `andrewpramirez`
+and YouTube `gospeladvance` are linked; Facebook, TikTok, and X remain visible
+inactive placeholders pending approved URLs. No email subscription is included.
+Styles are in `assets/mission-social.css`; campus and participation layouts
+use `assets/campus.css` and `assets/participation.css` respectively.
+
+The statistics, per-card context, and data disclaimer are unchanged at the
+owner's request. The mission trailer poster is an extracted frame at 150
+seconds of the existing film. The preaching photograph under assets/images
+is a byte-identical copy of the original, placed there for the preview server.
+
+The external recommended book is William Fay and Linda Evans Shepherd's
+`Share Jesus Without Fear`, B&H paperback ISBN 9780805418392, verified at
+https://www.bhpublishinggroup.com/product/share-jesus-without-fear-2/.
+It is distinguished from the ministry's own field guide. Charles Spurgeon's
+The Soul Winner is also listed, with a link to its Eerdmans edition.
+
+Still pending: approved public mailing address/phone, any YouTube channel
+artwork changes, and legally confirmed nonprofit/receipt/tax information.
+No tax promises, personal contact information, or new payment services were
+added. Scripture references link to Matthew 28:19-20; the accompanying text
+is a paraphrase, not a quotation from a newly approved translation.
+
+Browser verification: `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check-mission-refresh.cjs`.
+It uses the existing previews on 4178 and 4182, checks desktop/mobile layouts
+and image loading, and intercepts the inquiry submission without sending it.
+
 Run `node --test tests/*.test.cjs` and `git diff --check`. Visually check desktop and mobile, the video dialogs, mobile navigation, partnership handoff, and resource pages. The local preview server, when running, is at `http://127.0.0.1:4178` and only serves public site files.
 
 Deployment remains through GitHub Pages. No deployment has been performed as part of the mockup implementation.

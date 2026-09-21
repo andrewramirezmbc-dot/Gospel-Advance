@@ -1,0 +1,74 @@
+.ga-campus-page { background: #f7f7f5; }
+.ga-campus-page main .campus-label { font: 700 12px/1.5 'Plus Jakarta Sans', sans-serif; color: #d4382d; text-transform: uppercase; margin: 0 0 16px; letter-spacing: 0; }
+.ga-campus-page main h1 { font: 700 62px/1.04 'Bodoni Moda', Georgia, serif; margin: 18px 0 24px; text-transform: none; }
+.ga-campus-page main h2 { font: 700 42px/1.08 'Bodoni Moda', Georgia, serif; margin: 0 0 20px; text-transform: none; }
+.ga-subpage.ga-campus-page main h3 { font: 700 28px/1.12 'Bodoni Moda', Georgia, serif; margin: 18px 0 14px; text-transform: none; }
+.ga-campus-page main p { font-size: 15px; line-height: 1.65; }
+.ga-campus-page main .ga-button { gap: 12px; font-size: 13px; margin-top: 20px; }
+.campus-hero { position: relative; isolation: isolate; color: white; background: #171717; }
+.campus-hero-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.campus-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #000d, #0008 43%, #0001 72%, #0005); }
+.campus-hero > .ga-shell { min-height: 510px; padding-block: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.campus-hero-copy { max-width: 610px; }
+.campus-hero-copy > p:not(.campus-label) { max-width: 420px; }
+.ga-campus-page main .campus-hero .campus-label, .ga-campus-page main .campus-closing .campus-label { color: #fff; }
+.ga-campus-page main .campus-hero-note { align-self: flex-end; text-align: right; font: 400 21px/1.5 Georgia, serif; }
+.campus-why, .campus-approach, .campus-stories { padding: 48px 0; }
+.campus-why-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: center; }
+.campus-pillars { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-left: 1px solid #17171720; padding-left: 32px; gap: 28px; }
+.campus-pillars article > img { width: 48px; height: 48px; padding: 12px; border-radius: 50%; background: #e9ebea; }
+.ga-campus-page main .campus-pillars .campus-label { color: #171717; font-size: 10px; }
+.campus-approach { background: #eceeed; }
+.campus-section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-bottom: 24px; }
+.campus-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); background: #f7f7f5; }
+.campus-steps article { padding: 28px; border-right: 1px solid #17171715; }
+.campus-steps article:last-child { border: 0; }
+.campus-step-number { color: #777; margin-right: 28px; font-size: 14px; }
+.campus-steps article > img { display: inline-block; vertical-align: middle; width: 40px; height: 40px; padding: 10px; border-radius: 50%; background: #f9ddd8; }
+.campus-visit { padding: 28px 0; background: #e5e8e6; }
+.campus-visit-grid { display: grid; grid-template-columns: 1.15fr 1.15fr .65fr; gap: 28px; align-items: center; }
+.campus-visit figure { margin: 0; position: relative; height: 320px; }
+.campus-visit figure > img { width: 100%; height: 100%; object-fit: cover; }
+.campus-visit figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 16px 12px; background: linear-gradient(transparent,#000c); color: white; font-size: 11px; }
+.campus-visit aside { padding: 24px 0; }
+.ga-campus-page main .campus-visit-statement { font: 400 26px/1.4 Georgia, serif; }
+.campus-visit a:not(.ga-button), .campus-stories a { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; color: #c72e25; margin-top: 16px; }
+.campus-stories-grid { display: grid; grid-template-columns: 1.2fr repeat(3,minmax(0,1fr)); gap: 24px; align-items: start; }
+.campus-story { display: block; text-align: left; width: 100%; padding: 0; border: 0; background: transparent; color: #171717; cursor: pointer; }
+.campus-story-image { position: relative; display: block; aspect-ratio: 4/3; margin-bottom: 14px; }
+.campus-story-image > img:first-child { width: 100%; height: 100%; object-fit: cover; }
+.campus-conversation-art { display: flex; align-items: center; height: 100%; padding: 20px; background: #171717; color: #f7f7f5; font: 700 24px/1.15 Georgia, serif; }
+.campus-conversation-art + .campus-story-play { left: auto; top: auto; right: 12px; bottom: 12px; transform: none; width: 36px; height: 36px; }
+.campus-story-image .campus-story-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; padding: 12px; background: #f7f7f5e8; border-radius: 50%; }
+.campus-story strong { display: block; font: 700 19px/1.3 Georgia,serif; margin-bottom: 6px; }
+.campus-story > span:last-child { display: block; font-size: 12px; line-height: 1.5; }
+.campus-story:hover strong { color: #d4382d; }
+.campus-story:focus-visible { outline: 3px solid #e44436; outline-offset: 5px; }
+.campus-closing { padding: 48px 0; background: linear-gradient(90deg,#000d,#0008),url('video/hero-campus-desktop.jpg') center 45%/cover; color: white; }
+.campus-closing-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; align-items: center; }
+.campus-closing nav { border-left: 1px solid #ffffff50; padding-left: 36px; display: grid; gap: 24px; }
+.campus-closing nav a { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: white; font-size: 14px; }
+.campus-closing nav img { filter: invert(1); }
+@media(max-width:1100px) {
+ .ga-campus-page main h1 { font-size: 52px; }
+ .ga-campus-page main h2 { font-size: 36px; }
+ .campus-why-grid { grid-template-columns: 1fr; gap: 28px; }
+ .campus-pillars { border: 0; padding: 0; }
+ .campus-visit-grid { grid-template-columns: 1fr 1fr; }
+ .campus-visit aside { grid-column: 1/-1; }
+ .campus-stories-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+ .campus-stories-grid > div { grid-column: 1/-1; }
+}
+@media(max-width:650px) {
+ .ga-campus-page main h1 { font-size: 40px; }
+ .ga-campus-page main h2 { font-size: 32px; }
+ .campus-hero > .ga-shell { min-height: 500px; padding-block: 48px; }
+ .campus-hero-photo { object-position: 65% center; }
+ .campus-hero-note { display: none; }
+ .campus-why, .campus-approach, .campus-stories { padding: 36px 0; }
+ .campus-pillars, .campus-section-heading, .campus-steps, .campus-visit-grid, .campus-stories-grid, .campus-closing-grid { grid-template-columns: 1fr; gap: 24px; }
+ .campus-pillars article { border-top: 1px solid #17171720; padding-top: 24px; }
+ .campus-steps article { border-right: 0; border-bottom: 1px solid #17171715; padding: 24px; }
+ .campus-visit figure { height: 260px; }
+ .campus-closing nav { padding: 24px 0 0; border-left: 0; border-top: 1px solid #ffffff50; }
+}

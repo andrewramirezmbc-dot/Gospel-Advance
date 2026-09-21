@@ -8,7 +8,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 test('resources duplicates homepage media below articles and retains sermons', () => {
   const html = read('resources.html');
   assert.match(read('index.html'), /assets\/media-library.css/);
-  const media = source => source.match(/<section class="ga-media-library"[\s\S]*?<\/section>/)[0];
+  const media = source => source.match(/<section class="ga-media-library"[\s\S]*?<\/section>/)[0].replace(/^<div id="follow-mission"[^\n]*\n/m, '');
   assert.equal(media(html), media(read('index.html')).replace('Media that Multiplies the Message', 'Media that amplifies the message.'));
   assert(html.indexOf('id="media"') > html.indexOf('The gospel we share.'));
   assert(html.indexOf('id="media"') < html.indexOf('<section class="resource-sermons"'));

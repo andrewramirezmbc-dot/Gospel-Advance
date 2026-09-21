@@ -15,6 +15,9 @@ const publicPages = [
   'discipleship.html',
   'problem-of-evil.html',
   'when-you-cant-trace-his-hand.html',
+  'get-involved.html',
+  'on-campus.html',
+  'about.html',
 ];
 
 test('public pages have static verification slots, guarded analytics and Academy footer links', () => {
@@ -74,6 +77,9 @@ test('sitemap lists every public HTML page except the working copy and 404', () 
     'https://thegospeladvance.org/discipleship.html',
     'https://thegospeladvance.org/problem-of-evil.html',
     'https://thegospeladvance.org/when-you-cant-trace-his-hand.html',
+    'https://thegospeladvance.org/get-involved.html',
+    'https://thegospeladvance.org/on-campus.html',
+    'https://thegospeladvance.org/about.html',
   ]);
   assert.doesNotMatch(sitemap, /index\.html|gospel-advance-website|404\.html/);
   assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
@@ -100,7 +106,7 @@ test('every public page has unique title, description, canonical, social tags, a
     assert.equal(meta(html, 'og:description', 'property'), description, file);
     assert.equal(meta(html, 'og:url', 'property'), canonical, file);
     assert.match(meta(html, 'og:type', 'property') || '', /website|article/);
-    assert.equal(meta(html, 'og:image', 'property'), 'https://thegospeladvance.org/assets/images/campus-conversation-hero.jpg', file);
+    assert.equal(meta(html, 'og:image', 'property'), file === 'on-campus.html' ? 'https://thegospeladvance.org/assets/video/hero-campus-desktop.jpg' : 'https://thegospeladvance.org/assets/images/campus-conversation-hero.jpg', file);
     assert.equal(meta(html, 'twitter:card'), 'summary_large_image', file);
     assert.equal(meta(html, 'twitter:title'), pageTitle, file);
     assert.equal(meta(html, 'twitter:description'), description, file);
@@ -116,9 +122,9 @@ test('every public page has unique title, description, canonical, social tags, a
     descriptions.add(description);
     canonicals.add(canonical);
   }
-  assert.equal(titles.size, 9);
-  assert.equal(descriptions.size, 9);
-  assert.equal(canonicals.size, 9);
+  assert.equal(titles.size, 12);
+  assert.equal(descriptions.size, 12);
+  assert.equal(canonicals.size, 12);
   assert.equal(title(read('index.html')), title(read('gospel-advance-website.html')));
   assert.equal(meta(read('index.html'), 'description'), meta(read('gospel-advance-website.html'), 'description'));
 });
@@ -190,7 +196,7 @@ test('local links, fragments, and social images resolve to real files', () => {
     assert(fs.existsSync(path.join(root, new URL(image).pathname)), `${file}: missing social image`);
     assert(!jsonLd(html)['@graph'].some(entity => entity.founder || entity['@type'] === 'NonprofitOrganization'), file);
     for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
-      assert(/\balt="[^"]+"/.test(tag) || /src="assets\/icons\//.test(tag) || /src="assets\/video\/hero-campus-desktop.jpg"/.test(tag), `${file}: meaningful image needs alt: ${tag}`);
+      assert(/\balt="[^"]+"/.test(tag) || /src="\/?assets\/icons\//.test(tag) || /src="assets\/video\/hero-campus-desktop.jpg"/.test(tag), `${file}: meaningful image needs alt: ${tag}`);
     }
   }
   assert.match(read('robots.txt'), /Disallow: \/gospel-advance-website\.html/);

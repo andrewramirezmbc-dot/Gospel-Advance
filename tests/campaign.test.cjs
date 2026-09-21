@@ -71,9 +71,9 @@ test('heading sections omit supporting captions without removing body content', 
   assert.doesNotMatch(html, /class="ga-wordmark ga-hero-wordmark"/);
   assert.match(html, /class="ga-hero-artwork-image"/);
   assert.doesNotMatch(html, /class="ga-hero-artwork-link"/);
-  assert.match(html, /class="ga-letter-lead"/);
-  assert.match(html, /src="assets\/images\/personal-lettering\.svg"/);
-  assert.match(html, /class="ga-personal-lettering-text">I want college<br \/>students to know<br \/>the hope of<br \/><em>Jesus Christ\.<\/em>/);
+  assert.match(html, /class="ga-letter-lead ga-mission-letter"/);
+  assert.doesNotMatch(html, /src="assets\/images\/personal-lettering\.svg"/);
+  assert.match(html, /I want the next generation to know the hope of <em>Jesus Christ\.<\/em>/);
   for (const file of ['articles.html', 'sermons.html', 'preachers-guide.html']) {
     const page = fs.readFileSync(path.join(root, file), 'utf8');
     const header = page.match(/<section class="(?:page-header|guide-hero)">([\s\S]*?)<\/section>/);

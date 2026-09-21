@@ -125,9 +125,9 @@
     const status = document.getElementById('gaSearchStatus');
     const pages = [
       ['The Mission', '/#mission', 'Ministry', 'campus evangelism students Jesus'],
-      ['Campus Conversations', 'https://www.youtube.com/@gospeladvance', 'Films', 'interviews videos students'],
-      ['Meet Andrew Ramirez', '/#about', 'About', 'evangelist biography'],
-      ['Partner With Us', '/#partner', 'Get involved', 'give giving financial prayer support donate'],
+      ['On Campus', '/on-campus.html', 'Ministry', 'interviews videos students visits outreach'],
+      ['About Gospel Advance', '/about.html', 'About', 'evangelist biography Andrew mission'],
+      ['Get Involved', '/get-involved.html', 'Take action', 'host learn equipped local outreach prayer share give'],
       ['Contact Gospel Advance', '/#contact', 'Contact', 'connect campus church invite'],
       ['The Gospel We Share', '/#gospel', 'The gospel', 'Jesus salvation faith believe Bible Scripture'],
       ['Sermons', '/sermons.html', 'Watch', 'messages Bible John preaching'],
@@ -284,7 +284,7 @@
     try {
       const interest = window.sessionStorage.getItem('ga-interest');
       window.sessionStorage.removeItem('ga-interest');
-      if (['Prayer partnership', 'Financial partnership', 'Campus connection', 'Ministry partnership'].includes(interest)) {
+      if (['Prayer partnership', 'Financial partnership', 'Campus connection', 'Ministry partnership', 'Host Gospel Advance', 'Local outreach interest'].includes(interest)) {
         document.getElementById('contactInterest').value = interest;
         document.getElementById('contactInterestNote').textContent = `Interested in: ${interest}`;
         document.getElementById('contactInterestNote').hidden = false;

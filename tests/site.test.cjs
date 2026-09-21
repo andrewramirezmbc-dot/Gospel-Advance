@@ -143,7 +143,8 @@ test('removed conversations and process sections stay absent; original preaching
   assert.doesNotMatch(home, /Real questions|ga-conversations|ga-process|process-engage\.jpg|process-share-christ\.jpg|process-connect\.jpg/);
   assert.doesNotMatch(home, /ga-resource-photo/);
   assert.doesNotMatch(home, /andrew-portrait-refined/);
-  assert.match(home, /class="ga-andrew-photo" src="andrew-ramirez.jpg"[^>]*width="600" height="800"/);
+  assert.match(home, /class="ga-andrew-photo" src="assets\/images\/andrew-preaching-original.jpg"[^>]*width="600" height="800"/);
+  assert.deepEqual(fs.readFileSync(path.join(root, 'assets/images/andrew-preaching-original.jpg')), fs.readFileSync(path.join(root, 'andrew-ramirez.jpg')));
   assert(fs.existsSync(path.join(root, 'andrew-ramirez.jpg')));
 });
 

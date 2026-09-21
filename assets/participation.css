@@ -1,0 +1,88 @@
+.ga-participation-hero { position: relative; isolation: isolate; overflow: hidden; background: #111; color: #f7f7f5; padding: 72px 0 88px; }
+.ga-participation-photo { position: absolute; z-index: -2; inset: 0 0 0 38%; background: url('images/participation-scenes.png') right 42% / 300% auto no-repeat; filter: grayscale(1); }
+.ga-participation-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#111 12%,#111111e8 38%,#11111120 80%); }
+.ga-subpage.ga-participation-page main h1 { font: 800 54px/1.12 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; margin: 24px 0; max-width: 690px; }
+.ga-participation-page h1 em { color: #e44436; font-family: 'DM Serif Display',Georgia,serif; font-weight: 400; }
+.ga-participation-hero .ga-eyebrow { color: #d0d0cc; }
+.ga-participation-page .ga-participation-lead { max-width: 560px; font-size: 18px; line-height: 1.7; color: #d4d4d0; }
+.ga-participation-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+.ga-participation-actions .ga-icon { width: 20px; height: 20px; filter: invert(1); }
+.ga-participation-actions .ga-visit-button { background: transparent; color: white; border: 1px solid #f7f7f5; }
+.ga-participation-page .ga-participation-signoff { position: absolute; right: 5%; bottom: 44px; max-width: 260px; font: italic 24px/1.25 'DM Serif Display',Georgia,serif; }
+.ga-participation-ways { padding: 64px 0; }
+.ga-ways-heading { display: grid; grid-template-columns: 1.25fr 1fr .65fr; gap: 40px; align-items: center; margin-bottom: 36px; }
+.ga-participation-page .ga-ways-heading h2 { font-size: 48px; margin-top: 16px; }
+.ga-participation-page .ga-ways-heading > p { font-size: 16px; }
+.ga-ways-note { font: 24px/1.3 'Bodoni Moda',Georgia,serif; padding-left: 20px; border-left: 2px solid #e44436; }
+.ga-participation-cards { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 20px; }
+.ga-participation-cards article { border: 1px solid #1717171a; border-radius: 3px; overflow: hidden; display: flex; flex-direction: column; }
+.ga-participation-card-image { display: block; width: 100%; aspect-ratio: 1.3; object-fit: cover; }
+.ga-prayer-photo { background: url('images/participation-scenes.png') left 40% / 300% auto no-repeat; }
+.ga-participation-card-copy { display: flex; flex-direction: column; align-items: flex-start; padding: 20px; flex: 1; }
+.ga-participation-page .ga-participation-card-copy h3 { font: 700 25px/1.1 'Bodoni Moda',Georgia,serif; text-transform: none; margin: 10px 0 14px; }
+.ga-participation-page .ga-participation-card-copy p { font-size: 15px; line-height: 1.6; margin: 0 0 22px; }
+.ga-participation-page .ga-participation-card-copy a { font-size: 12px; margin-top: auto; min-height: 36px; }
+.ga-participation-card-copy .ga-eyebrow { font-size: 11px; }
+.ga-visit-section { background: #eeefed; padding: 64px 0; scroll-margin-top: 160px; }
+.ga-visit-layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; }
+.ga-participation-page .ga-visit-copy h2 { font-size: 64px; margin: 28px 0; }
+.ga-participation-page .ga-visit-copy p { font-size: 21px; line-height: 1.7; }
+.ga-participation-page .ga-visit-copy .ga-eyebrow { font-size: 18px; }
+.ga-visit-settings { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 44px; }
+.ga-visit-settings img { width: 36px; height: 36px; margin-bottom: 16px; }
+.ga-visit-settings strong,.ga-visit-settings span { display: block; font-size: 15px; line-height: 1.6; }
+.ga-visit-form { padding: 28px; background: #f7f7f5; border: 1px solid #17171712; border-radius: 6px; }
+.ga-visit-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
+.ga-visit-form label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 6px; }
+.ga-visit-form :is(input,select,textarea) { width: 100%; background: white; border: 1px solid #17171730; border-radius: 3px; padding: 12px; font: inherit; min-width: 0; }
+.ga-visit-form textarea { resize: vertical; }
+.ga-visit-form #contactBtn { width: 100%; justify-content: center; background: #171717; color: white; margin-top: 16px; gap: 16px; }
+.ga-visit-form #contactBtn .ga-icon { filter: invert(1); }
+.ga-visit-form small { display: block; font-size: 12px; line-height: 1.5; color: #626262; margin-top: 12px; }
+.ga-participation-closing { padding: 56px 0; background: #101212; color: #f7f7f5; }
+.ga-participation-closing > div { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.ga-participation-closing .ga-eyebrow { color: #c5c5c2; }
+.ga-participation-page .ga-participation-closing p { font: 700 28px/1.3 'Bodoni Moda',Georgia,serif; max-width: 360px; }
+.ga-participation-closing p span { font: 400 16px/1.6 'Plus Jakarta Sans',sans-serif; }
+.ga-participation-page .ga-participation-closing .ga-eyebrow { font: 500 12px/1.6 'Plus Jakarta Sans',sans-serif; }
+.ga-participation-closing .ga-icon { filter: invert(1); }
+.ga-town-callout { display: flex; gap: 24px; align-items: center; margin-top: 36px; padding: 24px; border: 1px solid #ffffff40; border-radius: 6px; max-width: 960px; background: #151515b0; }
+.ga-town-icon { flex: 0 0 32px; filter: invert(1); }
+.ga-town-callout > div { padding-left: 24px; border-left: 1px solid #ffffff50; }
+.ga-home .ga-town-callout h3 { font: 700 18px/1.35 'Plus Jakarta Sans',sans-serif; text-transform: uppercase; margin: 0 0 8px; }
+.ga-home .ga-town-callout p { font-size: 16px; line-height: 1.6; margin: 0; color: #c4c4c0; }
+.ga-town-callout a { flex-shrink: 0; display: flex; align-items: center; gap: 20px; padding: 16px 20px; border: 1px solid #fff8; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.ga-town-callout a img { filter: invert(1); }
+.ga-home .ga-frontlines-note { bottom: auto; top: 54%; max-width: 250px; }
+@media(max-width: 1150px) {
+ .ga-participation-cards { grid-template-columns: repeat(3,minmax(0,1fr)); }
+ .ga-ways-heading { grid-template-columns: 1fr 1fr; }
+ .ga-ways-note { display: none; }
+ .ga-visit-layout { gap: 32px; }
+ .ga-participation-page .ga-visit-copy h2 { font-size: 52px; }
+ .ga-town-callout { max-width: 860px; }
+ .ga-home .ga-frontlines-note { display: none; }
+ .ga-participation-page .ga-participation-signoff { display: none; }
+}
+@media(max-width: 760px) {
+ .ga-participation-hero { padding: 48px 0; }
+ .ga-participation-photo { left: 0; opacity: .45; }
+ .ga-subpage.ga-participation-page main h1 { font-size: 34px; }
+ .ga-participation-cards { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+ .ga-ways-heading,.ga-visit-layout { grid-template-columns: 1fr; gap: 24px; }
+ .ga-participation-page .ga-ways-heading h2,.ga-participation-page .ga-visit-copy h2 { font-size: 36px; }
+ .ga-participation-page .ga-visit-copy p { font-size: 18px; }
+ .ga-participation-page .ga-visit-copy .ga-eyebrow { font-size: 15px; }
+ .ga-participation-closing > div { flex-direction: column; align-items: flex-start; gap: 24px; }
+ .ga-town-callout { flex-wrap: wrap; gap: 16px; padding: 20px; }
+ .ga-town-callout > div { flex: 1; padding-left: 16px; }
+ .ga-town-callout a { width: 100%; justify-content: space-between; }
+ .ga-town-callout .ga-town-icon { width: 24px; flex-basis: 24px; }
+}
+@media(max-width: 480px) {
+ .ga-participation-cards { grid-template-columns: 1fr; }
+ .ga-participation-card-image { aspect-ratio: 1.8; }
+ .ga-visit-form-row { grid-template-columns: 1fr; gap: 0; }
+ .ga-visit-form { padding: 20px; }
+ .ga-visit-settings { gap: 12px; }
+}

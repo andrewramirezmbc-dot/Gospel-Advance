@@ -22,3 +22,18 @@ test('campus invitation has one Connect action, split image and three ministry o
 test('working homepage and published entry point remain identical', () => {
   assert.equal(html, fs.readFileSync(path.join(root, 'index.html'), 'utf8'));
 });
+
+test('homepage follows the approved mission and partnership sequence', () => {
+  const markers = ['class="ga-hero"', 'id="mission"', 'id="generation"', 'id="about"', 'id="fuel-the-mission"', 'id="strategy"', 'id="media"', 'id="follow-mission"', 'id="bring-the-mission"', 'id="mission-questions"', 'class="ga-footer-giving"', 'class="ga-footer-top"'];
+  const positions = markers.map(marker => html.indexOf(marker));
+  assert(positions.every((position, index) => position >= 0 && (!index || position > positions[index - 1])));
+  assert.match(html, /Your gift puts<br \/>the gospel on the/);
+  assert.match(html, /<em>community\.<\/em>/);
+  assert.match(html, /your campus, church, or town/);
+});
+
+test('homepage follow block is part of the media section', () => {
+  const media = html.match(/<section class="ga-media-library"[\s\S]*?<\/section>/)[0];
+  assert.match(media, /<div id="follow-mission"/);
+  assert.equal((html.match(/id="follow-mission"/g) || []).length, 1);
+});
