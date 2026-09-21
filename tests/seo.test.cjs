@@ -104,7 +104,7 @@ test('every public page has unique title, description, canonical, social tags, a
     assert.equal(meta(html, 'twitter:card'), 'summary_large_image', file);
     assert.equal(meta(html, 'twitter:title'), pageTitle, file);
     assert.equal(meta(html, 'twitter:description'), description, file);
-    assert.match(html, /rel="icon" href="\/favicon\.svg"/);
+    assert.match(html, /rel="icon" href="\/favicon\.png\?v=ga-monogram"/);
     assert.match(html, /rel="apple-touch-icon" href="\/apple-touch-icon\.png"/);
     const data = jsonLd(html);
     const types = (data['@graph'] || []).map(node => node['@type']);
@@ -163,7 +163,7 @@ test('each public page has one H1 and homepage chrome is not extra H2s', () => {
 });
 
 test('favicon assets exist and 404 is present with a home link', () => {
-  for (const file of ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'robots.txt', 'sitemap.xml', '404.html']) {
+  for (const file of ['favicon.png', 'favicon.ico', 'apple-touch-icon.png', 'robots.txt', 'sitemap.xml', '404.html']) {
     assert(fs.statSync(path.join(root, file)).size > 0, file);
   }
   const notFound = read('404.html');
