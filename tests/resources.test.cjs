@@ -53,6 +53,7 @@ test('Resources opens a dedicated page from desktop and mobile on every full-pag
     const mobile = html.match(/<dialog class="ga-mobile-menu"[\s\S]*?<\/dialog>/)[0];
     for (const nav of [header, mobile]) {
       assert.match(nav, /href="\/resources.html">Resources<\/a>/, file);
+      assert.match(nav, /href="https:\/\/101bible.org\/">Gospel Advance Academy<\/a>/, file);
       assert.doesNotMatch(nav, /preachers-guide.html|gaResourcesMenu|gaMobileResources/, file);
     }
   }
