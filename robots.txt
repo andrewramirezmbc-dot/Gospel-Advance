@@ -3,5 +3,9 @@ Allow: /
 
 # Working copy of the homepage; canonical is /
 Disallow: /gospel-advance-website.html
+Disallow: /mockup/
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /assets/brand-studies/
 
 Sitemap: https://thegospeladvance.org/sitemap.xml
