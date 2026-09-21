@@ -1,4 +1,18 @@
 /* Resource library: Academy, guide, reading, and films. */
+.ga-resources-page .resource-academy-heading .resource-label { font-size: 30px; }
+.ga-resources-page .resource-articles .resource-section-heading .resource-label { font-size: 42px; }
+.ga-resources-page .resource-main .resource-articles #articles-title { font-size: 88px; }
+.resource-articles .resource-section-heading { flex-direction: column; align-items: flex-start; }
+@media(max-width:1100px) {
+  .ga-resources-page .resource-main .resource-articles #articles-title { font-size: 64px; }
+}
+@media(max-width:767px) {
+  .ga-resources-page .resource-main .resource-articles #articles-title { font-size: 30px; }
+  .ga-resources-page .resource-academy-heading .resource-label { font-size: 26px; }
+}
+@media(max-width:359px) {
+  .ga-resources-page .resource-main .resource-articles #articles-title { font-size: 26px; }
+}
 .resource-academy { padding: 56px 0 32px; background: #f7f7f5; color: #171717; }
 .resource-academy-heading { display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 40px; align-items: center; }
 .ga-resources-page .resource-main .resource-academy h2 { font-size: 88px; line-height: .98; }

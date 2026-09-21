@@ -5,19 +5,16 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('resource media section shares the homepage layout and working media controls', () => {
+test('resources omits the homepage media section and retains sermons', () => {
   const html = read('resources.html');
-  for (const file of ['resources.html', 'index.html']) {
-    assert.match(read(file), /assets\/media-library.css/);
-  }
-  assert.match(html, /resource-watch ga-media-library/);
-  assert.match(html, /Faith worth sharing\./);
-  for (const script of ['media-config', 'film-carousel', 'site']) {
+  assert.match(read('index.html'), /assets\/media-library.css/);
+  assert.doesNotMatch(html, /resource-watch ga-media-library|Faith worth sharing\./);
+  for (const script of ['media-config', 'resource-sermons', 'site']) {
     assert(html.includes(`assets/${script}.js`));
   }
   assert.match(html, /id="mediaDialog"/);
-  assert.match(html, /data-media="testimony"/);
-  assert.match(html, /ga-media-resources" href="\/sermons.html"/);
+  assert.match(html, /resource-sermons-title/);
+  assert.match(html, /href="\/sermons.html"/);
   assert.doesNotMatch(html, /resource-watch-feature/);
 });
 
@@ -34,7 +31,7 @@ test('flagship resource has a real PDF download and a separate preview', () => {
 test('resource library places Academy directly after the flagship guide', () => {
   const html = read('resources.html');
   let previous = -1;
-  for (const section of ['resource-flagship', 'resource-academy', 'resource-articles', 'resource-watch']) {
+  for (const section of ['resource-flagship', 'resource-academy', 'resource-articles', 'resource-sermons']) {
     const index = html.indexOf(`<section class="${section}`);
     assert(index > previous, section);
     previous = index;

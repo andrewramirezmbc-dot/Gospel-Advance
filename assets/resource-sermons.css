@@ -1,7 +1,7 @@
 .resource-sermons { background: #101213; color: #f7f7f5; padding: 0 0 64px; }
 .resource-sermons .ga-shell { border-top: 1px solid #ffffff35; padding-top: 36px; }
 .resource-sermons-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
-.resource-sermons-label { display: flex; align-items: center; gap: 12px; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+.resource-sermons-label { display: flex; align-items: center; gap: 12px; font-size: 32.5px; text-transform: uppercase; margin-bottom: 12px; }
 .resource-sermons-label::before { content: ''; width: 34px; height: 2px; background: #e44436; }
 .ga-resources-page .resource-main .resource-sermons h2 { font-size: 48px; margin-bottom: 10px; }
 .resource-sermons-heading p { color: #bfc1c2; font-size: 20px; }
