@@ -104,20 +104,21 @@ test('statistics precede Andrew, with accessible values and visible research con
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert(html.indexOf('id="generation"') < html.indexOf('id="about"'));
   assert.match(html, /src="assets\/statistics.js" defer/);
-  for (const value of ['66', '3810', '3400000']) {
+  for (const value of ['66', '3810', '40']) {
     assert(html.includes(`data-count="${value}"`));
   }
   const notes = fs.readFileSync(path.join(root, 'assets/STATISTICS.md'), 'utf8');
   assert.match(notes, /Young-Adult-Church-Dropout-Report-2017.pdf/);
   assert.match(notes, /cdc.gov\/nchs\/products\/databriefs\/db549.htm/);
-  assert.match(notes, /2025-nsduh-annual-national-report.pdf/);
+  assert.match(notes, /CDC 2023 Youth Risk Behavior Survey/);
   assert(html.includes('class="ga-stat-sources"'));
   assert.match(html, /This generation<br \/>is under pressure/);
   assert.match(html, /not Gen Z as a whole/);
   assert.match(html, /ages 15&ndash;24\. In one year\./);
-  assert.match(html, /ages 12&ndash;17\. Use over one year\./);
+  assert.match(html, /U.S. high school students, 2023\./);
   assert.match(html, /3,810 overdose deaths[\s\S]*?in 2024/);
-  assert.match(html, /SAMHSA 2025 NSDUH/);
+  assert.match(html, /CDC 2023 Youth Risk Behavior Survey/);
+  assert.doesNotMatch(html, /Receiving mental-health|data-count="3400000"/);
   assert.match(html, /break of at least one year/);
   assert.doesNotMatch(html, /average per year/i);
   assert.match(html, /<details class="ga-stat-methodology"><summary>About the data<\/summary>/);
