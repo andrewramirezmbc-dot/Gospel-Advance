@@ -5,6 +5,22 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
+test('resource media section shares the homepage layout and working media controls', () => {
+  const html = read('resources.html');
+  for (const file of ['resources.html', 'index.html']) {
+    assert.match(read(file), /assets\/media-library.css/);
+  }
+  assert.match(html, /resource-watch ga-media-library/);
+  assert.match(html, /Faith worth sharing\./);
+  for (const script of ['media-config', 'film-carousel', 'site']) {
+    assert(html.includes(`assets/${script}.js`));
+  }
+  assert.match(html, /id="mediaDialog"/);
+  assert.match(html, /data-media="testimony"/);
+  assert.match(html, /ga-media-resources" href="\/sermons.html"/);
+  assert.doesNotMatch(html, /resource-watch-feature/);
+});
+
 test('flagship resource has a real PDF download and a separate preview', () => {
   const html = read('resources.html');
   assert.match(html, /href="\/assets\/downloads\/share-jesus-without-fear.pdf" download="Gospel-Advance-Share-Jesus-Without-Fear.pdf"/);
