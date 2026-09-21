@@ -1,5 +1,9 @@
 # Generated Site Imagery
 
+## Resource Background - September 20, 2026
+
+`resource-flagship-background.png` is an AI-generated matte black textured surface with a painted red diagonal stripe and directional lighting. It replaces the CSS stripe behind the separate, unchanged PDF cover in the Resources flagship section. No text or book is baked into this background.
+
 ## Film Artwork - September 20, 2026
 
 `film-darkness-artwork.jpg` and `film-christmas-artwork.jpg` are text-free AI-reconstructed illustrations based on Andrew's supplied media-section north-star image. They are promotional film artwork, not extracted video frames or documentary photographs. The first depicts a woman on a rainy bus; the second depicts the nativity. Generated with the built-in image tool and exported as JPEGs. Titles and controls remain live HTML, while the existing YouTube film destinations are unchanged.

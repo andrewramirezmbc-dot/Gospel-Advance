@@ -133,6 +133,8 @@
       ['Sermons', '/sermons.html', 'Watch', 'messages Bible John preaching'],
       ['Articles', '/articles.html', 'Read', 'writing Bible study'],
       ['Resources', '/resources.html', 'Study and grow', 'Bible gospel articles sermons discipleship'],
+      ['Share Jesus without fear', '/assets/downloads/share-jesus-without-fear.pdf', 'PDF guide', 'gospel evangelism conversation share Jesus'],
+      ['Bible 101', 'https://101bible.org/bible-101', 'Free course', 'Bible Scripture study lessons podcast'],
       ['Seven Components of the Gospel', '/seven-components.html', 'Article', 'evangelism gospel conversation'],
       ['Discipleship', '/discipleship.html', 'Article', 'following Jesus growth'],
       ['The Problem of Evil', '/problem-of-evil.html', 'Article', 'suffering God apologetics'],

@@ -10,7 +10,15 @@ All seven inner pages now load `assets/subpages.css` after `assets/site.css`. Th
 
 ## Navigation And Motion
 
+The Resources page places Gospel Advance Academy directly below the flagship guide, linking to its live
+homepage at `https://101bible.org/` and both public course overviews. This replaces
+the older standalone Bible 101 block below the articles. The paper-colored
+section uses two image-led course links with locally copied Academy Bible and
+Growing in Grace artwork. Articles and watch sections follow it.
+
 Resources now links directly to `resources.html` on desktop and mobile. This hub lists existing articles and messages; its homepage media tile and local search entry use the same URL. The Preacher's Preparation Guide remains available by its original URL but is no longer listed in navigation, the resource hub, or local search. The About menu retains its existing panel behavior.
+
+The Resources page follows the approved guide / articles / Bible 101 / watch layout, with page-specific styles in `assets/resources.css`. Its flagship download is the unchanged, seven-page supplied PDF at `assets/downloads/share-jesus-without-fear.pdf`; the cover image is rendered from page one. Preview opens that PDF in a new tab, while Download uses the native download attribute. The open-Bible illustration comes from the supplied guide artwork. Bible 101 links to `https://101bible.org/bible-101`; its public homepage confirmed 19 video lessons, 19 podcast companions, six modules, and free access on September 20, 2026. Recheck these counts when changing the course. Do not restore the old preparation-guide listing.
 
 Desktop mission and resource buttons open full-width panels on mouse hover, with a short fade/slide and blurred backdrop. Moving to another trigger switches panels without resetting the header or scroll lock. Leaving the header closes the panel after a 140ms grace period; re-entering cancels dismissal. A mouse click on a hovered trigger leaves it open, while keyboard and touch activation toggle it. Click outside or press Escape to close. Arrow Down moves into the panel; Tab retains normal document order. Pointer exit does not dismiss a keyboard-opened panel. The header compacts after 10px of scrolling.
 
