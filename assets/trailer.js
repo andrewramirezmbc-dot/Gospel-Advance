@@ -15,6 +15,21 @@
   let started = false;
   let raf = 0;
   const blocked = () => document.hidden || !!document.querySelector('dialog[open], .ga-header.menu-open');
+  const isFullscreen = () => document.fullscreenElement === video || document.webkitFullscreenElement === video || video.webkitDisplayingFullscreen;
+  const enterFullscreen = () => {
+    if (isFullscreen()) return;
+    try {
+      // Request during the click gesture; Safari on iPhone uses the video API.
+      if (video.requestFullscreen) {
+        const request = video.requestFullscreen();
+        request?.catch(() => {});
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      }
+    } catch (_) {
+      // Keep inline playback available when fullscreen is unavailable.
+    }
+  };
   const pause = () => {
     if (!video.paused) {
       automaticPause = true;
@@ -22,7 +37,7 @@
     }
   };
   const sync = () => {
-    if (!visible || blocked() || failed || userPaused || (motion.matches && !started)) {
+    if ((!visible && !isFullscreen()) || blocked() || failed || userPaused || (motion.matches && !started)) {
       pause();
       return;
     }
@@ -49,6 +64,7 @@
     video.muted = false;
     watch.hidden = true;
     video.play().catch(() => { watch.hidden = false; });
+    enterFullscreen();
   });
   video.addEventListener('play', () => {
     watch.hidden = true;
@@ -77,6 +93,9 @@
   const observer = new MutationObserver(sync);
   document.querySelectorAll('dialog, .ga-header').forEach(el => observer.observe(el, { attributes: true, attributeFilter: ['open', 'class'] }));
   document.addEventListener('visibilitychange', sync);
+  document.addEventListener('fullscreenchange', sync);
+  document.addEventListener('webkitfullscreenchange', sync);
+  video.addEventListener('webkitendfullscreen', sync);
   motion.addEventListener('change', () => {
     if (motion.matches) userPaused = true;
     layout();

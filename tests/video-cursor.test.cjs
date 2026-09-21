@@ -5,14 +5,20 @@ const vm = require('node:vm');
 const path = require('node:path');
 const root = path.join(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/video-cursor.js'), 'utf8');
-function fixture({ fine = true, reduced = false } = {}) {
+function fixture({ fine = true, reduced = false, tile = false } = {}) {
   const element = () => {
     const classes = new Set(), events = {};
-    return { classes, events, style: {}, setAttribute() {},
+    return { classes, events, style: {}, setAttribute() {}, hasAttribute: () => false,
       classList: { add: name => classes.add(name), remove: name => classes.delete(name) },
-      addEventListener: (name, fn) => { events[name] = fn; } };
+      addEventListener: (name, fn) => {
+        const previous = events[name];
+        events[name] = previous ? event => { previous(event); fn(event); } : fn;
+      } };
   };
   const target = element(), cursor = element(), document = element(), window = element();
+  let plays = 0;
+  target.hasAttribute = () => tile;
+  target.querySelector = () => ({ click: () => plays++ });
   const pointer = { matches: fine, addEventListener(name, fn) { this.change = fn; } };
   const motion = { matches: reduced, addEventListener(name, fn) { this.change = fn; } };
   document.querySelectorAll = () => [target];
@@ -20,7 +26,7 @@ function fixture({ fine = true, reduced = false } = {}) {
   document.createElement = () => cursor;
   document.body = { append() {} };
   vm.runInNewContext(source, { document, window, matchMedia: query => query.includes('reduce') ? motion : pointer });
-  return { target, cursor, document, window, pointer, motion,
+  return { target, cursor, document, window, pointer, motion, plays: () => plays,
     move(type = 'mouse') { target.events.pointermove({ clientX: 100, clientY: 200, pointerType: type }); } };
 }
 test('hover transforms cursor; leave, click, keyboard, scroll and blur restore it', () => {
@@ -42,4 +48,14 @@ test('touch, reduced motion and dialogs retain native cursors', () => {
 test('removed campaign films and action cards stay absent', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert.doesNotMatch(html, /class="ga-campaign-film"|class="ga-strategy-card"|class="ga-belief/);
+});
+test('video tiles forward surface clicks once and preserve button clicks', () => {
+  const f = fixture({ tile: true });
+  f.target.events.click({ target: { closest: () => null } });
+  assert.equal(f.plays(), 1);
+  f.target.events.click({ target: { closest: () => ({}) } });
+  assert.equal(f.plays(), 1);
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.equal((html.match(/data-video-cursor-tile/g) || []).length, 3);
+  assert.doesNotMatch(html, /class="ga-film-nav[^"]*"[^>]*data-video-cursor/);
 });

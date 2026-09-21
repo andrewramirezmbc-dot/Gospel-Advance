@@ -5,11 +5,15 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('resources omits the homepage media section and retains sermons', () => {
+test('resources duplicates homepage media below articles and retains sermons', () => {
   const html = read('resources.html');
   assert.match(read('index.html'), /assets\/media-library.css/);
-  assert.doesNotMatch(html, /resource-watch ga-media-library|Faith worth sharing\./);
-  for (const script of ['media-config', 'resource-sermons', 'site']) {
+  const media = source => source.match(/<section class="ga-media-library"[\s\S]*?<\/section>/)[0];
+  assert.equal(media(html), media(read('index.html')).replace('Media that Multiplies the Message', 'Media that amplifies the message.'));
+  assert(html.indexOf('id="media"') > html.indexOf('The gospel we share.'));
+  assert(html.indexOf('id="media"') < html.indexOf('<section class="resource-sermons"'));
+  assert.match(html, /assets\/media-library.css/);
+  for (const script of ['media-config', 'resource-sermons', 'site', 'film-carousel', 'video-cursor']) {
     assert(html.includes(`assets/${script}.js`));
   }
   assert.match(html, /id="mediaDialog"/);

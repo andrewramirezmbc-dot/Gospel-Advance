@@ -102,6 +102,9 @@
 <script src="assets/editorial-motion.js?v=1" defer></script>
 <link rel="stylesheet" href="assets/resources.css?v=3" />
 <link rel="stylesheet" href="assets/resource-sermons.css" />
+<link rel="stylesheet" href="assets/media-library.css" />
+<script src="assets/film-carousel.js" defer></script>
+<script src="assets/video-cursor.js" defer></script>
 <script src="assets/resource-sermons.js" defer></script>
 <!-- search-console-verification -->
 <script src="/assets/analytics.js?v=1" defer></script>
@@ -222,6 +225,45 @@
           <a class="resource-more-reading" href="/problem-of-evil.html">Also read: The Problem of Evil <img class="ga-icon" src="assets/icons/arrow-right.svg" alt="" /></a>
         </div>
       </section>
+  <section class="ga-media-library" id="media" aria-labelledby="media-title">
+    <div class="ga-shell">
+      <div class="ga-media-heading"><h2 id="media-title">Media that amplifies the message.</h2><p>Faith. Film. Real conversations.</p></div>
+      <div class="ga-media-grid">
+        <article class="ga-media-card ga-media-testimony" data-video-cursor data-video-cursor-tile>
+          <div class="ga-media-image"><img src="assets/images/andrew-testimony-podcast.png" alt="Andrew Ramirez sharing his testimony on a podcast" loading="lazy" /></div>
+          <span class="ga-media-kicker">Testimony</span>
+          <div class="ga-media-copy"><h3>Andrew's<br />testimony</h3><p>The story behind the mission.</p><button class="ga-media-status" type="button" data-media="testimony"><img src="assets/icons/play.svg" width="18" height="18" alt="" /> Watch testimony</button></div>
+        </article>
+        <article class="ga-media-card ga-media-films ga-film-carousel" aria-label="Film projects" aria-roledescription="carousel">
+          <h3 class="ga-media-kicker">Film projects</h3>
+          <div class="ga-film-slide" role="group" aria-label="1 of 2" data-video-cursor data-video-cursor-tile>
+            <img class="ga-film-backdrop" src="assets/images/film-darkness-artwork.jpg" alt="Illustrative film artwork of a woman beside a rain-covered bus window" width="1672" height="941" loading="lazy" />
+            <div class="ga-film-copy"><h4>Where is God<br />in the dark?</h4><p>How God meets you in your suffering.</p></div>
+            <button class="ga-film-play" type="button" data-media="filmSuffering" aria-label="Play How God meets you in your suffering"><img src="assets/icons/play.svg" alt="" /></button>
+          </div>
+          <div class="ga-film-slide" role="group" aria-label="2 of 2" data-video-cursor data-video-cursor-tile hidden>
+            <img class="ga-film-backdrop" src="assets/images/film-christmas-artwork.jpg" alt="Illustrative nativity film artwork beneath a starry sky" width="1672" height="941" loading="lazy" />
+            <div class="ga-film-copy"><h4>Born to die.</h4><p>The True Meaning of Christmas.</p></div>
+            <button class="ga-film-play" type="button" data-media="filmChristmas" aria-label="Play The True Meaning of Christmas"><img src="assets/icons/play.svg" alt="" /></button>
+          </div>
+          <button class="ga-film-preview" type="button" aria-label="Select The True Meaning of Christmas"><small class="ga-film-preview-label">Next film</small><img src="assets/images/film-christmas-artwork.jpg" alt="Illustrative nativity film artwork beneath a starry sky" width="1672" height="941" loading="lazy" /><span>The True Meaning of Christmas</span></button>
+          <div class="ga-film-progress" aria-hidden="true"><span></span></div>
+          <button class="ga-film-nav ga-film-prev" type="button" aria-label="Previous film" title="Previous film"><img src="assets/icons/chevron-down.svg" alt="" /></button>
+          <button class="ga-film-nav ga-film-next" type="button" aria-label="Next film" title="Next film"><img src="assets/icons/chevron-down.svg" alt="" /></button>
+          <span class="ga-film-counter" aria-live="polite" aria-atomic="true">01 / 02</span>
+        </article>
+        <a class="ga-media-card ga-media-conversations" href="https://www.youtube.com/@gospeladvance" target="_blank" rel="noopener">
+          <div class="ga-media-image"><img src="assets/images/campus-conversation-hero.jpg" alt="Andrew talking with a student on campus" loading="lazy" /><span class="ga-media-symbol"><img src="assets/icons/arrow-up-right.svg" alt="" /></span></div>
+          <span class="ga-media-kicker">Conversations</span><div class="ga-media-copy"><h3>Conversations</h3><p>Honest conversations about faith and life.</p></div>
+        </a>
+        <a class="ga-media-card ga-media-resources" href="/resources.html">
+          <div class="ga-media-image"><img src="assets/images/studio-host.jpg" alt="Bible teaching in the studio" loading="lazy" /><span class="ga-media-symbol"><img src="assets/icons/arrow-up-right.svg" alt="" /></span></div>
+          <span class="ga-media-kicker">Resources</span><div class="ga-media-copy"><h3>Resources</h3><p>Explore tools for studying<br />and sharing the Word.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="ga-approach" id="strategy" aria-labelledby="strategy-title">
     <section class="resource-sermons" aria-labelledby="resource-sermons-title">
       <div class="ga-shell">
         <div class="resource-sermons-heading">

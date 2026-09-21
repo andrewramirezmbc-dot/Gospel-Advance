@@ -16,6 +16,13 @@
     cursor.classList.remove('is-visible');
   };
   targets.forEach(target => {
+    if (target.hasAttribute('data-video-cursor-tile')) {
+      target.addEventListener('click', event => {
+        // Keep the existing accessible play button as the single playback action.
+        if (event.target.closest('button, a, video, iframe')) return;
+        target.querySelector('button[data-media]')?.click();
+      });
+    }
     target.addEventListener('pointermove', event => {
       if (!pointer.matches || motion.matches || event.pointerType === 'touch' || document.querySelector('dialog[open]')) { hide(); return; }
       if (active !== target) { hide(); active = target; }

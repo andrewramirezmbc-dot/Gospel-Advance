@@ -73,3 +73,21 @@ test('finished trailer is linked without replacing the existing hero media',()=>
   const config=fs.readFileSync(path.join(root,'assets/media-config.js'),'utf8');
   assert.match(config,/heroPreview: 'assets\/video\/hero-campus-desktop.mp4'/);
 });
+test('Play requests fullscreen during the click and fullscreen ignores offscreen observations',()=>{
+  const f=fixture();let requests=0;
+  f.video.requestFullscreen=()=>{requests++;f.document.fullscreenElement=f.video;return Promise.resolve();};
+  f.nodes.trailerWatch.listeners.click();
+  assert.equal(requests,1);assert.equal(f.video.plays,1);
+  f.visible(false);assert.equal(f.video.paused,false);
+  f.document.fullscreenElement=null;f.document.listeners.fullscreenchange();
+  assert.equal(f.video.paused,true);
+});
+test('Safari fullscreen and rejected requests preserve playback',async()=>{
+  const safari=fixture();let requests=0;
+  safari.video.webkitEnterFullscreen=()=>{requests++;};
+  safari.nodes.trailerWatch.listeners.click();assert.equal(requests,1);
+  const denied=fixture();
+  denied.video.requestFullscreen=()=>Promise.reject(new Error('Denied'));
+  denied.nodes.trailerWatch.listeners.click();
+  await Promise.resolve();assert.equal(denied.video.paused,false);
+});
