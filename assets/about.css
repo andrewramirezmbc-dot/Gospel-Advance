@@ -1,0 +1,74 @@
+.about-editorial { background: #f7f7f5; }
+.ga-subpage .about-editorial h2 { font: 700 38px/1.1 'Bodoni Moda', Georgia, serif; margin: 0 0 22px; text-transform: none; }
+.ga-subpage .about-editorial p { font-size: 16px; line-height: 1.65; margin: 0 0 18px; }
+.ga-subpage .about-editorial .about-kicker { display: flex; align-items: center; gap: 12px; font: 600 13px/1.4 'Archivo', sans-serif; text-transform: uppercase; margin-bottom: 14px; }
+.about-kicker::before { content: ''; width: 32px; height: 2px; background: #e44436; }
+.about-hero { background: #f7f7f5; color: #171717; text-align: center; padding: 48px 0 52px; }
+.about-hero .about-kicker { justify-content: center; }
+.about-hero .about-kicker::after { content: ''; width: 32px; height: 2px; background: #e44436; }
+.ga-subpage.ga-mission-page main .about-hero h1 { font: 700 60px/1.08 'Bodoni Moda', Georgia, serif; text-transform: none; max-width: 900px; margin: 0 auto 28px; letter-spacing: 0; }
+.about-hero h1 span { font-style: italic; }
+.ga-subpage .about-hero p:not(.about-kicker) { max-width: 760px; margin: 0 auto; font-size: 21px; line-height: 1.5; color: #505055; }
+.about-mission { padding: 48px 0; background: #fff; }
+.about-mission-grid { display: grid; grid-template-columns: 1.12fr 1fr; gap: 60px; align-items: center; }
+.about-scripture { border-left: 2px solid #707078; padding-left: 32px; }
+.ga-subpage .about-scripture p { font: italic 24px/1.45 Georgia, serif; margin-bottom: 12px; max-width: 980px; }
+.about-scripture-band { padding: 32px 0; }
+.about-overview { background: #fff; padding: 36px 0; }
+.about-overview-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
+.about-overview article + article { border-left: 1px solid #ddd; padding-left: 36px; }
+.about-overview article > span { color: #aaa; font-weight: 700; }
+.ga-subpage .about-overview h2 { font-size: 30px; margin: 6px 0 18px; }
+.ga-subpage .about-overview p { margin: 0; color: #505055; }
+.about-scripture a { font: 600 12px/1.5 'Archivo', sans-serif; text-transform: uppercase; }
+.about-collage { position: relative; height: 390px; }
+.about-campus-photo { width: 66%; height: 340px; object-fit: cover; transform: rotate(-2deg); }
+.ga-subpage .about-collage-note { position: absolute; right: 0; top: 14px; font: italic 19px/1.6 'DM Serif Display', Georgia, serif; color: #777; transform: rotate(-8deg); }
+.about-collage figure { position: absolute; width: 58%; right: 0; bottom: 0; margin: 0; padding: 12px 12px 20px; background: #fff; transform: rotate(5deg); }
+.about-collage figure img { display: block; width: 100%; height: 190px; object-fit: cover; filter: grayscale(1); }
+.about-collage figcaption { text-align: center; padding-top: 12px; font: italic 15px Georgia, serif; color: #777; }
+.about-founder { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-right: 6%; background: white; }
+.about-founder-photo { width: 100%; height: 100%; min-height: 510px; object-fit: cover; object-position: center 30%; }
+.about-founder-copy { padding: 34px 0; }
+.ga-subpage .about-founder-copy .about-signature { font: italic 34px/1.4 'DM Serif Display', Georgia, serif; margin-top: 24px; margin-bottom: 12px; }
+.ga-subpage .about-founder-copy .about-founder-credit { font: 500 11px/1.7 'Archivo', sans-serif; text-transform: uppercase; color: #666; }
+.about-pillars-section { background: white; border-top: 1px solid #17171718; }
+.about-pillars { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 32px; padding-block: 40px; }
+.about-pillars > div { display: grid; grid-template-columns: 52px 1fr; gap: 18px; }
+.about-pillars > div > img { width: 52px; height: 52px; padding: 13px; border: 1px solid #bbb; border-radius: 50%; }
+.ga-subpage .about-pillars h3 { font: 700 14px/1.4 'Archivo', sans-serif; margin: 0 0 4px; text-transform: uppercase; }
+.ga-subpage .about-pillars p { font: 15px/1.5 Georgia, serif; margin: 0; }
+.about-invitation { text-align: center; padding: 36px 0; }
+.ga-subpage .about-invitation h2 { font-size: 26px; margin-bottom: 8px; }
+.about-invitation-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+.about-invitation-actions .ga-button { font-size: 13px; min-height: 48px; border: 1px solid #888; padding: 12px 22px; }
+.about-invitation-actions .ga-button-red { border-color: #e44436; }
+@media(max-width:1000px) {
+ .about-mission-grid { gap: 30px; }
+ .about-founder { grid-template-columns: 1fr 1.4fr; gap: 30px; padding-right: 5%; }
+ .about-pillars { gap: 20px; }
+ .about-pillars > div { grid-template-columns: 1fr; }
+ .ga-subpage.ga-mission-page main .about-hero h1 { font-size: 52px; }
+}
+@media(max-width:650px) {
+ .about-hero { padding: 40px 0; }
+ .ga-subpage.ga-mission-page main .about-hero h1 { font-size: 36px; }
+ .ga-subpage .about-hero p:not(.about-kicker) { font-size: 18px; }
+ .about-overview-grid { grid-template-columns: 1fr; gap: 28px; }
+ .about-overview article + article { border-left: 0; border-top: 1px solid #ddd; padding: 24px 0 0; }
+ .ga-subpage .about-scripture p { font-size: 21px; }
+ .about-hero p br { display: none; }
+ .about-mission { padding: 40px 0; }
+ .about-mission-grid, .about-founder { grid-template-columns: 1fr; }
+ .ga-subpage .about-editorial h2 { font-size: 30px; }
+ .about-collage { height: 340px; margin: 14px 8px; }
+ .about-campus-photo { height: 280px; }
+ .about-collage figure img { height: 150px; }
+ .ga-subpage .about-collage-note { font-size: 16px; }
+ .about-founder { padding: 0; gap: 0; }
+ .about-founder-photo { min-height: 0; height: 420px; object-position: center 25%; }
+ .about-founder-copy { padding: 32px 6%; }
+ .about-pillars { grid-template-columns: 1fr 1fr; padding-block: 32px; }
+ .about-pillars > div { grid-template-columns: 1fr; gap: 12px; }
+ .about-invitation-actions { flex-direction: column; }
+}
