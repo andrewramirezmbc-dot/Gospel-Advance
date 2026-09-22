@@ -4,7 +4,7 @@
 .ga-subpage .about-editorial .about-kicker { display: flex; align-items: center; gap: 12px; font: 600 13px/1.4 'Archivo', sans-serif; text-transform: uppercase; margin-bottom: 14px; }
 .about-kicker::before { content: ''; width: 32px; height: 2px; background: #e44436; }
 .about-hero { background: #f7f7f5; color: #171717; text-align: center; padding: 48px 0 52px; }
-.about-hero .about-kicker { justify-content: center; }
+.ga-subpage .about-editorial .about-hero .about-kicker { justify-content: center; width: 100%; max-width: none; margin-inline: auto; }
 .about-hero .about-kicker::after { content: ''; width: 32px; height: 2px; background: #e44436; }
 .ga-subpage.ga-mission-page main .about-hero h1 { font: 700 60px/1.08 'Bodoni Moda', Georgia, serif; text-transform: none; max-width: 900px; margin: 0 auto 28px; letter-spacing: 0; }
 .about-hero h1 span { font-style: italic; }
