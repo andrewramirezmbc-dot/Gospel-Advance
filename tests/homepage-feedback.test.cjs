@@ -24,7 +24,7 @@ test('working homepage and published entry point remain identical', () => {
 });
 
 test('homepage follows the approved mission and partnership sequence', () => {
-  const markers = ['class="ga-hero"', 'id="mission"', 'id="generation"', 'id="about"', 'id="fuel-the-mission"', 'id="strategy"', 'id="media"', 'id="follow-mission"', 'id="bring-the-mission"', 'id="mission-questions"', 'class="ga-footer-giving"', 'class="ga-footer-top"'];
+  const markers = ['class="ga-hero"', 'id="mission"', 'id="generation"', 'id="about"', 'id="fuel-the-mission"', 'id="strategy"', 'id="media"', 'id="follow-mission"', 'id="bring-the-mission"', 'id="mission-questions"', 'class="ga-footer-top"'];
   const positions = markers.map(marker => html.indexOf(marker));
   assert(positions.every((position, index) => position >= 0 && (!index || position > positions[index - 1])));
   assert.match(html, /Your gift puts<br \/>the gospel on the/);

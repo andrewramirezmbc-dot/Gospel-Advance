@@ -37,7 +37,8 @@
 .ga-recommended-books .ga-text-link { margin-top: 20px; }
 @media (max-width: 700px) { .ga-recommended-books { grid-template-columns: 1fr; gap: 28px; } }
 .ga-home .ga-hero-content { flex-direction: column; }
-.ga-home .ga-hero-artwork-image { max-width: 1000px; }
+.ga-home .ga-hero-artwork-image { max-width: 1000px; aspect-ratio: 1672 / 510; position: relative; margin-bottom: 24px; }
+.ga-home .ga-hero-artwork-image img { position: absolute; top: 0; left: 0; transform: translateY(-24.44%); }
 .ga-hero-mission-summary { max-width: 780px; margin: 0 auto 20px; font-size: 18px; line-height: 1.65; text-align: center; color: #fff; }
 .ga-home .ga-hero-involve { flex: 0 0 auto; }
 .ga-home .ga-about .ga-section-copy > .ga-mission-letter { font: 700 48px/1.15 'Bodoni Moda', Georgia, serif; }

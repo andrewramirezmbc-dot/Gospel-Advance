@@ -28,7 +28,7 @@ test('only the homepage has a follow section and public pages retain the social 
 });
 test('participation includes nonfinancial paths without promising official chapters', () => {
   const html = fs.readFileSync(path.join(root, 'get-involved.html'), 'utf8');
-  for (const label of ['Get equipped', 'Host Gospel Advance', 'Explore local outreach', 'Pray with us', 'Share the message', 'Give to the mission']) assert(html.includes(label));
+  for (const label of ['Get equipped', 'Host Gospel Advance', 'Explore local outreach', '<h3>Pray</h3>', 'Follow &amp; Share', 'Give Today', 'Partner With Us']) assert(html.includes(label));
   assert.match(html, /not an official chapter application/);
   assert.match(html, /id="contactCity" name="location"/);
   assert.match(html, /<option value="Community">Local outreach in my town/);

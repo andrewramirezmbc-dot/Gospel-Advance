@@ -1,5 +1,11 @@
 # Generated Site Imagery
 
+## Support Cards - September 21, 2026
+
+`support-share-simple.png` replaces the network illustration in the Follow & Share card with hands holding a phone displaying one red sharing arrow. Generated with the built-in image tool; a fictional illustration, not a documentary photograph.
+
+`support-prayer-wide.png`, `support-share-network.png`, `support-missionary-campus.png`, and `support-partnership.png` were created with the built-in image generator for the four Ways to Support cards. The prayer scene widens the composition of the left panel of `participation-scenes.png`. The other images illustrate content distribution, a missionary arriving on campus, and outreach planning without visible faces. These are fictional illustrations, not documentary ministry photographs or testimonials.
+
 ## Resource Background - September 20, 2026
 
 `resource-flagship-background.png` is an AI-generated matte black textured surface with a painted red diagonal stripe and directional lighting. It replaces the CSS stripe behind the separate, unchanged PDF cover in the Resources flagship section. No text or book is baked into this background.
