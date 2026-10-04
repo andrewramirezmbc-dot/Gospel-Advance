@@ -18,8 +18,8 @@ design. The original and horizontal transparent adaptation are documented in
 `assets/images/ACTS-LOGO.md`; the light-lettering treatment uses a shared SVG
 filter. Keep the flame visible in the header, mobile menu, and footer.
 
-Below 768px, the homepage uses live headline text, a Follow on social action
-linked to `#follow-mission`, a paper-colored See the mission video section, and
+Below 768px, the homepage uses live headline text, outlined Instagram Follow
+and YouTube Subscribe buttons, a paper-colored See the mission video section, and
 three simple dark statistics cards. Desktop messaging, the existing film and
 fullscreen interaction, statistics values, and sources remain intact.
 

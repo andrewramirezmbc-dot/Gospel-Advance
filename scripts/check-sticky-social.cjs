@@ -23,7 +23,7 @@ async function barLayout(page) {
 (async () => {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
-    for (const width of [320, 390, 768, 1100, 1440]) {
+    for (const width of [320, 390, 430, 768, 1100, 1440]) {
       const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
@@ -33,6 +33,20 @@ async function barLayout(page) {
       assert.equal(initial.position, 'fixed');
       assert.equal(initial.visibility, 'visible');
       assert(!initial.overflow, `overflow at ${width}`);
+      const heroActions = page.locator('.ga-hero-social-actions');
+      if (width < 768) {
+        assert(await heroActions.isVisible());
+        const links = heroActions.locator('a');
+        assert.equal(await links.count(), 2);
+        assert.match(await links.nth(0).getAttribute('href'), /instagram.com\/andrewpramirez\//);
+        assert.match(await links.nth(1).getAttribute('href'), /youtube.com\/@gospeladvance\?sub_confirmation=1/);
+        assert.deepEqual(await links.allTextContents(), ['Follow', 'Subscribe']);
+        assert(await links.evaluateAll(items => items.every(el => el.scrollWidth <= el.clientWidth && el.getBoundingClientRect().height >= 44)));
+        assert(!await page.locator('.ga-hero-desktop-action').isVisible());
+      } else {
+        assert(!await heroActions.isVisible());
+        assert(await page.locator('.ga-hero-desktop-action').isVisible());
+      }
       if (width <= 1100) {
         assert.equal(initial.items.length, 4);
         assert(initial.x >= 0 && initial.x + initial.width <= width);

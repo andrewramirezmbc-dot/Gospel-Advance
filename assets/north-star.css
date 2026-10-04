@@ -82,10 +82,9 @@
 .ga-hero-film-link:hover > span { background: #e44436; }
 .ga-hero-film-link .ga-icon { width: 22px; height: 22px; filter: invert(1); }
 .ga-home .ga-hero-bottom { display: none; }
-.ga-hero-mobile-copy, .ga-hero-mobile-summary, .ga-hero-mobile-action,
+.ga-hero-mobile-copy, .ga-hero-mobile-summary, .ga-hero-social-actions,
 .ga-trailer-mobile-label, .ga-trailer-mobile-title, .ga-trailer-mobile-caption { display: none; }
 .ga-home .ga-hero .ga-hero-mobile-copy { display: none; }
-.ga-home .ga-hero-involve.ga-hero-mobile-action { display: none; }
 .ga-home .ga-hero-video, .ga-home .ga-hero-poster img { filter: saturate(.8) contrast(1.05); }
 .ga-home .ga-hero-shade { background: linear-gradient(180deg,#0007,#0005 60%,#171717); }
 
@@ -124,7 +123,20 @@
   .ga-hero-mobile-copy em { font-style: italic; }
   .ga-home .ga-hero-mobile-summary { display: block; margin: 18px 0 24px; max-width: 330px; font-size: 16px; line-height: 1.55; color: white; }
   .ga-home .ga-hero-involve { display: flex; justify-content: space-between; width: min(100%, 340px); min-height: 56px; padding: 16px 20px; font-size: 17px; text-transform: none; }
-  .ga-home .ga-hero-involve.ga-hero-mobile-action { display: flex; }
+  .ga-home .ga-hero-social-actions {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px;
+    width: min(100%, 280px);
+  }
+  .ga-home .ga-hero-social-actions a {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    min-width: 0; min-height: 48px; padding: 10px 12px;
+    border: 1px solid #ffffffe0; border-radius: 18px;
+    background: #0003; color: white; text-decoration: none;
+    font: 400 16px/1.4 'Plus Jakarta Sans', sans-serif; letter-spacing: 0;
+  }
+  .ga-home .ga-hero-social-actions a:hover { background: #0006; }
+  .ga-home .ga-hero-social-actions a:focus-visible { outline: 3px solid #e44436; outline-offset: 4px; }
+  .ga-hero-social-actions img { flex: 0 0 24px; width: 24px; height: 24px; filter: brightness(0) invert(1); }
   .ga-home .ga-hero-involve.ga-hero-desktop-action { display: none; }
   .ga-home .ga-hero-poster img { object-position: center; }
   .ga-home .ga-hero-shade { background: linear-gradient(90deg, #0008, #0003), linear-gradient(0deg, #0005, transparent 55%); }
