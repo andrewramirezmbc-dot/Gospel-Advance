@@ -14,7 +14,7 @@ html.ga-announcement-dismissed { --campaign-banner: 0px; }
 .ga-announcement .ga-icon { filter: invert(1); }
 .ga-header-inner, .ga-header.scrolled .ga-header-inner { display: grid; grid-template-columns: minmax(150px,1fr) auto minmax(60px,1fr) auto; grid-template-rows: var(--campaign-nav); gap: 0 24px; }
 .ga-header .ga-brand { grid-area: 1 / 1; align-self: center; justify-content: start; margin: 0; }
-.ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 134px; }
+.ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 190px; }
 .ga-header .ga-nav-left { grid-area: 1 / 2; justify-content: flex-start; gap: 20px; }
 .ga-header .ga-nav-right { grid-area: 1 / 4; justify-content: flex-end; gap: 14px; }
 .ga-header .ga-nav-trigger, .ga-header .ga-desktop-nav > a { font: 600 14px/1.4 var(--campaign-sans); }
@@ -214,6 +214,7 @@ html.ga-announcement-dismissed { --campaign-banner: 0px; }
 }
 @media (max-width: 1099px) {
   :root { --campaign-nav: 76px; }
+  .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 180px; }
   .ga-header-inner, .ga-header.scrolled .ga-header-inner { grid-template-columns: 1fr auto; grid-template-rows: var(--campaign-nav); }
   .ga-header .ga-header-socials, .ga-header.scrolled .ga-header-socials, .ga-header .ga-header-utility, .ga-header.scrolled .ga-header-utility { display: none; }
   .ga-header .ga-menu-toggle { grid-area: 1 / 2; }
@@ -243,7 +244,7 @@ html.ga-announcement-dismissed { --campaign-banner: 0px; }
   .ga-announcement p { max-width: 160px; font-size: 11px; }
   .ga-announcement > a { padding: 10px; white-space: nowrap; font-size: 11px; }
   .ga-announcement > button { right: 2px; top: 12px; }
-  .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 112px; }
+  .ga-header .ga-wordmark, .ga-header.scrolled .ga-wordmark { width: 150px; }
   .ga-home .ga-hero { min-height: 680px; height: 100svh; padding: 0; }
   .ga-hero-content { padding: 40px 0 calc(92px + var(--hero-notch)); }
   .ga-hero-wordmark { width: min(440px,92%); margin: 30px 0; }

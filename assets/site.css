@@ -609,18 +609,18 @@ html { scroll-behavior: smooth; scroll-padding-top: 92px; scrollbar-gutter: stab
   .ga-trailer-sticky { position: static; }
 }
 
-/* Use the supplied artwork as a luminance mask, preserving its letterforms. */
+/* Approved Acts 4:29 lockup, with a light-lettering version for dark surfaces. */
 .ga-wordmark {
   display: block;
   width: 200px;
-  aspect-ratio: 1130 / 470;
+  aspect-ratio: 2.4;
   flex: none;
-  background: currentColor;
-  mask-image: url('images/gospel-advance-logo.png');
-  mask-mode: luminance;
-  mask-repeat: no-repeat;
-  mask-size: 147.965% 200.213%;
-  mask-position: 49.815% 47.771%;
+  background: url('images/gospel-advance-acts-logo.png') center / contain no-repeat;
+  mask-image: none;
+}
+.ga-footer .ga-wordmark,
+.ga-home .ga-header:not(.scrolled):not(.menu-open) .ga-wordmark {
+  filter: url('icons/logo-on-dark.svg#light-lettering');
 }
 .ga-header .ga-wordmark { width: 220px; }
 .ga-header.scrolled .ga-wordmark { width: 145px; }

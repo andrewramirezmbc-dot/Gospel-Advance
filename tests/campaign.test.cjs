@@ -43,7 +43,7 @@ function fixture({ reduced = false, stored = false } = {}) {
 test('home leads into the newly titled film without the interactive arrow section', () => {
   const html = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
   assert.doesNotMatch(html + source, /ga-mission-scroll|ga-mission-arrow|ga-scroll-enabled/);
-  assert.match(html, /id="mission-film-title">Watch the mission<\/h2>/);
+  assert.match(html, /id="mission-film-title"><span class="ga-trailer-desktop-title">Watch the mission<\/span><span class="ga-trailer-mobile-title">See the mission\.<\/span><\/h2>/);
   assert.match(html, /id="missionTrailer"/);
 });
 
@@ -66,7 +66,7 @@ test('heading sections omit supporting captions without removing body content', 
     assert.doesNotMatch(section[1], /<p\b/);
   }
   assert.doesNotMatch(html, /class="ga-hero-corners"|class="ga-hero-bottom-note"/);
-  assert.match(html, /<h1 class="ga-hero-mission"><span class="ga-sr-only">Reaching this generation with the hope of Christ\.<\/span>/);
+  assert.match(html, /<h1 class="ga-hero-mission"><span class="ga-sr-only ga-hero-desktop-copy">Reaching this generation with the hope of Christ\.<\/span>/);
   assert.match(html, /src="assets\/images\/hero-mission-artwork\.png"/);
   assert.doesNotMatch(html, /class="ga-wordmark ga-hero-wordmark"/);
   assert.match(html, /class="ga-hero-artwork-image"/);

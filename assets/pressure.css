@@ -33,6 +33,7 @@
 .ga-stat-context-grid strong { display: block; color: #ddd; margin-bottom: 8px; }
 .ga-stat-context-grid a { display: block; margin-top: 8px; color: #ddd; }
 .ga-stat-imagery-note { margin-top: 12px; }
+.ga-generation-mobile-label { display: none; }
 @media (max-width: 1199px) {
   .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 76px; }
   .ga-generation .ga-stat-grid { grid-template-rows: minmax(300px, auto) minmax(320px, auto); }
@@ -52,21 +53,28 @@
   .ga-home .ga-generation .ga-stat-number-long { font-size: 62px; }
 }
 @media (max-width: 767px) {
-  .ga-home .ga-generation { padding-top: 48px; }
+  body.ga-home .ga-generation { padding-block: 48px; }
+  .ga-generation .ga-shell { width: calc(100% - 40px); }
   .ga-generation .ga-campaign-heading { width: 100%; }
-  .ga-generation .ga-campaign-heading::before { width: 92px; height: 4px; margin-bottom: 20px; }
-  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 60px; }
-  .ga-generation .ga-stat-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto auto; margin-top: 16px; }
-  .ga-generation .ga-stat-grid > .ga-stat { padding: 36px 16px; border: 0; }
-  .ga-generation .ga-stat-grid > .ga-stat-church { grid-row: auto; padding: 40px 0; }
-  .ga-generation .ga-stat-grid > .ga-stat + .ga-stat { border-top: 1px solid #777; }
-  .ga-home .ga-generation .ga-stat-church .ga-stat-number { font-size: 220px; }
-  .ga-home .ga-generation .ga-stat-church h3 { font-size: 42px; }
-  .ga-home .ga-generation .ga-stat-number-long { font-size: 76px; }
-  .ga-home .ga-generation .ga-stat h3 { font-size: 30px; }
+  .ga-generation .ga-campaign-heading::before { display: none; }
+  .ga-generation-mobile-label { display: block; margin-bottom: 14px; color: #ff6559; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  body.ga-home .ga-generation .ga-campaign-heading h2 { font: 700 40px/1.08 'Bodoni Moda', Georgia, serif; }
+  .ga-generation .ga-stat-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto auto; gap: 16px; margin-top: 28px; }
+  .ga-generation .ga-stat-grid > .ga-stat,
+  .ga-generation .ga-stat-grid > .ga-stat-church { grid-row: auto; padding: 24px 20px; border: 1px solid #505558; border-radius: 8px; background: #1a1c1d; }
+  .ga-generation .ga-stat-grid > .ga-stat + .ga-stat { border: 1px solid #505558; }
+  .ga-generation .ga-stat-image, .ga-generation .ga-stat::after { display: none; }
+  body.ga-home .ga-generation .ga-stat-number,
+  body.ga-home .ga-generation .ga-stat-church .ga-stat-number { font: 800 64px/1.05 'Plus Jakarta Sans', sans-serif; color: #ff443b; }
+  .ga-generation .ga-stat-percent { font-size: inherit; }
+  body.ga-home .ga-generation .ga-stat h3,
+  body.ga-home .ga-generation .ga-stat-church h3 { margin-top: 8px; font: 700 25px/1.18 'Bodoni Moda', Georgia, serif; }
+  .ga-generation .ga-stat h3 br { display: none; }
+  .ga-generation .ga-stat-context { margin-top: 12px; font-size: 14px; line-height: 1.6; }
+  .ga-generation .ga-stat-sources { margin-top: 24px; padding-top: 20px; border-top: 1px solid #505558; font-size: 12px; }
   .ga-stat-context-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 359px) {
-  .ga-home .ga-generation .ga-campaign-heading h2 { font-size: 50px; }
-  .ga-home .ga-generation .ga-stat-number-long { font-size: 64px; }
+  body.ga-home .ga-generation .ga-campaign-heading h2 { font-size: 34px; }
+  body.ga-home .ga-generation .ga-stat h3 { font-size: 23px; }
 }

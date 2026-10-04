@@ -82,6 +82,10 @@
 .ga-hero-film-link:hover > span { background: #e44436; }
 .ga-hero-film-link .ga-icon { width: 22px; height: 22px; filter: invert(1); }
 .ga-home .ga-hero-bottom { display: none; }
+.ga-hero-mobile-copy, .ga-hero-mobile-summary, .ga-hero-mobile-action,
+.ga-trailer-mobile-label, .ga-trailer-mobile-title, .ga-trailer-mobile-caption { display: none; }
+.ga-home .ga-hero .ga-hero-mobile-copy { display: none; }
+.ga-home .ga-hero-involve.ga-hero-mobile-action { display: none; }
 .ga-home .ga-hero-video, .ga-home .ga-hero-poster img { filter: saturate(.8) contrast(1.05); }
 .ga-home .ga-hero-shade { background: linear-gradient(180deg,#0007,#0005 60%,#171717); }
 
@@ -111,9 +115,19 @@
   .ga-about .ga-campaign-heading h2::after { display: none; }
 }
 @media (max-width: 767px) {
-  .ga-home .ga-hero { min-height: 700px; }
-  .ga-home .ga-hero .ga-hero-mission { font-size: 54px; }
-  .ga-home .ga-hero .ga-hero-mission > span { font-size: 42px; }
+  .ga-home .ga-hero { height: auto; min-height: min(700px, 88svh); max-height: none; justify-content: center; }
+  .ga-home .ga-hero-content { width: calc(100% - 48px); align-items: flex-start; padding: 180px 0 88px; text-align: left; }
+  .ga-home .ga-hero-editorial { text-align: left; }
+  .ga-home .ga-hero-artwork-image, .ga-home .ga-hero-desktop-copy, .ga-hero-desktop-action { display: none; }
+  .ga-home .ga-hero .ga-hero-mission { margin: 0; font-size: 48px; line-height: 1.02; text-align: left; }
+  .ga-home .ga-hero .ga-hero-mobile-copy { display: block; font-size: inherit; }
+  .ga-hero-mobile-copy em { font-style: italic; }
+  .ga-home .ga-hero-mobile-summary { display: block; margin: 18px 0 24px; max-width: 330px; font-size: 16px; line-height: 1.55; color: white; }
+  .ga-home .ga-hero-involve { display: flex; justify-content: space-between; width: min(100%, 340px); min-height: 56px; padding: 16px 20px; font-size: 17px; text-transform: none; }
+  .ga-home .ga-hero-involve.ga-hero-mobile-action { display: flex; }
+  .ga-home .ga-hero-involve.ga-hero-desktop-action { display: none; }
+  .ga-home .ga-hero-poster img { object-position: center; }
+  .ga-home .ga-hero-shade { background: linear-gradient(90deg, #0008, #0003), linear-gradient(0deg, #0005, transparent 55%); }
   .ga-home .ga-hero-mission > small { font-size: 28px; line-height: 1.25; }
   .ga-hero-eyebrow { font-size: 10px; }
   .ga-home .ga-about { padding: 0 0 32px; }
@@ -129,8 +143,7 @@
   .ga-home .ga-about .ga-section-copy > p { font-size: 16px; }
 }
 @media (max-width: 359px) {
-  .ga-home .ga-hero .ga-hero-mission { font-size: 46px; }
-  .ga-home .ga-hero .ga-hero-mission > span { font-size: 36px; }
+  .ga-home .ga-hero .ga-hero-mission { font-size: 40px; }
 }
 .ga-content-dialog { width: min(1100px, calc(100% - 32px)); max-height: 90svh; padding: 24px; border: 0; background: #f7f7f5; color: #171717; }
 .ga-content-dialog::backdrop { background: #000b; }
@@ -236,16 +249,26 @@ body:has(.ga-content-dialog[open]) { overflow: hidden; }
   .ga-home .ga-trailer .ga-trailer-title { font-size: 60px; }
 }
 @media (max-width: 767px) {
-  .ga-home .ga-trailer .ga-film-intro { padding-block: 40px 16px; margin-bottom: 24px; }
-  .ga-home .ga-trailer .ga-trailer-title { font-size: 32px; line-height: 1.1; }
-  .ga-home .ga-trailer { padding-bottom: 64px; }
+  .ga-home .ga-trailer { margin: 0; padding: 36px 0 40px; background: #f7f7f5; color: #171717; }
+  .ga-home .ga-trailer::before { display: none; }
+  .ga-home .ga-trailer .ga-film-intro { width: calc(100% - 48px); padding: 0; margin-bottom: 22px; text-align: left; }
+  .ga-home .ga-trailer .ga-trailer-title { margin: 0; font: 700 40px/1.08 'Bodoni Moda', Georgia, serif; color: #171717; text-align: left; white-space: normal; }
+  .ga-trailer-desktop-title { display: none; }
+  .ga-trailer-mobile-label { display: block; margin-bottom: 10px; color: #ce3026; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+  .ga-trailer-mobile-title { display: block; font: 700 40px/1.08 'Bodoni Moda', Georgia, serif; }
+  .ga-home .ga-trailer-sticky { padding: 0 24px; }
+  .ga-home .ga-trailer-frame { border: 0; border-radius: 8px; padding: 0; }
+  .ga-home .ga-trailer-frame video { border-radius: 8px; }
+  .ga-home .ga-trailer-watch { inset: 0; }
+  .ga-trailer-play-label { font-size: 0; gap: 0; }
+  .ga-trailer-play-label .ga-icon { width: 64px; height: 64px; padding: 18px; }
+  .ga-trailer-mobile-caption { display: block; margin: 18px 24px 0; text-align: center; font-size: 14px; line-height: 1.5; }
+  .ga-trailer-error { color: #171717; }
   .ga-home .ga-generation { padding-block: 64px 72px; }
   .ga-home .ga-about { border-top-width: 24px; border-bottom-width: 40px; }
   .ga-home .ga-frontlines { padding-top: 72px; padding-bottom: 72px; }
 }
-@media (max-width: 389px) {
-  .ga-home .ga-trailer .ga-trailer-title { font-size: 26px; }
-}
+@media (max-width: 359px) { .ga-home .ga-trailer .ga-trailer-title { font-size: 34px; } }
 .ga-campus-invite { background: #171717; color: #f7f7f5; }
 .ga-campus-split { display: grid; grid-template-columns: 54% 46%; }
 .ga-campus-invite-intro { padding: 76px 7.5% 64px; align-self: center; }

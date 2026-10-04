@@ -54,8 +54,6 @@
   .ga-mission-photo-hero { padding: 56px 0; }
   .ga-mission-page-intro { padding-top: 40px; }
   .ga-mission-band .ga-text-link { display: block; margin: 24px 0 0; }
-  .ga-home .ga-hero { height: auto; min-height: 0; }
-  .ga-home .ga-hero-content { padding: 130px 0 64px; }
   .ga-hero-mission-summary { font-size: 16px; }
   .ga-home .ga-about .ga-section-copy > .ga-mission-letter { font-size: 34px; }
 }

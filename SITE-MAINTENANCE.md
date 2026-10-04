@@ -1,5 +1,22 @@
 # Gospel Advance Website
 
+## October 3, 2026 Mobile And Logo Update
+
+The current shared logo is Andrew's flame-and-cross Gospel Advance / Acts 4:29
+design. The original and horizontal transparent adaptation are documented in
+`assets/images/ACTS-LOGO.md`; the light-lettering treatment uses a shared SVG
+filter. Keep the flame visible in the header, mobile menu, and footer.
+
+Below 768px, the homepage uses live headline text, a Follow on social action
+linked to `#follow-mission`, a paper-colored See the mission video section, and
+three simple dark statistics cards. Desktop messaging, the existing film and
+fullscreen interaction, statistics values, and sources remain intact.
+
+Andrew's new planning direction is One Mission. One Gospel. One Savior., with
+One Campus as the proposed campus initiative and reaching the nations as the
+longer-term horizon. The draft is in the separate Gospel Advance planning
+folder. Broader website messaging and program claims await that planning work.
+
 The September 2026 homepage follows Andrew's approved mockup layout. Its heavy white headline uses Archivo Black with a compact line-height and horizontal shaping; its red accent uses DM Serif Display Italic with a fuller stroke and narrower proportions. The hero is reserved exclusively for the Gospel Advance trailer video. Until it is supplied, a neutral charcoal background remains behind the approved typography; no conversation photo or interview footage is used as a substitute. Text, logo, buttons, and the mission divider remain real HTML/CSS. The two-line logo uses Archivo 900; navigation and body text remain Plus Jakarta Sans. These open-source faces visually adapt the mockup rather than claiming to identify an exact font in an AI-generated image. Earlier font research remains in `assets/brand-studies/FONT-RESEARCH.md`, and logo studies remain in `assets/brand-studies/wordmarks.html`. The site remains static HTML, CSS, and JavaScript with no build step.
 
 ## Editing
