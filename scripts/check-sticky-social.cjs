@@ -37,7 +37,7 @@ async function barLayout(page) {
         assert.equal(initial.items.length, 4);
         assert(initial.x >= 0 && initial.x + initial.width <= width);
         assert(initial.items.every(item => item.width >= 44 && item.height >= 44));
-        assert(initial.y + initial.height <= 844 - 16);
+        assert.equal(844 - (initial.y + initial.height), 6, 'bar should sit just above the bottom safe area');
         assert.match(initial.items[0].href, /instagram.com\/andrewpramirez/);
         assert.match(initial.items[1].href, /youtube.com\/@gospeladvance/);
         assert(initial.items.slice(2).every(item => item.href === null));

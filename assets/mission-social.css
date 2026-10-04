@@ -81,14 +81,14 @@ body.menu-open .mission-social-rail { visibility: hidden; }
   body .ga-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
   .mission-social-rail {
     box-sizing: border-box;
-    left: 50%; top: auto; bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    left: 50%; top: auto; bottom: calc(6px + env(safe-area-inset-bottom, 0px));
     transform: translateX(-50%); z-index: 900;
     display: grid; grid-template-columns: 80px repeat(4, minmax(0, 1fr));
     align-items: center; justify-items: center; gap: 12px;
     width: calc(100% - 24px); max-width: 520px; min-height: 76px; padding: 12px 16px;
-    border: 1px solid #ffffff45; border-radius: 999px;
-    background: #171717ed;
-    background: linear-gradient(180deg, #343432e8, #1b1b1aef);
+    border: 1px solid #ffffff30; border-radius: 999px;
+    background: #000d;
+    background: linear-gradient(180deg, rgb(0 0 0 / .78), rgb(0 0 0 / .94));
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 8px 28px #0003, inset 0 1px 0 #ffffff12;
   }
@@ -101,9 +101,9 @@ body.menu-open .mission-social-rail { visibility: hidden; }
   .mission-social-rail a, .mission-social-rail .mission-rail-placeholder {
     box-sizing: border-box; width: 50px; height: 50px;
     border: 1px solid #ffffff0d; border-radius: 50%;
-    background: linear-gradient(180deg, #ffffff16, #ffffff08);
+    background: linear-gradient(180deg, #ffffff12, #ffffff05);
   }
-  .mission-social-rail .mission-rail-instagram { background: linear-gradient(180deg, #ffffff16, #ffffff08); }
+  .mission-social-rail .mission-rail-instagram { background: linear-gradient(180deg, #ffffff12, #ffffff05); }
   .mission-social-rail a:hover, .mission-social-rail a:focus-visible { background: #ffffff25; }
   .mission-social-rail img { width: 26px; height: 26px; }
   .mission-social-rail .mission-rail-brand-x { display: none; }

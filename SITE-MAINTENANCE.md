@@ -8,6 +8,7 @@ approved links; TikTok and Facebook remain inactive placeholders. X remains
 in the desktop rail only. Styles live in `assets/mission-social.css`.
 The bar respects the device safe area and hides behind menus/dialogs and while
 form fields are focused. Footer spacing keeps the final content above it.
+Its mobile inset is 6px plus the safe area, with a translucent black gradient.
 Only the homepage retains the full Follow the Mission section.
 
 ## October 3, 2026 Mobile And Logo Update
