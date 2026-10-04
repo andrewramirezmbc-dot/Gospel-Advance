@@ -77,8 +77,18 @@ body:has(dialog[open], .ga-header.menu-open) .mission-social-rail,
 body.menu-open .mission-social-rail { visibility: hidden; }
 @media (min-width: 1101px) { body.academy .academy-wrap { width: calc(100% - 112px); } }
 @media (max-width: 1100px) {
-  html { scroll-padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
-  body .ga-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+  html { scroll-padding-bottom: calc(152px + env(safe-area-inset-bottom, 0px)); }
+  body .ga-footer { padding-bottom: calc(164px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.mission-social-rail)::after {
+    content: ''; position: fixed; inset: auto 0 0; z-index: 899;
+    height: calc(128px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
+    background: rgb(23 23 23 / .75);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    mask-image: linear-gradient(180deg, transparent, #000 40%);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
+  }
+  body:has(dialog[open], .ga-header.menu-open, input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus)::after,
+  body.menu-open::after { visibility: hidden; }
   .mission-social-rail {
     box-sizing: border-box;
     left: 50%; top: auto; bottom: calc(6px + env(safe-area-inset-bottom, 0px));

@@ -48,6 +48,14 @@ async function barLayout(page) {
         assert(await page.locator('.ga-hero-desktop-action').isVisible());
       }
       if (width <= 1100) {
+        const scrim = await page.evaluate(() => {
+          const style = getComputedStyle(document.body, '::after');
+          return { content: style.content, position: style.position, height: parseFloat(style.height), pointerEvents: style.pointerEvents, color: style.backgroundColor };
+        });
+        assert.equal(scrim.position, 'fixed');
+        assert.equal(scrim.pointerEvents, 'none');
+        assert.equal(scrim.color, 'rgba(23, 23, 23, 0.75)');
+        assert(scrim.height >= initial.height + 6);
         assert.equal(initial.items.length, 4);
         assert(initial.x >= 0 && initial.x + initial.width <= width);
         assert(initial.items.every(item => item.width >= 44 && item.height >= 44));
@@ -59,10 +67,11 @@ async function barLayout(page) {
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
         const scrolled = await barLayout(page);
         assert.equal(scrolled.y, initial.y, 'bar moves when scrolling');
-        assert(await page.locator('.ga-footer-bottom').evaluate((footer, y) => footer.getBoundingClientRect().bottom <= y, initial.y));
+        assert(await page.locator('.ga-footer-bottom').evaluate((footer, y) => footer.getBoundingClientRect().bottom <= y, 844 - scrim.height));
         await page.locator('#gaMenuToggle').click();
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.mission-social-rail')).visibility === 'hidden');
         assert.equal((await barLayout(page)).visibility, 'hidden', 'bar appears over menu');
+        assert.equal(await page.evaluate(() => getComputedStyle(document.body, '::after').visibility), 'hidden');
         await page.keyboard.press('Escape');
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.mission-social-rail')).visibility === 'visible');
         assert.equal((await barLayout(page)).visibility, 'visible');

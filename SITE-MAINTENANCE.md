@@ -9,6 +9,9 @@ in the desktop rail only. Styles live in `assets/mission-social.css`.
 The bar respects the device safe area and hides behind menus/dialogs and while
 form fields are focused. Footer spacing keeps the final content above it.
 Its mobile inset is 6px plus the safe area, with a translucent black gradient.
+A full-width 75%-opacity charcoal fade and soft blur sits behind the capsule
+and extends to the viewport bottom. It ignores pointer input and hides with
+the bar; footer and anchor spacing keep content clear of both layers.
 Only the homepage retains the full Follow the Mission section.
 
 ## October 3, 2026 Mobile And Logo Update
