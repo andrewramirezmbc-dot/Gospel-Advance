@@ -39,6 +39,7 @@ test('every public page includes the sticky follow label and keeps unconfirmed s
     const html = fs.readFileSync(path.join(root, file), 'utf8');
     const rail = html.match(/<aside class="mission-social-rail"[\s\S]*?<\/aside>/)?.[0];
     assert(rail, file);
+    assert.equal((html.match(/class="mission-social-backdrop" aria-hidden="true"/g) || []).length, 1, file);
     assert.match(rail, /class="mission-social-rail-label">Follow<br \/>Along<\/span>/, file);
     assert.match(rail, /assets\/icons\/brand-youtube.svg/, file);
     assert.equal((rail.match(/<a /g) || []).length, 2, file);

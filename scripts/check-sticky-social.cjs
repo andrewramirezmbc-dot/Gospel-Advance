@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 
 const base = process.env.SITE_URL || 'http://127.0.0.1:4178';
 async function barLayout(page) {
@@ -21,14 +21,17 @@ async function barLayout(page) {
 }
 
 (async () => {
-  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const browser = process.env.BROWSER_ENGINE === 'webkit'
+    ? await webkit.launch({ headless: true })
+    : await chromium.launch({ channel: 'chrome', headless: true });
   try {
     for (const width of [320, 390, 430, 768, 1100, 1440]) {
       const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
-      await page.goto(base, { waitUntil: 'domcontentloaded' });
+      await page.goto(base, { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       const initial = await barLayout(page);
       assert.equal(initial.position, 'fixed');
       assert.equal(initial.visibility, 'visible');
@@ -48,14 +51,15 @@ async function barLayout(page) {
         assert(await page.locator('.ga-hero-desktop-action').isVisible());
       }
       if (width <= 1100) {
-        const scrim = await page.evaluate(() => {
-          const style = getComputedStyle(document.body, '::after');
-          return { content: style.content, position: style.position, height: parseFloat(style.height), pointerEvents: style.pointerEvents, color: style.backgroundColor };
+        const scrim = await page.locator('.mission-social-backdrop').evaluate(el => {
+          const style = getComputedStyle(el);
+          const rect = el.getBoundingClientRect();
+          return { position: style.position, top: rect.top, bottom: rect.bottom, pointerEvents: style.pointerEvents };
         });
         assert.equal(scrim.position, 'fixed');
         assert.equal(scrim.pointerEvents, 'none');
-        assert.equal(scrim.color, 'rgba(23, 23, 23, 0.75)');
-        assert(scrim.height >= initial.height + 6);
+        assert(scrim.top < initial.y);
+        assert(scrim.bottom >= 844 + 160, 'backing must extend beneath browser chrome');
         assert.equal(initial.items.length, 4);
         assert(initial.x >= 0 && initial.x + initial.width <= width);
         assert(initial.items.every(item => item.width >= 44 && item.height >= 44));
@@ -64,14 +68,27 @@ async function barLayout(page) {
         assert.match(initial.items[1].href, /youtube.com\/@gospeladvance/);
         assert(initial.items.slice(2).every(item => item.href === null));
         await page.screenshot({ path: `/tmp/sticky-social-${width}.png` });
+        // Contrasting content must produce identical pixels beneath the bar.
+        await page.evaluate(() => {
+          const probe = document.createElement('div');
+          probe.id = 'social-backing-probe';
+          probe.style.cssText = 'position:fixed;inset:auto 0 0;height:300px;background:#ff00ff;z-index:898;pointer-events:none';
+          document.body.append(probe);
+        });
+        const clip = { x: 0, y: 840, width, height: 4 };
+        const first = await page.screenshot({ clip });
+        await page.evaluate(() => document.querySelector('#social-backing-probe').style.background = '#00ffff');
+        const second = await page.screenshot({ clip });
+        assert(first.equals(second), 'page colors bleed through beneath the bar');
+        await page.evaluate(() => document.querySelector('#social-backing-probe').remove());
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
         const scrolled = await barLayout(page);
         assert.equal(scrolled.y, initial.y, 'bar moves when scrolling');
-        assert(await page.locator('.ga-footer-bottom').evaluate((footer, y) => footer.getBoundingClientRect().bottom <= y, 844 - scrim.height));
+        assert(await page.locator('.ga-footer-bottom').evaluate((footer, y) => footer.getBoundingClientRect().bottom <= y, scrim.top));
         await page.locator('#gaMenuToggle').click();
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.mission-social-rail')).visibility === 'hidden');
         assert.equal((await barLayout(page)).visibility, 'hidden', 'bar appears over menu');
-        assert.equal(await page.evaluate(() => getComputedStyle(document.body, '::after').visibility), 'hidden');
+        assert.equal(await page.locator('.mission-social-backdrop').evaluate(el => getComputedStyle(el).visibility), 'hidden');
         await page.keyboard.press('Escape');
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.mission-social-rail')).visibility === 'visible');
         assert.equal((await barLayout(page)).visibility, 'visible');

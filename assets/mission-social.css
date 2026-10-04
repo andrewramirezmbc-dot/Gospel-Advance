@@ -63,6 +63,7 @@ body main .mission-social a.mission-social-card:hover { background: #202323; bor
   box-shadow: 0 2px 12px #0003;
 }
 .mission-social-rail-label { display: none; }
+.mission-social-backdrop { display: none; }
 .mission-social-rail a, .mission-social-rail .mission-rail-placeholder { position: relative; display: grid; place-items: center; width: 44px; height: 50px; color: white; text-decoration: none; background: #171717; }
 .mission-rail-instagram { background: #d33240; border-radius: 0 6px 0 0; }
 .mission-social-rail .mission-rail-instagram { background: #d33240; }
@@ -73,22 +74,18 @@ body main .mission-social a.mission-social-card:hover { background: #202323; bor
 }
 .mission-social-rail a:hover > span, .mission-social-rail a:focus-visible > span, .mission-rail-placeholder:hover > span { visibility: visible; }
 .mission-social a:focus-visible, .mission-social-rail a:focus-visible { outline: 3px solid #e44436; outline-offset: 4px; }
-body:has(dialog[open], .ga-header.menu-open) .mission-social-rail,
-body.menu-open .mission-social-rail { visibility: hidden; }
+body:has(dialog[open], .ga-header.menu-open) :is(.mission-social-rail, .mission-social-backdrop),
+body.menu-open :is(.mission-social-rail, .mission-social-backdrop) { visibility: hidden; }
 @media (min-width: 1101px) { body.academy .academy-wrap { width: calc(100% - 112px); } }
 @media (max-width: 1100px) {
   html { scroll-padding-bottom: calc(152px + env(safe-area-inset-bottom, 0px)); }
   body .ga-footer { padding-bottom: calc(164px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.mission-social-rail)::after {
-    content: ''; position: fixed; inset: auto 0 0; z-index: 899;
-    height: calc(128px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
-    background: rgb(23 23 23 / .75);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    mask-image: linear-gradient(180deg, transparent, #000 40%);
-    -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
+  .mission-social-backdrop {
+    display: block; position: fixed; inset: auto 0 -160px; z-index: 899;
+    height: calc(288px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
+    /* Extend the opaque backing below the viewport for translucent browser chrome. */
+    background: linear-gradient(180deg, transparent, #171717 48px, #171717);
   }
-  body:has(dialog[open], .ga-header.menu-open, input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus)::after,
-  body.menu-open::after { visibility: hidden; }
   .mission-social-rail {
     box-sizing: border-box;
     left: 50%; top: auto; bottom: calc(6px + env(safe-area-inset-bottom, 0px));
@@ -120,7 +117,7 @@ body.menu-open .mission-social-rail { visibility: hidden; }
   .mission-social-rail a > span, .mission-rail-placeholder > span {
     left: 50%; bottom: calc(100% + 14px); transform: translateX(-50%);
   }
-  body:has(input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus) .mission-social-rail {
+  body:has(input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus) :is(.mission-social-rail, .mission-social-backdrop) {
     visibility: hidden;
   }
   body main .mission-social .mission-social-inner { grid-template-columns: 1fr; gap: 24px; }
