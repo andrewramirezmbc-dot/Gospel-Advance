@@ -1,5 +1,15 @@
 # Gospel Advance Website
 
+## October 4, 2026 Sticky Social Bar
+
+The shared social rail becomes a floating Follow Along capsule below 1101px,
+matching the North Star mobile reference. Instagram and YouTube retain their
+approved links; TikTok and Facebook remain inactive placeholders. X remains
+in the desktop rail only. Styles live in `assets/mission-social.css`.
+The bar respects the device safe area and hides behind menus/dialogs and while
+form fields are focused. Footer spacing keeps the final content above it.
+Only the homepage retains the full Follow the Mission section.
+
 ## October 3, 2026 Mobile And Logo Update
 
 The current shared logo is Andrew's flame-and-cross Gospel Advance / Acts 4:29

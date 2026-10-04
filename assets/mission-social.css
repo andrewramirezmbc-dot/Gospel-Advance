@@ -62,6 +62,7 @@ body main .mission-social a.mission-social-card:hover { background: #202323; bor
   display: flex; flex-direction: column; width: 44px; border-radius: 0 6px 6px 0;
   box-shadow: 0 2px 12px #0003;
 }
+.mission-social-rail-label { display: none; }
 .mission-social-rail a, .mission-social-rail .mission-rail-placeholder { position: relative; display: grid; place-items: center; width: 44px; height: 50px; color: white; text-decoration: none; background: #171717; }
 .mission-rail-instagram { background: #d33240; border-radius: 0 6px 0 0; }
 .mission-social-rail .mission-rail-instagram { background: #d33240; }
@@ -72,11 +73,52 @@ body main .mission-social a.mission-social-card:hover { background: #202323; bor
 }
 .mission-social-rail a:hover > span, .mission-social-rail a:focus-visible > span, .mission-rail-placeholder:hover > span { visibility: visible; }
 .mission-social a:focus-visible, .mission-social-rail a:focus-visible { outline: 3px solid #e44436; outline-offset: 4px; }
-body:has(dialog[open]) .mission-social-rail, body.menu-open .mission-social-rail { visibility: hidden; }
+body:has(dialog[open], .ga-header.menu-open) .mission-social-rail,
+body.menu-open .mission-social-rail { visibility: hidden; }
 @media (min-width: 1101px) { body.academy .academy-wrap { width: calc(100% - 112px); } }
 @media (max-width: 1100px) {
-  .mission-social-rail { display: none; }
+  html { scroll-padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+  body .ga-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+  .mission-social-rail {
+    box-sizing: border-box;
+    left: 50%; top: auto; bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%); z-index: 900;
+    display: grid; grid-template-columns: 80px repeat(4, minmax(0, 1fr));
+    align-items: center; justify-items: center; gap: 12px;
+    width: calc(100% - 24px); max-width: 520px; min-height: 76px; padding: 12px 16px;
+    border: 1px solid #ffffff45; border-radius: 999px;
+    background: #171717ed;
+    background: linear-gradient(180deg, #343432e8, #1b1b1aef);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 28px #0003, inset 0 1px 0 #ffffff12;
+  }
+  .mission-social-rail-label {
+    display: block; justify-self: stretch; max-width: none; padding: 2px 14px 2px 6px;
+    border-right: 1px solid #ffffff45; color: #f7f7f5;
+    font: 600 11px/1.7 'Plus Jakarta Sans', sans-serif; letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  .mission-social-rail a, .mission-social-rail .mission-rail-placeholder {
+    box-sizing: border-box; width: 50px; height: 50px;
+    border: 1px solid #ffffff0d; border-radius: 50%;
+    background: linear-gradient(180deg, #ffffff16, #ffffff08);
+  }
+  .mission-social-rail .mission-rail-instagram { background: linear-gradient(180deg, #ffffff16, #ffffff08); }
+  .mission-social-rail a:hover, .mission-social-rail a:focus-visible { background: #ffffff25; }
+  .mission-social-rail img { width: 26px; height: 26px; }
+  .mission-social-rail .mission-rail-brand-x { display: none; }
+  .mission-social-rail a > span, .mission-rail-placeholder > span {
+    left: 50%; bottom: calc(100% + 14px); transform: translateX(-50%);
+  }
+  body:has(input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus) .mission-social-rail {
+    visibility: hidden;
+  }
   body main .mission-social .mission-social-inner { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 359px) {
+  .mission-social-rail { grid-template-columns: 64px repeat(4, minmax(0, 1fr)); gap: 6px; padding-inline: 12px; min-height: 72px; }
+  .mission-social-rail a, .mission-social-rail .mission-rail-placeholder { width: 44px; height: 44px; }
+  .mission-social-rail-label { padding-inline: 0 8px; font-size: 10px; }
 }
 @media (max-width: 760px) {
   body main .mission-social { padding: 32px 0; }

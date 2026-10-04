@@ -34,6 +34,19 @@ test('participation includes nonfinancial paths without promising official chapt
   assert.match(html, /<option value="Community">Local outreach in my town/);
   assert.match(fs.readFileSync(path.join(root, 'assets/site.js'), 'utf8'), /'Host Gospel Advance', 'Local outreach interest'/);
 });
+test('every public page includes the sticky follow label and keeps unconfirmed socials inactive', () => {
+  for (const file of [...pages, '404.html']) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    const rail = html.match(/<aside class="mission-social-rail"[\s\S]*?<\/aside>/)?.[0];
+    assert(rail, file);
+    assert.match(rail, /class="mission-social-rail-label">Follow<br \/>Along<\/span>/, file);
+    assert.match(rail, /assets\/icons\/brand-youtube.svg/, file);
+    assert.equal((rail.match(/<a /g) || []).length, 2, file);
+    for (const platform of ['tiktok', 'facebook', 'brand-x']) {
+      assert.match(rail, new RegExp('class="mission-rail-placeholder mission-rail-' + platform + '"'), file);
+    }
+  }
+});
 test('home copies stay identical and the stats remain at their approved values', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert.equal(html, fs.readFileSync(path.join(root, 'gospel-advance-website.html'), 'utf8'));
