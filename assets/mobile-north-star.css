@@ -5,8 +5,54 @@
 .ga-media-explore-links { display: contents; }
 .ga-home .ga-about .ga-message-desktop-prose > p { margin: 26px 0 0; color: #626262; font: 400 17px/1.65 'Plus Jakarta Sans', sans-serif; }
 .ga-approach-card > a.ga-approach-arrow { position: static; pointer-events: auto; }
+.ga-faq-mobile-label, .ga-faq-mobile-symbol, .ga-faq-mobile-help { display: none; }
+
+@media (max-width: 1100px) {
+  .ga-home #follow-mission { display: none; }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  :is(.ga-home, .ga-resources-page) .ga-media-explore-links .ga-media-copy h3 { font-size: 22px; }
+}
 
 @media (max-width: 767px) {
+  .ga-home .ga-campus-invite { padding: 32px 24px 40px; background: #171717; }
+  .ga-home .ga-campus-split { display: block; }
+  .ga-home .ga-campus-invite-intro { padding: 0; }
+  .ga-home .ga-campus-label { margin-bottom: 14px; gap: 12px; font-size: 10px; }
+  .ga-home .ga-campus-label::before { width: 38px; height: 3px; }
+  .ga-home .ga-campus-invite h2 { font: 700 34px/1.1 'Bodoni Moda', Georgia, serif; }
+  .ga-home .ga-campus-invite h2 > span { display: inline; }
+  .ga-home .ga-campus-invite-intro > p { margin: 18px 0; font-size: 16px; line-height: 1.5; }
+  .ga-home .ga-campus-connect { width: 100%; min-height: 48px; padding: 14px 20px; gap: 12px; border-radius: 6px; background: #e44436; font-size: 16px; }
+  .ga-home .ga-campus-photo { margin-top: 18px; aspect-ratio: 16/9; border-radius: 6px; }
+  .ga-home .ga-campus-offerings-band { padding: 0; margin-top: 12px; background: none; }
+  .ga-home .ga-campus-offerings { width: 100%; gap: 10px; }
+  .ga-home .ga-campus-offerings > div { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 4px 12px; padding: 12px 14px; border: 1px solid #ffffff30; border-left: 3px solid #e44436; border-radius: 8px; background: #1c1c1c; }
+  .ga-home .ga-offering-number { display: grid; place-items: center; align-self: start; width: 32px; height: 28px; grid-row: 1 / 3; margin: 0; border-radius: 4px; background: #c52129; color: white; font: 600 14px/1 'Plus Jakarta Sans', sans-serif; }
+  .ga-home .ga-campus-offerings h3 { margin: 0; font: 700 15px/1.4 'Plus Jakarta Sans', sans-serif; }
+  .ga-home .ga-campus-offerings p { margin: 0; grid-column: 2; font-size: 13px; line-height: 1.5; }
+
+  .ga-home .ga-mission-faq { padding: 38px 0 48px; }
+  .ga-home .ga-faq-layout { width: calc(100% - 40px); gap: 26px; }
+  .ga-home .ga-faq-mobile-label { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; color: #cf3026; font: 700 12px/1.4 'Plus Jakarta Sans', sans-serif; }
+  .ga-faq-mobile-label::before { content: ''; width: 26px; height: 2px; background: currentColor; }
+  .ga-home .ga-mission-faq h2 { margin: 0; font: 700 34px/1.12 'Archivo', sans-serif; text-transform: none; }
+  .ga-home .ga-faq-desktop-contact { display: none; }
+  .ga-home .ga-faq-items { border: 1px solid #d8d8d4; border-radius: 8px; background: #fcfcfa; overflow: hidden; }
+  .ga-home .ga-faq-items details { border: 0; }
+  .ga-home .ga-faq-items details + details { border-top: 1px solid #d8d8d4; }
+  .ga-home .ga-faq-items summary { min-height: 72px; padding: 20px 16px; gap: 16px; font: 600 16px/1.45 'Plus Jakarta Sans', sans-serif; }
+  .ga-home .ga-faq-items summary > img { display: none; }
+  .ga-home .ga-faq-mobile-symbol { display: grid; place-items: center; flex: 0 0 20px; width: 20px; height: 24px; color: #cf3026; font: 400 28px/1 'Plus Jakarta Sans', sans-serif; }
+  .ga-faq-mobile-symbol::before { content: '+'; }
+  .ga-faq-items details[open] .ga-faq-mobile-symbol::before { content: '\2212'; }
+  .ga-home .ga-faq-items details p { padding: 0 16px 20px; margin: 0; font-size: 14px; line-height: 1.6; }
+  .ga-home .ga-faq-items summary:focus-visible { outline-offset: -4px; }
+  .ga-home .ga-faq-mobile-help { display: block; margin-top: 2px; }
+  .ga-faq-mobile-help p { margin: 0 0 14px; font: 600 16px/1.5 'Plus Jakarta Sans', sans-serif; }
+  .ga-home .ga-faq-mobile-help .ga-faq-contact { display: flex; justify-content: space-between; width: 100%; min-height: 50px; margin: 0; padding: 14px 20px; border-radius: 6px; background: #e44436; color: white; font: 600 16px/1.4 'Plus Jakarta Sans', sans-serif; }
+  .ga-faq-mobile-help .ga-faq-contact img { filter: invert(1); flex-shrink: 0; }
+
   .ga-home main .ga-about { padding: 36px 0 40px; border: 0; background: #f7f7f5; }
   .ga-home .ga-about > .ga-shell { width: calc(100% - 48px); margin-inline: auto; }
   .ga-home .ga-about .ga-campaign-heading { position: static; display: block; width: auto; padding: 0; margin-bottom: 16px; background: none; }
@@ -132,6 +178,9 @@
   .ga-media-library[data-media-view="resources"] .ga-media-explore-links .ga-media-copy h3 { font-size: 28px; }
 }
 @media (max-width: 359px) {
+  .ga-home .ga-campus-invite { padding-inline: 20px; }
+  .ga-home .ga-campus-invite h2, .ga-home .ga-mission-faq h2 { font-size: 30px; }
+  .ga-home .ga-faq-items summary { font-size: 15px; gap: 12px; }
   .ga-home .ga-about .ga-section-copy > .ga-mission-letter { font-size: 30px; }
   .ga-home .ga-frontlines h2 { font-size: 24px; }
   .ga-home .ga-frontlines h2 em { font-size: 34px; }

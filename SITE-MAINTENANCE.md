@@ -16,6 +16,12 @@ tiles and pagination buttons. All content remains visible without JavaScript;
 resizing to desktop restores the editorial grid. The Resources page uses the
 same media presentation, without the homepage-only Follow the Mission section.
 The fixed social capsule and fully opaque charcoal backing remain unchanged.
+The full Follow the Mission block is hidden at 1100px and below, where the
+fixed capsule replaces it; desktop retains the full block. The mobile community
+invitation uses a landscape campus photo and three compact numbered offerings.
+FAQ questions remain native keyboard-accessible disclosures, with red plus/minus
+indicators and the question action below the accordion. Existing answers,
+including gift and monthly-support wording, are unchanged.
 
 Verify with `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check-mobile-north-star.cjs`.
 Set `BROWSER_ENGINE=webkit` for Safari-engine checks. The script checks narrow

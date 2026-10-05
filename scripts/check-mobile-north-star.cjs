@@ -18,13 +18,13 @@ async function showSection(page, selector) {
 (async () => {
   const browser = engine === 'webkit' ? await webkit.launch() : await chromium.launch({ channel: 'chrome' });
   try {
-    for (const width of [320, 390, 430, 767, 1440]) {
+    for (const width of [320, 390, 430, 767, 768, 1100, 1440]) {
       const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(base, { waitUntil: 'load' });
       await settle(page);
-      for (const section of ['#about', '#fuel-the-mission', '#strategy', '#media']) {
+      for (const section of ['#about', '#fuel-the-mission', '#strategy', '#media', '#bring-the-mission', '#mission-questions']) {
         await showSection(page, section);
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${section}: overflow at ${width}`);
         const failures = await page.locator(`${section} h2, ${section} h3, ${section} h4, ${section} p`).evaluateAll(elements => elements
@@ -34,7 +34,35 @@ async function showSection(page, selector) {
         await page.screenshot({ path: `/tmp/north-star-${engine}-${width}-${section.slice(1)}.png` });
       }
       const tabs = page.locator('.ga-media-tabs');
+      assert.equal(await page.locator('#follow-mission').isVisible(), width > 1100, 'full social section should appear only beside the desktop rail');
       if (width < 768) {
+        const invitation = page.locator('.ga-campus-offerings > div');
+        assert.equal(await invitation.count(), 3);
+        assert(await page.locator('.ga-campus-photo img').evaluate(el => el.complete && el.naturalWidth > 0));
+        const help = page.locator('.ga-faq-mobile-help');
+        assert(await help.isVisible());
+        const answers = page.locator('.ga-faq-items details');
+        assert.equal(await answers.count(), 5);
+        for (let index = 0; index < 5; index++) {
+          const item = answers.nth(index);
+          const summary = item.locator('summary');
+          await summary.focus();
+          await page.keyboard.press('Enter');
+          assert(await item.evaluate(el => el.open));
+          assert(await item.locator('p').isVisible());
+          assert(await item.locator('.ga-faq-mobile-symbol').evaluate(el => getComputedStyle(el, '::before').content.includes('\u2212')));
+          await page.keyboard.press('Enter');
+          assert(!await item.evaluate(el => el.open));
+        }
+        if (width === 390) {
+          await help.locator('a').click();
+          assert(await page.locator('#contactPanel').evaluate(el => el.open));
+          await page.locator('#contactPanel .ga-panel-close').click();
+          await page.locator('.ga-campus-connect').click();
+          assert(await page.locator('#contactPanel').evaluate(el => el.open));
+          assert.equal(await page.locator('#contactInterest').inputValue(), 'Ministry partnership');
+          await page.locator('#contactPanel .ga-panel-close').click();
+        }
         assert(await tabs.isVisible());
         const photo = await page.locator('.ga-andrew-frame').boundingBox();
         const message = await page.locator('.ga-about .ga-section-copy').boundingBox();
@@ -76,6 +104,8 @@ async function showSection(page, selector) {
           assert(await page.locator('.ga-media-resources').isVisible());
         }
       } else {
+        assert(!await page.locator('.ga-faq-mobile-help').isVisible());
+        assert(await page.locator('.ga-faq-desktop-contact').isVisible());
         assert(!await tabs.isVisible());
         assert(await page.locator('.ga-media-testimony').isVisible());
         assert(await page.locator('.ga-message-desktop-prose').isVisible());

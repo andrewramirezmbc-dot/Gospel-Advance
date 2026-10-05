@@ -51,6 +51,7 @@ async function barLayout(page) {
         assert(await page.locator('.ga-hero-desktop-action').isVisible());
       }
       if (width <= 1100) {
+        assert(!await page.locator('#follow-mission').isVisible(), 'full social section duplicates the mobile bar');
         const scrim = await page.locator('.mission-social-backdrop').evaluate(el => {
           const style = getComputedStyle(el);
           const rect = el.getBoundingClientRect();
@@ -97,6 +98,7 @@ async function barLayout(page) {
         assert.equal((await barLayout(page)).visibility, 'hidden', 'bar appears over search');
         await page.evaluate(() => document.querySelector('#gaSearchDialog').close());
       } else {
+        assert(await page.locator('#follow-mission').isVisible());
         assert.equal(initial.items.length, 5);
         assert.equal(initial.x, 0);
         await page.screenshot({ path: '/tmp/sticky-social-desktop.png' });
