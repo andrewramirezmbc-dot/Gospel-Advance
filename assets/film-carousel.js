@@ -23,7 +23,10 @@
   carousel.addEventListener('keydown', event => {
     if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
     event.preventDefault();
-    if (event.target.closest('.ga-film-slide')) carousel.querySelector('.ga-film-next').focus();
+    if (event.target.closest('.ga-film-slide')) {
+      const nextButton = carousel.querySelector('.ga-film-next');
+      (nextButton.getClientRects().length ? nextButton : preview).focus();
+    }
     select(event.key === 'ArrowRight' ? 1 : -1);
   });
 })();

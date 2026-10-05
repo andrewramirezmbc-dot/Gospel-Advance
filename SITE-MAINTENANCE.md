@@ -1,5 +1,27 @@
 # Gospel Advance Website
 
+## October 4, 2026 Mobile North Star Layouts
+
+Below 768px, `assets/mobile-north-star.css` adapts the personal message,
+partnership pitch, strategy, and media sections to Andrew's four references.
+The personal message uses the original preaching photo with a responsive
+landscape crop, concise copy, byline, and full-width About action. Desktop
+retains its original portrait and editorial layout. Strategy cards stack with
+red top rules and linked arrow controls; the town invitation has its own clear
+full-width action. Existing media, giving, and contact destinations are retained.
+
+`assets/mobile-media.js` provides mobile-only Featured, Conversations, and
+Resources tabs with keyboard navigation, plus native scroll-snap exploration
+tiles and pagination buttons. All content remains visible without JavaScript;
+resizing to desktop restores the editorial grid. The Resources page uses the
+same media presentation, without the homepage-only Follow the Mission section.
+The fixed social capsule and fully opaque charcoal backing remain unchanged.
+
+Verify with `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check-mobile-north-star.cjs`.
+Set `BROWSER_ENGINE=webkit` for Safari-engine checks. The script checks narrow
+mobile, larger mobile, and desktop layouts, filters, carousel focus, playback
+dialog, resizing, and shared resource media.
+
 ## October 4, 2026 Sticky Social Bar
 
 The shared social rail becomes a floating Follow Along capsule below 1101px,

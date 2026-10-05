@@ -1,0 +1,150 @@
+.ga-media-intro-label, .ga-media-heading-mobile, .ga-media-tabs,
+.ga-media-explore-heading, .ga-media-explore-dots, .ga-film-preview-arrow,
+.ga-town-mobile-label, .ga-town-mobile-title, .ga-town-mobile-copy,
+.ga-message-mobile-prose, .ga-message-mobile-byline, .ga-strategy-mobile-caption { display: none; }
+.ga-media-explore-links { display: contents; }
+.ga-home .ga-about .ga-message-desktop-prose > p { margin: 26px 0 0; color: #626262; font: 400 17px/1.65 'Plus Jakarta Sans', sans-serif; }
+.ga-approach-card > a.ga-approach-arrow { position: static; pointer-events: auto; }
+
+@media (max-width: 767px) {
+  .ga-home main .ga-about { padding: 36px 0 40px; border: 0; background: #f7f7f5; }
+  .ga-home .ga-about > .ga-shell { width: calc(100% - 48px); margin-inline: auto; }
+  .ga-home .ga-about .ga-campaign-heading { position: static; display: block; width: auto; padding: 0; margin-bottom: 16px; background: none; }
+  .ga-home .ga-about .ga-campaign-heading h2 { font: 600 11px/1.5 'Plus Jakarta Sans', sans-serif; color: #444; writing-mode: horizontal-tb; transform: none; }
+  .ga-home .ga-about .ga-campaign-heading h2::after { display: none; }
+  .ga-home .ga-about .ga-personal-message { display: flex; flex-direction: column; gap: 0; }
+  .ga-home .ga-about .ga-andrew-frame { position: relative; inset: auto; z-index: 0; order: -1; width: 100%; height: auto; aspect-ratio: 3/2; overflow: hidden; border-radius: 4px; background: #253e45; }
+  .ga-home .ga-about .ga-andrew-frame .ga-andrew-photo { position: static; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 18%; mask-image: none; }
+  .ga-home .ga-about .ga-section-copy { width: 100%; margin: 22px 0 0; padding: 0; background: none; }
+  .ga-home .ga-about .ga-section-copy::after, .ga-home .ga-about .ga-message-collage,
+  .ga-home .ga-about .ga-message-caption, .ga-message-desktop-prose, .ga-home .ga-about .ga-byline { display: none; }
+  .ga-home .ga-about .ga-section-copy > .ga-mission-letter { font: 700 34px/1.1 'Bodoni Moda', Georgia, serif; text-transform: none; }
+  .ga-home .ga-about .ga-mission-letter em { color: #cc352b; font-family: inherit; font-style: normal; }
+  .ga-message-mobile-prose, .ga-message-mobile-byline { display: block; }
+  .ga-message-mobile-prose p { margin: 20px 0 0; color: #565656; font: 400 16px/1.65 'Plus Jakarta Sans', sans-serif; }
+  .ga-message-scripture { display: inline-block; margin-top: 22px; font: 600 10px/1.6 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; color: #555; }
+  .ga-message-mobile-byline { margin-top: 18px; padding-top: 14px; border-top: 1px solid #ccc; }
+  .ga-message-mobile-byline strong { display: block; font: 700 20px/1.3 'Bodoni Moda', Georgia, serif; }
+  .ga-message-mobile-byline span { display: block; margin-top: 4px; color: #666; font-size: 12px; }
+  .ga-home .ga-about .ga-personal-message .ga-text-link { display: flex; justify-content: center; width: 100%; min-height: 48px; margin-top: 16px; padding: 14px 12px; border: 0; border-radius: 6px; background: #e44436; color: white; font: 600 15px/1.4 'Plus Jakarta Sans', sans-serif; text-transform: none; }
+
+  .ga-home main .ga-frontlines { padding: 38px 24px 44px; }
+  .ga-home .ga-frontlines-photo { inset: 0; background-position: right center; opacity: .7; mask-image: none; }
+  .ga-home .ga-frontlines::before { background: linear-gradient(90deg, #101010ef, #101010a8); }
+  .ga-home .ga-frontlines-kicker { margin-bottom: 18px; font-size: 11px; gap: 16px; }
+  .ga-home .ga-frontlines h2 { font: 800 28px/1.12 'Archivo', sans-serif; }
+  .ga-home .ga-frontlines h2 em { font: italic 400 38px/1.1 'DM Serif Display', Georgia, serif; }
+  .ga-home .ga-frontlines-copy { margin: 18px 0 22px; font-size: 16px; line-height: 1.55; }
+  .ga-home .ga-frontlines-action { min-height: 54px; padding: 16px 20px; border-radius: 6px; font-size: 15px; }
+  .ga-frontlines-action .ga-icon { width: 24px; height: 24px; }
+  .ga-home .ga-frontlines-note, .ga-town-icon, .ga-town-desktop-title, .ga-town-desktop-copy { display: none; }
+  .ga-home .ga-town-callout > .ga-town-icon { display: none; }
+  .ga-home .ga-town-callout { display: block; margin-top: 20px; padding: 20px; border: 1px solid #ffffff40; border-left: 4px solid #e44436; border-radius: 8px; background: linear-gradient(135deg, #421a1abc, #101010eb 65%); }
+  .ga-home .ga-town-callout > div { padding: 0; border: 0; }
+  .ga-town-mobile-label { display: block; margin-bottom: 10px; color: #fa7166; font: 600 10px/1.5 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; }
+  .ga-town-mobile-title, .ga-town-mobile-copy { display: block; }
+  .ga-home .ga-town-callout h3 { margin: 0 0 10px; font: 800 28px/1.15 'Plus Jakarta Sans', sans-serif; text-transform: none; }
+  .ga-town-mobile-title em { color: #ed4f43; font: italic 400 36px/1.1 'DM Serif Display', Georgia, serif; }
+  .ga-home .ga-town-callout p { font-size: 15px; line-height: 1.55; }
+  .ga-home .ga-town-callout a { justify-content: space-between; width: 100%; margin-top: 18px; padding: 14px 12px; min-height: 48px; border: 0; border-radius: 6px; background: #f7f7f5; color: #171717; font-size: 14px; text-transform: none; }
+  .ga-home .ga-town-callout a img { filter: none; }
+
+  .ga-home .ga-approach { padding: 40px 0 48px; }
+  .ga-home .ga-approach > .ga-shell { width: calc(100% - 40px); }
+  .ga-home .ga-approach-heading { display: block; padding-bottom: 22px; margin-bottom: 24px; }
+  .ga-home .ga-approach-heading > h2 { width: 100%; max-width: none; }
+  .ga-home .ga-approach-heading > p { margin-top: 18px; font: 400 16px/1.6 'IBM Plex Mono', monospace; }
+  .ga-strategy-desktop-caption { display: none; }
+  .ga-strategy-mobile-caption { display: block; }
+  .ga-home .ga-approach-grid { gap: 14px; }
+  .ga-home .ga-approach-card { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; grid-template-rows: auto auto; gap: 18px 12px; padding: 20px 16px; border: 1px solid #d8d8d4; border-top: 2px solid #e44436; border-radius: 8px; background: #fcfcfa; box-shadow: 0 2px 6px #17171708; }
+  .ga-home .ga-approach-card::before, .ga-home .ga-approach-card::after { display: none; }
+  .ga-home .ga-approach-top { display: grid; place-items: center; width: 44px; height: 44px; margin: 0; background: #e444360b; border-radius: 6px; font-size: 28px; }
+  .ga-home .ga-approach-card h3 { align-self: center; margin: 0; font: italic 400 34px/1.1 'DM Serif Display', Georgia, serif; }
+  .ga-home .ga-approach-card > p { grid-column: 1 / -1; grid-row: 2; margin: 0; min-height: 0; font-size: 16px; line-height: 1.55; }
+  .ga-home .ga-approach-card > a.ga-approach-arrow { grid-column: 3; grid-row: 1; align-self: center; margin: 0; width: 44px; height: 44px; border-radius: 50%; background: #e444360b; }
+  .ga-approach-arrow img { transform: rotate(-45deg); width: 24px; height: 24px; }
+
+  :is(.ga-home, .ga-resources-page) .ga-media-library { padding: 36px 0 44px; background: #101212; }
+  .ga-media-library > .ga-shell { width: calc(100% - 32px); }
+  .ga-media-heading { display: block; padding-top: 0; margin-bottom: 14px; }
+  .ga-media-heading::before { display: none; }
+  .ga-media-intro-label { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font: 600 9px/1.5 'Plus Jakarta Sans', sans-serif; color: #bdbdb8; text-transform: uppercase; }
+  .ga-media-intro-label::before { content: ''; width: 28px; height: 3px; background: #e44436; }
+  .ga-media-heading-desktop { display: none; }
+  .ga-media-heading-mobile { display: block; }
+  :is(.ga-home, .ga-resources-page) .ga-media-heading h2 { font: 700 32px/1.08 'Bodoni Moda', Georgia, serif; }
+  .ga-media-heading h2 em { color: #e44436; font-style: italic; }
+  .ga-media-heading > p { margin: 8px 0 0; font-size: 15px; }
+  .ga-media-library .ga-media-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 12px; }
+  .ga-media-library .ga-media-tabs[hidden] { display: none; }
+  .ga-media-tabs button { min-width: 0; min-height: 44px; padding: 6px; border: 1px solid #ffffff80; border-radius: 999px; background: transparent; color: #e5e5e3; font: 400 11px/1.4 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
+  .ga-media-tabs button[aria-selected="true"] { background: #f7f7f5; color: #171717; font-weight: 700; border-color: #f7f7f5; }
+  .ga-media-tabs button:focus-visible { outline: 2px solid #e44436; outline-offset: 3px; }
+  .ga-media-library .ga-media-grid { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 10px; }
+  .ga-media-grid > [hidden], .ga-media-explore-links > [hidden] { display: none; }
+  .ga-media-library .ga-media-testimony { grid-column: auto; grid-row: auto; min-height: 0; aspect-ratio: 16/9; }
+  .ga-media-testimony .ga-media-image > img { object-position: center 24%; }
+  .ga-media-testimony .ga-media-kicker { top: 10px; left: 10px; padding: 4px 6px; background: #e44436; font-size: 9px; }
+  .ga-media-testimony .ga-media-kicker::after { display: none; }
+  .ga-media-testimony .ga-media-copy { bottom: 12px; left: 12px; right: 66px; }
+  :is(.ga-home, .ga-resources-page) .ga-media-testimony h3 { font-size: 23px; margin: 0 0 4px; }
+  .ga-media-testimony h3 br, .ga-film-copy h4 br { display: none; }
+  .ga-media-testimony .ga-media-copy p { padding: 0; font-size: 11px; line-height: 1.4; }
+  .ga-media-testimony .ga-media-copy .ga-media-status { position: absolute; left: auto; right: -54px; bottom: 0; display: grid; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: #e44436; font-size: 0; }
+  .ga-media-testimony .ga-media-status img { width: 24px; height: 24px; margin: 0; }
+  .ga-media-library .ga-media-films { display: grid; grid-column: auto; grid-row: auto; gap: 10px; min-height: 0; overflow: visible; }
+  .ga-media-library .ga-media-films[hidden] { display: none; }
+  .ga-media-library .ga-film-slide { position: relative; inset: auto; height: auto; aspect-ratio: 16/7; border: 1px solid #ffffff40; border-radius: 8px; }
+  .ga-media-library .ga-film-slide[hidden] { display: none; }
+  :is(.ga-home, .ga-resources-page) .ga-film-carousel h3.ga-media-kicker { z-index: 3; top: 10px; left: 10px; padding: 4px 6px; border: 0; background: #e44436; font-size: 9px; }
+  .ga-film-copy { inset: auto 66px 12px 12px; }
+  :is(.ga-home, .ga-resources-page) .ga-film-copy h4 { font-size: 22px; margin-bottom: 4px; }
+  .ga-film-copy p { font-size: 10px; line-height: 1.4; }
+  .ga-film-play { bottom: 12px; right: 10px; width: 44px; height: 44px; }
+  .ga-media-library .ga-film-preview { position: relative; inset: auto; display: grid; width: 100%; grid-template-columns: 92px minmax(0, 1fr) 36px; grid-template-rows: auto 1fr; gap: 2px 12px; align-items: center; }
+  .ga-film-preview > img { grid-column: 1; grid-row: 1 / 3; width: 92px; height: 58px; border-radius: 6px; object-fit: cover; }
+  .ga-film-preview-label { grid-column: 2; margin: 0; font-size: 9px; color: #bdbdb8; }
+  .ga-film-preview-label::after { display: none; }
+  .ga-film-preview > span { grid-column: 2; padding: 0; font-size: 18px; line-height: 1.1; }
+  .ga-film-preview-arrow { display: grid; place-items: center; grid-column: 3; grid-row: 1 / 3; width: 36px; height: 36px; border: 1px solid #ffffff90; border-radius: 50%; }
+  .ga-film-preview-arrow img { width: 20px; height: 20px; filter: invert(1); }
+  .ga-film-progress, .ga-film-nav, .ga-film-counter { display: none; }
+  :is(.ga-home, .ga-resources-page) .ga-media-explore-heading { display: flex; align-items: center; gap: 12px; margin: 0; font: 700 22px/1.2 'Bodoni Moda', Georgia, serif; }
+  .ga-media-explore-heading img { filter: invert(36%) sepia(92%) saturate(2112%) hue-rotate(339deg); }
+  .ga-media-explore-heading[hidden] { display: none; }
+  .ga-media-explore-links { position: relative; display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 2px; }
+  .ga-media-explore-links::-webkit-scrollbar { display: none; }
+  .ga-media-explore-links > .ga-media-card { flex: 0 0 64%; grid-column: auto; grid-row: auto; min-height: 0; aspect-ratio: 2/1; scroll-snap-align: start; }
+  .ga-media-explore-links .ga-media-kicker, .ga-media-explore-links .ga-media-copy p { display: none; }
+  .ga-media-explore-links .ga-media-copy { inset: auto 38px 10px 10px; }
+  :is(.ga-home, .ga-resources-page) .ga-media-explore-links .ga-media-copy h3 { margin: 0; font-size: 18px; }
+  .ga-media-explore-links .ga-media-symbol { width: 28px; height: 28px; right: 8px; bottom: 8px; }
+  .ga-media-explore-links .ga-media-symbol img { width: 18px; height: 18px; }
+  .ga-media-explore-dots { display: flex; justify-content: center; gap: 4px; }
+  .ga-media-explore-dots[hidden] { display: none; }
+  .ga-media-explore-dots button { display: grid; place-items: center; width: 44px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; }
+  .ga-media-explore-dots button::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #666; }
+  .ga-media-explore-dots button[aria-pressed="true"]::after { background: white; }
+  .ga-media-library[data-media-view="conversations"] .ga-media-explore-links > .ga-media-card,
+  .ga-media-library[data-media-view="resources"] .ga-media-explore-links > .ga-media-card { flex-basis: 100%; aspect-ratio: 16/9; }
+  .ga-media-library[data-media-view="conversations"] .ga-media-explore-links .ga-media-copy h3,
+  .ga-media-library[data-media-view="resources"] .ga-media-explore-links .ga-media-copy h3 { font-size: 28px; }
+}
+@media (max-width: 359px) {
+  .ga-home .ga-about .ga-section-copy > .ga-mission-letter { font-size: 30px; }
+  .ga-home .ga-frontlines h2 { font-size: 24px; }
+  .ga-home .ga-frontlines h2 em { font-size: 34px; }
+  .ga-home .ga-town-callout h3 { font-size: 24px; }
+  .ga-town-mobile-title em { font-size: 32px; }
+  .ga-home .ga-approach-card { grid-template-columns: 36px minmax(0, 1fr) 44px; padding: 18px 12px; gap: 16px 8px; }
+  .ga-home .ga-approach-top { width: 36px; height: 40px; font-size: 25px; }
+  .ga-home .ga-approach-card h3 { font-size: 30px; }
+  :is(.ga-home, .ga-resources-page) .ga-media-heading h2 { font-size: 28px; }
+  :is(.ga-home, .ga-resources-page) .ga-media-testimony h3 { font-size: 20px; }
+  :is(.ga-home, .ga-resources-page) .ga-film-copy h4 { font-size: 20px; }
+  .ga-film-preview > span { font-size: 16px; }
+  .ga-media-library .ga-film-preview { grid-template-columns: 80px minmax(0, 1fr) 32px; gap: 2px 8px; }
+  .ga-film-preview > img { width: 80px; height: 54px; }
+  :is(.ga-home, .ga-resources-page) .ga-media-explore-links .ga-media-copy h3 { font-size: 16px; }
+}
